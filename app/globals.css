@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+* {
+  font-family: var(--font-titillium);
+}
+
+h1 {
+  font-size: 26px;
+  font-family: var(--font-spacemono);
+  line-height: 32px;
+}
+
+h2 {
+  font-size: 24px;
+  font-family: var(--font-spacemono);
+  line-height: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: var(--font-spacemono);
+  line-height: 20px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 16px;
+  font-family: var(--font-spacemono);
+  line-height: 18px;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 16px;
+  font-family: var(--font-titillium);
+  font-weight: 700;
+  line-height: 16px;
+}
+
+p {
+  font-size: 11px;
+  font-family: var(--font-titillium);
+  line-height: 16px;
+  font-weight: 200;
+  color: #A4A4A4;
+}
+
+.primary_button {
+  font-family: var(--font-titillium);
+  font-weight: 600;
+}
+
+
+@media (min-width: 640px) {
+  h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  p {
+    font-size: 13px;
+  line-height: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 52px;
+    line-height: 64px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  
+  h4 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  
+  h5 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 64px;
+    line-height: 80px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 80px;
+    line-height: 96px;
+  }
+}
+
+@media (min-width: 1536px) {
+  h1 {
+    font-size: 104px;
+    line-height: 128px;
+  }
+  
+  h2 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  
+  h4 {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  
+  h5 {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  
+  p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

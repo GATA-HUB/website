@@ -1,0 +1,61 @@
+[
+    {
+        "image": "/team/jove.jpg",
+        "name": "Jove",
+        "title": "CEO & CTO",
+        "desc": "GATA Core",
+        "twitter": "https://twitter.com/JoveCosmos"
+    },
+    {
+        "image": "/team/wassie.jpg",
+        "name": "Wassie",
+        "title": "CFO & Strategies",
+        "desc": "GATA Core",
+        "twitter": "https://twitter.com/ABCharlieEth"
+    },
+    {
+        "image": "/team/crypto.jpg",
+        "name": "Cryptopital",
+        "title": "CMO and PR",
+        "desc": "GATA Core",
+        "twitter": "https://twitter.com/Cryptopital"
+    },
+    {
+        "image": "/team/brasco.jpg",
+        "name": "Brasco",
+        "title": "Design & Community Lead",
+        "desc": "",
+        "twitter": "https://twitter.com/Tabrasco"
+    },
+    {
+        "image": "/team/george.jpg",
+        "name": "George",
+        "title": "Data Analyst & Content Writing",
+        "desc": "",
+        "twitter": "https://twitter.com/George9D"
+    },
+
+
+
+    {
+        "image": "/team/jove.jpg",
+        "name": "Jove",
+        "title": "CEO & CTO",
+        "desc": "GATA Core",
+        "twitter": "https://twitter.com/JoveCosmos"
+    },
+    {
+        "image": "/team/wassie.jpg",
+        "name": "Wassie",
+        "title": "CFO & Strategies",
+        "desc": "GATA Core",
+        "twitter": "https://twitter.com/ABCharlieEth"
+    },
+    {
+        "image": "/team/crypto.jpg",
+        "name": "Cryptopital",
+        "title": "CMO and PR",
+        "desc": "GATA Core",
+        "twitter": "https://twitter.com/Cryptopital"
+    }
+]

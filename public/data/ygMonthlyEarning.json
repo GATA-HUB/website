@@ -1,0 +1,119 @@
+[
+    {
+        "startingDate": "23rd Nov 2022",
+        "endingDate": "31st Dec 2022",
+        "reward": 1994.2,
+        "stake": 1894.5,
+        "floorBurn": 76,
+        "circulatingYg" : 9924,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st Jan 2023",
+        "endingDate": "31st Jan 2023",
+        "reward": 668,
+        "stake": 634.6,
+        "floorBurn": 30,
+        "circulatingYg" : 9894,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st Feb 2023",
+        "endingDate": "28th Feb 2023",
+        "reward": 400.1,
+        "stake": 380.1,
+        "floorBurn": 20,
+        "circulatingYg" : 9874,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st March 2023",
+        "endingDate": "31st March 2023",
+        "reward": 338,
+        "stake": 0,
+        "floorBurn": 17,
+        "circulatingYg" : 9857,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st April 2023",
+        "endingDate": "30th April 2023",
+        "reward": 230,
+        "stake": 0,
+        "floorBurn": 14,
+        "circulatingYg" : 9665,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st May 2023",
+        "endingDate": "31st May 2023",
+        "reward": 181,
+        "stake": 0,
+        "floorBurn": 11,
+        "circulatingYg" : 9579,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st June 2023",
+        "endingDate": "30th June 2023",
+        "reward": 201,
+        "stake": 0,
+        "floorBurn": 17,
+        "circulatingYg" : 9562,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st July 2023",
+        "endingDate": "31st July 2023",
+        "reward": 212.6,
+        "stake": 0,
+        "floorBurn": 15,
+        "circulatingYg" : 9547,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st August 2023",
+        "endingDate": "31st August 2023",
+        "reward": 168.8,
+        "stake": 0,
+        "floorBurn": 13,
+        "circulatingYg" : 9534,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st September 2023",
+        "endingDate": "30th September 2023",
+        "reward": 162.9,
+        "stake": 0,
+        "floorBurn": 12,
+        "circulatingYg" : 9522,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st October 2023",
+        "endingDate": "1st November 2023",
+        "reward": 278,
+        "stake": 0,
+        "floorBurn": 18,
+        "circulatingYg" : 9504,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st November 2023",
+        "endingDate": "30th November  2023",
+        "reward": 159,
+        "stake": 0,
+        "floorBurn": 12,
+        "circulatingYg" : 9492,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    },
+    {
+        "startingDate": "1st December 2023",
+        "endingDate": "31st December 2023",
+        "reward": 149.3,
+        "stake": 0,
+        "floorBurn": 12,
+        "circulatingYg" : 9480,
+        "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/yield-gorilla/ygs-assets-allocation#yg-monthly-earning-year-2023"
+    }
+]
