@@ -1,0 +1,22 @@
+[
+    {
+      "validators": [
+        { "icon": "/validator_chains/cosmos.png" },
+        { "icon": "/validator_chains/neutron.png" },
+        { "icon": "/validator_chains/stride.png" },
+        { "icon": "/validator_chains/osmosis.png" },
+        { "icon": "/validator_chains/stars.png" },
+        { "icon": "/validator_chains/junologo.png" },
+        { "icon": "/validator_chains/omni.png" },
+        { "icon": "/validator_chains/teri.png" },
+        { "icon": "/validator_chains/archway.png" },
+        { "icon": "/validator_chains/akt.png" }
+      ],
+      "title": "Cosmos",
+      "ibc": {
+        "monthly" : "22,000",
+        "weekly": "5,500",
+        "daily": "709"
+      }
+    }
+]

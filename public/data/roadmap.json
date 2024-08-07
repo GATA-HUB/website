@@ -1,0 +1,213 @@
+[
+    
+      
+      {
+        "title": "2024 Road Map",
+        "desc": "See the list of perpetual task for day to day expansion",
+        "content": [
+          {
+            "subTitle": "Q1 2024",
+            "points": [
+              { "href": "",
+               "point": "On-chain GATA DAO - Establishing on-chain GATA DAO using DAO DAO module,  it will enhance the existing decision making process within the DAO."},
+              { "href": "",
+               "point": "Community rewards via Streampay - Using existing tooling to reward active community"},
+              { "href": "",
+               "point": "Alternate Validator Funding model - Discussion and decision to have multiple options to fund the validator expansion"}
+            ]
+          },
+          {
+            "subTitle": "Q1-Q2 2024",
+            "points": [
+                {
+                    "href": "",
+                     "point":
+                    "GATA Channels Overhauling - New GATA website, restructuring of X and git book docs."
+                },
+                { "href": "",
+                 "point": "New Yield Collection - New Yield series based on new model and experince from YGs." }
+            ]
+          },
+          {
+            "subTitle": "Q2 2024",
+            "points": [
+              {
+                "href": "",
+                 "point":
+                  "GATA Deposit dApp - Launch of a new gamified dApp on GATAs Dymension RollApp and beyond."
+              }
+            ]
+          },
+          {
+            "subTitle": "Q2-Q3 2024",
+            "points": [
+              {
+                "href": "",
+                 "point":
+                  "GATA beyond Cosmos - GATA Validators outside of Cosmos on Solana and polygon"
+              }
+            ]
+          },
+          {
+            "subTitle": "Q3 2024",
+            "points": [
+              {
+                "href": "",
+                 "point":
+                  "GATA preparation for ICF - Finalize the ICF foundation delegation application"
+              }
+            ]
+          },
+          {
+            "subTitle": "Q4 2024",
+            "points": [
+              {
+                "href": "",
+                 "point":
+                  "Deposit dApp Upgrades - New features for the deposit dApp on Dymension RollApp and extension of dApp to more IBC chains. "
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2023 Recap",
+        "desc": "Major achievements of GATA DAO",
+        "content": [
+          {
+            "subTitle": "Q1 2023",
+            "points": [
+              { "href": "",
+               "point": "Feils Update; a comprehensive update to improve the GATA revenue model through a governance proposal." }
+            ]
+          },
+          {
+            "subTitle": "Q2 2023",
+            "points": [
+              { "href": "",
+               "point": "Launch of Souvenir Series to make important events even more memorable." },
+              {
+                "href": "https://gatadao.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs",
+                 "point":
+                  "Launch of GATA x FLIX launch souvenir and airdropped to GATA and YG holders ~1800 Unique addresses. Read more about the collection here"
+              },
+              {
+                "href": "",
+                 "point":
+                  "Launch of Omniflix validator."
+              },
+              {
+                "href": "",
+                 "point":
+                  "Launch of  GATA Relay services for public good, we relayed more than 150K IBC transactions in 2023."
+              },
+              {
+                "href": "",
+                 "point":
+                  "Launch of Akash Network validator."
+              }
+            ]
+          },
+          {
+            "subTitle": "Q3 2023",
+            "points": [
+              {
+                "href": "",
+                 "point":
+                  "Launch of AIG; Apes in games (The complete launch postponed after delays from the launchpad)."
+              },
+              {
+                "href": "",
+                 "point":
+                  "Launch of Archway validator."
+              },
+              { "href": "",
+               "point": "Launch of Passage Network Validator." },
+              {
+                "href": "",
+                 "point": "Launch of GATA Delegators Award NFT; airdropped to 5.2K unique delegators of GATA validators."
+              }
+            ]
+          },
+          {
+            "subTitle": "Q4 2023",
+            "points": [
+              {
+                "href": "",
+                 "point":
+                  "Launch of GATA Stargaze validator."
+              },
+              {
+                "href": "",
+                 "point":
+                  "Launch of GATA GAZE 7"
+              },
+              { "href": "",
+               "point": "Free mint of GATA Christmas collection 2023 to all the stakeholders ( ~5500 Unique addresses) launched on Stargaze network.  " }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2022 Recap",
+        "desc": "Foundation, Formation & Expansion",
+        "content": [
+          {
+            "subTitle": "Foundation of DAO (Q1 2022)",
+            "points": [
+              { "href": "",
+               "point": "Creation of the GATA community on Twitter and Discord" },
+              { "href": "",
+               "point": "Giveaways for the community to bootstrap the marketing" },
+              { "href": "",
+               "point": "Minting Website " },
+              {
+                "href": "",
+                 "point":
+                  "Genesis Mint of DAO’s First Collection Colonial Cats (950 GATAc)"
+              },
+              { "href": "",
+               "point": "Distribution of giveaways and honorary NFT (49 GATAc)" }
+            ]
+          },
+          {
+            "subTitle": "Formation of DAO (Q2 2022)",
+            "points": [
+              { "href": "",
+               "point": "Verification and integration of all GATA Owner " },
+              {
+                "href": "",
+                 "point":
+                  "DAO vote to select the chains where GATA DAO will operate as a validator"
+              },
+              {
+                "href": "",
+                 "point":
+                  "DAO’s website, DAO’s own voting module and Reward distribution module."
+              }
+            ]
+          },
+          {
+            "subTitle": "Expansion of DAO (Q2-Q4 2022)",
+            "points": [
+              {
+                "href": "",
+                 "point":
+                  "Launch of next NFT collections on different platforms across Cosmos to onboard new users and more liquidity to expand the operations."
+              },
+              {
+                "href": "",
+                 "point":
+                  "Participation in incentivized Test-nets of new sovereign blockchains."
+              },
+              { "href": "",
+               "point": "Strengthening the DAO Treasury." },
+              {
+                "href": "",
+                "point": "Exploring new streams of revenue."
+              }
+            ]
+          }
+        ]
+      }
+]
