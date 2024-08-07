@@ -571,7 +571,7 @@ const LandingPage = () => {
             </div>
             <div className="flex gap-2 flex-wrap">
               <h2 className="text-green text-[40px] xl:text-[64px] font-bold leading-[40px]">
-                121K
+                132K
               </h2>
               <h3 className="text-green">USD</h3>
             </div>
