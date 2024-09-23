@@ -4,8 +4,7 @@ import Lenis from "@studio-freight/lenis";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Validators from "../infrastructure/validators/page";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -35,17 +34,28 @@ export default function Nav() {
     setMenu(!menu);
   };
 
-  const openDropDown = () => {
+  const closeHumberger = () => {
+    setMenu(false);
+  };
+
+  const handleDropDown = () => {
     setDropDown(!dropDown);
+  };
+
+  const closeDropDown = () => {
+    setDropDown(false);
   };
 
   return (
     <div className="z-30 fixed top-0 left-0 w-full px-2 pt-2 md:px-4 md:pt-4 flex justify-center">
       <nav className="relative w-full max-w-[1888px] flex justify-between items-center border-2 border-white border-opacity-10 bg-purple rounded-2xl pl-[18px] pr-[18px] py-[8px]">
         {/* Logo */}
-        <Link href={"/"}>
+        <Link href={"/"} onClick={closeHumberger}>
           <span>
-            <div className="flex gap-[12px] items-center">
+            <div
+              onClick={closeDropDown}
+              className="flex gap-[12px] items-center"
+            >
               <div className="flex h-[26px]">
                 <svg
                   width="104"
@@ -69,15 +79,17 @@ export default function Nav() {
         {/* Menu */}
         <div className="hidden lg:flex gap-[40px] lg2:gap-[64px]">
           <Link
-            href={"/"}
+            onClick={closeDropDown}
+            href={"/ygata"}
             className={`text-${
-              pathname === "/" ? "white" : "dgray"
-            } h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px]`}
+              pathname === "/ygata" ? "white" : "dgray"
+            } h-fit py-[8px] transition-all duration-300 ease-in-out font-semibold hover:text-white text-[16px]`}
           >
-            home
+            yGATA
           </Link>
 
           <Link
+            onClick={closeDropDown}
             href={"/rollapp"}
             className={`h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
               pathname === "/rollapp" ? "white" : "dgray"
@@ -86,16 +98,140 @@ export default function Nav() {
             RollApp
           </Link>
 
-          <Link
-            href={"/infrastructure"}
-            className={`h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
-              pathname === "/infrastructure" ? "white" : "dgray"
-            }`}
+          <div
+            className={`group flex gap-2 items-center justify-center h-fit py-[8px] transition-all duration-300 ease-in-out font-semibold hover:text-white text-[16px] cursor-pointer text-${
+              dropDown ? "white" : "dgray"
+            } text-${pathname === "/infrastructure" ? "white" : "dgray"}`}
+            onClick={handleDropDown}
           >
-            Infrastructure
-          </Link>
+            <div className="uppercase">Infrastructure</div>
+            <div className="w-6 h-6 flex items-center justify-center">
+              <svg
+                className={`${dropDown ? "fill-white" : "fill-dgray"} ${
+                  pathname === "/infrastructure" ? "fill-white" : "fill-dgray"
+                } group-hover:fill-white transition-all duration-300 ease-in-out ${
+                  dropDown ? "rotate-[180deg]" : "rotate-[0deg]"
+                }`}
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M2.29289 5.29289C2.68342 4.90237 3.31658 4.90237 3.70711 5.29289L8 9.58579L12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289C14.0976 5.68342 14.0976 6.31658 13.7071 6.70711L8.70711 11.7071C8.31658 12.0976 7.68342 12.0976 7.29289 11.7071L2.29289 6.70711C1.90237 6.31658 1.90237 5.68342 2.29289 5.29289Z"
+                  fill=""
+                />
+              </svg>
+            </div>
+            {dropDown && (
+              <div className="absolute top-[72px] flex flex-col bg-gray rounded-[16px] overflow-hidden">
+                <Link
+                  href={"/infrastructure/validators"}
+                  className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-dgray hover:bg-lgray text-white`}
+                >
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="16" cy="16" r="4" fill="white" />
+                      <circle
+                        cx="27"
+                        cy="16"
+                        r="2"
+                        transform="rotate(90 27 16)"
+                        fill="white"
+                      />
+                      <circle
+                        cx="16"
+                        cy="27"
+                        r="2"
+                        transform="rotate(-180 16 27)"
+                        fill="white"
+                      />
+                      <circle
+                        cx="5"
+                        cy="16"
+                        r="2"
+                        transform="rotate(90 5 16)"
+                        fill="white"
+                      />
+                      <circle
+                        cx="16"
+                        cy="5"
+                        r="2"
+                        transform="rotate(-180 16 5)"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  Validators
+                </Link>
+
+                <Link
+                  href={"/infrastructure/rpcs"}
+                  className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-dgray hover:bg-lgray text-white`}
+                >
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="9" cy="9" r="5" fill="white" />
+                      <circle cx="9" cy="9" r="5" fill="white" />
+                      <circle cx="23" cy="23" r="5" fill="white" />
+                      <circle cx="23" cy="23" r="5" fill="white" />
+                      <circle cx="26" cy="6" r="2" fill="white" />
+                      <circle cx="6" cy="26" r="2" fill="white" />
+                      <path
+                        d="M9 9L23 23"
+                        stroke="white"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeDasharray="2 2"
+                      />
+                    </svg>
+                  </div>
+                  Endpoints
+                </Link>
+
+                <Link
+                  href={"/infrastructure/snapshot"}
+                  className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-dgray hover:bg-lgray text-white`}
+                >
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M5 8C6.65685 8 8 6.65685 8 5C8 3.34315 6.65685 2 5 2C3.34315 2 2 3.34315 2 5C2 6.65685 3.34315 8 5 8ZM27 8C28.6569 8 30 6.65685 30 5C30 3.34315 28.6569 2 27 2C25.3431 2 24 3.34315 24 5C24 6.65685 25.3431 8 27 8ZM16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24ZM22.7026 22.0064C24.1311 20.4133 25 18.3081 25 16C25 13.6919 24.1311 11.5867 22.7026 9.99363C22.7264 9.97702 22.749 9.95811 22.7703 9.93689L24.6036 8.10356C24.7989 7.9083 24.7989 7.59172 24.6036 7.39645C24.4083 7.20119 24.0917 7.20119 23.8965 7.39645L22.0632 9.22979C22.0419 9.25101 22.023 9.27366 22.0064 9.29743C20.4134 7.86889 18.3082 7 16 7C13.6919 7 11.5867 7.86887 9.99363 9.29739C9.97703 9.27363 9.95813 9.25099 9.93692 9.22979L8.10359 7.39645C7.90833 7.20119 7.59175 7.20119 7.39648 7.39645C7.20122 7.59172 7.20122 7.9083 7.39648 8.10356L9.22982 9.93689C9.25102 9.9581 9.27366 9.977 9.29741 9.9936C7.86889 11.5866 7 13.6918 7 16C7 18.3082 7.86889 20.4134 9.29742 22.0064C9.27366 22.023 9.25103 22.0419 9.22982 22.0631L7.39648 23.8965C7.20122 24.0917 7.20122 24.4083 7.39648 24.6036C7.59175 24.7988 7.90833 24.7988 8.10359 24.6036L9.93692 22.7702C9.95813 22.749 9.97703 22.7264 9.99364 22.7026C11.5867 24.1311 13.6919 25 16 25C18.3082 25 20.4134 24.1311 22.0064 22.7026C22.023 22.7264 22.0419 22.749 22.0632 22.7702L23.8965 24.6036C24.0917 24.7988 24.4083 24.7988 24.6036 24.6036C24.7989 24.4083 24.7989 24.0917 24.6036 23.8965L22.7703 22.0631C22.749 22.0419 22.7264 22.023 22.7026 22.0064ZM19.1644 19.8715C18.3024 20.5768 17.2006 21 16 21C14.7994 21 13.6976 20.5768 12.8357 19.8715L11.7703 20.9369C11.575 21.1322 11.2584 21.1322 11.0632 20.9369C10.8679 20.7416 10.8679 20.425 11.0632 20.2298L12.1285 19.1644C11.4232 18.3025 11 17.2006 11 16C11 14.7994 11.4232 13.6976 12.1285 12.8356L11.0632 11.7702C10.8679 11.575 10.8679 11.2584 11.0632 11.0631C11.2584 10.8679 11.575 10.8679 11.7703 11.0631L12.8357 12.1285C13.6976 11.4232 14.7994 11 16 11C17.2006 11 18.3025 11.4232 19.1644 12.1285L20.2298 11.0631C20.4251 10.8679 20.7417 10.8679 20.9369 11.0631C21.1322 11.2584 21.1322 11.575 20.9369 11.7702L19.8715 12.8357C20.5768 13.6976 21 14.7994 21 16C21 17.2006 20.5768 18.3024 19.8715 19.1643L20.9369 20.2298C21.1322 20.425 21.1322 20.7416 20.9369 20.9369C20.7417 21.1322 20.4251 21.1322 20.2298 20.9369L19.1644 19.8715ZM30 27C30 28.6569 28.6569 30 27 30C25.3431 30 24 28.6569 24 27C24 25.3431 25.3431 24 27 24C28.6569 24 30 25.3431 30 27ZM8 27C8 28.6569 6.65685 30 5 30C3.34315 30 2 28.6569 2 27C2 25.3431 3.34315 24 5 24C6.65685 24 8 25.3431 8 27Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  Relayers
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link
+            onClick={closeDropDown}
             href={"/nft-collections"}
             className={`h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
               pathname === "/nft-collections" ? "white" : "dgray"
@@ -105,6 +241,7 @@ export default function Nav() {
           </Link>
 
           <Link
+            onClick={closeDropDown}
             href={"/roadmap"}
             className={`h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
               pathname === "/roadmap" ? "white" : "dgray"
@@ -114,6 +251,7 @@ export default function Nav() {
           </Link>
 
           <Link
+            onClick={closeDropDown}
             href={"/rewards"}
             className={`h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
               pathname === "/rewards" ? "white" : "dgray"
@@ -204,17 +342,19 @@ export default function Nav() {
         >
           <div onClick={humberger}>
             <Link
-              className={`py-[16px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
-                pathname === "/" ? "white" : "dgray"
+              onClick={closeDropDown}
+              className={`py-[16px] transition-all duration-300 ease-in-out font-semibold hover:text-white text-[16px] text-${
+                pathname === "/ygata" ? "white" : "dgray"
               }`}
-              href={"/"}
+              href={"/ygata"}
             >
-              home
+              yGATA
             </Link>
           </div>
 
           <div onClick={humberger}>
             <Link
+              onClick={closeDropDown}
               className={`py-[16px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
                 pathname === "rollapp" ? "white" : "dgray"
               }`}
@@ -224,19 +364,147 @@ export default function Nav() {
             </Link>
           </div>
 
-          <div onClick={humberger}>
-            <Link
-              className={`py-[16px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
-                pathname === "/infrastructure" ? "white" : "dgray"
-              }`}
-              href={"/infrastructure"}
-            >
-              Infrastructure
-            </Link>
+          <div
+            className={`group w-fit flex gap-2 items-center justify-center h-fit py-[8px] transition-all duration-300 ease-in-out font-semibold hover:text-white text-[16px] cursor-pointer text-${
+              dropDown ? "white" : "dgray"
+            } text-${pathname === "/infrastructure" ? "white" : "dgray"}`}
+            onClick={handleDropDown}
+          >
+            <div className="uppercase">Infrastructure</div>
+            <div className="w-6 h-6 flex items-center justify-center">
+              <svg
+                className={`${dropDown ? "fill-white" : "fill-dgray"} ${
+                  pathname === "/infrastructure" ? "fill-white" : "fill-dgray"
+                } group-hover:fill-white transition-all duration-300 ease-in-out ${
+                  dropDown ? "rotate-[180deg]" : "rotate-[0deg]"
+                }`}
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M2.29289 5.29289C2.68342 4.90237 3.31658 4.90237 3.70711 5.29289L8 9.58579L12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289C14.0976 5.68342 14.0976 6.31658 13.7071 6.70711L8.70711 11.7071C8.31658 12.0976 7.68342 12.0976 7.29289 11.7071L2.29289 6.70711C1.90237 6.31658 1.90237 5.68342 2.29289 5.29289Z"
+                  fill=""
+                />
+              </svg>
+            </div>
+            {dropDown && (
+              <div className="absolute left-[200px] top-[80px] flex flex-col bg-gray rounded-[16px] overflow-hidden">
+                <div onClick={humberger}>
+                  <Link
+                    href={"/infrastructure/validators"}
+                    className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-dgray hover:bg-lgray text-white`}
+                  >
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="16" cy="16" r="4" fill="white" />
+                        <circle
+                          cx="27"
+                          cy="16"
+                          r="2"
+                          transform="rotate(90 27 16)"
+                          fill="white"
+                        />
+                        <circle
+                          cx="16"
+                          cy="27"
+                          r="2"
+                          transform="rotate(-180 16 27)"
+                          fill="white"
+                        />
+                        <circle
+                          cx="5"
+                          cy="16"
+                          r="2"
+                          transform="rotate(90 5 16)"
+                          fill="white"
+                        />
+                        <circle
+                          cx="16"
+                          cy="5"
+                          r="2"
+                          transform="rotate(-180 16 5)"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    Validators
+                  </Link>
+                </div>
+
+                <div onClick={humberger}>
+                  <Link
+                    href={"/infrastructure/rpcs"}
+                    className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-dgray hover:bg-lgray text-white`}
+                  >
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="9" cy="9" r="5" fill="white" />
+                        <circle cx="9" cy="9" r="5" fill="white" />
+                        <circle cx="23" cy="23" r="5" fill="white" />
+                        <circle cx="23" cy="23" r="5" fill="white" />
+                        <circle cx="26" cy="6" r="2" fill="white" />
+                        <circle cx="6" cy="26" r="2" fill="white" />
+                        <path
+                          d="M9 9L23 23"
+                          stroke="white"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeDasharray="2 2"
+                        />
+                      </svg>
+                    </div>
+                    Endpoints
+                  </Link>
+                </div>
+
+                <div onClick={humberger}>
+                  <Link
+                    href={"/infrastructure/snapshot"}
+                    className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-dgray hover:bg-lgray text-white`}
+                  >
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M5 8C6.65685 8 8 6.65685 8 5C8 3.34315 6.65685 2 5 2C3.34315 2 2 3.34315 2 5C2 6.65685 3.34315 8 5 8ZM27 8C28.6569 8 30 6.65685 30 5C30 3.34315 28.6569 2 27 2C25.3431 2 24 3.34315 24 5C24 6.65685 25.3431 8 27 8ZM16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24ZM22.7026 22.0064C24.1311 20.4133 25 18.3081 25 16C25 13.6919 24.1311 11.5867 22.7026 9.99363C22.7264 9.97702 22.749 9.95811 22.7703 9.93689L24.6036 8.10356C24.7989 7.9083 24.7989 7.59172 24.6036 7.39645C24.4083 7.20119 24.0917 7.20119 23.8965 7.39645L22.0632 9.22979C22.0419 9.25101 22.023 9.27366 22.0064 9.29743C20.4134 7.86889 18.3082 7 16 7C13.6919 7 11.5867 7.86887 9.99363 9.29739C9.97703 9.27363 9.95813 9.25099 9.93692 9.22979L8.10359 7.39645C7.90833 7.20119 7.59175 7.20119 7.39648 7.39645C7.20122 7.59172 7.20122 7.9083 7.39648 8.10356L9.22982 9.93689C9.25102 9.9581 9.27366 9.977 9.29741 9.9936C7.86889 11.5866 7 13.6918 7 16C7 18.3082 7.86889 20.4134 9.29742 22.0064C9.27366 22.023 9.25103 22.0419 9.22982 22.0631L7.39648 23.8965C7.20122 24.0917 7.20122 24.4083 7.39648 24.6036C7.59175 24.7988 7.90833 24.7988 8.10359 24.6036L9.93692 22.7702C9.95813 22.749 9.97703 22.7264 9.99364 22.7026C11.5867 24.1311 13.6919 25 16 25C18.3082 25 20.4134 24.1311 22.0064 22.7026C22.023 22.7264 22.0419 22.749 22.0632 22.7702L23.8965 24.6036C24.0917 24.7988 24.4083 24.7988 24.6036 24.6036C24.7989 24.4083 24.7989 24.0917 24.6036 23.8965L22.7703 22.0631C22.749 22.0419 22.7264 22.023 22.7026 22.0064ZM19.1644 19.8715C18.3024 20.5768 17.2006 21 16 21C14.7994 21 13.6976 20.5768 12.8357 19.8715L11.7703 20.9369C11.575 21.1322 11.2584 21.1322 11.0632 20.9369C10.8679 20.7416 10.8679 20.425 11.0632 20.2298L12.1285 19.1644C11.4232 18.3025 11 17.2006 11 16C11 14.7994 11.4232 13.6976 12.1285 12.8356L11.0632 11.7702C10.8679 11.575 10.8679 11.2584 11.0632 11.0631C11.2584 10.8679 11.575 10.8679 11.7703 11.0631L12.8357 12.1285C13.6976 11.4232 14.7994 11 16 11C17.2006 11 18.3025 11.4232 19.1644 12.1285L20.2298 11.0631C20.4251 10.8679 20.7417 10.8679 20.9369 11.0631C21.1322 11.2584 21.1322 11.575 20.9369 11.7702L19.8715 12.8357C20.5768 13.6976 21 14.7994 21 16C21 17.2006 20.5768 18.3024 19.8715 19.1643L20.9369 20.2298C21.1322 20.425 21.1322 20.7416 20.9369 20.9369C20.7417 21.1322 20.4251 21.1322 20.2298 20.9369L19.1644 19.8715ZM30 27C30 28.6569 28.6569 30 27 30C25.3431 30 24 28.6569 24 27C24 25.3431 25.3431 24 27 24C28.6569 24 30 25.3431 30 27ZM8 27C8 28.6569 6.65685 30 5 30C3.34315 30 2 28.6569 2 27C2 25.3431 3.34315 24 5 24C6.65685 24 8 25.3431 8 27Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    Relayers
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
 
           <div onClick={humberger}>
             <Link
+              onClick={closeDropDown}
               className={`py-[16px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
                 pathname === "/nft-collections" ? "white" : "dgray"
               }`}
@@ -248,6 +516,7 @@ export default function Nav() {
 
           <div onClick={humberger}>
             <Link
+              onClick={closeDropDown}
               className={`py-[16px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
                 pathname === "/roadmap" ? "white" : "dgray"
               }`}
@@ -259,6 +528,7 @@ export default function Nav() {
 
           <div onClick={humberger}>
             <Link
+              onClick={closeDropDown}
               className={`py-[16px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
                 pathname === "/rewards" ? "white" : "dgray"
               }`}

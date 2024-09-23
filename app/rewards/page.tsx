@@ -218,28 +218,33 @@ const Treasury = () => {
       {/* <div className="absolute z-[-1] top-[800px] right-0">
         <img src="/bg-waves.png" alt="" loading="lazy" />
       </div> */}
-      <div className="w-full px-4">
-        <>
+      <div className="relative flex w-full h-[960px] items-center ">
+        <div className="absolute w-full h-full overflow-hidden flex justify-center">
           <Image
+            style={{
+              minWidth: "1920px",
+            }}
+            src="/rewardsBg.jpg"
+            // layout="fill"
+            // objectFit="cover"
+            // objectPosition="center"
+            width={1920}
+            height={960}
+            quality={100}
             alt=""
-            priority={true}
-            width={1888}
-            height={522}
-            src="/reward-banner.png"
           />
-        </>
-      </div>
-      <div className="w-full mt-[-48px] sm:mt-[-80px] lg:mt-[-104px] xl:mt-[-128px] 2xl:mt-[-256px] max-w-[1920px] flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
-        <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8">
-          <div className="flex flex-col">
-            <h1>GATA HUB Rewards</h1>
+        </div>
+        <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
+          <div className="flex flex-col gap-2 w-2/3 lg:w-1/2">
+            <h1>Rewards</h1>
             <p>
-              GATA NFT holders get monthly rewards. These rewards come from our
-              validators, staking operations and airdrops.
+              NFT holders get monthly rewards. These rewards come from our
+              validators, DeFi, NFTfi, and airdrops.
             </p>
           </div>
         </div>
-
+      </div>
+      <div className="w-full max-w-[1920px] flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
         <div className="flex flex-col gap-24 w-full">
           <div className="flex w-full items-center justify-center">
             <Tab

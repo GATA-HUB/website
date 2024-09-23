@@ -45,25 +45,30 @@ const NftCollection = () => {
       {/* <div className="absolute z-[-1] top-[800px] right-0">
         <img src="/bg-waves.png" alt="" loading="lazy" />
       </div> */}
-      <div className="w-full px-4">
-        <>
+      <div className="relative flex w-full h-[960px] items-center ">
+        <div className="absolute w-full h-full overflow-hidden flex justify-center">
           <Image
+            style={{
+              minWidth: "1920px",
+            }}
+            src="/nftCollBg.jpg"
+            // layout="fill"
+            // objectFit="cover"
+            // objectPosition="center"
+            width={1920}
+            height={960}
+            quality={100}
             alt=""
-            priority={true}
-            width={1888}
-            height={522}
-            src="/nft-header.jpg"
           />
-        </>
-      </div>
-
-      <div className="w-full mt-[-48px] sm:mt-[-80px] lg:mt-[-104px] xl:mt-[-128px] 2xl:mt-[-256px] max-w-[1920px] flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
-        <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8">
-          <div className="flex flex-col">
+        </div>
+        <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
+          <div className="flex flex-col gap-2 lg:w-1/2">
             <h1>Exclusive NFTs made by GATA HUB</h1>
           </div>
         </div>
+      </div>
 
+      <div className="w-full max-w-[1920px] flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
         <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
           <div className="flex flex-col gap-[16px] items-center max-w-[1024px] text-center">
             <Image
@@ -79,9 +84,8 @@ const NftCollection = () => {
             </div>
             <div className="flex flex-col items-center">
               <p>
-                We have launched various type of NFT collections. Some pay
-                revenue share to the holders, some generate DeFi Yield and some
-                are memorial.
+                Some pay revenue share to the holders, some generate DeFi Yield
+                and some are memorial
               </p>
               {/* <div className="flex gap-[4px] items-center justify-center">
                 <p>For more details visit GATA HUB</p>

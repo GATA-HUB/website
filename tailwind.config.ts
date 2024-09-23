@@ -23,6 +23,7 @@ const config: Config = {
         lgray: "#302F31",
         gray: "#A4A4A4",
         dgray: "#0F0F0F",
+        mgray: "#1F1F1F",
         green: "#78FF48",
         red: "#FF4874",
         lpurple: "#DA48FF",
