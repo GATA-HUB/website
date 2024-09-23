@@ -1,0 +1,62 @@
+[
+    {
+      "icon": "/validator_chains/archway.png",
+      "title": "Archway",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/cosmos.png",
+      "title": "Cosmos",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/evmos.png",
+      "title": "Evmos",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/junologo.png",
+      "title": "Juno",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/neutron.png",
+      "title": "Neutron",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/nomic.png",
+      "title": "Nomic",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/omni.png",
+      "title": "Omniflix",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/osmosis.png",
+      "title": "Osmosis",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/stars.png",
+      "title": "Stargaze",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/stride.png",
+      "title": "Stride",
+      "link1": ""
+    },
+    {
+      "icon": "/validator_chains/teri.png",
+      "title": "Teritori",
+      "link1": ""
+    },
+    {
+        "icon": "/validator_chains/dym.png",
+        "title": "Dymension",
+        "link1": ""
+    }
+  ]

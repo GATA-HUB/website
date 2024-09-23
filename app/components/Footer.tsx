@@ -5,18 +5,23 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className=" relative w-full max-w-[1920px] flex flex-col gap-[64px] items-center pt-[160px] pb-[128px] lg:pt-[350px] lg:pb-[300px]">
-      <div className="z-10 flex flex-col gap-[16px] items-center">
-        <Image
-          width={32}
-          height={9}
-          className="w-24 md:w-48"
-          src="/Logo(Large).svg"
-          alt=""
-          priority={true}
-        />
+    <div className="z-20 relative w-full max-w-[1920px] flex flex-col gap-[64px] items-center pt-[160px] pb-[128px] lg:pt-[350px] lg:pb-[300px]">
+      <div className="z-20 flex flex-col gap-[16px] items-center">
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.40083 0.996531C8.66011 1.14083 8.82244 1.22199 8.97801 1.32119C11.2574 2.70551 13.5413 4.07405 15.8139 5.46739C15.9506 5.56049 16.1084 5.6181 16.2729 5.63502C16.4374 5.65195 16.6036 5.62766 16.7564 5.56434C20.9417 4.1147 25.4717 3.98797 29.7316 5.20135C29.8809 5.25144 30.0397 5.26691 30.196 5.2466C30.3522 5.22629 30.5018 5.17073 30.6334 5.08411C33.2623 3.49838 35.9016 1.92542 38.5515 0.365244C38.7432 0.252515 38.9393 0.139785 39.1941 0C39.2214 0.149049 39.2395 0.299642 39.2482 0.450919C39.2482 3.75616 39.2482 7.06139 39.2482 10.3711C39.2576 10.4907 39.241 10.611 39.1993 10.7235C39.1576 10.836 39.092 10.9381 39.007 11.0227C37.5257 12.4882 36.0534 13.9672 34.5789 15.4395C34.5331 15.4737 34.4849 15.5046 34.4347 15.5319C31.0843 12.3304 27.0666 10.8221 22.4109 11.2279C19.1233 11.5045 16.027 12.8892 13.6292 15.1554C11.292 17.3112 9.69886 20.1529 9.07921 23.2716C8.45956 26.3903 8.84531 29.6252 10.1809 32.5107C11.5166 35.3962 13.7332 37.7837 16.5119 39.3294C19.2905 40.8751 22.4879 41.4995 25.644 41.1126C33.1089 40.1814 37.4806 34.3668 38.432 29.5713H37.7715C32.7377 29.5713 27.7024 29.5713 22.6657 29.5713C22.2345 29.5797 21.8145 29.4333 21.482 29.1587C21.0314 28.8019 20.6676 28.3475 20.4183 27.8296C20.169 27.3117 20.0405 26.744 20.0427 26.1692C20.0449 25.5945 20.1776 25.0277 20.4308 24.5118C20.6841 23.9958 21.0512 23.5441 21.5045 23.1908C21.8383 22.9173 22.2591 22.7725 22.6905 22.7827C26.636 22.7985 30.5815 22.7827 34.5226 22.7827H45.3446C45.41 23.2742 45.4957 23.7454 45.5363 24.2211C45.905 28.3252 45.1027 32.4496 43.2223 36.1162C41.342 39.7827 38.4607 42.841 34.9126 44.9363C31.1706 47.1838 26.8323 48.2369 22.4763 47.9552C12.8694 47.3984 4.39216 40.3956 2.46223 30.525C1.0283 23.202 2.94696 16.7314 7.99049 11.2144C8.12771 11.0794 8.23574 10.9178 8.30788 10.7394C8.38001 10.5609 8.41472 10.3696 8.40985 10.1772C8.39181 7.359 8.40985 4.54076 8.40985 1.72477L8.40083 0.996531Z"
+            fill="white"
+          />
+        </svg>
+
         <h5 className="text-center px-4 max-w-[512px]">
-          Providing pure catnip for the decentralized world of tomorrow
+          Catnip for the decentralized world of tomorrow
         </h5>
 
         {/* Social Media Links */}
@@ -39,7 +44,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://discord.gg/ckAhhs6z"
+            href="https://discord.gg/4MCrtaCetp"
             target="_blank"
             className="group transition-all duration-300 ease-in-out border-2 border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
           >
@@ -92,7 +97,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://linktr.ee/gatadao"
+            href="https://linktr.ee/gatahub"
             target="_blank"
             className="group transition-all duration-300 ease-in-out border-2 border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
           >
@@ -112,6 +117,23 @@ const Footer = () => {
                   <rect width="26.0504" height="32" transform="translate(3)" />
                 </clipPath>
               </defs>
+            </svg>
+          </a>
+
+          <a
+            href="https://github.com/GATA-HUB"
+            target="_blank"
+            className="group transition-all duration-300 ease-in-out border-2 border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
+          >
+            <svg
+              className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-dgray group-hover:text-purple"
+              height="32"
+              viewBox="0 0 24 24"
+              version="1.1"
+              width="32"
+              fill="none"
+            >
+              <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
             </svg>
           </a>
         </div>

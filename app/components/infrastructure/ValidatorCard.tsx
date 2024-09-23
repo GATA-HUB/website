@@ -51,6 +51,8 @@ const ValidatorCard = ({
     fetchPrices();
   }, []);
 
+  console.log(title, ":", stat);
+
   return (
     <motion.div
       style={{

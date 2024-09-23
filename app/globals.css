@@ -16,6 +16,28 @@
   }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #232323; 
+  border-radius: 4px;
+  padding-left: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #646363; 
+}
 
 @layer utilities {
   .text-balance {
@@ -28,9 +50,9 @@
 }
 
 h1 {
-  font-size: 26px;
+  font-size: 48px;
   font-family: var(--font-spacemono);
-  line-height: 32px;
+  line-height: 48px;
 }
 
 h2 {
@@ -76,7 +98,7 @@ p {
 
 @media (min-width: 640px) {
   h1 {
-    font-size: 40px;
+    font-size: 48px;
     line-height: 50px;
   }
   p {
@@ -114,7 +136,7 @@ p {
 @media (min-width: 1024px) {
   h1 {
     font-size: 64px;
-    line-height: 80px;
+    line-height: 72px;
   }
 
   h3 {
@@ -126,14 +148,14 @@ p {
 @media (min-width: 1280px) {
   h1 {
     font-size: 80px;
-    line-height: 96px;
+    line-height: 88px;
   }
 }
 
 @media (min-width: 1536px) {
   h1 {
     font-size: 104px;
-    line-height: 128px;
+    line-height: 108px;
   }
   
   h2 {

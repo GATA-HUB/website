@@ -21,6 +21,7 @@ interface Validator {
   stake?: string;
   autoCompound?: string;
   stat: string;
+  active: boolean;
 }
 
 interface Team {
@@ -414,9 +415,9 @@ const LandingPage = () => {
           {/* Title text section */}
           <div className="flex flex-col">
             {/* Heading 01 */}
-            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
+            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
               <h1 className="h-fit">We</h1>
-              <div className="flex flex-col animate-text-slide h-fit">
+              <div className="flex flex-col gap-2 animate-text-slide h-fit">
                 <h1>Validate</h1>
                 <h1>Provide</h1>
                 <h1>Provide</h1>
@@ -426,8 +427,8 @@ const LandingPage = () => {
             </div>
 
             {/* Heading 02 */}
-            <div className="flex overflow-hidden h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
-              <div className="flex flex-col animate-text-slide-2 h-fit w-fit">
+            <div className="flex overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
+              <div className="flex flex-col gap-4 animate-text-slide-2 h-fit w-fit">
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
                   <h1 className="text-purple">Cosmos</h1>
                   <h1>Chains</h1>
@@ -479,7 +480,7 @@ const LandingPage = () => {
             </a>
 
             <a
-              href="https://discord.gg/ckAhhs6z"
+              href="https://discord.gg/4MCrtaCetp"
               target="_blank"
               className="group flex justify-center items-center w-6 h-6 lg:w-[32px] lg:h-[32px] cursor-pointer"
             >
@@ -532,7 +533,7 @@ const LandingPage = () => {
             </a>
 
             <a
-              href="https://linktr.ee/gatadao"
+              href="https://linktr.ee/gatahub"
               target="_blank"
               className="group flex justify-center items-center w-6 h-6 lg:w-[32px] lg:h-[32px] cursor-pointer"
             >
@@ -558,6 +559,23 @@ const LandingPage = () => {
                 </defs>
               </svg>
             </a>
+
+            <a
+              href="https://github.com/GATA-HUB/"
+              target="_blank"
+              className="group flex justify-center items-center w-6 h-6 lg:w-[32px] lg:h-[32px] cursor-pointer"
+            >
+              <svg
+                className="transition-all duration-300 ease-in-out fill-current text-white group-hover:text-purple"
+                height="32"
+                viewBox="0 0 24 24"
+                version="1.1"
+                width="32"
+                fill="none"
+              >
+                <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+              </svg>
+            </a>
           </div>
 
           <SecondaryButton disabled={true}>Enter Roll App</SecondaryButton>
@@ -571,7 +589,7 @@ const LandingPage = () => {
             </div>
             <div className="flex gap-2 flex-wrap">
               <h2 className="text-green text-[40px] xl:text-[64px] font-bold leading-[40px]">
-                132K
+                121K
               </h2>
               <h3 className="text-green">USD</h3>
             </div>
@@ -583,7 +601,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/epoch.svg" />
             </div>
             <h2 className="text-red text-[40px] xl:text-[64px] font-bold">
-              24
+              22
             </h2>
             <p>Epoch Distributed</p>
           </div>
@@ -624,7 +642,7 @@ const LandingPage = () => {
             </div>
             <div className="flex gap-2 flex-wrap">
               <h2 className="text-purple text-[40px] xl:text-[64px] font-bold leading-[40px]">
-                5,419,556
+                7,319,556
               </h2>
               <h3 className="text-purple">USD</h3>
             </div>
@@ -642,13 +660,13 @@ const LandingPage = () => {
               src="/title-decor.svg"
             />
             <div className="flex gap-8">
-              <h2>GATA HUB</h2>
+              {/* <h2>GATA HUB</h2> */}
               <h2 className="text-red">Validators</h2>
             </div>
-            <p>
+            {/* <p>
               Trust us to safeguard your assets and deliver excellence in
               staking
-            </p>
+            </p> */}
           </div>
 
           {/* validators */}
@@ -678,7 +696,7 @@ const LandingPage = () => {
               return;
             })}
           </div>
-          <Link href={"/infrastructure"}>
+          <Link href={"/infrastructure/validators"}>
             <span>
               <SecondaryButton>View all validators</SecondaryButton>
             </span>
@@ -715,32 +733,43 @@ const LandingPage = () => {
               src="/title-decor.svg"
             />
             <div className="flex gap-[16px] items-center">
-              <h2>GATA</h2>
+              {/* <h2>GATA</h2> */}
               <h2 className="text-green">Team</h2>
             </div>
           </div>
 
           <div className="flex w-full relative overflow-hidden">
-            <div className="z-10 absolute left-0 h-full w-[64px] bg-gradient-to-r from-black to-transparent"></div>
+            {/* <div className="z-10 absolute left-0 h-full w-[64px] bg-gradient-to-r from-black to-transparent"></div> */}
 
-            <div className="flex animate-team-slide">
+            <div className="flex w-full flex-wrap gap-16 justify-center">
               {intialTeam.map((member, i) => {
-                if (i < intialTeam.length - 3) {
-                  return (
-                    <MemberCard
-                      key={i}
-                      image={member.image}
-                      name={member.name}
-                      title={member.title}
-                      desc={member.desc}
-                      twitter={member.twitter}
-                    />
-                  );
-                }
+                //   if (i < intialTeam.length - 3) {
+                //     return (
+                //       <MemberCard
+                //         key={i}
+                //         image={member.image}
+                //         name={member.name}
+                //         title={member.title}
+                //         desc={member.desc}
+                //         twitter={member.twitter}
+                //       />
+                //     );
+                //   }
+                // })}
+                return (
+                  <MemberCard
+                    key={i}
+                    image={member.image}
+                    name={member.name}
+                    title={member.title}
+                    desc={member.desc}
+                    twitter={member.twitter}
+                  />
+                );
               })}
               {/* Duplicate for animation */}
 
-              <div aria-hidden="true" className="flex mr-[64px] w-[180px] ">
+              {/* <div aria-hidden="true" className="flex mr-[64px] w-[180px] ">
                 <div className="flex">
                   {intialTeam.map((member, i) => {
                     return (
@@ -755,9 +784,9 @@ const LandingPage = () => {
                     );
                   })}
                 </div>
-              </div>
+              </div> */}
             </div>
-            <div className="absolute right-0 h-full w-[64px] bg-gradient-to-r from-transparent to-black"></div>
+            {/* <div className="absolute right-0 h-full w-[64px] bg-gradient-to-r from-transparent to-black"></div> */}
           </div>
         </section>
       </div>

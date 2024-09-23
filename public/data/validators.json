@@ -36,18 +36,6 @@
     "active": true
   },
   {
-    "icon": "/validator_chains/evmos.png",
-    "title": "Evmos",
-    "tokens": "10,000",
-    "symbol": "EVMOS",
-    "commission": "5%",
-    "status": "https://www.mintscan.io/evmos/validators/evmosvaloper1w9m6p7ctu4gkdsr8plle997h25rzsa96xlzfat",
-    "stake": "https://wallet.keplr.app/#/evmos/stake?modal=stake&validator=evmosvaloper1w9m6p7ctu4gkdsr8plle997h25rzsa96xlzfat&all-list=true",
-    "autoCompound": "",
-    "stat": "active",
-    "active": true
-  },
-  {
     "icon": "/validator_chains/junologo.png",
     "title": "Juno",
     "tokens": "1,500",
@@ -58,6 +46,18 @@
     "autoCompound": "",
     "stat": "active",
     "active": true
+  },
+  {
+    "icon": "/validator_chains/evmos.png",
+    "title": "Evmos",
+    "tokens": "10,000",
+    "symbol": "EVMOS",
+    "commission": "",
+    "status": "",
+    "stake": "",
+    "autoCompound": "",
+    "stat": "decommissioned",
+    "active": false
   },
   {
     "icon": "/validator_chains/neutron.png",
@@ -112,12 +112,12 @@
     "title": "Passage",
     "tokens": "10",
     "symbol": "PASG",
-    "commission": "",
-    "status": "",
-    "stake": "",
+    "commission": "5%",
+    "status": "https://www.mintscan.io/passage/validators/pasgvaloper17axwjxcdgmeygx2mfndkqhamsnx5q48xv6zxxv",
+    "stake": "https://wallet.keplr.app/chains/passage?tab=staking&modal=staking&chain=passage-2&validator_address=pasgvaloper17axwjxcdgmeygx2mfndkqhamsnx5q48xv6zxxv&step_id=3&action_id=stake",
     "autoCompound": "",
-    "stat": "experimental",
-    "active": false
+    "stat": "active",
+    "active": true
   },
   {
     "icon": "/validator_chains/rebus.png",
