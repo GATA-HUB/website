@@ -12,13 +12,13 @@
     "active": true
   },
   {
-    "icon": "/validator_chains/archway.png",
-    "title": "Archway",
-    "tokens": "1,000",
-    "symbol": "ARCH",
+    "icon": "/validator_chains/stars.png",
+    "title": "Stargaze",
+    "tokens": "75",
+    "symbol": "STARS",
     "commission": "5%",
-    "status": "https://www.mintscan.io/archway/validators/archwayvaloper1mj2muyc2el7z9l243thhj3crhzzn2ds4tsr7ar",
-    "stake": "https://connect.archway.io/staking",
+    "status": "https://www.mintscan.io/stargaze/validators/starsvaloper1pn9m649n2ugeyw4a7lj4vdtm76f7ptlp0sqxhz",
+    "stake": "https://wallet.keplr.app/chains/stargaze?modal=validator&chain=stargaze-1&validator_address=starsvaloper1pn9m649n2ugeyw4a7lj4vdtm76f7ptlp0sqxhz",
     "autoCompound": "",
     "stat": "active",
     "active": true
@@ -46,6 +46,18 @@
     "autoCompound": "",
     "stat": "active",
     "active": true
+  },
+  {
+    "icon": "/validator_chains/archway.png",
+    "title": "Archway",
+    "tokens": "1,000",
+    "symbol": "ARCH",
+    "commission": "",
+    "status": "",
+    "stake": "",
+    "autoCompound": "",
+    "stat": "decommissioned",
+    "active": false
   },
   {
     "icon": "/validator_chains/evmos.png",
@@ -142,18 +154,6 @@
     "autoCompound": "",
     "stat": "decommissioned",
     "active": false
-  },
-  {
-    "icon": "/validator_chains/stars.png",
-    "title": "Stargaze",
-    "tokens": "75",
-    "symbol": "STARS",
-    "commission": "5%",
-    "status": "https://www.mintscan.io/stargaze/validators/starsvaloper1pn9m649n2ugeyw4a7lj4vdtm76f7ptlp0sqxhz",
-    "stake": "https://wallet.keplr.app/chains/stargaze?modal=validator&chain=stargaze-1&validator_address=starsvaloper1pn9m649n2ugeyw4a7lj4vdtm76f7ptlp0sqxhz",
-    "autoCompound": "",
-    "stat": "active",
-    "active": true
   },
   {
     "icon": "/validator_chains/stride.png",

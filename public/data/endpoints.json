@@ -2,7 +2,7 @@
     {
       "icon": "/validator_chains/archway.png",
       "title": "Archway",
-      "endpoints": ["https://archway-rpc.gatadao.com/"]
+      "endpoints": ["Decommissioned"]
     },
     {
       "icon": "/validator_chains/akt.png",
