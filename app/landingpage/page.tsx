@@ -422,7 +422,7 @@ const LandingPage = () => {
                 <h1>Yield DAO</h1>
                 <h1>Public Infra</h1>
                 <h1>Rewards</h1>
-               <h1 aria-hidden="true"></h1> 
+               <h1 aria-hidden="true">NFTfi</h1> 
               </div>
             </div>
 
