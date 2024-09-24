@@ -589,11 +589,11 @@ const LandingPage = () => {
             </div>
             <div className="flex gap-2 flex-wrap">
               <h2 className="text-green text-[40px] xl:text-[64px] font-bold leading-[40px]">
-                121K
+                150K
               </h2>
               <h3 className="text-green">USD</h3>
             </div>
-            <p>Atom Distributed</p>
+            <p>Rewards Distributed</p>
           </div>
 
           <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
@@ -601,7 +601,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/epoch.svg" />
             </div>
             <h2 className="text-red text-[40px] xl:text-[64px] font-bold">
-              22
+              25
             </h2>
             <p>Epoch Distributed</p>
           </div>
@@ -621,7 +621,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/validator.svg" />
             </div>
             <h2 className="text-lpurple text-[40px] xl:text-[64px] font-bold">
-              12
+              11
             </h2>
             <p>Active Validator</p>
           </div>
@@ -631,7 +631,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/relay.svg" />
             </div>
             <h2 className="text-yellow text-[40px] xl:text-[64px] font-bold">
-              18
+              15
             </h2>
             <p>IBC relay connections</p>
           </div>
@@ -642,7 +642,7 @@ const LandingPage = () => {
             </div>
             <div className="flex gap-2 flex-wrap">
               <h2 className="text-purple text-[40px] xl:text-[64px] font-bold leading-[40px]">
-                7,319,556
+                4,319,556
               </h2>
               <h3 className="text-purple">USD</h3>
             </div>
