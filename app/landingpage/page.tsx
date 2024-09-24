@@ -419,10 +419,10 @@ const LandingPage = () => {
               <h1 className="h-fit">GATA</h1>
               <div className="flex flex-col gap-2 animate-text-slide h-fit">
                 <h1>NFT DAO</h1>
-                <h1>Yeild DAO</h1>
+                <h1>Yield DAO</h1>
                 <h1>Public Infra</h1>
                 <h1>Rewards</h1>
-                <h1 aria-hidden="true">Validate</h1>
+{/*                 <h1 aria-hidden="true">Validate</h1> */}
               </div>
             </div>
 
@@ -578,7 +578,7 @@ const LandingPage = () => {
             </a>
           </div>
 
-          <SecondaryButton disabled={true}>Streamswap</SecondaryButton>
+          <SecondaryButton disabled={true}>yGATA Token Stream</SecondaryButton>
         </section>
 
         {/* Gata Breif */}
