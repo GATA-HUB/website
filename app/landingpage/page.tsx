@@ -416,18 +416,18 @@ const LandingPage = () => {
           <div className="flex flex-col">
             {/* Heading 01 */}
             <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
-              <h1 className="h-fit">We</h1>
+              <h1 className="h-fit">GATA</h1>
               <div className="flex flex-col gap-2 animate-text-slide h-fit">
-                <h1>Validate</h1>
-                <h1>Provide</h1>
-                <h1>Provide</h1>
-                <h1>Distribute</h1>
+                <h1>NFT DAO</h1>
+                <h1>Yeild DAO</h1>
+                <h1>Public Infra</h1>
+                <h1>Rewards</h1>
                 <h1 aria-hidden="true">Validate</h1>
               </div>
             </div>
 
             {/* Heading 02 */}
-            <div className="flex overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
+{/*         <div className="flex overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
               <div className="flex flex-col gap-4 animate-text-slide-2 h-fit w-fit">
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
                   <h1 className="text-purple">Cosmos</h1>
@@ -456,8 +456,8 @@ const LandingPage = () => {
                   <h1 className="text-purple">Cosmos</h1>
                   <h1>Chains</h1>
                 </div>
-              </div>
-            </div>
+              </div> 
+            </div> */}
           </div>
 
           {/* Social Media Links */}
