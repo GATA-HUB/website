@@ -712,7 +712,7 @@ const LandingPage = () => {
             </div>
             <p>
               Over the past two years, GATA HUB has forged meaningful
-              partnerships with variety of projects. Together, we're driving
+              partnerships and collaborations with many projects. Together, we're driving
               innovation, fostering growth, and creating lasting impact in the
               blockchain ecosystem.
             </p>
