@@ -463,7 +463,7 @@ const LandingPage = () => {
           {/* Social Media Links */}
           <div className="flex gap-8 lg:gap-12">
             <a
-              href="https://twitter.com/GataDaoZone"
+              href="https://twitter.com/GataHubZone"
               target="_blank"
               className="group flex justify-center items-center w-6 h-6 lg:w-[32px] lg:h-[32px] cursor-pointer"
             >
@@ -578,7 +578,7 @@ const LandingPage = () => {
             </a>
           </div>
 
-          <SecondaryButton disabled={true}>Enter Roll App</SecondaryButton>
+          <SecondaryButton disabled={true}>Streamswap</SecondaryButton>
         </section>
 
         {/* Gata Breif */}
