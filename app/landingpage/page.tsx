@@ -427,26 +427,26 @@ const LandingPage = () => {
             </div>
 
             {/* Heading 02 */}
-{/*         <div className="flex overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
+            <div className="flex overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
               <div className="flex flex-col gap-4 animate-text-slide-2 h-fit w-fit">
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-purple">Cosmos</h1>
-                  <h1>Chains</h1>
+                  <h1 className="text-purple"></h1>
+                  <h1></h1>
                 </div>
 
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-lpurple">IBC</h1>
-                  <h1>Relayers</h1>
+                  <h1 className="text-lpurple"></h1>
+                  <h1></h1>
                 </div>
 
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-red">Public</h1>
-                  <h1>RPC</h1>
+                  <h1 className="text-red"></h1>
+                  <h1></h1>
                 </div>
 
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-green">Atom</h1>
-                  <h1>Rewards</h1>
+                  <h1 className="text-green"></h1>
+                  <h1></h1>
                 </div>
 
                 <div
@@ -454,10 +454,10 @@ const LandingPage = () => {
                   aria-hidden="true"
                 >
                   <h1 className="text-purple">Cosmos</h1>
-                  <h1>Chains</h1>
+                  <h1></h1>
                 </div>
               </div> 
-            </div> */}
+            </div>
           </div>
 
           {/* Social Media Links */}
