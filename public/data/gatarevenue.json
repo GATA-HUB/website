@@ -1,5 +1,26 @@
 [
     {
+        "title": "GATA DAO EPOCH 25",
+        "desc": "GATA DOA epoch 25 from August 1st 2024 to August 31st 2024. Where 902/1887 eligible holders of GATAc & GATAv NFTs earned 0.17 $ATOM per GATA.",
+        "atomeDist": 158,
+        "date": "September 2nd 2024",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-25"
+    },
+    {
+        "title": "GATA DAO EPOCH 24",
+        "desc": "GATA DOA epoch 24 from July 1st 2024 to July 30th 2024. Where 938/1887 eligible holders of GATAc & GATAv NFTs earned 0.16 $ATOM per GATA.",
+        "atomeDist": 151,
+        "date": "August 3rd 2024",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-24"
+    },
+    {
+        "title": "GATA DAO EPOCH 23",
+        "desc": "GATA DOA epoch 23 from June 1st 2024 to June 30th 2024. Where 929/1887 eligible holders of GATAc & GATAv NFTs earned 0.15 $ATOM per GATA.",
+        "atomeDist": 141,
+        "date": "July 2nd 2024",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-23"
+    },
+    {
         "title": "GATA DAO EPOCH 22",
         "desc": "GATA DOA epoch 22 from May 1st 2024 to May 31st 2024. Where 916/1887 eligible holders of GATAc & GATAv NFTs earned 0.15 $ATOM per GATA.",
         "atomeDist": 148,
