@@ -435,7 +435,7 @@ const LandingPage = () => {
                 </div>
 
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-lpurple"></h1>
+                  <h1 className="text-purple"></h1>
                   <h1></h1>
                 </div>
 
@@ -453,7 +453,7 @@ const LandingPage = () => {
                   className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12"
                   aria-hidden="true"
                 >
-                  <h1 className="text-purple">Cosmos</h1>
+                  <h1 className="text-purple"></h1>
                   <h1></h1>
                 </div>
               </div> 
