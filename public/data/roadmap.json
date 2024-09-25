@@ -22,10 +22,12 @@
                 {
                     "href": "",
                      "point":
-                    "GATA Channels Overhauling - New GATA web, restructuring of X and docs."
+                    "GATA Channels Overhauling - New GATA web, restructuring of X and docs"
                 },
                 { "href": "",
-                 "point": "New Yield Collection based on new model different from YGs." }
+                 "point": "Launch of Yield Paws on Stragaze launchpad" },
+                { "href": "",
+                 "point": "Yield gorilla's vote for new Yield strategies" }
             ]
           },
           {
@@ -34,7 +36,12 @@
               {
                 "href": "",
                  "point":
-                  "GATA SE-100 and elys testnet, expansion of GATA infra & public goods"
+                  "GATA Namada SE-100 and Elys testnet"
+              },
+                  {
+                "href": "",
+                 "point":
+                  "Expansion of GATA infra & public goods support"
               }
             ]
           },
@@ -44,7 +51,17 @@
               {
                 "href": "",
                  "point":
-                  "GATA Rollapp on dymension testnet - NFT staking yield dapp"
+                  "GATA loyalty app (a way forward for the community participatuon rewards)"
+              },
+                {
+                "href": "",
+                 "point":
+                  "GATA ICF Foundation application"
+              },
+                   {
+                "href": "",
+                 "point":
+                  "GATA ICF Foundation application"
               }
             ]
           },
@@ -54,7 +71,7 @@
               {
                 "href": "",
                  "point":
-                  "GATA loyalty app and GATA ICF application"
+                  "Launch of GATA HUB TV on Omnilfix"
               }
             ]
           },
@@ -71,7 +88,9 @@
                  { "href": "",
                "point": "Launch of Yield Crocs YC - New yield collection in yGATA"},
                 { "href": "",
-               "point": "Launch of GATA Rollapp on dymension mainnet"}
+               "point": "Launch of GATA Rollapp on dymension mainnet"},
+                 { "href": "",
+               "point": "Launch of GATA Rollapp Airdrop"}
             ]
           }
         ]
