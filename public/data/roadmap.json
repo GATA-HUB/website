@@ -44,7 +44,7 @@
               {
                 "href": "",
                  "point":
-                  "GATA Rollapp on dymension testnet - NFT minting and staking yield dapp"
+                  "GATA Rollapp on dymension testnet - NFT staking yield dapp"
               }
             ]
           },
@@ -68,8 +68,6 @@
               },
                 { "href": "",
                "point": "Launch of yGATA token via streamswap and establishing GATA Yield DAO"},
-                { "href": "",
-               "point": "Launch of GATA Rollapp on dymension mainnet"},
                  { "href": "",
                "point": "Launch of Yield Crocs YC - New yield collection in yGATA"},
                 { "href": "",
@@ -102,17 +100,17 @@
               {
                 "href": "",
                  "point":
-                  "Launch of Omniflix validator."
+                  "Joined Omniflix network as validator"
               },
               {
                 "href": "",
                  "point":
-                  "Launch of  GATA Relay services for public good, we relayed more than 150K IBC transactions in 2023."
+                  "GATA infra for IBC relayer and public goods"
               },
               {
                 "href": "",
                  "point":
-                  "Launch of Akash Network validator."
+                  "Joined Akash network as validator and public goods."
               }
             ]
           },
@@ -127,10 +125,10 @@
               {
                 "href": "",
                  "point":
-                  "Launch of Archway validator."
+                  "Archway genesis validator."
               },
               { "href": "",
-               "point": "Launch of Passage Network Validator." },
+               "point": "Started validator services on passage" },
               {
                 "href": "",
                  "point": "Launch of GATA Delegators Award NFT; airdropped to 5.2K unique delegators of GATA validators."
@@ -143,7 +141,7 @@
               {
                 "href": "",
                  "point":
-                  "Launch of GATA Stargaze validator."
+                  "started validator services on stargaze."
               },
               {
                 "href": "",
