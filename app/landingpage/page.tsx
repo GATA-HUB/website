@@ -631,7 +631,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/relay.svg" />
             </div>
             <h2 className="text-yellow text-[40px] xl:text-[64px] font-bold">
-              110k+
+              131k+
             </h2>
             <p>IBC Txs</p>
           </div>
