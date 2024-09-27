@@ -172,7 +172,7 @@
     "title": "Teritori",
     "tokens": "15,000",
     "symbol": "Tori",
-    "commission": "3%",
+    "commission": "5%",
     "status": "https://www.mintscan.io/teritori/validators/torivaloper1dyduggaqthztgm8tnk59flkeu3l3qvpzhhd6hn",
     "stake": "https://app.rebuschain.com/staking",
     "autoCompound": "",
