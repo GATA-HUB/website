@@ -601,7 +601,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/epoch.svg" />
             </div>
             <h2 className="text-red text-[40px] xl:text-[64px] font-bold">
-              25
+              48
             </h2>
             <p>Epoch Distributed</p>
           </div>
