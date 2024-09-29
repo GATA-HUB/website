@@ -5,7 +5,7 @@ import { fetchTokenPrice } from "../../../actions/fetchTokenPrice";
 import { PrimaryButton, SecondaryButton } from "../Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import TextLoader from "../textLoader";
+import TextLoader from "../TextLoader";
 
 interface Props {
   icon: string;

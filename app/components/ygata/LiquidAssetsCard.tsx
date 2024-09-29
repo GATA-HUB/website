@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { fetchTokenPrice } from "@/actions/fetchTokenPrice";
-import TextLoader from "../textLoader";
+import TextLoader from "../TextLoader";
 
 interface Props {
   icon: string;
