@@ -5,6 +5,7 @@ import { fetchTokenPrice } from "../../../actions/fetchTokenPrice";
 import { PrimaryButton, SecondaryButton } from "../Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import TextLoader from "../TextLoader";
 
 interface Props {
   icon: string;
@@ -50,8 +51,6 @@ const ValidatorCard = ({
 
     fetchPrices();
   }, []);
-
-  console.log(title, ":", stat);
 
   return (
     <motion.div
@@ -122,26 +121,7 @@ const ValidatorCard = ({
                 )}
               </div>
 
-              {loading ? (
-                <motion.div
-                  style={{
-                    width: "100px",
-                    height: "18px",
-                    backgroundColor: "#2C2C2C",
-                    borderRadius: "4px",
-                    opacity: 1,
-                  }}
-                  animate={{
-                    opacity: [1, 0.5, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                ></motion.div>
-              ) : (
-                <p>${currentPrice}</p>
-              )}
+              {loading ? <TextLoader /> : <p>${currentPrice}</p>}
             </div>
             <div className="flex h-fit gap-2 px-[8px] py-[4px] items-center rounded-full bg-lgray border-2 border-white border-opacity-10">
               <Image width={16} height={16} alt="" src="/apr.svg" />

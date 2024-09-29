@@ -14,37 +14,42 @@ import NFTValueCard from "../components/ygata/NFTValueCard";
 const page = () => {
   const initialSAB = [
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
+      network: "Atom",
+      symbol: "ATOM",
+      icon: "/validator_chains/cosmos.png",
+      quantity: "-",
       dynamicPrice: "$20",
       usdValue: "$2,460",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
+      network: "Osmosis",
+      symbol: "OSMO",
+      icon: "/validator_chains/osmosis.png",
+      quantity: "-",
       dynamicPrice: "$20",
       usdValue: "$2,460",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
+      network: "Stargaze",
+      symbol: "STARS",
+      icon: "/validator_chains/stars.png",
+      quantity: "-",
       dynamicPrice: "$20",
       usdValue: "$2,460",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
+      network: "Omniflix",
+      symbol: "FLIX",
+      icon: "/validator_chains/omni.png",
+      quantity: "-",
       dynamicPrice: "$20",
       usdValue: "$2,460",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
+      network: "Akash",
+      symbol: "AKT",
+      icon: "/validator_chains/akt.png",
+      quantity: "-",
       dynamicPrice: "$20",
       usdValue: "$2,460",
     },
@@ -52,66 +57,61 @@ const page = () => {
 
   const initialLiqudity = [
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      network: "BTC",
+      icon: "/validator_chains/btc.png",
+      quantity: "-",
+      symbol: "BTC",
+      usdValue: "-",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      network: "Ether",
+      icon: "/validator_chains/eth.png",
+      quantity: "-",
+      symbol: "ETH",
+      usdValue: "-",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      network: "Solana",
+      icon: "/validator_chains/sol.png",
+      quantity: "-",
+      symbol: "SOL",
+      usdValue: "-",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      network: "Atom",
+      icon: "/validator_chains/cosmos.png",
+      quantity: "-",
+      symbol: "ATOM",
+      usdValue: "-",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      network: "Flix",
+      icon: "/validator_chains/omni.png",
+      quantity: "-",
+      symbol: "FLIX",
+      usdValue: "-",
+    },
+    {
+      network: "Stars",
+      icon: "/validator_chains/stars.png",
+      quantity: "-",
+      symbol: "STARS",
+      usdValue: "-",
     },
   ];
 
   const initialNFTVal = [
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      usdValue: "$2,460",
+      network: "GATAc",
+      icon: "/validator_chains/gata.png",
+      quantity: "-",
+      usdValue: "-",
     },
     {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      usdValue: "$2,460",
-    },
-    {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      usdValue: "$2,460",
-    },
-    {
-      network: "atom",
-      icon: "/networkIcons/atom.png",
-      quantity: "128",
-      usdValue: "$2,460",
+      network: "GATAv",
+      icon: "/validator_chains/gata.png",
+      quantity: "-",
+      usdValue: "-",
     },
   ];
 
@@ -136,7 +136,7 @@ const page = () => {
         <div className="w-full mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
           <div className="flex flex-col gap-2 lg:w-1/2">
             <h1 className="w-full">GATA YIELD DAO</h1>
-            <h5 className="text-gray">yGATA Managed Assets</h5>
+            <h5 className="text-gray">Managed Assets</h5>
             <div className="flex gap-2 items-center">
               <div className="relative flex items-center justify-center w-6 h-6 bg-dgray rounded">
                 <div className="absolute w-[8px] h-[8px] bg-black bg-opacity-40 rounded-full" />
@@ -174,8 +174,8 @@ const page = () => {
         }}
         className="fixed flex flex-wrap justify-center gap-4 z-10 px-4"
       >
-        <PrimaryExternalLink>yGATA DAO/ VOTE/ STAKE</PrimaryExternalLink>
-        <PrimaryExternalLink>Osmosis pool</PrimaryExternalLink>
+        <PrimaryExternalLink>Visit DAO to Stake and Vote</PrimaryExternalLink>
+        <PrimaryExternalLink>Osmosis Incentivized pool</PrimaryExternalLink>
         <SecondaryExternalLink>epoch rewards</SecondaryExternalLink>
         <SecondaryExternalLink>docs</SecondaryExternalLink>
       </motion.div>
@@ -189,7 +189,7 @@ const page = () => {
             {/* sub content */}
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-green">
-                $0.06
+                -
               </h3>
               <p>price</p>
             </div>
@@ -198,26 +198,26 @@ const page = () => {
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-red">
                 21%
               </h3>
-              <p>APR</p>
+              <p>Last APR</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-lpurple">
-                $5.2M
+                -
               </h3>
               <p>FDV</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                $5.52
+                -
               </h3>
               <p>Market Cap</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                9.2M
+                -
               </h3>
               <p>Circulating Supply</p>
             </div>
@@ -255,7 +255,7 @@ const page = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 w-full md:w-3/4 xl:w-1/2">
+          <div className="flex flex-col gap-2 w-full md:w-full xl:w-1/2">
             {initialSAB.map((sab, i) => {
               return (
                 <SABCard
@@ -264,7 +264,7 @@ const page = () => {
                   network={sab.network}
                   quantity={sab.quantity}
                   dynamicPrice={sab.dynamicPrice}
-                  usdValue={sab.usdValue}
+                  symbol={sab.symbol}
                 />
               );
             })}
@@ -294,8 +294,9 @@ const page = () => {
             <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
               Token Distribution
             </h3>
-            <div className="relative flex items-center p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Circulating Supply</p>
+              <p className="z-[1] text-white">20%</p>
               <motion.div
                 animate={{
                   width: inView ? "20%" : "0%",
@@ -308,8 +309,9 @@ const page = () => {
               ></motion.div>
             </div>
 
-            <div className="relative flex items-center p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Staked</p>
+              <p className="z-[1] text-white">50%</p>
               <motion.div
                 animate={{
                   width: inView ? "50%" : "0%",
@@ -322,8 +324,9 @@ const page = () => {
               ></motion.div>
             </div>
 
-            <div className="relative flex items-center p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">DAO/CP</p>
+              <p className="z-[1] text-white">30%</p>
               <motion.div
                 animate={{
                   width: inView ? "30%" : "0%",
@@ -341,8 +344,9 @@ const page = () => {
             <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
               Asset Allocation
             </h3>
-            <div className="relative flex items-center p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Staked Assets</p>
+              <p className="z-[1] text-white">50%</p>
               <motion.div
                 animate={{
                   width: inView ? "50%" : "0%",
@@ -355,8 +359,9 @@ const page = () => {
               ></motion.div>
             </div>
 
-            <div className="relative flex items-center p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Liquid Assets</p>
+              <p className="z-[1] text-white">20%</p>
               <motion.div
                 animate={{
                   width: inView ? "20%" : "0%",
@@ -369,8 +374,9 @@ const page = () => {
               ></motion.div>
             </div>
 
-            <div className="relative flex items-center p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">LP</p>
+              <p className="z-[1] text-white">30%</p>
               <motion.div
                 animate={{
                   width: inView ? "30%" : "0%",
@@ -385,7 +391,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col lg:flex-row gap-[32px] 2xl:gap-[64px] items-center">
+        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col lg:flex-row gap-[32px] 2xl:gap-[64px]">
           <div className="flex w-full flex-col gap-4">
             <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
               Liquid Assets
@@ -418,7 +424,7 @@ const page = () => {
                     icon={liqudity.icon}
                     network={liqudity.network}
                     quantity={liqudity.quantity}
-                    dynamicPrice={liqudity.dynamicPrice}
+                    symbol={liqudity.symbol}
                     usdValue={liqudity.usdValue}
                   />
                 );
@@ -426,7 +432,7 @@ const page = () => {
             </div>
           </div>
 
-          <div className="w-full max-h-[440px] flex flex-col p-6 gap-6 rounded-2xl bg-dgray border-[1px] border-white border-opacity-10">
+          <div className="w-full flex flex-col p-6 gap-6 rounded-2xl bg-dgray border-[1px] border-white border-opacity-10">
             <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
               NFT Value
             </h3>
@@ -471,9 +477,7 @@ const page = () => {
               </h3>
             </div>
             <div className="z-[1] flex gap-4">
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
-                440,000
-              </h3>
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">-</h3>
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-dgray">
                 USD
               </h3>
