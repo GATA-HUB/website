@@ -1,4 +1,62 @@
 [
+    {
+        "title": "YP Epoch 06",
+        "date": "1st October 2024",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws/yp-reward-distribution#yp-epoch-6",
+        "rewards": [
+          {
+            "nfts": [
+              {
+                "icon": "/yprewards/01.png",
+                "title": "Brown Fur"
+              }
+            ],
+            "reward": 160.0,
+            "revenue": 9
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/yprewards/02.png",
+                "title": "Grey Fur"
+              }
+            ],
+            "reward": 80.0,
+            "revenue": 13.5
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/yprewards/03.png",
+                "title": "Black Fur"
+              }
+            ],
+            "reward": 36.0,
+            "revenue": 16
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/yprewards/04.png",
+                "title": "White Fur"
+              }
+            ],
+            "reward": 31.0,
+            "revenue": 18
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/yprewards/05.png",
+                "title": "Orange Fur"
+              }
+            ],
+            "reward": 28.0,
+            "revenue": 43.5
+          }
+        ]
+      },
+     
      {
         "title": "YP Epoch 05",
         "date": "1st September 2024",
@@ -56,6 +114,7 @@
           }
         ]
       },
+     
     {
         "title": "YP Epoch 04",
         "date": "1st July 2024",

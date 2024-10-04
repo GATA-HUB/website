@@ -589,7 +589,7 @@ const LandingPage = () => {
             </div>
             <div className="flex gap-2 flex-wrap">
               <h2 className="text-green text-[40px] xl:text-[64px] font-bold leading-[40px]">
-                150K
+                154K
               </h2>
               <h3 className="text-green">USD</h3>
             </div>
@@ -601,7 +601,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/epoch.svg" />
             </div>
             <h2 className="text-red text-[40px] xl:text-[64px] font-bold">
-              48
+              51
             </h2>
             <p>Epoch Distributed</p>
           </div>
@@ -631,7 +631,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/relay.svg" />
             </div>
             <h2 className="text-yellow text-[40px] xl:text-[64px] font-bold">
-              131k+
+              133k+
             </h2>
             <p>IBC Txs</p>
           </div>
