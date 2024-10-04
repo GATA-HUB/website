@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import {
@@ -55,12 +55,12 @@ const page = () => {
     },
   ];
 
-  const initialLiqudity = [
+  const initialLiquidity = [
     {
       network: "BTC",
       icon: "/validator_chains/btc.png",
       quantity: "-",
-      symbol: "BTC",
+      symbol: "nBTC",
       usdValue: "-",
     },
     {
@@ -115,6 +115,59 @@ const page = () => {
     },
   ];
 
+  const [managedAssets, setManagedAssets] = useState('');
+
+  const [assetsPrices, setAssetsPrices] = useState<number[]>([]);
+  const [stakedAssets, setStakedAssets] = useState<string>('');
+
+  const handlePriceUpdate = (newPrice: number, index: number) => {
+    setAssetsPrices((prevPrices) => {
+      const updatedPrices = [...prevPrices];
+      updatedPrices[index] = newPrice;
+      return updatedPrices;
+    });
+  };
+
+  useEffect(() => {
+    const sum = (assetsPrices.reduce((acc, curr) => acc + curr, 0));
+    const formattedPrice = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(sum)
+    setStakedAssets(formattedPrice);
+  }, [assetsPrices]);
+
+  const [liquidAssetsPrices, setLiquidAssetsPrices] = useState<number[]>([]);
+  const [liquidAssets, setLiquidAssets] = useState<string>('');
+
+  const handleLiquidityPriceUpdate = (newPrice: number, index: number) => {
+    setLiquidAssetsPrices((prevPrices) => {
+      const updatedPrices = [...prevPrices];
+      updatedPrices[index] = newPrice;
+      return updatedPrices;
+    });
+  };
+
+  useEffect(() => {
+    const sum = (liquidAssetsPrices.reduce((acc, curr) => acc + curr, 0));
+    const formattedPrice = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(sum)
+    setLiquidAssets(formattedPrice);
+  }, [liquidAssetsPrices]);
+
+  useEffect(() => {
+    const stakedAssetSum = (assetsPrices.reduce((acc, curr) => acc + curr, 0));
+    const liquidAssetSum = (liquidAssetsPrices.reduce((acc, curr) => acc + curr, 0));
+    const sum = liquidAssetSum + stakedAssetSum;
+    const formattedPrice = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(sum)
+    setManagedAssets(formattedPrice);
+  }, [liquidAssetsPrices, assetsPrices]);
+
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
@@ -131,6 +184,7 @@ const page = () => {
             height={960}
             quality={100}
             alt=""
+            priority={true}
           />
         </div>
         <div className="w-full mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
@@ -153,8 +207,21 @@ const page = () => {
                   className="w-[16px] h-[16px] rounded-full"
                 />
               </div>
-              <h4>765,432.1</h4>
+              <h4>{managedAssets}</h4>
               <h4 className="text-purple">USD</h4>
+            </div>
+            <div className="flex gap-2 items-center cursor-pointer">
+              <Image width={16} height={16} alt="" src="/coingecko.png" />
+              <motion.h4 animate={{
+                    color: ["#7B5AFF", "#FF4874", "#7B5AFF"],
+                  }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 1,
+                  }}>($0.06/yGATA)</motion.h4>
+
             </div>
           </div>
         </div>
@@ -175,7 +242,7 @@ const page = () => {
         className="fixed flex flex-wrap justify-center gap-4 z-10 px-4"
       >
         <PrimaryExternalLink>Visit DAO to Stake and Vote</PrimaryExternalLink>
-        <PrimaryExternalLink>Osmosis Incentivized pool</PrimaryExternalLink>
+        <PrimaryExternalLink>Osmosis Incentivize pool</PrimaryExternalLink>
         <SecondaryExternalLink>epoch rewards</SecondaryExternalLink>
         <SecondaryExternalLink>docs</SecondaryExternalLink>
       </motion.div>
@@ -250,7 +317,7 @@ const page = () => {
                   className="w-[16px] h-[16px] rounded-full"
                 />
               </div>
-              <h4>12,300</h4>
+              <h4>{stakedAssets}</h4>
               <h4 className="text-purple">USD</h4>
             </div>
           </div>
@@ -263,7 +330,8 @@ const page = () => {
                   icon={sab.icon}
                   network={sab.network}
                   quantity={sab.quantity}
-                  dynamicPrice={sab.dynamicPrice}
+                  prices={assetsPrices}
+                  setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
                   symbol={sab.symbol}
                 />
               );
@@ -281,6 +349,7 @@ const page = () => {
                 height={637}
                 quality={100}
                 alt=""
+                priority={true}
               />
             </div>
           </div>
@@ -412,20 +481,22 @@ const page = () => {
                   className="w-[16px] h-[16px] rounded-full"
                 />
               </div>
-              <h4>12,300</h4>
+              <h4>{liquidAssets}</h4>
               <h4 className="text-purple">USD</h4>
             </div>
 
             <div className="flex flex-col gap-2 w-full">
-              {initialLiqudity.map((liqudity, i) => {
+              {initialLiquidity.map((liquidity, i) => {
                 return (
                   <LiquidAssetsCard
                     key={i}
-                    icon={liqudity.icon}
-                    network={liqudity.network}
-                    quantity={liqudity.quantity}
-                    symbol={liqudity.symbol}
-                    usdValue={liqudity.usdValue}
+                    icon={liquidity.icon}
+                    network={liquidity.network}
+                    quantity={liquidity.quantity}
+                    symbol={liquidity.symbol}
+                    prices={liquidAssetsPrices}
+                    setPrice={(newPrice) => handleLiquidityPriceUpdate(newPrice, i)}
+                    usdValue={liquidity.usdValue}
                   />
                 );
               })}

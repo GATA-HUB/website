@@ -1,4 +1,4 @@
-"client";
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
@@ -9,13 +9,14 @@ interface Props {
   icon: string;
   network: string;
   quantity: string;
-  dynamicPrice: string;
+  prices: number[];
+  setPrice: (newPrice: number) => void;
   symbol: string;
 }
 
-const SABCard = ({ icon, network, quantity, dynamicPrice, symbol }: Props) => {
+const SABCard = ({ icon, network, quantity, symbol, setPrice, prices }: Props) => {
   const [loading, setLoading] = useState(false);
-  const [currentPrice, setcurrentPrice] = useState("0");
+  const [currentPrice, setCurrentPrice] = useState("0");
 
   useEffect(() => {
     const fetchPrices = async () => {
@@ -24,9 +25,12 @@ const SABCard = ({ icon, network, quantity, dynamicPrice, symbol }: Props) => {
       const roundedPrice =
         updatedTokens !== null ? parseFloat(updatedTokens).toFixed(3) : null;
       if (roundedPrice) {
-        setcurrentPrice(roundedPrice);
+        setCurrentPrice(roundedPrice);
+        setPrice(
+          parseFloat(roundedPrice)
+        )
       } else {
-        setcurrentPrice("0");
+        setCurrentPrice("0");
       }
       setLoading(false);
     };
@@ -48,7 +52,7 @@ const SABCard = ({ icon, network, quantity, dynamicPrice, symbol }: Props) => {
       </div>
 
       <div className="flex flex-col items-end">
-        <p>Dynamic Price</p>
+        <p>Price</p>
         {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
       </div>
 

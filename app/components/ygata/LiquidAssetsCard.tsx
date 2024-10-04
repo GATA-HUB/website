@@ -11,6 +11,8 @@ interface Props {
   quantity: string;
   symbol: string;
   usdValue: string;
+  prices: number[];
+  setPrice: (newPrice: number) => void;
 }
 
 const LiquidAssetsCard = ({
@@ -19,9 +21,10 @@ const LiquidAssetsCard = ({
   quantity,
   symbol,
   usdValue,
+  setPrice
 }: Props) => {
   const [loading, setLoading] = useState(false);
-  const [currentPrice, setcurrentPrice] = useState("0");
+  const [currentPrice, setCurrentPrice] = useState("0");
 
   useEffect(() => {
     const fetchPrices = async () => {
@@ -29,10 +32,15 @@ const LiquidAssetsCard = ({
       const updatedTokens = await fetchTokenPrice(symbol);
       const roundedPrice =
         updatedTokens !== null ? parseFloat(updatedTokens).toFixed(3) : null;
-      if (roundedPrice) {
-        setcurrentPrice(roundedPrice);
+      const formattedPrice = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      }).format(updatedTokens)
+      if (formattedPrice && roundedPrice) {
+        setCurrentPrice(formattedPrice);
+        setPrice(parseFloat(roundedPrice));
       } else {
-        setcurrentPrice("0");
+        setCurrentPrice("0");
       }
       setLoading(false);
     };
