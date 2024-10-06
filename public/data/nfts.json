@@ -1,14 +1,5 @@
 [
     {
-        "image": "/nfts/10.gif",
-        "name": "GATA Delegator Rewards 2024",
-        "desc": "GATA HUB Delegator Reward NFTs for every GATA fam member who staked with GATA on various IBC chains.",
-        "collection": "Souvenirs collection",
-        "active": true,
-        "href" : "https://omniflix.market/c/onftdenom98a328b68f994118af813e69723f2cf6",
-        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-2-gata-delegator-reward-2023"
-    },
-    {
         "image": "/nfts/01.jpg",
         "name": "Colonial Cats",
         "desc": "Colonial Cats is the very first GATA series NFT collection of GATA DAO. Launched on the Stargaze launchpad on March 11, 2022.",
@@ -43,6 +34,15 @@
         "active": true,
         "href" : "https://www.stargaze.zone/l/yieldpaws",
         "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws"
+    },
+    {
+        "image": "/nfts/10.gif",
+        "name": "GATA Delegator Rewards 2024",
+        "desc": "GATA HUB Delegator Reward NFTs for every GATA fam member who staked with GATA on various IBC chains.",
+        "collection": "Souvenirs collection",
+        "active": true,
+        "href" : "https://omniflix.market/c/onftdenom98a328b68f994118af813e69723f2cf6",
+        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-2-gata-delegator-reward-2023"
     },
     {
         "image": "/nfts/04.jpg",
