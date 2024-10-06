@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import {
@@ -17,86 +17,70 @@ const page = () => {
       network: "Atom",
       symbol: "ATOM",
       icon: "/validator_chains/cosmos.png",
-      quantity: "-",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      quantity: 0,
     },
     {
       network: "Osmosis",
       symbol: "OSMO",
       icon: "/validator_chains/osmosis.png",
-      quantity: "-",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      quantity: 0,
     },
     {
       network: "Stargaze",
       symbol: "STARS",
       icon: "/validator_chains/stars.png",
-      quantity: "-",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      quantity: 0,
     },
     {
       network: "Omniflix",
       symbol: "FLIX",
       icon: "/validator_chains/omni.png",
-      quantity: "-",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      quantity: 0,
     },
     {
       network: "Akash",
       symbol: "AKT",
       icon: "/validator_chains/akt.png",
-      quantity: "-",
-      dynamicPrice: "$20",
-      usdValue: "$2,460",
+      quantity: 0,
     },
   ];
 
-  const initialLiqudity = [
+  const initialLiquidity = [
     {
       network: "BTC",
       icon: "/validator_chains/btc.png",
-      quantity: "-",
-      symbol: "BTC",
-      usdValue: "-",
+      quantity: 0,
+      symbol: "nBTC",
     },
     {
       network: "Ether",
       icon: "/validator_chains/eth.png",
-      quantity: "-",
+      quantity: 0,
       symbol: "ETH",
-      usdValue: "-",
     },
     {
       network: "Solana",
       icon: "/validator_chains/sol.png",
-      quantity: "-",
+      quantity: 0,
       symbol: "SOL",
-      usdValue: "-",
     },
     {
       network: "Atom",
       icon: "/validator_chains/cosmos.png",
-      quantity: "-",
+      quantity: 0,
       symbol: "ATOM",
-      usdValue: "-",
     },
     {
       network: "Flix",
       icon: "/validator_chains/omni.png",
-      quantity: "-",
+      quantity: 0,
       symbol: "FLIX",
-      usdValue: "-",
     },
     {
       network: "Stars",
       icon: "/validator_chains/stars.png",
-      quantity: "-",
+      quantity: 0,
       symbol: "STARS",
-      usdValue: "-",
     },
   ];
 
@@ -104,16 +88,74 @@ const page = () => {
     {
       network: "GATAc",
       icon: "/validator_chains/gata.png",
-      quantity: "-",
-      usdValue: "-",
+      quantity: 0,
+      usdValue: 0,
     },
     {
       network: "GATAv",
       icon: "/validator_chains/gata.png",
-      quantity: "-",
-      usdValue: "-",
+      quantity: 0,
+      usdValue: 0,
     },
   ];
+
+  const totalLPValue = 0;
+  const totalNFTValue = 0;
+
+  const price = 0;
+  const lastAPR = '21%';
+  const fdv = 0;
+  const marketCap = 0;
+  const circulatingSupply = 0;
+  const totalSupply = "21M";
+  
+
+  const [yGataPrice, setyGataPrice] = useState(0);
+  const [managedAssets, setManagedAssets] = useState<number>(0);
+  const [assetsPrices, setAssetsPrices] = useState<number[]>([]);
+  const [stakedAssets, setStakedAssets] = useState<number>(0);
+
+  const [liquidAssetsPrices, setLiquidAssetsPrices] = useState<number[]>([]);
+  const [liquidAssets, setLiquidAssets] = useState<number>(0);
+
+  const handlePriceUpdate = (newPrice: number, index: number) => {
+    setAssetsPrices((prevPrices) => {
+      const updatedPrices = [...prevPrices];
+      updatedPrices[index] = newPrice;
+      return updatedPrices;
+    });
+  };
+
+  const handlePriceFormat = (price: number) => {
+    const formattedPrice = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(price)
+    return formattedPrice;
+  }
+
+  const handleLiquidityPriceUpdate = (newPrice: number, index: number) => {
+    setLiquidAssetsPrices((prevPrices) => {
+      const updatedPrices = [...prevPrices];
+      updatedPrices[index] = newPrice;
+      return updatedPrices;
+    });
+  };
+
+  useEffect(() => {
+    const sum = (assetsPrices.reduce((acc, curr) => acc + curr, 0));
+    setStakedAssets(sum);
+  }, [assetsPrices]);
+
+  useEffect(() => {
+    const sum = (liquidAssetsPrices.reduce((acc, curr) => acc + curr, 0));
+    setLiquidAssets(sum);
+  }, [liquidAssetsPrices]);
+
+  useEffect(() => {
+    setManagedAssets(stakedAssets + liquidAssets + totalLPValue + totalNFTValue);
+    setyGataPrice(managedAssets / circulatingSupply);
+  }, []);
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -131,6 +173,7 @@ const page = () => {
             height={960}
             quality={100}
             alt=""
+            priority={true}
           />
         </div>
         <div className="w-full mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
@@ -153,8 +196,25 @@ const page = () => {
                   className="w-[16px] h-[16px] rounded-full"
                 />
               </div>
-              <h4>765,432.1</h4>
-              <h4 className="text-purple">USD</h4>
+              {managedAssets ? (
+                <>
+                  <h4>{managedAssets}</h4>
+                  <h4 className="text-purple">USD</h4>
+                </>
+              ) : <h4>-</h4>}
+            </div>
+            <div className="flex gap-2 items-center cursor-pointer">
+              <Image width={24} height={24} alt="" src="/coingecko.png" />
+              <motion.h4 animate={{
+                    color: ["#7B5AFF", "#FF4874", "#7B5AFF"],
+                  }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 1,
+                  }}>{yGataPrice ? `${yGataPrice}/yGATA` : "-"}</motion.h4>
+
             </div>
           </div>
         </div>
@@ -175,7 +235,7 @@ const page = () => {
         className="fixed flex flex-wrap justify-center gap-4 z-10 px-4"
       >
         <PrimaryExternalLink>Visit DAO to Stake and Vote</PrimaryExternalLink>
-        <PrimaryExternalLink>Osmosis Incentivized pool</PrimaryExternalLink>
+        <PrimaryExternalLink>Osmosis Incentivize pool</PrimaryExternalLink>
         <SecondaryExternalLink>epoch rewards</SecondaryExternalLink>
         <SecondaryExternalLink>docs</SecondaryExternalLink>
       </motion.div>
@@ -189,42 +249,42 @@ const page = () => {
             {/* sub content */}
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-green">
-                -
+                {price ? price : '-'}
               </h3>
               <p>price</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-red">
-                21%
+                {lastAPR ? lastAPR : '-'}
               </h3>
               <p>Last APR</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-lpurple">
-                -
+                {fdv? fdv : '-'}
               </h3>
               <p>FDV</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                -
+                {marketCap ? marketCap : '-'}
               </h3>
               <p>Market Cap</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                -
+                {circulatingSupply ? circulatingSupply : '-'}
               </h3>
               <p>Circulating Supply</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                21M
+                {totalSupply ? totalSupply : '-'}
               </h3>
               <p>Total Supply</p>
             </div>
@@ -250,8 +310,14 @@ const page = () => {
                   className="w-[16px] h-[16px] rounded-full"
                 />
               </div>
-              <h4>12,300</h4>
-              <h4 className="text-purple">USD</h4>
+              {stakedAssets ? (
+                <>
+                <h4>{handlePriceFormat(stakedAssets)}</h4>
+                <h4 className="text-purple">USD</h4>
+                </>
+              ) : (
+                <h4>-</h4>
+              )}
             </div>
           </div>
 
@@ -263,7 +329,8 @@ const page = () => {
                   icon={sab.icon}
                   network={sab.network}
                   quantity={sab.quantity}
-                  dynamicPrice={sab.dynamicPrice}
+                  prices={assetsPrices}
+                  setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
                   symbol={sab.symbol}
                 />
               );
@@ -281,6 +348,7 @@ const page = () => {
                 height={637}
                 quality={100}
                 alt=""
+                priority={true}
               />
             </div>
           </div>
@@ -412,20 +480,25 @@ const page = () => {
                   className="w-[16px] h-[16px] rounded-full"
                 />
               </div>
-              <h4>12,300</h4>
-              <h4 className="text-purple">USD</h4>
+              {liquidAssets ? (
+                <>
+                <h4>{handlePriceFormat(liquidAssets)}</h4>
+                <h4 className="text-purple">USD</h4>
+                </>
+              ) : <h4>-</h4>}
             </div>
 
             <div className="flex flex-col gap-2 w-full">
-              {initialLiqudity.map((liqudity, i) => {
+              {initialLiquidity.map((liquidity, i) => {
                 return (
                   <LiquidAssetsCard
                     key={i}
-                    icon={liqudity.icon}
-                    network={liqudity.network}
-                    quantity={liqudity.quantity}
-                    symbol={liqudity.symbol}
-                    usdValue={liqudity.usdValue}
+                    icon={liquidity.icon}
+                    network={liquidity.network}
+                    quantity={liquidity.quantity}
+                    symbol={liquidity.symbol}
+                    prices={liquidAssetsPrices}
+                    setPrice={(newPrice) => handleLiquidityPriceUpdate(newPrice, i)}
                   />
                 );
               })}

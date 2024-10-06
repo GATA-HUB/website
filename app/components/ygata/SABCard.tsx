@@ -1,4 +1,4 @@
-"client";
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
@@ -8,14 +8,16 @@ import TextLoader from "../TextLoader";
 interface Props {
   icon: string;
   network: string;
-  quantity: string;
-  dynamicPrice: string;
+  quantity: number;
+  prices: number[];
+  setPrice: (newPrice: number) => void;
   symbol: string;
 }
 
-const SABCard = ({ icon, network, quantity, dynamicPrice, symbol }: Props) => {
+const SABCard = ({ icon, network, quantity, symbol, setPrice, prices }: Props) => {
   const [loading, setLoading] = useState(false);
-  const [currentPrice, setcurrentPrice] = useState("0");
+  const [currentPrice, setCurrentPrice] = useState(0);
+  const [usdValue, setUsdValue] = useState(0);
 
   useEffect(() => {
     const fetchPrices = async () => {
@@ -24,9 +26,13 @@ const SABCard = ({ icon, network, quantity, dynamicPrice, symbol }: Props) => {
       const roundedPrice =
         updatedTokens !== null ? parseFloat(updatedTokens).toFixed(3) : null;
       if (roundedPrice) {
-        setcurrentPrice(roundedPrice);
+        setCurrentPrice(Number(roundedPrice));
+        setUsdValue(currentPrice * quantity);
+        setPrice(
+          currentPrice
+        )
       } else {
-        setcurrentPrice("0");
+        setCurrentPrice(0);
       }
       setLoading(false);
     };
@@ -44,17 +50,17 @@ const SABCard = ({ icon, network, quantity, dynamicPrice, symbol }: Props) => {
       </div>
       <div className="flex flex-col items-end">
         <p>Quantity</p>
-        <h4>{quantity}</h4>
+        <h4>{quantity === 0 ? '-' : quantity}</h4>
       </div>
 
       <div className="flex flex-col items-end">
-        <p>Dynamic Price</p>
+        <p>Price</p>
         {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
       </div>
 
       <div className="flex flex-col items-end">
         <p>USD value</p>
-        {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
+        {loading ? <TextLoader /> : <h4>{usdValue ? `$${usdValue}` : '-'}</h4>}
       </div>
     </div>
   );

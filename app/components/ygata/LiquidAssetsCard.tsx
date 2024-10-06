@@ -8,9 +8,10 @@ import TextLoader from "../TextLoader";
 interface Props {
   icon: string;
   network: string;
-  quantity: string;
+  quantity: number;
   symbol: string;
-  usdValue: string;
+  prices: number[];
+  setPrice: (newPrice: number) => void;
 }
 
 const LiquidAssetsCard = ({
@@ -18,10 +19,11 @@ const LiquidAssetsCard = ({
   network,
   quantity,
   symbol,
-  usdValue,
+  setPrice
 }: Props) => {
   const [loading, setLoading] = useState(false);
-  const [currentPrice, setcurrentPrice] = useState("0");
+  const [currentPrice, setCurrentPrice] = useState("0");
+  const [usdValue, setUsdValue] = useState(0)
 
   useEffect(() => {
     const fetchPrices = async () => {
@@ -29,10 +31,16 @@ const LiquidAssetsCard = ({
       const updatedTokens = await fetchTokenPrice(symbol);
       const roundedPrice =
         updatedTokens !== null ? parseFloat(updatedTokens).toFixed(3) : null;
-      if (roundedPrice) {
-        setcurrentPrice(roundedPrice);
+      const formattedPrice = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      }).format(updatedTokens)
+      if (formattedPrice && roundedPrice) {
+        setCurrentPrice(formattedPrice);
+        setUsdValue(Number(roundedPrice) * quantity);
+        setPrice(usdValue);
       } else {
-        setcurrentPrice("0");
+        setCurrentPrice("0");
       }
       setLoading(false);
     };
@@ -41,27 +49,30 @@ const LiquidAssetsCard = ({
   }, []);
   return (
     <div className="w-full flex items-center justify-between px-6 py-3 rounded-2xl bg-dgray border-[1px] border-white border-opacity-10">
-      <div className="w-1/3 flex items-center gap-4">
+      <div className="min-w-[40%] flex items-center gap-4">
         <div className="w-10 h-10 flex items-center justfiy-center">
           <Image src={icon} width={40} height={40} quality={100} alt="" />
         </div>
         <h3 className="capitalize">{network}</h3>
       </div>
 
-      <div className="grid grid-cols-3 w-full">
-        <div className="flex flex-col items-end">
+      <div className="grid grid-cols-5 min-w-[60%]">
+        <div className="flex flex-col col-span-1 items-end">
           <p>Quantity</p>
-          <h4>{quantity}</h4>
+          <h4>{quantity ? quantity : '-'}</h4>
         </div>
 
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col col-span-3 items-center">
+          <div className="min-w-[60%] flex flex-col items-end">
           <p>Price</p>
           {loading ? <TextLoader /> : <h4>{currentPrice}</h4>}
+
+          </div>
         </div>
 
-        <div className="flex flex-col items-end">
-          <p>USD value</p>
-          <h4>{usdValue}</h4>
+        <div className="min-w-[52px] flex flex-col text-right col-span-1 items-end ml-4">
+          <p >USD value</p>
+          <h4>{usdValue ? usdValue : '-'}</h4>
         </div>
       </div>
     </div>
