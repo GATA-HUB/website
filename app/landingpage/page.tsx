@@ -415,37 +415,26 @@ const LandingPage = () => {
           {/* Title text section */}
           <div className="flex flex-col">
             {/* Heading 01 */}
-            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
+            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[116px]">
               <h1 className="h-fit">GATA</h1>
-              <div className="flex flex-col gap-2 animate-text-slide h-fit">
-                <h1>NFT DAO</h1>
-                <h1>Yield DAO</h1>
-                <h1>Public Infra</h1>
-                <h1>Rewards</h1>
-               <h1 aria-hidden="true">NFTfi</h1> 
-              </div>
-            </div>
-
-            {/* Heading 02 */}
-            <div className="flex overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[8rem]">
-              <div className="flex flex-col gap-4 animate-text-slide-2 h-fit w-fit">
+              <div className="hidden md:flex flex-col animate-text-slide h-fit w-fit">
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-purple"></h1>
-                  <h1></h1>
+                  <h1 className="text-purple">NFT</h1>
+                  <h1>DAO</h1>
                 </div>
 
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-purple"></h1>
-                  <h1></h1>
+                  <h1 className="text-yellow">Yield</h1>
+                  <h1>DAO</h1>
                 </div>
 
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-red"></h1>
-                  <h1></h1>
+                  <h1 className="text-red">Public</h1>
+                  <h1>Infra</h1>
                 </div>
 
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
-                  <h1 className="text-green"></h1>
+                  <h1 className="text-green">Reward</h1>
                   <h1></h1>
                 </div>
 
@@ -453,10 +442,43 @@ const LandingPage = () => {
                   className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12"
                   aria-hidden="true"
                 >
-                  <h1 className="text-purple"></h1>
+                  <h1 className="text-purple">NFT</h1>
+                  <h1>DAO</h1>
+                </div>
+              </div>
+            </div>
+
+            {/* mobile heading */}
+            <div className="flex md:hidden overflow-hidden h-12">
+              <div className="flex flex-col animate-text-slide h-fit w-fit">
+                <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
+                  <h1 className="text-purple">NFT</h1>
+                  <h1>DAO</h1>
+                </div>
+
+                <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
+                  <h1 className="text-yellow">Yield</h1>
+                  <h1>DAO</h1>
+                </div>
+
+                <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
+                  <h1 className="text-red">Public</h1>
+                  <h1>Infra</h1>
+                </div>
+
+                <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
+                  <h1 className="text-green">Reward</h1>
                   <h1></h1>
                 </div>
-              </div> 
+
+                <div
+                  className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12"
+                  aria-hidden="true"
+                >
+                  <h1 className="text-purple">NFT</h1>
+                  <h1>DAO</h1>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -712,9 +734,9 @@ const LandingPage = () => {
             </div>
             <p>
               Over the past two years, GATA HUB has forged meaningful
-              partnerships and collaborations with many projects. Together, we're driving
-              innovation, fostering growth, and creating lasting impact in the
-              blockchain ecosystem.
+              partnerships and collaborations with many projects. Together,
+              we're driving innovation, fostering growth, and creating lasting
+              impact in the blockchain ecosystem.
             </p>
           </div>
 
