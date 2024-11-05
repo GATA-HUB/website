@@ -1,7 +1,14 @@
 [
+  {
+        "title": "GATA DAO EPOCH 27",
+        "desc": "GATA DOA epoch 27 from October 1st 2024 to October 31st 2024. Where 896/1887 eligible holders of GATAc & GATAv NFTs earned 0.18 $ATOM per GATA.",
+        "atomeDist": 160,
+        "date": "November 1st 2024",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-27"
+    },
    {
         "title": "GATA DAO EPOCH 26",
-        "desc": "GATA DOA epoch 26 from September 1st 2024 to September 31st 2024. Where 882/1887 eligible holders of GATAc & GATAv NFTs earned 0.16 $ATOM per GATA.",
+        "desc": "GATA DOA epoch 26 from September 1st 2024 to September 30th 2024. Where 882/1887 eligible holders of GATAc & GATAv NFTs earned 0.16 $ATOM per GATA.",
         "atomeDist": 158,
         "date": "October 2nd 2024",
         "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-26"
