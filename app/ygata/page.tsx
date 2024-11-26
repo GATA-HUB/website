@@ -11,40 +11,38 @@ import SABCard from "../components/ygata/SABCard";
 import LiquidAssetsCard from "../components/ygata/LiquidAssetsCard";
 import NFTValueCard from "../components/ygata/NFTValueCard";
 import { fetchTokenPriceV2 } from "@/actions/fetchTokenPriceV2";
+import { fetchBalances } from "@/actions/fetchTokenBalance";
+
+interface SAB {
+  name: string;
+  network: string;
+  symbol: string;
+  icon: string;
+  addr: string;
+  quantity: number;
+}
 
 const page = () => {
-  const initialSAB = [
-    {
-      network: "Atom",
-      symbol: "ATOM",
-      icon: "/validator_chains/cosmos.png",
-      quantity: 0,
-    },
-    {
-      network: "Osmosis",
-      symbol: "OSMO",
-      icon: "/validator_chains/osmosis.png",
-      quantity: 0,
-    },
-    {
-      network: "Stargaze",
-      symbol: "STARS",
-      icon: "/validator_chains/stars.png",
-      quantity: 0,
-    },
-    {
-      network: "Omniflix",
-      symbol: "FLIX",
-      icon: "/validator_chains/omni.png",
-      quantity: 0,
-    },
-    {
-      network: "Akash",
-      symbol: "AKT",
-      icon: "/validator_chains/akt.png",
-      quantity: 0,
-    },
-  ];
+  // const initialSAB = [
+  //   {
+  //     network: "Atom",
+  //     symbol: "ATOM",
+  //     icon: "/validator_chains/cosmos.png",
+  //     quantity: 0,
+  //   },
+  //   {
+  //     network: "Stargaze",
+  //     symbol: "STARS",
+  //     icon: "/validator_chains/stars.png",
+  //     quantity: 0,
+  //   },
+  //   {
+  //     network: "Omniflix",
+  //     symbol: "FLIX",
+  //     icon: "/validator_chains/omni.png",
+  //     quantity: 0,
+  //   },
+  // ];
 
   const initialLiquidity = [
     {
@@ -100,9 +98,17 @@ const page = () => {
     },
   ];
 
+  // const cosmosAddr =
+  //   "cosmos1p9xp6nzfrdzfma032afzpfwm9w0c4qy9wxfs58pf27eyzjluf7jsznxdpx";
+  // const omniAddr =
+  //   "omniflix19z3h463xmkz66vdq8tcpk986kvecjyqxy4ywtdzu4qqe2vjyz69sy0u32r";
+  // const starsAddr =
+  //   "stars1y0enax8s6uxn8g5cudcc5mq30ycl0msgg0us0ewzyvlj3g66tmxq8l35eg";
+
   const totalLPValue = 0;
   const totalNFTValue = 0;
 
+  const [sabData, setSabData] = useState<SAB[] | null>();
   const [CoingeckoYGata, setCoingeckoYGata] = useState(0);
   const [managedAssets, setManagedAssets] = useState<number>(0);
   const [assetsPrices, setAssetsPrices] = useState<number[]>([]);
@@ -179,6 +185,15 @@ const page = () => {
     };
 
     fetchPrices();
+  }, []);
+
+  useEffect(() => {
+    const fetchBalance = async () => {
+      const allSABData = await fetchBalances();
+      setSabData(allSABData);
+    };
+
+    fetchBalance();
   }, []);
 
   const formatNumber = (num: number) => {
@@ -363,20 +378,23 @@ const page = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 w-full md:w-full xl:w-1/2">
-            {initialSAB.map((sab, i) => {
-              return (
-                <SABCard
-                  key={i}
-                  icon={sab.icon}
-                  network={sab.network}
-                  quantity={sab.quantity}
-                  prices={assetsPrices}
-                  setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
-                  symbol={sab.symbol}
-                />
-              );
-            })}
+          <div className="flex flex-col gap-2 w-full md:w-full xl:w-2/3">
+            {sabData &&
+              sabData.map((sab, i) => {
+                return (
+                  <SABCard
+                    key={i}
+                    name={sab.name}
+                    icon={sab.icon}
+                    network={sab.network}
+                    quantity={sab.quantity}
+                    prices={assetsPrices}
+                    setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
+                    symbol={sab.symbol}
+                    addr={sab.addr}
+                  />
+                );
+              })}
           </div>
 
           <div className="z-[-1] absolute w-full flex justify-center items-center">
