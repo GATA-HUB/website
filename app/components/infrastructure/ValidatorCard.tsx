@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { fetchTokenPrice } from "../../../actions/fetchTokenPrice";
+import { fetchTokenPriceV2 } from "../../../actions/fetchTokenPriceV2";
 import { PrimaryButton, SecondaryButton } from "../Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -33,24 +33,43 @@ const ValidatorCard = ({
   heartBeat,
 }: Props) => {
   const [loading, setLoading] = useState(false);
-  const [currentPrice, setcurrentPrice] = useState("0");
+  const [currentPrice, setCurrentPrice] = useState("0");
 
   useEffect(() => {
     const fetchPrices = async () => {
       setLoading(true);
-      const updatedTokens = await fetchTokenPrice(symbol);
+      const updatedTokens = await fetchTokenPriceV2(symbol);
+      console.log(symbol, ":", updatedTokens);
       const roundedPrice =
         updatedTokens !== null ? parseFloat(updatedTokens).toFixed(10) : null;
       if (roundedPrice) {
-        setcurrentPrice(roundedPrice);
+        setCurrentPrice(roundedPrice);
       } else {
-        setcurrentPrice("0");
+        setCurrentPrice("0");
       }
       setLoading(false);
     };
 
     fetchPrices();
   }, []);
+
+  // useEffect(() => {
+  //   const fetchPrices = async () => {
+  //     setLoading(true);
+  //     const updatedTokens = await fetchTokenPriceV2(symbol);
+  //     console.log(symbol, ":", updatedTokens);
+  //     const roundedPrice =
+  //       updatedTokens !== null ? parseFloat(updatedTokens).toFixed(10) : null;
+  //     if (roundedPrice) {
+  //       setCurrentPrice(roundedPrice);
+  //     } else {
+  //       setCurrentPrice("0");
+  //     }
+  //     setLoading(false);
+  //   };
+
+  //   fetchPrices();
+  // }, []);
 
   return (
     <motion.div

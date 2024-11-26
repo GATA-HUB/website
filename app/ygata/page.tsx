@@ -10,6 +10,7 @@ import {
 import SABCard from "../components/ygata/SABCard";
 import LiquidAssetsCard from "../components/ygata/LiquidAssetsCard";
 import NFTValueCard from "../components/ygata/NFTValueCard";
+import { fetchTokenPriceV2 } from "@/actions/fetchTokenPriceV2";
 
 const page = () => {
   const initialSAB = [
@@ -102,18 +103,19 @@ const page = () => {
   const totalLPValue = 0;
   const totalNFTValue = 0;
 
-  const price = 0;
-  const lastAPR = '21%';
-  const fdv = 0;
-  const marketCap = 0;
-  const circulatingSupply = 0;
-  const totalSupply = "21M";
-  
-
-  const [yGataPrice, setyGataPrice] = useState(0);
+  const [CoingeckoYGata, setCoingeckoYGata] = useState(0);
   const [managedAssets, setManagedAssets] = useState<number>(0);
   const [assetsPrices, setAssetsPrices] = useState<number[]>([]);
   const [stakedAssets, setStakedAssets] = useState<number>(0);
+  const [loading, setLoading] = useState(false);
+  const [yGataPrice, setYGataPrice] = useState("0");
+
+  const price = Number(yGataPrice);
+  const lastAPR = 21;
+  const circulatingSupply = 14070000;
+  const totalSupply = 21000000;
+  const marketCap = circulatingSupply * price;
+  const fdv = totalSupply * price;
 
   const [liquidAssetsPrices, setLiquidAssetsPrices] = useState<number[]>([]);
   const [liquidAssets, setLiquidAssets] = useState<number>(0);
@@ -127,12 +129,12 @@ const page = () => {
   };
 
   const handlePriceFormat = (price: number) => {
-    const formattedPrice = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format(price)
+    const formattedPrice = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(price);
     return formattedPrice;
-  }
+  };
 
   const handleLiquidityPriceUpdate = (newPrice: number, index: number) => {
     setLiquidAssetsPrices((prevPrices) => {
@@ -143,22 +145,51 @@ const page = () => {
   };
 
   useEffect(() => {
-    const sum = (assetsPrices.reduce((acc, curr) => acc + curr, 0));
+    const sum = assetsPrices.reduce((acc, curr) => acc + curr, 0);
     setStakedAssets(sum);
   }, [assetsPrices]);
 
   useEffect(() => {
-    const sum = (liquidAssetsPrices.reduce((acc, curr) => acc + curr, 0));
+    const sum = liquidAssetsPrices.reduce((acc, curr) => acc + curr, 0);
     setLiquidAssets(sum);
   }, [liquidAssetsPrices]);
 
   useEffect(() => {
-    setManagedAssets(stakedAssets + liquidAssets + totalLPValue + totalNFTValue);
-    setyGataPrice(managedAssets / circulatingSupply);
+    setManagedAssets(
+      stakedAssets + liquidAssets + totalLPValue + totalNFTValue
+    );
+    setCoingeckoYGata(managedAssets / circulatingSupply);
   }, []);
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    const fetchPrices = async () => {
+      setLoading(true);
+      const updatedTokens = await fetchTokenPriceV2("YGATA");
+      const roundedPrice =
+        updatedTokens !== null ? parseFloat(updatedTokens).toFixed(5) : null;
+      if (roundedPrice) {
+        setYGataPrice(roundedPrice);
+      } else {
+        setYGataPrice("0");
+      }
+      setLoading(false);
+    };
+
+    fetchPrices();
+  }, []);
+
+  const formatNumber = (num: number) => {
+    if (num >= 1000000) {
+      // Format numbers greater than 1 million
+      return (num / 1000000).toFixed(num % 1000000 === 0 ? 0 : 2) + "M";
+    } else {
+      // Format numbers below 1 million with commas
+      return new Intl.NumberFormat("en-US").format(num);
+    }
+  };
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
@@ -201,20 +232,25 @@ const page = () => {
                   <h4>{managedAssets}</h4>
                   <h4 className="text-purple">USD</h4>
                 </>
-              ) : <h4>-</h4>}
+              ) : (
+                <h4>-</h4>
+              )}
             </div>
             <div className="flex gap-2 items-center cursor-pointer">
               <Image width={24} height={24} alt="" src="/coingecko.png" />
-              <motion.h4 animate={{
-                    color: ["#7B5AFF", "#FF4874", "#7B5AFF"],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 1,
-                  }}>{yGataPrice ? `${yGataPrice}/yGATA` : "-"}</motion.h4>
-
+              <motion.h4
+                animate={{
+                  color: ["#7B5AFF", "#FF4874", "#7B5AFF"],
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatDelay: 1,
+                }}
+              >
+                {CoingeckoYGata !== 0 ? `${CoingeckoYGata}/yGATA` : "-"}
+              </motion.h4>
             </div>
           </div>
         </div>
@@ -234,10 +270,16 @@ const page = () => {
         }}
         className="fixed flex flex-wrap justify-center gap-4 z-10 px-4"
       >
-        <PrimaryExternalLink>Visit DAO to Stake and Vote</PrimaryExternalLink>
-        <PrimaryExternalLink>Osmosis Incentivize pool</PrimaryExternalLink>
-        <SecondaryExternalLink>epoch rewards</SecondaryExternalLink>
-        <SecondaryExternalLink>docs</SecondaryExternalLink>
+        <PrimaryExternalLink href="https://daodao.zone/dao/omniflix19z3h463xmkz66vdq8tcpk986kvecjyqxy4ywtdzu4qqe2vjyz69sy0u32r/home">
+          Visit DAO to Stake and Vote
+        </PrimaryExternalLink>
+        <PrimaryExternalLink href="https://app.osmosis.zone/pool/2300">
+          Osmosis Incentivize pool
+        </PrimaryExternalLink>
+        <SecondaryExternalLink href="">epoch rewards</SecondaryExternalLink>
+        <SecondaryExternalLink href="https://docs.gatahub.zone/welcome-to-gitbook/gatahub/ygata">
+          docs
+        </SecondaryExternalLink>
       </motion.div>
 
       <div className="w-full flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
@@ -249,42 +291,42 @@ const page = () => {
             {/* sub content */}
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-green">
-                {price ? price : '-'}
+                {yGataPrice ? yGataPrice : "-"}
               </h3>
               <p>price</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-red">
-                {lastAPR ? lastAPR : '-'}
+                {lastAPR ? lastAPR : "-"}%
               </h3>
               <p>Last APR</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-lpurple">
-                {fdv? fdv : '-'}
+                {fdv ? formatNumber(fdv) : "-"}
               </h3>
               <p>FDV</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                {marketCap ? marketCap : '-'}
+                {marketCap ? formatNumber(marketCap) : "-"}
               </h3>
               <p>Market Cap</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                {circulatingSupply ? circulatingSupply : '-'}
+                {circulatingSupply ? formatNumber(circulatingSupply) : "-"}
               </h3>
               <p>Circulating Supply</p>
             </div>
 
             <div className="flex flex-col gap-1 items-center">
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                {totalSupply ? totalSupply : '-'}
+                {totalSupply ? formatNumber(totalSupply) : "-"}
               </h3>
               <p>Total Supply</p>
             </div>
@@ -312,8 +354,8 @@ const page = () => {
               </div>
               {stakedAssets ? (
                 <>
-                <h4>{handlePriceFormat(stakedAssets)}</h4>
-                <h4 className="text-purple">USD</h4>
+                  <h4>{handlePriceFormat(stakedAssets)}</h4>
+                  <h4 className="text-purple">USD</h4>
                 </>
               ) : (
                 <h4>-</h4>
@@ -482,10 +524,12 @@ const page = () => {
               </div>
               {liquidAssets ? (
                 <>
-                <h4>{handlePriceFormat(liquidAssets)}</h4>
-                <h4 className="text-purple">USD</h4>
+                  <h4>{handlePriceFormat(liquidAssets)}</h4>
+                  <h4 className="text-purple">USD</h4>
                 </>
-              ) : <h4>-</h4>}
+              ) : (
+                <h4>-</h4>
+              )}
             </div>
 
             <div className="flex flex-col gap-2 w-full">
@@ -498,7 +542,9 @@ const page = () => {
                     quantity={liquidity.quantity}
                     symbol={liquidity.symbol}
                     prices={liquidAssetsPrices}
-                    setPrice={(newPrice) => handleLiquidityPriceUpdate(newPrice, i)}
+                    setPrice={(newPrice) =>
+                      handleLiquidityPriceUpdate(newPrice, i)
+                    }
                   />
                 );
               })}

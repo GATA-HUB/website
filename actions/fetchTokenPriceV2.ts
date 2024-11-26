@@ -1,8 +1,8 @@
 'use server';
 
-export async function fetchTokenPrice(tokenName: string) {
+export async function fetchTokenPriceV2(tokenName: string) {
   try {
-    const response = await fetch(`https://api-osmosis.imperator.co//tokens/v2/price/${tokenName}`, {
+    const response = await fetch(`https://public-osmosis-api.numia.xyz/tokens/v2/${tokenName}`, {
       headers: {
         Accept: 'application/json',
         method: 'GET',
@@ -17,7 +17,12 @@ export async function fetchTokenPrice(tokenName: string) {
     }
 
     const data = await response.json();
-    return data.price;
+    
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].price && data[i].price !== 0) {
+        return data[i].price;
+      }
+    }
   } catch (error) {
     console.error(`Error fetching price for ${tokenName}:`, error);
     return null;
