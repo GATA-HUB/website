@@ -32,22 +32,28 @@ const SABCard = ({
   const [tokenQuantity, setTokenQuantity] = useState(0);
   const [usdValue, setUsdValue] = useState("0");
   const [reward, setReward] = useState("");
+  const [roundedQuantity, setRoundedQuantity] = useState(0);
 
-  function formatQuantity(quantity: number): {
-    integerPart: string;
-    decimalPart: string;
-  } {
+  // function formatQuantity(quantity: number): {
+  //   integerPart: string;
+  //   decimalPart: string;
+  // } {
+  //   const dividedQuantity = quantity / 1000000;
+
+  //   const formattedQuantity = new Intl.NumberFormat("en-US", {
+  //     minimumFractionDigits: 6,
+  //     maximumFractionDigits: 6,
+  //   }).format(dividedQuantity);
+
+  //   const [integerPart, decimalPart] = formattedQuantity.split(".");
+
+  //   return { integerPart, decimalPart };
+  // }
+
+  useEffect(() => {
     const dividedQuantity = quantity / 1000000;
-
-    const formattedQuantity = new Intl.NumberFormat("en-US", {
-      minimumFractionDigits: 6,
-      maximumFractionDigits: 6,
-    }).format(dividedQuantity);
-
-    const [integerPart, decimalPart] = formattedQuantity.split(".");
-
-    return { integerPart, decimalPart };
-  }
+    setRoundedQuantity(dividedQuantity);
+  }, []);
 
   useEffect(() => {
     const fetchPrices = async () => {
@@ -74,8 +80,8 @@ const SABCard = ({
       const totalReward = await fetchTokenReward(network, addr);
       if (totalReward) {
         const formattedReward = new Intl.NumberFormat("en-US", {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2,
+          minimumFractionDigits: 6,
+          maximumFractionDigits: 6,
         }).format(totalReward);
 
         setReward(formattedReward);
@@ -99,36 +105,49 @@ const SABCard = ({
     setUsdValue(integerPart);
   }, [currentPrice]);
 
+  const formatNumber = (num: number): string => {
+    if (num > 1_000_000_000) {
+      // Format numbers greater than 1 billion
+      return (
+        (num / 1_000_000_000).toFixed(num % 1_000_000_000 === 0 ? 0 : 2) + "B"
+      );
+    } else if (num > 1_000_000) {
+      // Format numbers greater than 1 million
+      return (num / 1_000_000).toFixed(num % 1_000_000 === 0 ? 0 : 2) + "M";
+    } else if (num > 1_000) {
+      // Format numbers greater than 1 thousand
+      return (num / 1_000).toFixed(num % 1_000 === 0 ? 0 : 2) + "K";
+    } else {
+      // Format numbers below 1 thousand with commas
+      return new Intl.NumberFormat("en-US").format(num);
+    }
+  };
+
   return (
-    <div className="w-full flex items-center justify-between pr-3 sm:pr-6 pl-3 py-3 rounded-2xl bg-dgray border-[1px] border-white border-opacity-10">
+    <div className="w-full flex flex-col gap-4 p-3 rounded-2xl bg-dgray border-[1px] border-white border-opacity-10">
       <div className="flex items-center gap-2 md:gap-4 w-1/4">
-        <div className="min-w-8 min-h-8 flex items-center justfiy-center">
-          <Image src={icon} width={32} height={32} quality={100} alt="" />
+        <div className="min-w-10 min-h-10 md:min-w-12 md:min-h-12 flex items-center justfiy-center">
+          <Image src={icon} width={48} height={48} quality={100} alt="" />
         </div>
-        <h4 className="capitalize">{name}</h4>
+        <h3 className="capitalize">{name}</h3>
       </div>
-      <div className=" w-full grid grid-cols-4 gap-2">
-        <div className="flex flex-col items-end">
+      <div className=" w-full grid grid-cols-2 sm:grid-cols-3 gap-2">
+        <div className="flex flex-col">
           <p>Quantity</p>
           <h4>
-            {formatQuantity(quantity).integerPart}
+            {formatNumber(roundedQuantity)}
             {/* <span className="text-[12px] font-space text-gray">
             .{formatQuantity(quantity).decimalPart}
           </span> */}
           </h4>
         </div>
 
-        <div className="flex flex-col items-end">
-          <p>Reward</p>
-          {loading ? <TextLoader /> : <h4>{reward ? reward : "-"}</h4>}
-        </div>
-
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col">
           <p>Price</p>
           {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
         </div>
 
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col">
           <p>USD value</p>
           {loading ? (
             <TextLoader />
@@ -136,6 +155,14 @@ const SABCard = ({
             <h4>{usdValue ? `$${usdValue}` : "-"}</h4>
           )}
         </div>
+      </div>
+      <div className="flex flex-col bg-mgray px-3 py-2 rounded-lg">
+        <p className="text-white">Reward</p>
+        {loading ? (
+          <TextLoader />
+        ) : (
+          <h3 className="text-purple">{reward ? reward : "-"}</h3>
+        )}
       </div>
     </div>
   );

@@ -8,12 +8,14 @@ const spacemono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-spacemono",
+  display: "swap",
 });
 
 const titillium = Titillium_Web({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-titillium",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

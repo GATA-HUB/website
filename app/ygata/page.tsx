@@ -348,8 +348,8 @@ const page = () => {
           </div>
         </div>
 
-        <div className="relative mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <div className="flex flex-col gap-4">
+        <div className="relative mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col xl:flex-row gap-8">
+          <div className="flex flex-col gap-4 h-full">
             <h2>Staked Asset Breakdown</h2>
             <div className="flex gap-2 items-center">
               <div className="relative flex items-center justify-center w-6 h-6 bg-dgray rounded">
@@ -378,7 +378,7 @@ const page = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 w-full md:w-full xl:w-2/3">
+          <div className="grid grid-cols-2 gap-2 w-full">
             {sabData &&
               sabData.map((sab, i) => {
                 return (
@@ -398,7 +398,7 @@ const page = () => {
           </div>
 
           <div className="z-[-1] absolute w-full flex justify-center items-center">
-            <div className="absolute w-[100vw] h-[637px] overflow-hidden">
+            <div className="absolute w-[100vw] h-[637px] top-[-104px] overflow-hidden">
               <Image
                 style={{
                   minWidth: "1920px",
