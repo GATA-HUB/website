@@ -12,6 +12,7 @@ import LiquidAssetsCard from "../components/ygata/LiquidAssetsCard";
 import NFTValueCard from "../components/ygata/NFTValueCard";
 import { fetchTokenPriceV2 } from "@/actions/fetchTokenPriceV2";
 import { fetchStakedAssets } from "@/actions/fetchStakedAssets";
+import RowCardLoader from "../components/ygata/RowCardLoader";
 
 interface SAB {
   network: string;
@@ -22,27 +23,6 @@ interface SAB {
 }
 
 const page = () => {
-  // const initialSAB = [
-  //   {
-  //     network: "Atom",
-  //     symbol: "ATOM",
-  //     icon: "/validator_chains/cosmos.png",
-  //     quantity: 0,
-  //   },
-  //   {
-  //     network: "Stargaze",
-  //     symbol: "STARS",
-  //     icon: "/validator_chains/stars.png",
-  //     quantity: 0,
-  //   },
-  //   {
-  //     network: "Omniflix",
-  //     symbol: "FLIX",
-  //     icon: "/validator_chains/omni.png",
-  //     quantity: 0,
-  //   },
-  // ];
-
   const initialLiquidity = [
     {
       network: "BTC",
@@ -97,13 +77,6 @@ const page = () => {
     },
   ];
 
-  // const cosmosAddr =
-  //   "cosmos1p9xp6nzfrdzfma032afzpfwm9w0c4qy9wxfs58pf27eyzjluf7jsznxdpx";
-  // const omniAddr =
-  //   "omniflix19z3h463xmkz66vdq8tcpk986kvecjyqxy4ywtdzu4qqe2vjyz69sy0u32r";
-  // const starsAddr =
-  //   "stars1y0enax8s6uxn8g5cudcc5mq30ycl0msgg0us0ewzyvlj3g66tmxq8l35eg";
-
   const totalLPValue = 112500;
   const totalNFTValue = 0;
 
@@ -130,6 +103,17 @@ const page = () => {
 
   const [liquidAssetsPrices, setLiquidAssetsPrices] = useState<number[]>([]);
   const [liquidAssets, setLiquidAssets] = useState<number>(0);
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchBalance = async () => {
+      const allSABData = await fetchStakedAssets();
+      setSabData(allSABData);
+      setLoading(false);
+    };
+
+    fetchBalance();
+  }, []);
 
   const handlePriceUpdate = (newPrice: number, index: number) => {
     if (newPrice) {
@@ -211,7 +195,7 @@ const page = () => {
 
   useEffect(() => {
     const fetchPrices = async () => {
-      setLoading(true);
+      // setLoading(true);
       const updatedTokens = await fetchTokenPriceV2("YGATA");
       const roundedPrice =
         updatedTokens !== null ? parseFloat(updatedTokens).toFixed(5) : null;
@@ -220,19 +204,10 @@ const page = () => {
       } else {
         setYGataPrice("0");
       }
-      setLoading(false);
+      // setLoading(false);
     };
 
     fetchPrices();
-  }, []);
-
-  useEffect(() => {
-    const fetchBalance = async () => {
-      const allSABData = await fetchStakedAssets();
-      setSabData(allSABData);
-    };
-
-    fetchBalance();
   }, []);
 
   const formatNumber = (num: number) => {
@@ -436,19 +411,25 @@ const page = () => {
             {sabData &&
               sabData.map((sab, i) => {
                 return (
-                  <SABCard
-                    key={i}
-                    icon={sab.icon}
-                    network={sab.network}
-                    quantity={sab.quantity}
-                    prices={assetsPrices}
-                    setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
-                    setQuantity={(newQuantity) =>
-                      handleStakedQuantity(newQuantity, i)
-                    }
-                    symbol={sab.symbol}
-                    addr={sab.addr}
-                  />
+                  <>
+                    {loading ? (
+                      <RowCardLoader />
+                    ) : (
+                      <SABCard
+                        key={i}
+                        icon={sab.icon}
+                        network={sab.network}
+                        quantity={sab.quantity}
+                        prices={assetsPrices}
+                        setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
+                        setQuantity={(newQuantity) =>
+                          handleStakedQuantity(newQuantity, i)
+                        }
+                        symbol={sab.symbol}
+                        addr={sab.addr}
+                      />
+                    )}
+                  </>
                 );
               })}
           </div>
@@ -539,10 +520,15 @@ const page = () => {
             </h3>
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Staked Assets</p>
-              <p className="z-[1] text-white">{formatNumber(stakedQuantity)}</p>
+              <p className="z-[1] text-white">
+                {formatNumber(stakedAssets)}{" "}
+                <span className="text-purple font-bold"> USD</span>
+              </p>
               <motion.div
                 animate={{
-                  width: inView ? "50%" : "0%",
+                  width: inView
+                    ? `${(stakedAssets / managedAssets) * 100}%`
+                    : "0%",
                 }}
                 transition={{
                   ease: "easeInOut",
@@ -555,11 +541,14 @@ const page = () => {
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Liquid Assets</p>
               <p className="z-[1] text-white">
-                {formatNumber(liquidityQuantity)}
+                {formatNumber(liquidAssets)}
+                <span className="text-purple font-bold"> USD</span>
               </p>
               <motion.div
                 animate={{
-                  width: inView ? "20%" : "0%",
+                  width: inView
+                    ? `${(liquidAssets / managedAssets) * 100}%`
+                    : "0%",
                 }}
                 transition={{
                   ease: "easeInOut",
@@ -571,10 +560,16 @@ const page = () => {
 
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">LP</p>
-              <p className="z-[1] text-white">30%</p>
+              <p className="z-[1] text-white">
+                {formatNumber(totalLPValue)}
+                <span className="text-purple font-bold"> USD</span>
+              </p>
+
               <motion.div
                 animate={{
-                  width: inView ? "30%" : "0%",
+                  width: inView
+                    ? `${(totalLPValue / managedAssets) * 100}%`
+                    : "0%",
                 }}
                 transition={{
                   ease: "easeInOut",
