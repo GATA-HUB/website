@@ -7,23 +7,23 @@ import TextLoader from "../TextLoader";
 import { fetchTokenReward } from "@/actions/fetchTokenReward";
 
 interface Props {
-  name: string;
   icon: string;
   network: string;
   quantity: number;
   prices: number[];
   setPrice: (newPrice: number) => void;
+  setQuantity: (newQuantity: number) => void;
   symbol: string;
   addr: string;
 }
 
 const SABCard = ({
-  name,
   icon,
   network,
   quantity,
   symbol,
   setPrice,
+  setQuantity,
   prices,
   addr,
 }: Props) => {
@@ -34,25 +34,10 @@ const SABCard = ({
   const [reward, setReward] = useState("");
   const [roundedQuantity, setRoundedQuantity] = useState(0);
 
-  // function formatQuantity(quantity: number): {
-  //   integerPart: string;
-  //   decimalPart: string;
-  // } {
-  //   const dividedQuantity = quantity / 1000000;
-
-  //   const formattedQuantity = new Intl.NumberFormat("en-US", {
-  //     minimumFractionDigits: 6,
-  //     maximumFractionDigits: 6,
-  //   }).format(dividedQuantity);
-
-  //   const [integerPart, decimalPart] = formattedQuantity.split(".");
-
-  //   return { integerPart, decimalPart };
-  // }
-
   useEffect(() => {
     const dividedQuantity = quantity / 1000000;
     setRoundedQuantity(dividedQuantity);
+    setQuantity(dividedQuantity);
   }, []);
 
   useEffect(() => {
@@ -80,8 +65,8 @@ const SABCard = ({
       const totalReward = await fetchTokenReward(network, addr);
       if (totalReward) {
         const formattedReward = new Intl.NumberFormat("en-US", {
-          minimumFractionDigits: 6,
-          maximumFractionDigits: 6,
+          minimumFractionDigits: 5,
+          maximumFractionDigits: 5,
         }).format(totalReward);
 
         setReward(formattedReward);
@@ -95,14 +80,17 @@ const SABCard = ({
   }, []);
 
   useEffect(() => {
-    const tokenUsdValue = currentPrice * tokenQuantity;
-    const truncatedValue = Math.trunc(tokenUsdValue);
-    const formattedQuantity = new Intl.NumberFormat("en-US", {
-      minimumFractionDigits: 6,
-      maximumFractionDigits: 6,
-    }).format(truncatedValue);
-    const [integerPart, decimalPart] = formattedQuantity.split(".");
-    setUsdValue(integerPart);
+    if (tokenQuantity) {
+      const tokenUsdValue = currentPrice * tokenQuantity;
+      const truncatedValue = Math.trunc(tokenUsdValue);
+      setPrice(truncatedValue);
+      const formattedQuantity = new Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 6,
+        maximumFractionDigits: 6,
+      }).format(truncatedValue);
+      const [integerPart, decimalPart] = formattedQuantity.split(".");
+      setUsdValue(integerPart);
+    }
   }, [currentPrice]);
 
   const formatNumber = (num: number): string => {
@@ -124,45 +112,43 @@ const SABCard = ({
   };
 
   return (
-    <div className="w-full flex flex-col gap-4 p-3 rounded-2xl bg-dgray border-[1px] border-white border-opacity-10">
-      <div className="flex items-center gap-2 md:gap-4 w-1/4">
-        <div className="min-w-10 min-h-10 md:min-w-12 md:min-h-12 flex items-center justfiy-center">
-          <Image src={icon} width={48} height={48} quality={100} alt="" />
+    <div className="w-full flex gap-4 p-2 pl-4 rounded-2xl items-center bg-dgray border-[1px] border-white border-opacity-10">
+      <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+        <div className="min-w-8 min-h-8 flex items-center justify-center">
+          <Image src={icon} width={32} height={32} quality={100} alt="" />
         </div>
-        <h3 className="capitalize">{name}</h3>
+        <h4 className="capitalize">{symbol}</h4>
       </div>
-      <div className=" w-full grid grid-cols-2 sm:grid-cols-3 gap-2">
-        <div className="flex flex-col">
-          <p>Quantity</p>
-          <h4>
-            {formatNumber(roundedQuantity)}
-            {/* <span className="text-[12px] font-space text-gray">
+      <div className="w-full flex flex-row xsm:flex-col gap-2">
+        <div className=" w-full grid grid-cols-4 gap-2 items-center">
+          <div className="flex flex-col">
+            <p>Quantity</p>
+            <h4>
+              {formatNumber(roundedQuantity)}
+              {/* <span className="text-[12px] font-space text-gray">
             .{formatQuantity(quantity).decimalPart}
           </span> */}
-          </h4>
-        </div>
+            </h4>
+          </div>
 
-        <div className="flex flex-col">
-          <p>Price</p>
-          {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
-        </div>
+          <div className="flex flex-col col-span-2">
+            <p>Reward</p>
+            {loading ? <TextLoader /> : <h4>{reward ? reward : "-"}</h4>}
+          </div>
 
-        <div className="flex flex-col">
-          <p>USD value</p>
+          <div className="flex flex-col">
+            <p>Price</p>
+            {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
+          </div>
+        </div>
+        <div className="xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between bg-mgray px-3 py-2 xsm:py-1 rounded-lg">
+          <p className="text-white">USD value</p>
           {loading ? (
             <TextLoader />
           ) : (
-            <h4>{usdValue ? `$${usdValue}` : "-"}</h4>
+            <h4 className="text-purple">{usdValue ? `$${usdValue}` : "-"}</h4>
           )}
         </div>
-      </div>
-      <div className="flex flex-col bg-mgray px-3 py-2 rounded-lg">
-        <p className="text-white">Reward</p>
-        {loading ? (
-          <TextLoader />
-        ) : (
-          <h3 className="text-purple">{reward ? reward : "-"}</h3>
-        )}
       </div>
     </div>
   );

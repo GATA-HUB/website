@@ -30,7 +30,7 @@ const config: Config = {
         yellow: "#FFE248"
       },
       screens: {
-        'xsm': {'max': '464px'},
+        'xsm': {'max': '512px'},
         'lg2': {'min': '1440px'},
         '3xl': {'min': '1740px'},
       },

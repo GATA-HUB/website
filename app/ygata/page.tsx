@@ -11,10 +11,9 @@ import SABCard from "../components/ygata/SABCard";
 import LiquidAssetsCard from "../components/ygata/LiquidAssetsCard";
 import NFTValueCard from "../components/ygata/NFTValueCard";
 import { fetchTokenPriceV2 } from "@/actions/fetchTokenPriceV2";
-import { fetchBalances } from "@/actions/fetchTokenBalance";
+import { fetchStakedAssets } from "@/actions/fetchStakedAssets";
 
 interface SAB {
-  name: string;
   network: string;
   symbol: string;
   icon: string;
@@ -48,37 +47,37 @@ const page = () => {
     {
       network: "BTC",
       icon: "/validator_chains/btc.png",
-      quantity: 0,
+      quantity: 0.005,
       symbol: "nBTC",
     },
     {
-      network: "Ether",
+      network: "ETH",
       icon: "/validator_chains/eth.png",
-      quantity: 0,
+      quantity: 0.5,
       symbol: "ETH",
     },
     {
-      network: "Solana",
+      network: "SOL",
       icon: "/validator_chains/sol.png",
-      quantity: 0,
+      quantity: 1,
       symbol: "SOL",
     },
     {
-      network: "Atom",
+      network: "ATOM",
       icon: "/validator_chains/cosmos.png",
-      quantity: 0,
+      quantity: 10,
       symbol: "ATOM",
     },
     {
-      network: "Flix",
+      network: "FLIX",
       icon: "/validator_chains/omni.png",
-      quantity: 0,
+      quantity: 1000,
       symbol: "FLIX",
     },
     {
-      network: "Stars",
+      network: "STARS",
       icon: "/validator_chains/stars.png",
-      quantity: 0,
+      quantity: 20000,
       symbol: "STARS",
     },
   ];
@@ -105,7 +104,7 @@ const page = () => {
   // const starsAddr =
   //   "stars1y0enax8s6uxn8g5cudcc5mq30ycl0msgg0us0ewzyvlj3g66tmxq8l35eg";
 
-  const totalLPValue = 0;
+  const totalLPValue = 112500;
   const totalNFTValue = 0;
 
   const [sabData, setSabData] = useState<SAB[] | null>();
@@ -113,6 +112,10 @@ const page = () => {
   const [managedAssets, setManagedAssets] = useState<number>(0);
   const [assetsPrices, setAssetsPrices] = useState<number[]>([]);
   const [stakedAssets, setStakedAssets] = useState<number>(0);
+  const [stakedQuantities, setStakedQuantities] = useState<number[]>([]);
+  const [stakedQuantity, setStakedQuantity] = useState<number>(0);
+  const [liquidityQuantities, setLiquidityQuantities] = useState<number[]>([]);
+  const [liquidityQuantity, setLiquidityQuantity] = useState<number>(0);
   const [loading, setLoading] = useState(false);
   const [yGataPrice, setYGataPrice] = useState("0");
 
@@ -120,6 +123,8 @@ const page = () => {
   const lastAPR = 21;
   const circulatingSupply = 14070000;
   const totalSupply = 21000000;
+  const communityPool = 6600000;
+  const stakedTokens = 11050000;
   const marketCap = circulatingSupply * price;
   const fdv = totalSupply * price;
 
@@ -127,11 +132,33 @@ const page = () => {
   const [liquidAssets, setLiquidAssets] = useState<number>(0);
 
   const handlePriceUpdate = (newPrice: number, index: number) => {
-    setAssetsPrices((prevPrices) => {
-      const updatedPrices = [...prevPrices];
-      updatedPrices[index] = newPrice;
-      return updatedPrices;
-    });
+    if (newPrice) {
+      setAssetsPrices((prevPrices) => {
+        const updatedPrices = [...prevPrices];
+        updatedPrices[index] = newPrice;
+        return updatedPrices;
+      });
+    }
+  };
+
+  const handleStakedQuantity = (newQuantity: number, index: number) => {
+    if (newQuantity) {
+      setStakedQuantities((prevQuantity) => {
+        const updatedQuantity = [...prevQuantity];
+        updatedQuantity[index] = newQuantity;
+        return updatedQuantity;
+      });
+    }
+  };
+
+  const handleLiquidityQuantity = (newQuantity: number, index: number) => {
+    if (newQuantity) {
+      setLiquidityQuantities((prevQuantity) => {
+        const updatedQuantity = [...prevQuantity];
+        updatedQuantity[index] = newQuantity;
+        return updatedQuantity;
+      });
+    }
   };
 
   const handlePriceFormat = (price: number) => {
@@ -143,11 +170,13 @@ const page = () => {
   };
 
   const handleLiquidityPriceUpdate = (newPrice: number, index: number) => {
-    setLiquidAssetsPrices((prevPrices) => {
-      const updatedPrices = [...prevPrices];
-      updatedPrices[index] = newPrice;
-      return updatedPrices;
-    });
+    if (newPrice) {
+      setLiquidAssetsPrices((prevPrices) => {
+        const updatedPrices = [...prevPrices];
+        updatedPrices[index] = newPrice;
+        return updatedPrices;
+      });
+    }
   };
 
   useEffect(() => {
@@ -161,11 +190,21 @@ const page = () => {
   }, [liquidAssetsPrices]);
 
   useEffect(() => {
+    const sum = stakedQuantities.reduce((acc, curr) => acc + curr, 0);
+    setStakedQuantity(sum);
+  }, [stakedQuantities]);
+
+  useEffect(() => {
+    const sum = liquidityQuantities.reduce((acc, curr) => acc + curr, 0);
+    setLiquidityQuantity(sum);
+  }, [liquidityQuantities]);
+
+  useEffect(() => {
     setManagedAssets(
       stakedAssets + liquidAssets + totalLPValue + totalNFTValue
     );
     setCoingeckoYGata(managedAssets / circulatingSupply);
-  }, []);
+  }, [stakedAssets]);
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -189,7 +228,7 @@ const page = () => {
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const allSABData = await fetchBalances();
+      const allSABData = await fetchStakedAssets();
       setSabData(allSABData);
     };
 
@@ -197,14 +236,24 @@ const page = () => {
   }, []);
 
   const formatNumber = (num: number) => {
-    if (num >= 1000000) {
+    if (num > 1_000_000_000) {
+      // Format numbers greater than 1 billion
+      return (
+        (num / 1_000_000_000).toFixed(num % 1_000_000_000 === 0 ? 0 : 2) + "B"
+      );
+    } else if (num > 1_000_000) {
       // Format numbers greater than 1 million
-      return (num / 1000000).toFixed(num % 1000000 === 0 ? 0 : 2) + "M";
+      return (num / 1_000_000).toFixed(num % 1_000_000 === 0 ? 0 : 2) + "M";
+    } else if (num > 1_000) {
+      // Format numbers greater than 1 thousand
+      return (num / 1_000).toFixed(num % 1_000 === 0 ? 0 : 2) + "K";
     } else {
-      // Format numbers below 1 million with commas
+      // Format numbers below 1 thousand with commas
       return new Intl.NumberFormat("en-US").format(num);
     }
   };
+
+  console.log(stakedQuantity);
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
@@ -244,7 +293,7 @@ const page = () => {
               </div>
               {managedAssets ? (
                 <>
-                  <h4>{managedAssets}</h4>
+                  <h4>{formatNumber(managedAssets)}</h4>
                   <h4 className="text-purple">USD</h4>
                 </>
               ) : (
@@ -252,7 +301,12 @@ const page = () => {
               )}
             </div>
             <div className="flex gap-2 items-center cursor-pointer">
-              <Image width={24} height={24} alt="" src="/coingecko.png" />
+              <Image
+                width={24}
+                height={24}
+                alt=""
+                src="/validator_chains/osmosis.png"
+              />
               <motion.h4
                 animate={{
                   color: ["#7B5AFF", "#FF4874", "#7B5AFF"],
@@ -264,7 +318,7 @@ const page = () => {
                   repeatDelay: 1,
                 }}
               >
-                {CoingeckoYGata !== 0 ? `${CoingeckoYGata}/yGATA` : "-"}
+                {yGataPrice ? `${yGataPrice}/yGATA` : "-"}
               </motion.h4>
             </div>
           </div>
@@ -378,18 +432,20 @@ const page = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 w-full">
+          <div className="grid grid-cols-1 gap-2 w-full">
             {sabData &&
               sabData.map((sab, i) => {
                 return (
                   <SABCard
                     key={i}
-                    name={sab.name}
                     icon={sab.icon}
                     network={sab.network}
                     quantity={sab.quantity}
                     prices={assetsPrices}
                     setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
+                    setQuantity={(newQuantity) =>
+                      handleStakedQuantity(newQuantity, i)
+                    }
                     symbol={sab.symbol}
                     addr={sab.addr}
                   />
@@ -414,6 +470,7 @@ const page = () => {
           </div>
         </div>
 
+        {/* Token Distribution  */}
         <div
           ref={ref}
           className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col md:flex-row gap-[40px] items-center"
@@ -424,10 +481,14 @@ const page = () => {
             </h3>
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Circulating Supply</p>
-              <p className="z-[1] text-white">20%</p>
+              <p className="z-[1] text-white">
+                {formatNumber(circulatingSupply)}
+              </p>
               <motion.div
                 animate={{
-                  width: inView ? "20%" : "0%",
+                  width: inView
+                    ? `${(circulatingSupply / totalSupply) * 100}%`
+                    : "0%",
                 }}
                 transition={{
                   ease: "easeInOut",
@@ -439,10 +500,12 @@ const page = () => {
 
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Staked</p>
-              <p className="z-[1] text-white">50%</p>
+              <p className="z-[1] text-white">{formatNumber(stakedTokens)}</p>
               <motion.div
                 animate={{
-                  width: inView ? "50%" : "0%",
+                  width: inView
+                    ? `${(stakedTokens / totalSupply) * 100}%`
+                    : "0%",
                 }}
                 transition={{
                   ease: "easeInOut",
@@ -454,10 +517,12 @@ const page = () => {
 
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">DAO/CP</p>
-              <p className="z-[1] text-white">30%</p>
+              <p className="z-[1] text-white">{formatNumber(communityPool)}</p>
               <motion.div
                 animate={{
-                  width: inView ? "30%" : "0%",
+                  width: inView
+                    ? `${(communityPool / totalSupply) * 100}%`
+                    : "0%",
                 }}
                 transition={{
                   ease: "easeInOut",
@@ -474,7 +539,7 @@ const page = () => {
             </h3>
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Staked Assets</p>
-              <p className="z-[1] text-white">50%</p>
+              <p className="z-[1] text-white">{formatNumber(stakedQuantity)}</p>
               <motion.div
                 animate={{
                   width: inView ? "50%" : "0%",
@@ -489,7 +554,9 @@ const page = () => {
 
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
               <p className="z-[1] text-white">Liquid Assets</p>
-              <p className="z-[1] text-white">20%</p>
+              <p className="z-[1] text-white">
+                {formatNumber(liquidityQuantity)}
+              </p>
               <motion.div
                 animate={{
                   width: inView ? "20%" : "0%",
@@ -563,6 +630,9 @@ const page = () => {
                     setPrice={(newPrice) =>
                       handleLiquidityPriceUpdate(newPrice, i)
                     }
+                    setQuantity={(newQuantity) =>
+                      handleLiquidityQuantity(newQuantity, i)
+                    }
                   />
                 );
               })}
@@ -614,7 +684,9 @@ const page = () => {
               </h3>
             </div>
             <div className="z-[1] flex gap-4">
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">-</h3>
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
+                {formatNumber(totalLPValue)}
+              </h3>
               <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-dgray">
                 USD
               </h3>
