@@ -2,7 +2,7 @@
 
 export async function fetchTokenPriceV2(tokenName: string) {
   try {
-    const response = await fetch(`https://osmosis-api.gatadao.com/tokens/v2/${tokenName}`, {
+    const response = await fetch(`https://public-osmosis-api.numia.xyz/tokens/v2/${tokenName}`, {
       headers: {
         Accept: 'application/json',
         method: 'GET',
