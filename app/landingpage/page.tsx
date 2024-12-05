@@ -655,7 +655,7 @@ const LandingPage = () => {
             <h2 className="text-yellow text-[40px] xl:text-[64px] font-bold">
               193k+
             </h2>
-            <p>IBC Txs</p>
+            <p>IBC relayer transactions</p>
           </div>
 
           <div className="w-full h-full flex flex-col col-span-2 sm:col-span-6 lg:col-span-3 xl:col-span-4 gap-[16px] p-4 xl:p-6 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
