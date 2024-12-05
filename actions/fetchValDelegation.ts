@@ -3,7 +3,6 @@
 export async function fetchValDelegation(network: string, addr: string) {
     try {
       const response = await fetch(`https://${network}-api.gatadao.com/cosmos/staking/v1beta1/validators/${addr}`, {
-        mode: 'no-cors',
         headers: {
           Accept: 'application/json',
           method: 'GET',
