@@ -9,6 +9,7 @@ import Template from "../../template";
 interface Validator {
   icon: string;
   title: string;
+  network: string;
   tokens: string;
   symbol: string;
   commission: string;
@@ -16,6 +17,7 @@ interface Validator {
   stake?: string;
   autoCompound?: string;
   stat: string;
+  addr: string;
   active: boolean;
 }
 
@@ -151,6 +153,7 @@ const validators = () => {
                     <ValidatorCard
                       icon={val.icon}
                       title={val.title}
+                      network={val.network}
                       tokens={val.tokens}
                       symbol={val.symbol}
                       commission={val.commission}
@@ -158,6 +161,7 @@ const validators = () => {
                       stake={val.stake}
                       autoCompound={val.autoCompound}
                       stat={val.stat}
+                      addr={val.addr}
                       heartBeat={heartBeat}
                     />
                   </Template>

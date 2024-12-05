@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 interface Validator {
   icon: string;
   title: string;
+  network: string;
   tokens: string;
   symbol: string;
   commission: string;
@@ -21,6 +22,7 @@ interface Validator {
   stake?: string;
   autoCompound?: string;
   stat: string;
+  addr: string;
   active: boolean;
 }
 
@@ -703,6 +705,7 @@ const LandingPage = () => {
                   <ValidatorCard
                     key={i}
                     icon={val.icon}
+                    network={val.network}
                     title={val.title}
                     tokens={val.tokens}
                     symbol={val.symbol}
@@ -711,6 +714,7 @@ const LandingPage = () => {
                     stake={val.stake}
                     autoCompound={val.autoCompound}
                     stat={val.stat}
+                    addr={val.addr}
                     heartBeat={heartBeat}
                   />
                 );
