@@ -6,10 +6,12 @@ import { PrimaryButton, SecondaryButton } from "../Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import TextLoader from "../TextLoader";
+import { fetchValDelegation } from "@/actions/fetchValDelegation";
 
 interface Props {
   icon: string;
   title: string;
+  network: string;
   tokens: string;
   symbol: string;
   commission: string;
@@ -17,12 +19,14 @@ interface Props {
   stake?: string;
   autoCompound?: string;
   stat: string;
+  addr: string;
   heartBeat: number;
 }
 
 const ValidatorCard = ({
   icon,
   title,
+  network,
   tokens,
   symbol,
   commission,
@@ -30,16 +34,43 @@ const ValidatorCard = ({
   stake,
   autoCompound,
   stat,
+  addr,
   heartBeat,
 }: Props) => {
   const [loading, setLoading] = useState(false);
   const [currentPrice, setCurrentPrice] = useState("0");
+  const [delegation, setDelegation] = useState(0);
+
+  const handlePriceFormat = (price: number) => {
+    const formattedPrice = new Intl.NumberFormat("en-US", {
+      minimumFractionDigits: 3,
+      maximumFractionDigits: 3,
+    }).format(price);
+    return formattedPrice;
+  };
+
+  useEffect(() => {
+    const fetchDelegation = async () => {
+      setLoading(true);
+      if (addr) {
+        const updateDelegation = await fetchValDelegation(network, addr);
+        if (updateDelegation) {
+          setDelegation(updateDelegation);
+        } else {
+          setDelegation(0);
+        }
+        console.log("delegation of ", network, ":", updateDelegation);
+      }
+      setLoading(false);
+    };
+
+    fetchDelegation();
+  }, []);
 
   useEffect(() => {
     const fetchPrices = async () => {
       setLoading(true);
       const updatedTokens = await fetchTokenPriceV2(symbol);
-      console.log(symbol, ":", updatedTokens);
       const roundedPrice =
         updatedTokens !== null ? parseFloat(updatedTokens).toFixed(10) : null;
       if (roundedPrice) {
@@ -133,12 +164,18 @@ const ValidatorCard = ({
 
           <div className="flex gap-4 justify-between items-center flex-wrap">
             <div className="flex flex-col gap-1">
-              <div className="flex gap-1">
-                <p className="font-bold text-purple">{tokens}</p>
-                {tokens === "ICS Chain" ? null : (
-                  <p className="font-bold text-purple">{symbol}</p>
-                )}
-              </div>
+              {loading ? (
+                <TextLoader />
+              ) : (
+                <div className="flex gap-1">
+                  <p className="font-bold text-purple">
+                    {delegation !== 0 ? handlePriceFormat(delegation) : tokens}
+                  </p>
+                  {tokens === "ICS Chain" ? null : (
+                    <p className="font-bold text-purple">{symbol}</p>
+                  )}
+                </div>
+              )}
 
               {loading ? <TextLoader /> : <p>${currentPrice}</p>}
             </div>
