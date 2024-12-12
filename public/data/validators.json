@@ -208,5 +208,33 @@
     "stat": "active",
     "addr": "torivaloper1dyduggaqthztgm8tnk59flkeu3l3qvpzhhd6hn",
     "active": true
+  },
+  {
+    "icon": "/validator_chains/namada.png",
+    "title": "Namada",
+    "network": "namadillo",
+    "tokens": "0",
+    "symbol": "NAM",
+    "commission": "5%",
+    "status": "",
+    "stake": "https://namada-interface.sproutstake.space/staking",
+    "autoCompound": "",
+    "stat": "active",
+    "addr": "tnam1qy7u3y3sqltmd68a43lsr0khu8c9y8uyyuzy7sck",
+    "active": true
+  },
+  {
+    "icon": "/validator_chains/dym.png",
+    "title": "Dymension",
+    "network": "dymension",
+    "tokens": "0",
+    "symbol": "DYM",
+    "commission": "5%",
+    "status": "",
+    "stake": "https://portal.dymension.xyz/dymension/staking",
+    "autoCompound": "",
+    "stat": "",
+    "addr": "",
+    "active": false
   }
 ]
