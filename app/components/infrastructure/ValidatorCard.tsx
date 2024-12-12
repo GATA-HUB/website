@@ -177,7 +177,11 @@ const ValidatorCard = ({
                 </div>
               )}
 
-              {loading ? <TextLoader /> : <p>${currentPrice}</p>}
+              {loading ? (
+                <TextLoader />
+              ) : (
+                <p>${currentPrice !== "NaN" ? currentPrice : 0}</p>
+              )}
             </div>
             <div className="flex h-fit gap-2 px-[8px] py-[4px] items-center rounded-full bg-lgray border-2 border-white border-opacity-10">
               <Image width={16} height={16} alt="" src="/apr.svg" />
