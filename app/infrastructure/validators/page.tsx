@@ -10,7 +10,7 @@ interface Validator {
   icon: string;
   title: string;
   network: string;
-  tokens: string;
+  tokens: number;
   symbol: string;
   commission: string;
   status?: string;
@@ -26,6 +26,7 @@ const validators = () => {
 
   const [vals, setVals] = useState<Validator[]>(initialNFTs);
   const [tab, setTab] = useState("active");
+  const [totalStakedAsset, setTotalStakedAsset] = useState(0);
 
   const handleTab = (ValSet: string) => {
     let updatedVals: Validator[];

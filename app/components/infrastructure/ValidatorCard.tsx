@@ -12,7 +12,7 @@ interface Props {
   icon: string;
   title: string;
   network: string;
-  tokens: string;
+  tokens: number;
   symbol: string;
   commission: string;
   status?: string;
@@ -59,7 +59,6 @@ const ValidatorCard = ({
         } else {
           setDelegation(0);
         }
-        console.log("delegation of ", network, ":", updateDelegation);
       }
       setLoading(false);
     };
@@ -83,24 +82,6 @@ const ValidatorCard = ({
 
     fetchPrices();
   }, []);
-
-  // useEffect(() => {
-  //   const fetchPrices = async () => {
-  //     setLoading(true);
-  //     const updatedTokens = await fetchTokenPriceV2(symbol);
-  //     console.log(symbol, ":", updatedTokens);
-  //     const roundedPrice =
-  //       updatedTokens !== null ? parseFloat(updatedTokens).toFixed(10) : null;
-  //     if (roundedPrice) {
-  //       setCurrentPrice(roundedPrice);
-  //     } else {
-  //       setCurrentPrice("0");
-  //     }
-  //     setLoading(false);
-  //   };
-
-  //   fetchPrices();
-  // }, []);
 
   return (
     <motion.div
@@ -171,9 +152,9 @@ const ValidatorCard = ({
                   <p className="font-bold text-purple">
                     {delegation !== 0 ? handlePriceFormat(delegation) : tokens}
                   </p>
-                  {tokens === "ICS Chain" ? null : (
+                  {/* {tokens === "ICS Chain" ? null : (
                     <p className="font-bold text-purple">{symbol}</p>
-                  )}
+                  )} */}
                 </div>
               )}
 

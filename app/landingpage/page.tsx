@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SecondaryButton } from "../components/Button";
@@ -10,12 +10,16 @@ import teamData from "../../public/data/team.json";
 import dynamic from "next/dynamic";
 import ValLogosAnim from "../components/landing-page/ValLogosAnim";
 import { motion } from "framer-motion";
+import { fetchValDelegation } from "@/actions/fetchValDelegation";
+import { fetchTokenPriceV2 } from "@/actions/fetchTokenPriceV2";
+import TextLoader from "../components/TextLoader";
+import LargeTextLoader from "../components/LargeTextLoader";
 
 interface Validator {
   icon: string;
   title: string;
   network: string;
-  tokens: string;
+  tokens: number;
   symbol: string;
   commission: string;
   status?: string;
@@ -38,12 +42,71 @@ const LandingPage = () => {
   const initialVals: Validator[] = ValData;
   const intialTeam: Team[] = teamData;
 
+  const [delegation, setDelegation] = useState("0");
+  const [currentPrice, setCurrentPrice] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
   const MemberCard = dynamic(
     () => import("../components/landing-page/MemberCard"),
     {
       ssr: false,
     }
   );
+
+  const fetchPrices = async (symbol: string) => {
+    const updatedTokens = await fetchTokenPriceV2(symbol);
+    return updatedTokens || 0;
+  };
+
+  const fetchDelegation = async (
+    addr: string,
+    network: string,
+    tokens: number
+  ) => {
+    if (addr) {
+      const updateDelegation = await fetchValDelegation(network, addr);
+      return updateDelegation || tokens;
+    }
+    return tokens;
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      const results = await Promise.all(
+        initialVals.map(async (val) => {
+          // console.log(val.network, val.active, val.tokens);
+          const tokenPrice = await fetchPrices(val.symbol);
+          const tokenDelegation = await fetchDelegation(
+            val.addr,
+            val.network,
+            val.tokens
+          );
+
+          console.log(
+            val.symbol,
+            " x delegation: ",
+            tokenPrice,
+            tokenDelegation
+          );
+
+          return tokenPrice * tokenDelegation;
+        })
+      );
+
+      const totalSum = results.reduce((acc, curr) => acc + curr, 0);
+      const formattedPrice = new Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(totalSum);
+
+      // Log all results
+      setDelegation(formattedPrice);
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="z-10 flex flex-col w-full items-center overflow-x-hidden">
@@ -665,9 +728,13 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/staked.svg" />
             </div>
             <div className="flex gap-2 flex-wrap">
-              <h2 className="text-purple text-[40px] xl:text-[64px] font-bold leading-[40px]">
-                5,619,556
-              </h2>
+              {isLoading ? (
+                <LargeTextLoader />
+              ) : (
+                <h2 className="text-purple text-[40px] xl:text-[64px] font-bold leading-[40px]">
+                  {delegation}
+                </h2>
+              )}
               <h3 className="text-purple">USD</h3>
             </div>
             <p>Assets Staked</p>
