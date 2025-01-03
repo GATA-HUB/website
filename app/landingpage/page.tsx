@@ -12,7 +12,6 @@ import ValLogosAnim from "../components/landing-page/ValLogosAnim";
 import { motion } from "framer-motion";
 import { fetchValDelegation } from "@/actions/fetchValDelegation";
 import { fetchTokenPriceV2 } from "@/actions/fetchTokenPriceV2";
-import TextLoader from "../components/TextLoader";
 import LargeTextLoader from "../components/LargeTextLoader";
 
 interface Validator {
@@ -43,7 +42,6 @@ const LandingPage = () => {
   const intialTeam: Team[] = teamData;
 
   const [delegation, setDelegation] = useState("0");
-  const [currentPrice, setCurrentPrice] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const MemberCard = dynamic(
@@ -75,19 +73,11 @@ const LandingPage = () => {
     const fetchData = async () => {
       const results = await Promise.all(
         initialVals.map(async (val) => {
-          // console.log(val.network, val.active, val.tokens);
           const tokenPrice = await fetchPrices(val.symbol);
           const tokenDelegation = await fetchDelegation(
             val.addr,
             val.network,
             val.tokens
-          );
-
-          console.log(
-            val.symbol,
-            " x delegation: ",
-            tokenPrice,
-            tokenDelegation
           );
 
           return tokenPrice * tokenDelegation;
