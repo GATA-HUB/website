@@ -80,7 +80,7 @@ const LandingPage = () => {
             val.tokens
           );
 
-          return tokenPrice * tokenDelegation;
+          return tokenPrice * tokenDelegation * 2;
         })
       );
 
