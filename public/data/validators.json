@@ -113,8 +113,8 @@
   },
   {
     "icon": "/validator_chains/omni.png",
-    "title": "Omniflix",
-    "network": "omniflix",
+    "title": "OmniflixHub",
+    "network": "omniflixhub",
     "tokens": 2000,
     "symbol": "FLIX",
     "commission": "5%",
@@ -212,7 +212,7 @@
   {
     "icon": "/validator_chains/namada.png",
     "title": "Namada",
-    "network": "namadillo",
+    "network": "namada",
     "tokens": 0,
     "symbol": "NAM",
     "commission": "5%",
@@ -249,6 +249,20 @@
     "autoCompound": "",
     "stat": "active",
     "addr": "elysvaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq6nlyj4",
+    "active": true
+  },
+  {
+    "icon": "/validator_chains/atomone.png",
+    "title": "AtomOne",
+    "network": "atomone",
+    "tokens": 0,
+    "symbol": "ATONE",
+    "commission": "5%",
+    "status": "https://explorer.allinbits.services/atomone/staking/atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
+    "stake": "https://explorer.allinbits.services/atomone/staking/atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
+    "autoCompound": "",
+    "stat": "active",
+    "addr": "atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
     "active": true
   }
 ]
