@@ -113,8 +113,8 @@
   },
   {
     "icon": "/validator_chains/omni.png",
-    "title": "Omniflix",
-    "network": "omniflix",
+    "title": "OmniflixHub",
+    "network": "omniflixhub",
     "tokens": 2000,
     "symbol": "FLIX",
     "commission": "5%",
@@ -212,7 +212,7 @@
   {
     "icon": "/validator_chains/namada.png",
     "title": "Namada",
-    "network": "namadillo",
+    "network": "namada",
     "tokens": 0,
     "symbol": "NAM",
     "commission": "5%",
@@ -253,8 +253,8 @@
   },
   {
     "icon": "/validator_chains/atomone.png",
-    "title": "Atom One",
-    "network": "atone",
+    "title": "AtomOne",
+    "network": "atomone",
     "tokens": 0,
     "symbol": "ATONE",
     "commission": "5%",
