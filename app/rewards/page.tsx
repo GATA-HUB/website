@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import GataRewards from "../components/reward/GataRewards";
-import YGEpoch from "../components/reward/YGEpoch";
+import YieldGorillaReward from "../components/reward/YieldGorillaReward";
 // import YGMonthlyRewardCard from "../components/reward/YGMonthlyRewardCard";
 import Image from "next/image";
 import gataEpochData from "../../public/data/gatarevenue.json";
@@ -12,7 +12,8 @@ import { motion } from "framer-motion";
 import { SecondaryButton } from "../components/Button";
 import YPEpoch from "../components/reward/YPEpoch";
 import Tab from "../components/Tab";
-// import ygMEarningData from "../../public/data/ygMonthlyEarning.json";
+import yieldCrocsEpoch from "../../public/data/yieldCrocsEpoch.json";
+import YieldCrocsReward from "../components/reward/YieldCrocsReward";
 
 interface GataEpoch {
   title: string;
@@ -22,13 +23,20 @@ interface GataEpoch {
   href: string;
 }
 
-interface YGNfts {
+interface Nfts {
   icon: string;
   title: string;
 }
 
+interface Reward {
+  nfts: Nfts[];
+  rewardSol: number;
+  rewardYGata: number;
+  revenue: number;
+}
+
 interface YGReward {
-  nfts: YGNfts[];
+  nfts: Nfts[];
   reward: number;
   revenue: number;
 }
@@ -40,14 +48,11 @@ interface YGEpoch {
   rewards: YGReward[];
 }
 
-interface YGMonthlyReward {
-  startingDate: string;
-  endingDate: string;
-  reward: number;
-  stake: number;
-  floorBurn: number;
-  circulatingYg: number;
+interface YCEpoch {
+  title: string;
+  date: string;
   href: string;
+  rewards: Reward[];
 }
 
 const Treasury = () => {
@@ -57,14 +62,9 @@ const Treasury = () => {
 
   const initialYPEpoch: YGEpoch[] = ypEpochData;
 
-  // const initialYGMonthlyReward: YGMonthlyReward[] = ygMEarningData;
+  const initialYeildCrocsEpoch: YCEpoch[] = yieldCrocsEpoch;
 
   const sliderRef = useRef<HTMLDivElement | null>(null);
-  // const [slideCount, setSlideCount] = useState(1);
-  // const [cardsCount, setCardsCount] = useState(1);
-  // const totalCards = initialGataEpoch.length;
-  // const [cardSum, setCardSum] = useState(1);
-  // const [cardsSecCount, setCardsSecCount] = useState(1);
   const [expanderHeight, setExpanderHeight] = useState(1080);
   const [expanderCont, setExpanderCont] = useState(true);
 
@@ -109,35 +109,11 @@ const Treasury = () => {
     }
   };
 
-  // useEffect(() => {
-  //   if (sliderRef.current) {
-  //     const oneCardWidth = sliderRef.current.scrollWidth / totalCards;
-  //     const visibleCards = Math.round(
-  //       sliderRef.current.clientWidth / oneCardWidth
-  //     );
-  //     setCardSum(visibleCards);
-  //     setCardsSecCount(visibleCards);
-  //   }
-  // }, []);
-
   const slideLeft = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 920;
     }
     calCurrentSlide("left");
-    // if (slideCount > 1) {
-    //   setSlideCount(slideCount - 1);
-    //   setCardsSecCount(cardsSecCount - cardSum);
-    //   let tempCount = cardsCount - cardSum;
-
-    //   if (tempCount === 0) {
-    //     setCardsCount(1);
-    //   } else {
-    //     setCardsCount(tempCount);
-    //   }
-    // } else {
-    //   return;
-    // }
   };
 
   const slideRight = () => {
@@ -146,19 +122,6 @@ const Treasury = () => {
     }
 
     calCurrentSlide("right");
-    // let maxSlides = calCurrentSlide();
-
-    // if (slideCount < maxSlides) {
-    //   setSlideCount(slideCount + 1);
-    //   setCardsCount(slideCount * cardSum);
-    //   if (cardsSecCount < totalCards) {
-    //     setCardsSecCount(cardsSecCount + cardSum);
-    //   } else {
-    //     setCardsSecCount(totalCards);
-    //   }
-    // } else {
-    //   return;
-    // }
   };
 
   useEffect(() => {
@@ -215,9 +178,6 @@ const Treasury = () => {
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
-      {/* <div className="absolute z-[-1] top-[800px] right-0">
-        <img src="/bg-waves.png" alt="" loading="lazy" />
-      </div> */}
       <div className="relative flex w-full h-[960px] items-center ">
         <div className="absolute w-full h-full overflow-hidden flex justify-center">
           <Image
@@ -225,9 +185,6 @@ const Treasury = () => {
               minWidth: "1920px",
             }}
             src="/rewardsBg.jpg"
-            // layout="fill"
-            // objectFit="cover"
-            // objectPosition="center"
             width={1920}
             height={960}
             quality={100}
@@ -250,12 +207,77 @@ const Treasury = () => {
             <Tab
               currentTab={currentTab}
               setCurrentTab={setCurrentTab}
-              tabs={["Yield Paws", "Yield Gorilla", "GATA"]}
+              tabs={["Yield Crocs", "Yield Paws", "Yield Gorilla", "GATA"]}
             />
           </div>
 
           {/* YP Monthly reward */}
           {currentTab === 0 && (
+            <section
+              ref={ypRewards}
+              className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center"
+            >
+              <div className="flex flex-col gap-[8px] items-center max-w-[1024px] text-center">
+                <Image
+                  width={222}
+                  height={32}
+                  loading="lazy"
+                  alt=""
+                  src="/title-decor.svg"
+                />
+                <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
+                  <h2 className="text-green">YCs Reward</h2>
+                  <h2>Distribution</h2>
+                </div>
+                <p>Epoch record of YC collection</p>
+              </div>
+
+              <motion.div
+                ref={ypexpanderWrap}
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "1080px",
+                  overflow: "hidden",
+                  width: "100%",
+                }}
+                animate={{
+                  height: ypExpanderHeight,
+                }}
+              >
+                <div ref={ypexpander} className="flex flex-col gap-16">
+                  {initialYeildCrocsEpoch.map((epoch, i) => {
+                    return (
+                      <YieldCrocsReward
+                        key={i}
+                        title={epoch.title}
+                        date={epoch.date}
+                        href={epoch.href}
+                        rewards={epoch.rewards}
+                      />
+                    );
+                  })}
+                </div>
+                {ypExpanderCont && (
+                  <div className="z-10 absolute bottom-0 w-full h-[128px] bg-gradient-to-t from-black to-transparent"></div>
+                )}
+              </motion.div>
+
+              {loadMore && (
+                <div className="flex w-full justify-center items-center">
+                  <div onClick={handleYPExpand}>
+                    <SecondaryButton>
+                      {ypExpanderCont ? "load more" : "load less"}
+                    </SecondaryButton>
+                  </div>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* YP Monthly reward */}
+          {currentTab === 1 && (
             <section
               ref={ypRewards}
               className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center"
@@ -320,7 +342,7 @@ const Treasury = () => {
           )}
 
           {/* YG rewards */}
-          {currentTab === 1 && (
+          {currentTab === 2 && (
             <section
               ref={ygRewards}
               className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center"
@@ -356,7 +378,7 @@ const Treasury = () => {
                 <div ref={expander} className="flex flex-col gap-16">
                   {initialYGEpoch.map((epoch, i) => {
                     return (
-                      <YGEpoch
+                      <YieldGorillaReward
                         key={i}
                         title={epoch.title}
                         date={epoch.date}
@@ -381,7 +403,7 @@ const Treasury = () => {
           )}
 
           {/* Gata Rewards */}
-          {currentTab === 2 && (
+          {currentTab === 3 && (
             <section className="flex flex-col gap-[64px] items-center">
               <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[8px] items-center max-w-[1024px] text-center">
                 <Image
@@ -484,40 +506,6 @@ const Treasury = () => {
             </section>
           )}
         </div>
-
-        {/* YG Monthly earnings */}
-        {/* <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
-          <div className="flex flex-col gap-[16px] items-center max-w-[1024px] text-center">
-            <Image
-              width={222}
-              height={32}
-              loading="lazy"
-              alt=""
-              src="/title-decor.svg"
-            />
-            <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
-              <h2 className="text-green">YGs Monthly Earning</h2>
-              <h2>Year 2023</h2>
-            </div>
-          </div>
-
-          <div className="grid grid-rows-5 gap-2 w-full">
-            {initialYGMonthlyReward.map((reward, i) => {
-              return (
-                <YGMonthlyRewardCard
-                  key={i}
-                  startingDate={reward.startingDate}
-                  endingDate={reward.endingDate}
-                  reward={reward.reward}
-                  stake={reward.stake}
-                  floorBurn={reward.floorBurn}
-                  href={reward.href}
-                  circulatingYg={reward.circulatingYg}
-                />
-              );
-            })}
-          </div>
-        </section> */}
       </div>
     </div>
   );

@@ -1,5 +1,14 @@
 [
     {
+        "image": "/nfts/yieldCrocs.png",
+        "name": "Yield Crocs",
+        "desc": "Your friendly neighborhood crocs provide you with monthly epoch rewards in $SOL and $yGATA. Earn passive income from various DeFi activities managed by GATA.",
+        "collection": "Yield Series",
+        "active": true,
+        "href" : "https://omniflix.market/c/onftdenom096ab49e894d401c8996913f3ad0d795/collect-now",
+        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-crocs"
+    },
+    {
         "image": "/nfts/01.jpg",
         "name": "Colonial Cats",
         "desc": "Colonial Cats is the very first GATA series NFT collection of GATA DAO. Launched on the Stargaze launchpad on March 11, 2022.",

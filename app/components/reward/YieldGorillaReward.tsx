@@ -22,7 +22,7 @@ interface Props {
   rewards: Reward[];
 }
 
-const YGEpoch = ({ title, date, rewards, href }: Props) => {
+const YieldGorillaReward = ({ title, date, rewards, href }: Props) => {
   return (
     <div className="flex flex-col gap-6 w-full">
       <div className="flex items-center justify-between gap-4 w-full">
@@ -58,4 +58,4 @@ const YGEpoch = ({ title, date, rewards, href }: Props) => {
   );
 };
 
-export default YGEpoch;
+export default YieldGorillaReward;

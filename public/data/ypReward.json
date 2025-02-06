@@ -1,4 +1,117 @@
-[ 
+[ {
+  "title": "YP Epoch 10",
+  "date": "1st February 2025",
+  "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws/yp-reward-distribution#yp-epoch-10",
+  "rewards": [
+    {
+      "nfts": [
+        {
+          "icon": "/yprewards/01.png",
+          "title": "Brown Fur"
+        }
+      ],
+      "reward": 216.0,
+      "revenue": 9
+    },
+    {
+      "nfts": [
+        {
+          "icon": "/yprewards/02.png",
+          "title": "Grey Fur"
+        }
+      ],
+      "reward": 108,
+      "revenue": 13.5
+    },
+    {
+      "nfts": [
+        {
+          "icon": "/yprewards/03.png",
+          "title": "Black Fur"
+        }
+      ],
+      "reward": 48,
+      "revenue": 16
+    },
+    {
+      "nfts": [
+        {
+          "icon": "/yprewards/04.png",
+          "title": "White Fur"
+        }
+      ],
+      "reward": 43,
+      "revenue": 18
+    },
+    {
+      "nfts": [
+        {
+          "icon": "/yprewards/05.png",
+          "title": "Orange Fur"
+        }
+      ],
+      "reward": 38,
+      "revenue": 43.5
+    }
+  ]
+},
+  {
+    "title": "YP Epoch 09",
+    "date": "1st January 2025",
+    "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws/yp-reward-distribution#yp-epoch-9",
+    "rewards": [
+      {
+        "nfts": [
+          {
+            "icon": "/yprewards/01.png",
+            "title": "Brown Fur"
+          }
+        ],
+        "reward": 215.0,
+        "revenue": 9
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/yprewards/02.png",
+            "title": "Grey Fur"
+          }
+        ],
+        "reward": 107.0,
+        "revenue": 13.5
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/yprewards/03.png",
+            "title": "Black Fur"
+          }
+        ],
+        "reward": 48.5,
+        "revenue": 16
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/yprewards/04.png",
+            "title": "White Fur"
+          }
+        ],
+        "reward": 43,
+        "revenue": 18
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/yprewards/05.png",
+            "title": "Orange Fur"
+          }
+        ],
+        "reward": 37.5,
+        "revenue": 43.5
+      }
+    ]
+  },
      {
         "title": "YP Epoch 08",
         "date": "2nd December 2024",

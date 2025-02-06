@@ -250,5 +250,19 @@
     "stat": "active",
     "addr": "elysvaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq6nlyj4",
     "active": true
+  },
+  {
+    "icon": "/validator_chains/atomone.png",
+    "title": "Atom One",
+    "network": "atone",
+    "tokens": 0,
+    "symbol": "ATONE",
+    "commission": "5%",
+    "status": "https://explorer.allinbits.services/atomone/staking/atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
+    "stake": "https://explorer.allinbits.services/atomone/staking/atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
+    "autoCompound": "",
+    "stat": "active",
+    "addr": "atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
+    "active": true
   }
 ]
