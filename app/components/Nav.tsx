@@ -4,7 +4,6 @@ import Lenis from "lenis";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import Validators from "../infrastructure/validators/page";
 
 export default function Nav() {
   const pathname = usePathname();
