@@ -96,7 +96,7 @@ const validators = () => {
                 Active
               </p>
             </div>
-            <div
+            {/* <div
               className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
                 tab === "all" ? "purple" : "dgray"
               } hover:bg-purple border-2 border-white border-opacity-10`}
@@ -109,9 +109,9 @@ const validators = () => {
               >
                 All
               </p>
-            </div>
+            </div> */}
 
-            <div
+            {/* <div
               className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
                 tab === "experimental" ? "purple" : "dgray"
               } hover:bg-purple border-2 border-white border-opacity-10`}
@@ -124,7 +124,7 @@ const validators = () => {
               >
                 Experimental
               </p>
-            </div>
+            </div> */}
 
             <div
               className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${

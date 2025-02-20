@@ -135,9 +135,9 @@
     "status": "https://www.mintscan.io/osmosis/validators/osmovaloper1d5ada26tcd24wltfakqkkdu3656k6n4chnyz8h",
     "stake": "https://wallet.keplr.app/chains/osmosis?modal=validator&chain=osmosis-1&validator_address=osmovaloper1d5ada26tcd24wltfakqkkdu3656k6n4chnyz8h",
     "autoCompound": "",
-    "stat": "active",
+    "stat": "decommissioned",
     "addr": "osmovaloper1d5ada26tcd24wltfakqkkdu3656k6n4chnyz8h",
-    "active": true
+    "active": false
   },
   {
     "icon": "/validator_chains/passage.png",
@@ -205,9 +205,9 @@
     "status": "https://www.mintscan.io/teritori/validators/torivaloper1dyduggaqthztgm8tnk59flkeu3l3qvpzhhd6hn",
     "stake": "https://app.rebuschain.com/staking",
     "autoCompound": "",
-    "stat": "active",
+    "stat": "decommissioned",
     "addr": "torivaloper1dyduggaqthztgm8tnk59flkeu3l3qvpzhhd6hn",
-    "active": true
+    "active": false
   },
   {
     "icon": "/validator_chains/namada.png",
@@ -253,16 +253,30 @@
   },
   {
     "icon": "/validator_chains/atomone.png",
-    "title": "Atom One",
+    "title": "AtomOne",
     "network": "atone",
-    "tokens": 0,
+    "tokens": 93775.75,
     "symbol": "ATONE",
     "commission": "5%",
     "status": "https://explorer.allinbits.services/atomone/staking/atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
     "stake": "https://explorer.allinbits.services/atomone/staking/atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
     "autoCompound": "",
     "stat": "active",
-    "addr": "",
+    "addr": "atone10unx6s0cdqntvrumd5hs07rgd5ytcztqun3e53",
+    "active": true
+  },
+  {
+    "icon": "/validator_chains/govgen.png",
+    "title": "GovGen",
+    "network": "govgen",
+    "tokens": 704098.56,
+    "symbol": "GOVGEN",
+    "commission": "5%",
+    "status": "https://explorer.nodeshub.online/govgen/staking/govgenvaloper1p454fm4rerxddn0uppen8hvckceylf7phx9xzt",
+    "stake": "",
+    "autoCompound": "",
+    "stat": "active",
+    "addr": "govgenvaloper1p454fm4rerxddn0uppen8hvckceylf7phx9xzt",
     "active": true
   }
 ]

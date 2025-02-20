@@ -203,9 +203,14 @@ export default function Nav() {
                   Endpoints
                 </Link>
 
-                <Link
-                  href={"/infrastructure/snapshot"}
-                  className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-dgray hover:bg-lgray text-white`}
+                <div
+                  onClick={() =>
+                    window.open(
+                      "https://relayers.smartstake.io/relayer/44937E3DA9AA699A",
+                      "_blank"
+                    )
+                  }
+                  className={`group flex gap-2 py-4 pl-4 pr-5 items-center bg-dgray hover:bg-lgray text-white`}
                 >
                   <div className="w-8 h-8 flex items-center justify-center">
                     <svg
@@ -224,7 +229,30 @@ export default function Nav() {
                     </svg>
                   </div>
                   Relayers
-                </Link>
+                  <div className="ml-6">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="fill-[#333333]"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M13.4783 3C13.4783 2.44772 13.926 2 14.4783 2H21C21.5523 2 22 2.44772 22 3V9.02007C22 9.57235 21.5523 10.0201 21 10.0201C20.4477 10.0201 20 9.57235 20 9.02007V5.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L18.5858 4H14.4783C13.926 4 13.4783 3.55228 13.4783 3Z"
+                        fill=""
+                      />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M2 5C2 3.34315 3.34314 2 5 2H8.82353C9.37581 2 9.82353 2.44772 9.82353 3C9.82353 3.55228 9.37581 4 8.82353 4H5C4.44772 4 4 4.44771 4 5V19C4 19.5523 4.44772 20 5 20H19C19.5523 20 20 19.5523 20 19V14.6471C20 14.0948 20.4477 13.6471 21 13.6471C21.5523 13.6471 22 14.0948 22 14.6471V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5Z"
+                        fill=""
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             )}
           </div>

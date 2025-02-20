@@ -66,7 +66,7 @@ const RpcCard = ({ icon, title, endpoints }: Props) => {
                 className="flex items-center justify-between w-full bg-[#1F1F1F] pl-4 pr-2 py-2 rounded gap-2"
               >
                 {copiedIndex === i ? (
-                  <p>Copied to clipboard!</p>
+                  <p className="text-white">Copied to clipboard!</p>
                 ) : (
                   <p className="w-full overflow-hidden">{endpoint}</p>
                 )}

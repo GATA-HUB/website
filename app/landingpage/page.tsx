@@ -43,6 +43,7 @@ const LandingPage = () => {
 
   const [delegation, setDelegation] = useState("0");
   const [isLoading, setIsLoading] = useState(false);
+  const [activeValidators, setActiveValidators] = useState(0);
 
   const MemberCard = dynamic(
     () => import("../components/landing-page/MemberCard"),
@@ -96,6 +97,18 @@ const LandingPage = () => {
     };
 
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
+    let count = 0;
+    initialVals.map((val) => {
+      if (val.active) {
+        count++;
+      }
+    });
+
+    setActiveValidators(count);
   }, []);
 
   return (
@@ -698,7 +711,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/validator.svg" />
             </div>
             <h2 className="text-lpurple text-[40px] xl:text-[64px] font-bold">
-              11
+              {activeValidators}
             </h2>
             <p>Active Validator</p>
           </div>
