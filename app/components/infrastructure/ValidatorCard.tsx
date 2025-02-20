@@ -64,7 +64,7 @@ const ValidatorCard = ({
     };
 
     fetchDelegation();
-  }, []);
+  }, [addr, network]);
 
   useEffect(() => {
     const fetchPrices = async () => {
@@ -81,7 +81,7 @@ const ValidatorCard = ({
     };
 
     fetchPrices();
-  }, []);
+  }, [symbol]);
 
   return (
     <motion.div
@@ -150,7 +150,9 @@ const ValidatorCard = ({
               ) : (
                 <div className="flex gap-1">
                   <p className="font-bold text-purple">
-                    {delegation !== 0 ? handlePriceFormat(delegation) : tokens}
+                    {delegation !== 0
+                      ? handlePriceFormat(delegation)
+                      : handlePriceFormat(tokens)}
                   </p>
                   {/* {tokens === "ICS Chain" ? null : (
                     <p className="font-bold text-purple">{symbol}</p>

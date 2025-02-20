@@ -1,10 +1,5 @@
 [
     {
-      "icon": "/validator_chains/archway.png",
-      "title": "Archway",
-      "endpoints": ["Decommissioned"]
-    },
-    {
       "icon": "/validator_chains/akt.png",
       "title": "Akash",
       "endpoints": ["https://akash-rpc.gatadao.com/", "https://akash-api.gatadao.com/", "https://akash-grpc.gatadao.com/"]
@@ -13,16 +8,6 @@
       "icon": "/validator_chains/cosmos.png",
       "title": "Cosmos",
       "endpoints": ["https://cosmoshub-rpc.gatadao.com/", "https://cosmoshub-api.gatadao.com/", "https://cosmoshub-grpc.gatadao.com/"]
-    },
-    {
-        "icon": "/validator_chains/dym.png",
-        "title": "Dymension",
-        "endpoints": ["https://dymension-rpc.gatadao.com/"]
-    },
-    {
-      "icon": "/validator_chains/evmos.png",
-      "title": "Evmos",
-      "endpoints": ["Decommissioned"]
     },
     {
       "icon": "/validator_chains/nomic.png",
@@ -60,11 +45,6 @@
       "endpoints": ["https://stride-rpc.gatadao.com/", "https://stride-api.gatadao.com/", "https://stride-grpc.gatadao.com/"]
     },
     {
-      "icon": "/validator_chains/teri.png",
-      "title": "Teritori",
-      "endpoints": ["https://teritori-rpc.gatadao.com/"]
-    },
-    {
       "icon": "/validator_chains/cosmos.png",
       "title": "Cosmos Theta",
       "endpoints": ["https://rpc-theta-testnet-001.gatadao.com/", "https://api-theta-testnet-001.gatadao.com/", "https://grpc-theta-testnet-001.gatadao.com/"]
@@ -72,6 +52,21 @@
     {
       "icon": "/validator_chains/elys.png",
       "title": "Elys",
-      "endpoints": ["https://testnet-elys-rpc.gatadao.com/"]
+      "endpoints": ["https://elys-rpc.gatadao.com/"]
+    },
+    {
+      "icon": "/validator_chains/atomone.png",
+      "title": "AtomOne",
+      "endpoints": ["https://atomone-rpc.gatadao.com/", "https://atomone-api.gatadao.com/", "https://atomone-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/validator_chains/namada.png",
+      "title": "Namada",
+      "endpoints": ["https://namada-rpc.gatadao.com/"]
+    },
+    {
+      "icon": "/validator_chains/govgen.png",
+      "title": "GovGen",
+      "endpoints": ["https://govgen-rpc.gatadao.com/"]
     }
   ]
