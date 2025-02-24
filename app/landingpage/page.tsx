@@ -679,7 +679,7 @@ const LandingPage = () => {
             </div>
             <div className="flex gap-2 flex-wrap">
               <h2 className="text-green text-[40px] xl:text-[64px] font-bold leading-[40px]">
-                170K
+                201K
               </h2>
               <h3 className="text-green">USD</h3>
             </div>
@@ -691,9 +691,9 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/epoch.svg" />
             </div>
             <h2 className="text-red text-[40px] xl:text-[64px] font-bold">
-              58
+              31
             </h2>
-            <p>Epoch Distributed</p>
+            <p>Reward Months</p>
           </div>
 
           <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-4 lg:col-span-1 xl:col-span-3 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
@@ -721,7 +721,7 @@ const LandingPage = () => {
               <Image width={64} height={64} alt="icons" src="/relay.svg" />
             </div>
             <h2 className="text-yellow text-[40px] xl:text-[64px] font-bold">
-              281k+
+              451k+
             </h2>
             <p>IBC relayer transactions</p>
           </div>
