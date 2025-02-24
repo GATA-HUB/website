@@ -27,7 +27,7 @@ const page = () => {
     {
       network: "BTC",
       icon: "/validator_chains/btc.png",
-      quantity: 0.005,
+      quantity: 0.01,
       symbol: "nBTC",
     },
     {
@@ -93,11 +93,11 @@ const page = () => {
   const [yGataPrice, setYGataPrice] = useState("0");
 
   const price = Number(yGataPrice);
-  const lastAPR = 21;
-  const circulatingSupply = 14070000;
+  const lastAPR = 38;
+  const circulatingSupply = 14500000;
   const totalSupply = 21000000;
-  const communityPool = 6600000;
-  const stakedTokens = 11050000;
+  const communityPool = 5710000;
+  const stakedTokens = 12510000;
   const marketCap = circulatingSupply * price;
   const fdv = totalSupply * price;
 
