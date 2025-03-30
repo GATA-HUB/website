@@ -73,9 +73,16 @@ const YieldCrocsRewardCard = ({
       <div className="flex justify-between w-fit gap-4 sm:gap-8 items-center flex-wrap">
         <div className="flex gap-1 flex-col xl:items-end justify-center">
           <p className="font-bold text-purple">Epoch Reward</p>
-          <div className="flex items-end gap-2 flex-wrap">
-            <h3>{rewardSol}</h3>
-            <p className="text-gray">Stars/YP</p>
+          <div className="flex gap-2">
+            <div className="flex items-end gap-2 flex-wrap">
+              <h3>{rewardSol}</h3>
+              <p className="text-gray">SOL</p>
+            </div>
+            +
+            <div className="flex items-end gap-2 flex-wrap">
+              <h3>{rewardYGata}</h3>
+              <p className="text-gray">yGata</p>
+            </div>
           </div>
         </div>
 

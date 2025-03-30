@@ -24,8 +24,8 @@ interface Props {
 
 const YieldGorillaReward = ({ title, date, rewards, href }: Props) => {
   return (
-    <div className="flex flex-col gap-6 w-full">
-      <div className="flex items-center justify-between gap-4 w-full">
+    <div className="w-full flex flex-col gap-6">
+      <div className="w-full flex items-center justify-between gap-4">
         <div className="flex flex-col gap-2">
           <h3>{title}</h3>
           <div className="flex h-fit w-fit gap-[8px] pl-1 pr-3 py-1 items-center rounded-full bg-lgray border-2 border-white border-opacity-10">

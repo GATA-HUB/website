@@ -45,6 +45,15 @@
         "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws"
     },
     {
+        "image": "/nfts/GATA-Xmas-2024.jpg",
+        "name": "GATA Xmas Greetings 2024",
+        "desc": "As 2024 decides to take its leave, the time has come to celebrate! GATA HUB extends warm wishes to everyone who joined us on our rollercoaster journey through this wild year. Here's to you from the entire GATA HUB team - Merry Christmas, you wonderful catnip lovers!",
+        "collection": "Souvenirs collection",
+        "active": true,
+        "href" : "https://www.stargaze.zone/m/stars13u6ugmja48etdpy5gaf6hnkmx8gw05fkcg0wr9ry65qc5nm39cpqc3tt3x/tokens",
+        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-8-gata-xmas-greetings-2024"
+    },
+    {
         "image": "/nfts/10.gif",
         "name": "GATA Delegator Rewards 2024",
         "desc": "GATA HUB Delegator Reward NFTs for every GATA fam member who staked with GATA on various IBC chains.",
