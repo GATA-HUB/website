@@ -365,10 +365,11 @@ const Treasury = () => {
               <motion.div
                 ref={expanderWrap}
                 style={{
+                  width: "100%",
+                  height: "1080px",
                   position: "relative",
                   display: "flex",
                   flexDirection: "column",
-                  height: "1080px",
                   overflow: "hidden",
                 }}
                 animate={{
