@@ -45,6 +45,15 @@
         "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws"
     },
     {
+        "image": "/images/nfts/collections/gata3rdAnniversary.png",
+        "name": "GATA HUB: 3rd Anniversary",
+        "desc": "Celebrate 3 incredible years of GATA HUB with this special Open Edition collection! Mint your free commemorative NFT from March 11th, 4 PM UTC to March 18th, 4 PM UTC and be part of the legacy.",
+        "collection": "Souvenirs collection",
+        "active": true,
+        "href" : "https://omniflix.market/c/nonTransferable/onftdenom5841d7530dfd4dd0b61093389896aae8",
+        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-9-gata-3rd-anniversary"
+    },
+    {
         "image": "/images/nfts/collections/GATA-Xmas-2024.jpg",
         "name": "GATA Xmas Greetings 2024",
         "desc": "As 2024 decides to take its leave, the time has come to celebrate! GATA HUB extends warm wishes to everyone who joined us on our rollercoaster journey through this wild year. Here's to you from the entire GATA HUB team - Merry Christmas, you wonderful catnip lovers!",

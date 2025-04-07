@@ -53,11 +53,12 @@ const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        borderRadius: "16px",
-        background: "#0F0F0F",
-        border: "solid 2px rgba(255, 255, 255, 0.1)",
+        borderRadius: "8px",
+        background: "#000",
+        border: "solid 1px rgba(255, 255, 255, 0.1)",
         cursor: "pointer",
         zIndex: 0,
+        overflow: "hidden",
       }}
       whileHover={{
         scale: 1.06,
@@ -66,8 +67,8 @@ const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
     >
       <div className="relative flex flex-col h-full justify-between">
         <div className="flex flex-col w-full">
-          <div className="flex justify-center items-center overflow-hidden p-1">
-            <div className="relative flex w-full aspect-square items-center justify-center rounded-[8px] overflow-hidden">
+          <div className="flex justify-center items-center overflow-hidden">
+            <div className="relative flex w-full aspect-square items-center justify-center overflow-hidden">
               {image ? (
                 <Image
                   layout="fill"
