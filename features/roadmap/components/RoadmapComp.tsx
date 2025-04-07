@@ -70,6 +70,7 @@ const RoadmapComp = ({ title, desc, content, state, index }: Props) => {
           style={{
             background:
               "linear-gradient(90deg, rgba(15, 15, 15, 0) 0%, #0F0F0F 50%)",
+            zIndex: "1",
           }}
           className="absolute right-0 w-1/2 h-24"
         />
@@ -80,7 +81,7 @@ const RoadmapComp = ({ title, desc, content, state, index }: Props) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            zIndex: "-10",
+            zIndex: "0",
           }}
           animate={{
             rotate: active ? -360 : 0,
@@ -117,6 +118,7 @@ const RoadmapComp = ({ title, desc, content, state, index }: Props) => {
             justifyContent: "center",
             alignItems: "center",
             zIndex: "10",
+            cursor: "pointer",
           }}
           animate={{ rotate: active ? 45 : 0 }}
         >

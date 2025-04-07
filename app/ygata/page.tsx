@@ -370,7 +370,7 @@ const page = () => {
                 style={{
                   minWidth: "1920px",
                 }}
-                src="/ygataBg2.jpg"
+                src="/images/bgs/ygata/ygataBg2.jpg"
                 width={1920}
                 height={637}
                 quality={100}
