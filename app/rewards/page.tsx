@@ -1,67 +1,25 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import GataRewards from "../components/reward/GataRewards";
-import YieldGorillaReward from "../components/reward/YieldGorillaReward";
 // import YGMonthlyRewardCard from "../components/reward/YGMonthlyRewardCard";
 import Image from "next/image";
-import gataEpochData from "../../public/data/gatarevenue.json";
-import ygEpochData from "../../public/data/ygepoch.json";
-import ypEpochData from "../../public/data/ypReward.json";
+import gataEpochData from "../../features/reward/data/gatarevenue.json";
+import ygEpochData from "../../features/reward/data/ygepoch.json";
+import ypEpochData from "../../features/reward/data/ypReward.json";
 import { motion } from "framer-motion";
-import { SecondaryButton } from "../components/Button";
-import YPEpoch from "../components/reward/YPEpoch";
-import Tab from "../components/Tab";
-import yieldCrocsEpoch from "../../public/data/yieldCrocsEpoch.json";
-import YieldCrocsReward from "../components/reward/YieldCrocsReward";
-
-interface GataEpoch {
-  title: string;
-  desc: string;
-  atomeDist: number;
-  date: string;
-  href: string;
-}
-
-interface Nfts {
-  icon: string;
-  title: string;
-}
-
-interface Reward {
-  nfts: Nfts[];
-  rewardSol: number;
-  rewardYGata: number;
-  revenue: number;
-}
-
-interface YGReward {
-  nfts: Nfts[];
-  reward: number;
-  revenue: number;
-}
-
-interface YGEpoch {
-  title: string;
-  date: string;
-  href: string;
-  rewards: YGReward[];
-}
-
-interface YCEpoch {
-  title: string;
-  date: string;
-  href: string;
-  rewards: Reward[];
-}
+import { SecondaryButton } from "../../features/common/components/Button";
+import Tab from "../../features/common/components/Tab";
+import yieldCrocsEpoch from "../../features/reward/data/yieldCrocsEpoch.json";
+import YieldCrocsReward from "@/features/reward/components/YieldCrocsReward";
+import YPEpoch from "@/features/reward/components/YPEpoch";
+import YieldGorillaReward from "@/features/reward/components/YieldGorillaReward";
+import GataRewards from "@/features/reward/components/GataRewards";
+import { GataEpoch, YCEpoch, YGEpoch } from "@/types";
 
 const Treasury = () => {
   const initialGataEpoch: GataEpoch[] = gataEpochData;
-
   const initialYGEpoch: YGEpoch[] = ygEpochData;
-
   const initialYPEpoch: YGEpoch[] = ypEpochData;
-
   const initialYeildCrocsEpoch: YCEpoch[] = yieldCrocsEpoch;
 
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -184,7 +142,7 @@ const Treasury = () => {
             style={{
               minWidth: "1920px",
             }}
-            src="/rewardsBg.jpg"
+            src="/images/headers/rewardsBg.jpg"
             width={1920}
             height={960}
             quality={100}
@@ -223,7 +181,7 @@ const Treasury = () => {
                   height={32}
                   loading="lazy"
                   alt=""
-                  src="/title-decor.svg"
+                  src="/images/common/title-decor.svg"
                 />
                 <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
                   <h2 className="text-green">YCs Reward</h2>
@@ -288,7 +246,7 @@ const Treasury = () => {
                   height={32}
                   loading="lazy"
                   alt=""
-                  src="/title-decor.svg"
+                  src="/images/common/title-decor.svg"
                 />
                 <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
                   <h2 className="text-green">YPs Reward</h2>
@@ -353,7 +311,7 @@ const Treasury = () => {
                   height={32}
                   loading="lazy"
                   alt=""
-                  src="/title-decor.svg"
+                  src="/images/common/title-decor.svg"
                 />
                 <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
                   <h2 className="text-green">YGs Reward</h2>
@@ -412,7 +370,7 @@ const Treasury = () => {
                   height={32}
                   loading="lazy"
                   alt=""
-                  src="/title-decor.svg"
+                  src="/images/common/title-decor.svg"
                 />
                 <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
                   <h2 className="text-green">GATA Revenue</h2>

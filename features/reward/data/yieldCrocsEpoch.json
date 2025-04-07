@@ -1,0 +1,188 @@
+[ 
+    {
+      "title": "YC Epoch 03",
+      "date": "1st March 2025",
+      "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-crocs/yc-reward-distribution#epoch-3",
+      "rewards": [
+        {
+          "nfts": [
+            {
+              "icon": "/images/nfts/reward/yield-crocs/ycfire.png",
+              "title": "Fire Croc"
+            }
+          ],
+          "rewardSol": 0.0009,
+          "rewardYGata": 7.5,
+          "revenue": 5
+        },
+        {
+          "nfts": [
+            {
+              "icon": "/images/nfts/reward/yield-crocs/ycwater.png",
+              "title": "Water Croc"
+            }
+          ],
+          "rewardSol": 0.00072,
+          "rewardYGata": 6,
+          "revenue": 4
+        },
+        {
+          "nfts": [
+            {
+              "icon": "/images/nfts/reward/yield-crocs/ycgold.png",
+              "title": "Golden Croc"
+            }
+          ],
+          "rewardSol": 0.00054,
+          "rewardYGata": 4.5,
+          "revenue": 3
+        },
+        {
+          "nfts": [
+            {
+              "icon": "/images/nfts/reward/yield-crocs/ycsilver.png",
+              "title": "Silver Croc"
+            }
+          ],
+          "rewardSol": 0.00036,
+          "rewardYGata": 3,
+          "revenue": 2
+        },
+        {
+          "nfts": [
+            {
+              "icon": "/images/nfts/reward/yield-crocs/ycearth.png",
+              "title": "Earth Croc"
+            }
+          ],
+          "rewardSol": 0.00018,
+          "rewardYGata": 1.5,
+          "revenue": 1
+        }
+      ]
+    },
+     {
+        "title": "YC Epoch 02",
+        "date": "1st February 2025",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-crocs/yc-reward-distribution#epoch-2",
+        "rewards": [
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycfire.png",
+                "title": "Fire Croc"
+              }
+            ],
+            "rewardSol": 0.00074,
+            "rewardYGata": 7.5,
+            "revenue": 5
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycwater.png",
+                "title": "Water Croc"
+              }
+            ],
+            "rewardSol": 0.00057,
+            "rewardYGata": 6,
+            "revenue": 4
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycgold.png",
+                "title": "Golden Croc"
+              }
+            ],
+            "rewardSol": 0.00043,
+            "rewardYGata": 4.5,
+            "revenue": 3
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycsilver.png",
+                "title": "Silver Croc"
+              }
+            ],
+            "rewardSol": 0.00028,
+            "rewardYGata": 3,
+            "revenue": 2
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycearth.png",
+                "title": "Earth Croc"
+              }
+            ],
+            "rewardSol": 0.00014,
+            "rewardYGata": 1.5,
+            "revenue": 1
+          }
+        ]
+      },
+      {
+        "title": "YC Epoch 01",
+        "date": "1st January 2025",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-crocs/yc-reward-distribution#epoch-1",
+        "rewards": [
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycfire.png",
+                "title": "Fire Croc"
+              }
+            ],
+            "rewardSol": 0.0011,
+            "rewardYGata": 11,
+            "revenue": 5
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycwater.png",
+                "title": "Water Croc"
+              }
+            ],
+            "rewardSol": 0.00088,
+            "rewardYGata": 8.8,
+            "revenue": 4
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycgold.png",
+                "title": "Golden Croc"
+              }
+            ],
+            "rewardSol": 0.0066,
+            "rewardYGata": 6.6,
+            "revenue": 3
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycsilver.png",
+                "title": "Silver Croc"
+              }
+            ],
+            "rewardSol": 0.0044,
+            "rewardYGata": 4.4,
+            "revenue": 2
+          },
+          {
+            "nfts": [
+              {
+                "icon": "/images/nfts/reward/yield-crocs/ycearth.png",
+                "title": "Earth Croc"
+              }
+            ],
+            "rewardSol": 0.0022,
+            "rewardYGata": 2.2,
+            "revenue": 1
+          }
+        ]
+      }
+]

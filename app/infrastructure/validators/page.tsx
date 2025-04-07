@@ -1,32 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import ValidatorCard from "../../components/infrastructure/ValidatorCard";
 import Image from "next/image";
-import ValData from "../../../public/data/validators.json";
+import ValData from "../../../features/infrastructure/data/validators.json";
 import Template from "../../template";
-
-interface Validator {
-  icon: string;
-  title: string;
-  network: string;
-  tokens: number;
-  symbol: string;
-  commission: string;
-  status?: string;
-  stake?: string;
-  autoCompound?: string;
-  stat: string;
-  addr: string;
-  active: boolean;
-}
+import ValidatorCard from "@/features/infrastructure/components/ValidatorCard";
+import { Validator } from "@/types";
 
 const validators = () => {
   const initialNFTs: Validator[] = ValData;
 
   const [vals, setVals] = useState<Validator[]>(initialNFTs);
   const [tab, setTab] = useState("active");
-  const [totalStakedAsset, setTotalStakedAsset] = useState(0);
 
   const handleTab = (ValSet: string) => {
     let updatedVals: Validator[];
@@ -53,7 +38,7 @@ const validators = () => {
             style={{
               minWidth: "1920px",
             }}
-            src="/valBg.jpg"
+            src="/images/headers/valBg.jpg"
             width={1920}
             height={960}
             quality={100}
@@ -74,7 +59,7 @@ const validators = () => {
               height={32}
               loading="lazy"
               alt=""
-              src="/title-decor.svg"
+              src="/images/common/title-decor.svg"
             />
             <div className="flex gap-8">
               <h2 className="text-red">Validators</h2>

@@ -1,30 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import NftCard from "../components/nft-collections/NftCard";
+import NftCard from "../../features/nft-collection/components/NftCard";
 import Template from "../template";
-import { TertiaryButton } from "../components/Button";
 import Image from "next/image";
-import nftData from "../../public/data/nfts.json";
-
-interface NFT {
-  image: string;
-  name: string;
-  desc?: string;
-  collection: string;
-  active: boolean;
-  href: string;
-  details: string;
-}
+import nftData from "../../features/nft-collection/data/nfts.json";
+import { NFTCollection } from "@/types";
 
 const NftCollection = () => {
-  const initialNFTs: NFT[] = nftData;
+  const initialNFTs: NFTCollection[] = nftData;
 
-  const [nfts, setNfts] = useState<NFT[]>(initialNFTs);
+  const [nfts, setNfts] = useState<NFTCollection[]>(initialNFTs);
   const [tab, setTab] = useState("all");
 
   const handleCollection = (collectionName: string) => {
-    let updatedNFTs: NFT[];
+    let updatedNFTs: NFTCollection[];
 
     if (collectionName === "all") {
       updatedNFTs = nfts.map((nft) => ({ ...nft, active: true }));
@@ -42,19 +32,13 @@ const NftCollection = () => {
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
-      {/* <div className="absolute z-[-1] top-[800px] right-0">
-        <img src="/bg-waves.png" alt="" loading="lazy" />
-      </div> */}
       <div className="relative flex w-full h-[960px] items-center ">
         <div className="absolute w-full h-full overflow-hidden flex justify-center">
           <Image
             style={{
               minWidth: "1920px",
             }}
-            src="/nftCollBg.jpg"
-            // layout="fill"
-            // objectFit="cover"
-            // objectPosition="center"
+            src="/images/headers/nftCollBg.jpg"
             width={1920}
             height={960}
             quality={100}
@@ -75,7 +59,7 @@ const NftCollection = () => {
               alt=""
               width={222}
               height={32}
-              src="/title-decor.svg"
+              src="/images/common/title-decor.svg"
               loading="lazy"
             />
             <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
@@ -87,12 +71,6 @@ const NftCollection = () => {
                 Some pay revenue share to the holders, some generate DeFi Yield
                 and some are memorial
               </p>
-              {/* <div className="flex gap-[4px] items-center justify-center">
-                <p>For more details visit GATA HUB</p>
-                <TertiaryButton>gitbook</TertiaryButton>
-                <p>or</p>
-                <TertiaryButton>GATA Paper</TertiaryButton>
-              </div> */}
             </div>
           </div>
 
