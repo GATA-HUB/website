@@ -14,7 +14,7 @@ interface Props {
 
 const GataRewards = ({ title, desc, atomeDist, date, href }: Props) => {
   return (
-    <div className="inline-block mr-2 w-[256px] lg:w-[448px] p-4 lg:p-6 rounded-[16px] bg-dgray border-2 border-white border-opacity-10">
+    <div className="inline-block mr-2 w-[256px] lg:w-[448px] p-4 lg:p-6 rounded-[16px] bg-black border-[1px] border-white border-opacity-10">
       <div className="w-full flex flex-col gap-4">
         <div className="w-full px-4">
           <Image
@@ -34,7 +34,7 @@ const GataRewards = ({ title, desc, atomeDist, date, href }: Props) => {
             <p className="font-semibold text-purple">Atom Distribution</p>
             <h5>{atomeDist} Atoms</h5>
           </div>
-          <div className="flex h-fit w-fit gap-[8px] pl-1 pr-3 py-1 items-center rounded-full bg-lgray border-2 border-white border-opacity-10">
+          <div className="flex h-fit w-fit gap-[8px] pl-1 pr-3 py-1 items-center rounded-full bg-dgray border-[1px] border-white border-opacity-10">
             <Image
               width={20}
               height={20}

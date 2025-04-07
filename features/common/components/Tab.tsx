@@ -14,19 +14,19 @@ const Tab = ({ currentTab, setCurrentTab, tabs }: Props) => {
   };
 
   return (
-    <div className="w-fit flex gap-1 sm:gap-1 justify-center items-center p-1 bg-black border-2 border-white border-opacity-10 rounded-full">
+    <div className="w-fit flex gap-1 sm:gap-1 justify-center items-center p-1 bg-black border-[1px] border-white border-opacity-10 rounded-full">
       {tabs.map((tab, i) => {
         return (
           <div
             key={i}
             className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
               currentTab === i ? "purple" : "black"
-            } hover:bg-purple border-2 border-white border-opacity-10`}
+            } hover:bg-purple border-[1px] border-white border-opacity-10`}
             onClick={() => handleTab(i)}
           >
             <p
-              className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                currentTab === i ? "black" : "white"
+              className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-black capitalize ${
+                currentTab === i ? "text-black" : "text-white"
               }`}
             >
               {tab}

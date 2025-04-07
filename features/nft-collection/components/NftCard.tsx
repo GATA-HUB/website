@@ -53,7 +53,7 @@ const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        borderRadius: "8px",
+        borderRadius: "16px",
         background: "#000",
         border: "solid 1px rgba(255, 255, 255, 0.1)",
         cursor: "pointer",
@@ -107,7 +107,7 @@ const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
                 </p>
               ) : null}
             </div>
-            <div className="flex w-[fit-content] gap-2 items-center border-2 border-white border-opacity-10 rounded-full bg-lgray pl-[8px] pr-[16px] py-[4px]">
+            <div className="flex w-[fit-content] gap-2 items-center border-[1px] border-white border-opacity-10 rounded-full bg-dgray pl-[8px] pr-[16px] py-[4px]">
               <Image
                 width={16}
                 height={16}

@@ -1,17 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ValData from "../../../features/infrastructure/data/validators.json";
 import Template from "../../template";
 import ValidatorCard from "@/features/infrastructure/components/ValidatorCard";
-import { Validator } from "@/types";
+import { NFTCollection, Validator } from "@/types";
+import Tab from "@/features/common/components/Tab";
 
 const validators = () => {
   const initialNFTs: Validator[] = ValData;
 
   const [vals, setVals] = useState<Validator[]>(initialNFTs);
-  const [tab, setTab] = useState("active");
+  const [tab, setTab] = useState<number>(0);
+  const collectionTads: string[] = ["active", "decommissioned"];
 
   const handleTab = (ValSet: string) => {
     let updatedVals: Validator[];
@@ -27,8 +29,25 @@ const validators = () => {
     }
 
     setVals(updatedVals);
-    setTab(ValSet);
   };
+
+  useEffect(() => {
+    const selectedCollection = collectionTads[tab];
+
+    let updatedVals: Validator[];
+
+    if (selectedCollection === "all") {
+      updatedVals = vals.map((val) => ({ ...val, active: true }));
+    } else {
+      updatedVals = vals.map((val) =>
+        val.stat != selectedCollection
+          ? { ...val, active: false }
+          : { ...val, active: true }
+      );
+    }
+
+    setVals(updatedVals);
+  }, [tab]);
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
@@ -66,66 +85,7 @@ const validators = () => {
             </div>
           </div>
           {/* tab section */}
-          <div className="flex gap-1 sm:gap-1 justify-center items-center p-1 bg-black border-2 border-white border-opacity-10 rounded-full">
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "active" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleTab("active")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "active" ? "dgray" : "white"
-                }`}
-              >
-                Active
-              </p>
-            </div>
-            {/* <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "all" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleTab("all")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "all" ? "dgray" : "white"
-                }`}
-              >
-                All
-              </p>
-            </div> */}
-
-            {/* <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "experimental" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleTab("experimental")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "experimental" ? "dgray" : "white"
-                }`}
-              >
-                Experimental
-              </p>
-            </div> */}
-
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "decommissioned" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleTab("decommissioned")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "decommissioned" ? "dgray" : "white"
-                }`}
-              >
-                Decommissioned
-              </p>
-            </div>
-          </div>
+          <Tab setCurrentTab={setTab} tabs={collectionTads} currentTab={tab} />
 
           <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-2 sm:gap-2">
             {vals.map((val, i) => {

@@ -16,7 +16,7 @@ interface Props {
 
 const YGRewardCard = ({ nfts, reward, revenue }: Props) => {
   return (
-    <div className="w-full flex items-center gap-4 justify-between p-2 pr-[12px] rounded-[1rem] bg-dgray border-2 border-white border-opacity-10 flex-wrap">
+    <div className="w-full flex items-center gap-4 justify-between p-2 pr-[12px] rounded-[1rem] bg-black border-[1px] border-white border-opacity-10 flex-wrap">
       <div className="flex items-center w-fit gap-2 flex-wrap">
         <div className="flex items-center">
           {nfts.map((nft, i) => {
