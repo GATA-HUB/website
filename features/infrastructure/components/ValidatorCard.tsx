@@ -90,8 +90,8 @@ const ValidatorCard = ({
         width: "100%",
         height: "100%",
         borderRadius: "16px",
-        background: "#0F0F0F",
-        border: "solid 2px rgba(255, 255, 255, 0.1)",
+        background: "#000",
+        border: "solid 1px rgba(255, 255, 255, 0.1)",
         cursor: "pointer",
         zIndex: 0,
         overflow: "hidden",
@@ -162,7 +162,7 @@ const ValidatorCard = ({
                 <p>${currentPrice !== "NaN" ? currentPrice : 0}</p>
               )}
             </div>
-            <div className="flex h-fit gap-2 px-[8px] py-[4px] items-center rounded-full bg-lgray border-2 border-white border-opacity-10">
+            <div className="flex h-fit gap-2 px-[8px] py-[4px] items-center rounded-full bg-dgray border-[1px] border-white border-opacity-10">
               <Image
                 width={16}
                 height={16}

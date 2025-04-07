@@ -37,8 +37,8 @@ const EndpointsCard = ({ icon, title, endpoints }: Props) => {
         width: "100%",
         height: "100%",
         borderRadius: "16px",
-        background: "#0F0F0F",
-        border: "solid 2px rgba(255, 255, 255, 0.1)",
+        background: "#000",
+        border: "solid 1px rgba(255, 255, 255, 0.1)",
         zIndex: 0,
         overflow: "hidden",
       }}
@@ -62,7 +62,7 @@ const EndpointsCard = ({ icon, title, endpoints }: Props) => {
             return (
               <div
                 key={i}
-                className="flex items-center justify-between w-full bg-[#1F1F1F] pl-4 pr-2 py-2 rounded gap-2"
+                className="flex items-center justify-between w-full bg-black border-[1px] border-white border-opacity-10 pl-4 pr-2 py-2 rounded gap-2"
               >
                 {copiedIndex === i ? (
                   <p className="text-white">Copied to clipboard!</p>

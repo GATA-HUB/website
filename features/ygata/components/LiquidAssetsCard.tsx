@@ -87,7 +87,7 @@ const LiquidAssetsCard = ({
   };
 
   return (
-    <div className="w-full flex items-center justify-between px-6 py-3 rounded-2xl bg-dgray border-[1px] border-white border-opacity-10">
+    <div className="w-full flex items-center justify-between px-6 py-3 rounded-2xl bg-black border-[1px] border-white border-opacity-10">
       <div className="min-w-[40%] flex items-center gap-4">
         <div className="w-8 h-8 flex items-center justfiy-center">
           <Image src={icon} width={40} height={40} quality={100} alt="" />

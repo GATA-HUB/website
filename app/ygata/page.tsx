@@ -390,7 +390,7 @@ const page = () => {
             <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
               Token Distribution
             </h3>
-            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
               <p className="z-[1] text-white">Circulating Supply</p>
               <p className="z-[1] text-white">
                 {formatNumber(circulatingSupply)}
@@ -409,7 +409,7 @@ const page = () => {
               ></motion.div>
             </div>
 
-            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
               <p className="z-[1] text-white">Staked</p>
               <p className="z-[1] text-white">{formatNumber(stakedTokens)}</p>
               <motion.div
@@ -426,7 +426,7 @@ const page = () => {
               ></motion.div>
             </div>
 
-            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
               <p className="z-[1] text-white">DAO/CP</p>
               <p className="z-[1] text-white">{formatNumber(communityPool)}</p>
               <motion.div
@@ -448,7 +448,7 @@ const page = () => {
             <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
               Asset Allocation
             </h3>
-            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
               <p className="z-[1] text-white">Staked Assets</p>
               <p className="z-[1] text-white">
                 {formatNumber(stakedAssets)}{" "}
@@ -468,7 +468,7 @@ const page = () => {
               ></motion.div>
             </div>
 
-            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
               <p className="z-[1] text-white">Liquid Assets</p>
               <p className="z-[1] text-white">
                 {formatNumber(liquidAssets)}
@@ -488,7 +488,7 @@ const page = () => {
               ></motion.div>
             </div>
 
-            <div className="relative flex items-center justify-between p-6 rounded-xl bg-dgray overflow-hidden">
+            <div className="relative flex items-center justify-between p-6 rounded-xl bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
               <p className="z-[1] text-white">LP</p>
               <p className="z-[1] text-white">
                 {formatNumber(totalLPValue)}
@@ -564,11 +564,11 @@ const page = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col p-6 gap-6 rounded-2xl bg-dgray border-[1px] border-white border-opacity-10">
+          <div className="w-full flex flex-col p-6 gap-6 rounded-2xl bg-black border-[1px] border-white border-opacity-10">
             <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
               NFT Value
             </h3>
-            <div className="w-full h-[2px] rounded bg-lgray" />
+            <div className="w-full h-[1px] rounded bg-white bg-opacity-10" />
 
             <div className="w-full h-full overflow-y-scroll overflow-x-hidden flex flex-col gap-2">
               {initialNFTVal.map((nftVal, i) => {

@@ -26,7 +26,7 @@ function YGMonthlyRewardCard({
   return (
     <div
       onClick={() => window.open(href, "_blank")}
-      className="w-full flex flex-col lg:flex-row lg:items-center gap-4 justify-between px-4 py-4 rounded-[1rem] bg-dgray border-2 border-white border-opacity-10 flex-wrap cursor-pointer"
+      className="w-full flex flex-col lg:flex-row lg:items-center gap-4 justify-between px-4 py-4 rounded-[1rem] bg-black border-[1px] border-white border-opacity-10 flex-wrap cursor-pointer"
     >
       <div className="flex flex-col sm:flex-row gap-4 sm:items-center w-fit">
         <div className="flex justify-center items-center rounded-full">

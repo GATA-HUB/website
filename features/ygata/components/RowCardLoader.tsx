@@ -3,7 +3,7 @@ import React from "react";
 
 const RowCardLoader = () => {
   return (
-    <div className="w-full flex gap-4 p-2 pl-4 rounded-2xl items-center bg-dgray border-[1px] border-white border-opacity-10">
+    <div className="w-full flex gap-4 p-2 pl-4 rounded-2xl items-center bg-black border-[1px] border-white border-opacity-10">
       <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
         <motion.div
           style={{
