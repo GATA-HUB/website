@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import RoadmapComp from "../components/roadmap/RoadmapComp";
 import Image from "next/image";
-import roadmapData from "../../public/data/roadmap.json";
+import roadmapData from "../../features/roadmap/data/roadmap.json";
+import RoadmapComp from "@/features/roadmap/components/RoadmapComp";
 
 interface Points {
   point: string;
@@ -24,7 +24,7 @@ interface RoadmapMain {
 const Roadmap = () => {
   const initialPoint: RoadmapMain[] = roadmapData;
 
-  const RoadmapCout = initialPoint.length;
+  const RoadmapCount = initialPoint.length;
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
@@ -38,7 +38,7 @@ const Roadmap = () => {
             priority={true}
             width={1888}
             height={522}
-            src="/common-header.png"
+            src="/images/headers/common-header.png"
           />
         </>
       </div>
@@ -62,10 +62,10 @@ const Roadmap = () => {
                       desc={point.desc}
                       content={point.content}
                       state={true}
-                      i={i}
+                      index={i}
                     />
                   );
-                } else if (i === RoadmapCout - 1) {
+                } else if (i === RoadmapCount - 1) {
                   return (
                     <RoadmapComp
                       key={i}
@@ -73,7 +73,7 @@ const Roadmap = () => {
                       desc={point.desc}
                       content={point.content}
                       state={false}
-                      i={1}
+                      index={1}
                     />
                   );
                 } else {
@@ -84,7 +84,7 @@ const Roadmap = () => {
                       desc={point.desc}
                       content={point.content}
                       state={false}
-                      i={2}
+                      index={2}
                     />
                   );
                 }

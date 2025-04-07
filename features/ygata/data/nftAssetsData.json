@@ -1,0 +1,14 @@
+[
+    {
+        "network": "GATAc",
+        "icon": "/images/validators/gata.png",
+        "quantity": 0,
+        "usdValue": 0
+      },
+      {
+        "network": "GATAv",
+        "icon": "/images/validators/gata.png",
+        "quantity": 0,
+        "usdValue": 0
+      }
+]

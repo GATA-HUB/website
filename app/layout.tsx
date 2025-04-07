@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Mono, Titillium_Web } from "next/font/google";
 import "./globals.css";
-import Nav from "./components/Nav";
-import Footer from "@/app/components/Footer";
+import Nav from "../features/common/components/Nav";
+import Footer from "@/features/common/components/Footer";
 
 const spacemono = Space_Mono({
   subsets: ["latin"],

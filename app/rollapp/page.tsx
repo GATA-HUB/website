@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { SecondaryButton } from "../components/Button";
+import { SecondaryButton } from "../../features/common/components/Button";
 
 const page = () => {
   return (
@@ -13,10 +13,7 @@ const page = () => {
             style={{
               minWidth: "1920px",
             }}
-            src="/rollAppBann.jpg"
-            // layout="fill"
-            // objectFit="cover"
-            // objectPosition="center"
+            src="/images/headers/rollAppBann.jpg"
             width={1920}
             height={960}
             quality={100}
