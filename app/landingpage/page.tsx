@@ -387,7 +387,7 @@ const LandingPage = () => {
         </section>
 
         {/* Team section */}
-        <section className="flex flex-col gap-[64px] items-center">
+        <section className="flex flex-col gap-[64px] items-center ">
           <div className="flex flex-col gap-[16px] items-center">
             <Image
               width={222}
