@@ -19,6 +19,7 @@ import nftAssetsData from "../../features/ygata/data/nftAssetsData.json";
 import { formatNumber } from "@/actions/formatNumber";
 import { formatPrice } from "@/actions/formatPrice";
 import ManagedLiquidityCard from "@/features/ygata/components/ManagedLiquidityCard";
+import { fetchCoingeckoPrice } from "@/api/fetchCoingeckoPrice";
 
 const page = () => {
   const initialLiquidity: Liquidity[] = liquidityData;
@@ -36,6 +37,7 @@ const page = () => {
   const [stakedQuantities, setStakedQuantities] = useState<number[]>([]);
   const [stakedQuantity, setStakedQuantity] = useState<number>(0);
   const [liquidityQuantities, setLiquidityQuantities] = useState<number[]>([]);
+  const [coingecko, setCoingecko] = useState("0");
   // const [liquidityQuantity, setLiquidityQuantity] = useState<number>(0);
   const [loading, setLoading] = useState(false);
   const [yGataPrice, setYGataPrice] = useState("0");
@@ -141,24 +143,34 @@ const page = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
+  const fetchOsmosisPrices = async () => {
+    // setLoading(true);
+    const updatedTokens = await fetchTokenPriceV2("YGATA");
+    const roundedPrice =
+      updatedTokens !== null ? parseFloat(updatedTokens).toFixed(5) : null;
+    if (roundedPrice) {
+      setYGataPrice(roundedPrice);
+    } else {
+      setYGataPrice("0");
+    }
+    // setLoading(false);
+  };
   useEffect(() => {
-    const fetchPrices = async () => {
-      // setLoading(true);
-      const updatedTokens = await fetchTokenPriceV2("YGATA");
-      const roundedPrice =
-        updatedTokens !== null ? parseFloat(updatedTokens).toFixed(5) : null;
-      if (roundedPrice) {
-        setYGataPrice(roundedPrice);
-      } else {
-        setYGataPrice("0");
-      }
-      // setLoading(false);
-    };
-
-    fetchPrices();
+    fetchOsmosisPrices();
   }, []);
 
-  console.log(stakedQuantity);
+  const fetchCoingecko = async () => {
+    const updatedPrice = await fetchCoingeckoPrice();
+    const roundedPrice =
+      updatedPrice !== null ? parseFloat(updatedPrice).toFixed(5) : null;
+    if (roundedPrice) {
+      setCoingecko(roundedPrice);
+    }
+  };
+
+  useEffect(() => {
+    fetchCoingecko();
+  }, []);
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
@@ -205,26 +217,58 @@ const page = () => {
                 <h4>-</h4>
               )}
             </div>
-            <div className="flex gap-2 items-center cursor-pointer">
-              <Image
-                width={24}
-                height={24}
-                alt=""
-                src="/images/validators/osmosis.png"
-              />
-              <motion.h4
-                animate={{
-                  color: ["#7B5AFF", "#FF4874", "#7B5AFF"],
-                }}
-                transition={{
-                  duration: 2,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  repeatDelay: 1,
-                }}
-              >
-                {yGataPrice ? `${yGataPrice}/yGATA` : "-"}
-              </motion.h4>
+            <div className="flex gap-4">
+              <div className="w-fit flex gap-2 items-center cursor-pointer bg-black py-2 px-4 rounded-xl border-[1px] border-white border-opacity-10">
+                <Image
+                  width={24}
+                  height={24}
+                  alt=""
+                  src="/images/validators/osmosis.png"
+                />
+                {yGataPrice === "0" ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      repeatDelay: 0.3,
+                    }}
+                    className="w-32 h-4 bg-dgray rounded"
+                  ></motion.div>
+                ) : (
+                  <h4>
+                    {yGataPrice}
+                    <span className="text-purple"> /yGATA</span>
+                  </h4>
+                )}
+              </div>
+
+              <div className="w-fit flex gap-2 items-center cursor-pointer bg-black py-2 px-4 rounded-xl border-[1px] border-white border-opacity-10">
+                <Image
+                  width={24}
+                  height={24}
+                  alt=""
+                  src="/images/common/coingecko.png"
+                />
+                {coingecko === "0" ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      repeatDelay: 0.3,
+                    }}
+                    className="w-32 h-4 bg-dgray rounded"
+                  ></motion.div>
+                ) : (
+                  <h4>
+                    {coingecko}
+                    <span className="text-purple"> /yGATA</span>
+                  </h4>
+                )}
+              </div>
             </div>
           </div>
         </div>

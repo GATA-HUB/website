@@ -71,7 +71,7 @@ export const SecondaryButton = ({ children, href, width, disabled }: Props) => {
           onClick={href ? () => window.open(href, "_blank") : () => null}
           className={`w-${
             width || "fit"
-          } flex px-4 py-1 justify-center items-center text-center rounded-[4px] bg-dgray font-titillium font-semibold uppercase text-lgray text-[14px] sm:px-6 sm:py-2 3xl:px-[32px] 3xl:py-[8px] sm:text-[14px]`}
+          } flex px-4 py-1 justify-center items-center text-center rounded-[4px] bg-black font-titillium font-semibold uppercase text-lgray text-[14px] sm:px-6 sm:py-2 3xl:px-[32px] 3xl:py-[8px] sm:text-[14px]`}
         >
           {children}
         </div>
@@ -80,7 +80,7 @@ export const SecondaryButton = ({ children, href, width, disabled }: Props) => {
           onClick={href ? () => window.open(href, "_blank") : () => null}
           className={`w-${
             width || "fit"
-          } flex px-4 py-1 justify-center items-center text-center rounded-[4px] bg-dgray border-[1px] border-white border-opacity-10 font-titillium font-semibold uppercase text-white text-[14px] hover:border-purple hover:border-opacity-100 hover:text-white transition-all duration-300 ease-in-out cursor-pointer sm:px-6 sm:py-2 3xl:px-[32px] 3xl:py-[8px] sm:text-[14px]`}
+          } flex px-4 py-1 justify-center items-center text-center rounded-[4px] bg-black border-[1px] border-white border-opacity-10 font-titillium font-semibold uppercase text-white text-[14px] hover:border-purple hover:border-opacity-100 hover:text-white transition-all duration-300 ease-in-out cursor-pointer sm:px-6 sm:py-2 3xl:px-[32px] 3xl:py-[8px] sm:text-[14px]`}
         >
           {children}
         </div>

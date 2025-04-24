@@ -47,7 +47,7 @@ export default function Nav() {
 
   return (
     <div className="z-30 fixed top-0 left-0 w-full flex justify-center">
-      <nav className="relative w-full flex justify-center items-center border-[1px] border-white border-opacity-10 bg-black pl-[18px] pr-[18px] py-[8px]">
+      <nav className="relative w-full flex justify-center items-center border-y-[1px] border-white border-opacity-10 bg-black pl-[18px] pr-[18px] py-[8px]">
         <div className="flex w-full justify-between items-center max-w-[1880px]">
           {/* Logo */}
           <Link href={"/"} onClick={closeHumberger}>
