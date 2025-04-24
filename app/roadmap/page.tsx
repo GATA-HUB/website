@@ -31,13 +31,14 @@ const Roadmap = () => {
       {/* <div className="absolute z-[-1] top-[800px] right-0">
         <img src="/bg-waves.png" alt="" loading="lazy" />
       </div> */}
-      <div className="w-full px-4">
+      <div className="w-full">
         <>
           <Image
             alt=""
             priority={true}
-            width={1888}
-            height={522}
+            width={1920}
+            height={530}
+            quality={100}
             src="/images/headers/common-header.png"
           />
         </>

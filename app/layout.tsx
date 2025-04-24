@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`relative flex flex-col items-center w-full bg-black text-white ${spacemono.variable} ${titillium.variable}`}
       >
         <Nav />
-        <div className="mt-[84px] md:mt-[100px] lg:mt-[92px] max-w-[1920px] w-full">
+        <div className="mt-[50px] lg:mt-[58px] max-w-[1920px] w-full">
           {children}
         </div>
         <Footer />

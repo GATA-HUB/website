@@ -64,12 +64,12 @@ const RoadmapComp = ({ title, desc, content, state, index }: Props) => {
       </div>
       <div
         onClick={handleRoadmap}
-        className={`relative w-full flex items-center justify-between py-4 pl-4 pr-6 lg:py-6 lg:pl-6 lg:pr-8 bg-dgray border-2 border-white border-opacity-10 rounded-[1rem] overflow-hidden `}
+        className={`relative w-full flex items-center justify-between py-4 pl-4 pr-6 lg:py-6 lg:pl-6 lg:pr-8 bg-black border-[1px] border-white border-opacity-10 rounded-[1rem] overflow-hidden `}
       >
         <motion.div
           style={{
             background:
-              "linear-gradient(90deg, rgba(15, 15, 15, 0) 0%, #0F0F0F 50%)",
+              "linear-gradient(90deg, rgba(15, 15, 15, 0) 0%, #000 50%)",
             zIndex: "1",
           }}
           className="absolute right-0 w-1/2 h-24"
@@ -122,8 +122,8 @@ const RoadmapComp = ({ title, desc, content, state, index }: Props) => {
           }}
           animate={{ rotate: active ? 45 : 0 }}
         >
-          <span className="absolute w-6 h-1 bg-purple rounded-full" />
-          <span className="absolute w-1 h-6 bg-purple rounded-full" />
+          <span className="absolute w-4 h-[2px] bg-purple rounded-full" />
+          <span className="absolute w-[2px] h-4 bg-purple rounded-full" />
         </motion.div>
       </div>
 

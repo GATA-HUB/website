@@ -1,60 +1,175 @@
-[ {
-  "title": "YP Epoch 10",
-  "date": "1st February 2025",
-  "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws/yp-reward-distribution#yp-epoch-10",
-  "rewards": [
-    {
-      "nfts": [
-        {
-          "icon": "/images/nfts/reward/yield-paws/01.png",
-          "title": "Brown Fur"
-        }
-      ],
-      "reward": 216.0,
-      "revenue": 9
-    },
-    {
-      "nfts": [
-        {
-          "icon": "/images/nfts/reward/yield-paws/02.png",
-          "title": "Grey Fur"
-        }
-      ],
-      "reward": 108,
-      "revenue": 13.5
-    },
-    {
-      "nfts": [
-        {
-          "icon": "/images/nfts/reward/yield-paws/03.png",
-          "title": "Black Fur"
-        }
-      ],
-      "reward": 48,
-      "revenue": 16
-    },
-    {
-      "nfts": [
-        {
-          "icon": "/images/nfts/reward/yield-paws/04.png",
-          "title": "White Fur"
-        }
-      ],
-      "reward": 43,
-      "revenue": 18
-    },
-    {
-      "nfts": [
-        {
-          "icon": "/images/nfts/reward/yield-paws/05.png",
-          "title": "Orange Fur"
-        }
-      ],
-      "reward": 38,
-      "revenue": 43.5
-    }
-  ]
-},
+[ 
+  {
+    "title": "YP Epoch 12",
+    "date": "1st April 2025",
+    "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws/yp-reward-distribution#yp-epoch-12",
+    "rewards": [
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/01.png",
+            "title": "Brown Fur"
+          }
+        ],
+        "reward": 252,
+        "revenue": 9
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/02.png",
+            "title": "Grey Fur"
+          }
+        ],
+        "reward": 126,
+        "revenue": 13.5
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/03.png",
+            "title": "Black Fur"
+          }
+        ],
+        "reward": 56,
+        "revenue": 16
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/04.png",
+            "title": "White Fur"
+          }
+        ],
+        "reward": 50,
+        "revenue": 18
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/05.png",
+            "title": "Orange Fur"
+          }
+        ],
+        "reward": 46,
+        "revenue": 43.5
+      }
+    ]
+  },
+  {
+    "title": "YP Epoch 11",
+    "date": "1st March 2025",
+    "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws/yp-reward-distribution#yp-epoch-11",
+    "rewards": [
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/01.png",
+            "title": "Brown Fur"
+          }
+        ],
+        "reward": 216,
+        "revenue": 9
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/02.png",
+            "title": "Grey Fur"
+          }
+        ],
+        "reward": 108,
+        "revenue": 13.5
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/03.png",
+            "title": "Black Fur"
+          }
+        ],
+        "reward": 48,
+        "revenue": 16
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/04.png",
+            "title": "White Fur"
+          }
+        ],
+        "reward": 43,
+        "revenue": 18
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/05.png",
+            "title": "Orange Fur"
+          }
+        ],
+        "reward": 38,
+        "revenue": 43.5
+      }
+    ]
+  },
+  {
+    "title": "YP Epoch 10",
+    "date": "1st February 2025",
+    "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws/yp-reward-distribution#yp-epoch-10",
+    "rewards": [
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/01.png",
+            "title": "Brown Fur"
+          }
+        ],
+        "reward": 216.0,
+        "revenue": 9
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/02.png",
+            "title": "Grey Fur"
+          }
+        ],
+        "reward": 108,
+        "revenue": 13.5
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/03.png",
+            "title": "Black Fur"
+          }
+        ],
+        "reward": 48,
+        "revenue": 16
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/04.png",
+            "title": "White Fur"
+          }
+        ],
+        "reward": 43,
+        "revenue": 18
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-paws/05.png",
+            "title": "Orange Fur"
+          }
+        ],
+        "reward": 38,
+        "revenue": 43.5
+      }
+    ]
+  },
   {
     "title": "YP Epoch 09",
     "date": "1st January 2025",

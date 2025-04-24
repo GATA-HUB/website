@@ -112,7 +112,7 @@ const SABCard = ({
   };
 
   return (
-    <div className="w-full flex gap-4 p-2 pl-4 rounded-2xl items-center bg-dgray border-[1px] border-white border-opacity-10">
+    <div className="w-full flex gap-4 p-2 pl-4 rounded-2xl items-center bg-black border-[1px] border-white border-opacity-10">
       <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
         <div className="min-w-8 min-h-8 flex items-center justify-center">
           <Image src={icon} width={32} height={32} quality={100} alt="" />
@@ -141,7 +141,7 @@ const SABCard = ({
             {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
           </div>
         </div>
-        <div className="xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between bg-mgray px-3 py-2 xsm:py-1 rounded-lg">
+        <div className="xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between bg-dgray px-3 py-2 xsm:py-1 rounded-lg">
           <p className="text-white">USD value</p>
           {loading ? (
             <TextLoader />

@@ -1,5 +1,123 @@
 [
   {
+    "title": "YG Epoch 25",
+    "date": "1st April 2025",
+    "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-gorillas/yg-reward-distributions#yg-epoch-25",
+    "rewards": [
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/bull.png",
+            "title": "Bull"
+          },
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/legend.png",
+            "title": "Legend"
+          }
+        ],
+        "reward": 0.1,
+        "revenue": 12
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/mooned.png",
+            "title": "Mooned"
+          }
+        ],
+        "reward": 0.05,
+        "revenue": 15
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/bear.png",
+            "title": "Bear"
+          },
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/pump.png",
+            "title": "pump"
+          }
+        ],
+        "reward": 0.036,
+        "revenue": 30
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/neat.png",
+            "title": "Neat"
+          },
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/elemental.png",
+            "title": "Elemental"
+          }
+        ],
+        "reward": 0.01,
+        "revenue": 38
+      }
+    ]
+  },
+  {
+    "title": "YG Epoch 24",
+    "date": "1st March 2025",
+    "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-gorillas/yg-reward-distributions#yg-epoch-24",
+    "rewards": [
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/bull.png",
+            "title": "Bull"
+          },
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/legend.png",
+            "title": "Legend"
+          }
+        ],
+        "reward": 0.1,
+        "revenue": 12
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/mooned.png",
+            "title": "Mooned"
+          }
+        ],
+        "reward": 0.05,
+        "revenue": 15
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/bear.png",
+            "title": "Bear"
+          },
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/pump.png",
+            "title": "pump"
+          }
+        ],
+        "reward": 0.036,
+        "revenue": 30
+      },
+      {
+        "nfts": [
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/neat.png",
+            "title": "Neat"
+          },
+          {
+            "icon": "/images/nfts/reward/yield-gorilla/elemental.png",
+            "title": "Elemental"
+          }
+        ],
+        "reward": 0.01,
+        "revenue": 38
+      }
+    ]
+  },
+  {
       "title": "YG Epoch 23",
       "date": "1st February 2025",
       "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-gorillas/yg-reward-distributions#yg-epoch-23",

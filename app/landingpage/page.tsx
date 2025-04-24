@@ -211,7 +211,7 @@ const LandingPage = () => {
 
         {/* Gata Breif */}
         <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 grid grid-cols-2 sm:grid-cols-12 lg:grid-cols-4 xl:grid-cols-8 gap-2 items-center">
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 col-span-2 sm:col-span-5 lg:col-span-1 xl:col-span-3 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
+          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 col-span-2 sm:col-span-5 lg:col-span-1 xl:col-span-3 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -229,7 +229,7 @@ const LandingPage = () => {
             <p>Rewards Distributed</p>
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
+          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -244,7 +244,7 @@ const LandingPage = () => {
             <p>Reward Months</p>
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-4 lg:col-span-1 xl:col-span-3 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
+          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-4 lg:col-span-1 xl:col-span-3 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -259,7 +259,7 @@ const LandingPage = () => {
             <p>GATA Circulating Supply</p>
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
+          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -274,7 +274,7 @@ const LandingPage = () => {
             <p>Active Validator</p>
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
+          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -289,7 +289,7 @@ const LandingPage = () => {
             <p>IBC relayer transactions</p>
           </div>
 
-          <div className="w-full h-full flex flex-col col-span-2 sm:col-span-6 lg:col-span-3 xl:col-span-4 gap-[16px] p-4 xl:p-6 rounded-[16px] border-2 border-white border-opacity-10 bg-dgray">
+          <div className="w-full h-full flex flex-col col-span-2 sm:col-span-6 lg:col-span-3 xl:col-span-4 gap-[16px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -387,7 +387,7 @@ const LandingPage = () => {
         </section>
 
         {/* Team section */}
-        <section className="flex flex-col gap-[64px] items-center">
+        <section className="flex flex-col gap-[64px] items-center ">
           <div className="flex flex-col gap-[16px] items-center">
             <Image
               width={222}

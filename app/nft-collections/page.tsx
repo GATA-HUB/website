@@ -1,34 +1,58 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NftCard from "../../features/nft-collection/components/NftCard";
 import Template from "../template";
 import Image from "next/image";
 import nftData from "../../features/nft-collection/data/nfts.json";
 import { NFTCollection } from "@/types";
+import Tab from "@/features/common/components/Tab";
 
 const NftCollection = () => {
   const initialNFTs: NFTCollection[] = nftData;
 
   const [nfts, setNfts] = useState<NFTCollection[]>(initialNFTs);
-  const [tab, setTab] = useState("all");
+  const collectionTads: string[] = [
+    "all",
+    "Genesis GATA collection",
+    "Yield Series",
+    "Souvenirs collection",
+  ];
+  const [tab, setTab] = useState<number>(0);
 
-  const handleCollection = (collectionName: string) => {
+  // const handleCollection = (collectionName: string) => {
+  //   let updatedNFTs: NFTCollection[];
+
+  //   if (collectionName === "all") {
+  //     updatedNFTs = nfts.map((nft) => ({ ...nft, active: true }));
+  //   } else {
+  //     updatedNFTs = nfts.map((nft) =>
+  //       nft.collection != collectionName
+  //         ? { ...nft, active: false }
+  //         : { ...nft, active: true }
+  //     );
+  //   }
+
+  //   setNfts(updatedNFTs);
+  // };
+
+  useEffect(() => {
+    const selectedCollection = collectionTads[tab];
+
     let updatedNFTs: NFTCollection[];
 
-    if (collectionName === "all") {
-      updatedNFTs = nfts.map((nft) => ({ ...nft, active: true }));
+    if (selectedCollection === "all") {
+      updatedNFTs = nftData.map((nft) => ({ ...nft, active: true }));
     } else {
-      updatedNFTs = nfts.map((nft) =>
-        nft.collection != collectionName
-          ? { ...nft, active: false }
-          : { ...nft, active: true }
+      updatedNFTs = nftData.map((nft) =>
+        nft.collection === selectedCollection
+          ? { ...nft, active: true }
+          : { ...nft, active: false }
       );
     }
 
     setNfts(updatedNFTs);
-    setTab(collectionName);
-  };
+  }, [tab]);
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
@@ -75,67 +99,17 @@ const NftCollection = () => {
           </div>
 
           {/* Tab Section */}
-          <div className="flex gap-1 sm:gap-1 justify-center items-center p-1 bg-black border-2 border-white border-opacity-10 rounded-full">
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "all" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleCollection("all")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "all" ? "dgray" : "white"
-                }`}
-              >
-                All NFT's
-              </p>
-            </div>
 
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "Genesis GATA collection" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleCollection("Genesis GATA collection")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "Genesis GATA collection" ? "dgray" : "white"
-                }`}
-              >
-                GATA Series
-              </p>
-            </div>
-
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "Yield Series" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleCollection("Yield Series")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "Yield Series" ? "dgray" : "white"
-                }`}
-              >
-                Yield Series
-              </p>
-            </div>
-
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "Souvenirs collection" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleCollection("Souvenirs collection")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "Souvenirs collection" ? "dgray" : "white"
-                }`}
-              >
-                Souvenir Series
-              </p>
-            </div>
-          </div>
+          <Tab
+            setCurrentTab={setTab}
+            currentTab={tab}
+            tabs={[
+              "All NFT's",
+              "GATA Series",
+              "Yield Series",
+              "Souvenir Series",
+            ]}
+          />
 
           {/* NFT Collections */}
 

@@ -12,8 +12,8 @@ interface Props {
 
 const PhaseContainer = ({ index, subTitle, points }: Props) => {
   return (
-    <div className="relative w-full flex flex-col gap-4 p-4 lg:p-6 bg-dgray border-2 border-white border-opacity-10 rounded-[1rem] overflow-hidden">
-      <div className="flex w-fit gap-2 justify-center items-center py-2 pr-4 pl-[12px] border-2 border-white border-opacity-10 rounded-full bg-purple">
+    <div className="relative w-full flex flex-col gap-4 p-4 lg:p-6 bg-black border-[1px] border-white border-opacity-10 rounded-[1rem] overflow-hidden">
+      <div className="flex w-fit gap-2 justify-center items-center py-2 pr-4 pl-[12px] border-[1px] border-white border-opacity-10 rounded-full bg-purple">
         <Image
           width={16}
           height={16}
