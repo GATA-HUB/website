@@ -211,8 +211,8 @@ const LandingPage = () => {
 
         {/* Gata Breif */}
         <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 grid grid-cols-2 sm:grid-cols-12 lg:grid-cols-4 xl:grid-cols-8 gap-2 items-center">
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 col-span-2 sm:col-span-5 lg:col-span-1 xl:col-span-3 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
+          <div className="relative w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 col-span-2 sm:col-span-5 lg:col-span-1 xl:col-span-3 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden">
+            <div className="z-[1] w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
                 height={64}
@@ -220,13 +220,22 @@ const LandingPage = () => {
                 src="/images/common/atome.svg"
               />
             </div>
-            <div className="flex gap-2 flex-wrap">
-              <h2 className="text-green text-[40px] xl:text-[64px] font-bold leading-[40px]">
+            <div className="z-[1] flex gap-2 flex-wrap">
+              <h2 className="text-[40px] xl:text-[64px] font-bold leading-[40px] text-black">
                 201K
               </h2>
-              <h3 className="text-green">USD</h3>
+              <h3 className="text-black">USD</h3>
             </div>
-            <p>Rewards Distributed</p>
+            <p className="z-[1] text-black">Rewards Distributed</p>
+
+            <Image
+              fill
+              objectFit="cover"
+              objectPosition="center"
+              src="/images/bgs/ygata/gradientBgSmall.jpg"
+              quality={100}
+              alt=""
+            />
           </div>
 
           <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
@@ -238,9 +247,7 @@ const LandingPage = () => {
                 src="/images/common/epoch.svg"
               />
             </div>
-            <h2 className="text-red text-[40px] xl:text-[64px] font-bold">
-              31
-            </h2>
+            <h2 className=" text-[40px] xl:text-[64px] font-bold">31</h2>
             <p>Reward Months</p>
           </div>
 
@@ -253,9 +260,7 @@ const LandingPage = () => {
                 src="/images/common/supply.svg"
               />
             </div>
-            <h2 className="text-yellow text-[40px] xl:text-[64px] font-bold">
-              1727
-            </h2>
+            <h2 className="text-[40px] xl:text-[64px] font-bold">1727</h2>
             <p>GATA Circulating Supply</p>
           </div>
 
@@ -268,7 +273,7 @@ const LandingPage = () => {
                 src="/images/common/validator.svg"
               />
             </div>
-            <h2 className="text-lpurple text-[40px] xl:text-[64px] font-bold">
+            <h2 className="text-[40px] xl:text-[64px] font-bold">
               {activeValidators}
             </h2>
             <p>Active Validator</p>
@@ -283,9 +288,7 @@ const LandingPage = () => {
                 src="/images/common/relay.svg"
               />
             </div>
-            <h2 className="text-yellow text-[40px] xl:text-[64px] font-bold">
-              451k+
-            </h2>
+            <h2 className="text-[40px] xl:text-[64px] font-bold">451k+</h2>
             <p>IBC relayer transactions</p>
           </div>
 
@@ -302,11 +305,11 @@ const LandingPage = () => {
               {isLoading ? (
                 <LargeTextLoader />
               ) : (
-                <h2 className="text-purple text-[40px] xl:text-[64px] font-bold leading-[40px]">
+                <h2 className="text-[40px] xl:text-[64px] font-bold leading-[40px]">
                   {delegation}
                 </h2>
               )}
-              <h3 className="text-purple">USD</h3>
+              <h3 className="">USD</h3>
             </div>
             <p>Assets Staked</p>
           </div>
@@ -372,7 +375,7 @@ const LandingPage = () => {
           <div className="flex flex-col gap-[16px] md:w-[512px]">
             <div className="flex flex-col">
               <h2>Partners &</h2>
-              <h2 className="text-lpurple">Collaborators</h2>
+              <h2 className="text-purple">Collaborators</h2>
             </div>
             <p>
               Over the past two years, GATA HUB has forged meaningful
@@ -397,7 +400,7 @@ const LandingPage = () => {
               src="/images/common/title-decor.svg"
             />
             <div className="flex gap-[16px] items-center">
-              <h2 className="text-green">Team</h2>
+              <h2 className="text-red">Team</h2>
             </div>
           </div>
 

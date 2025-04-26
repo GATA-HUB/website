@@ -184,7 +184,7 @@ const Treasury = () => {
                   src="/images/common/title-decor.svg"
                 />
                 <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
-                  <h2 className="text-green">YCs Reward</h2>
+                  <h2 className="text-red">YCs Reward</h2>
                   <h2>Distribution</h2>
                 </div>
                 <p>Epoch record of YC collection</p>
@@ -249,7 +249,7 @@ const Treasury = () => {
                   src="/images/common/title-decor.svg"
                 />
                 <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
-                  <h2 className="text-green">YPs Reward</h2>
+                  <h2 className="text-red">YPs Reward</h2>
                   <h2>Distribution</h2>
                 </div>
                 <p>Epoch record of YP collection</p>
@@ -314,7 +314,7 @@ const Treasury = () => {
                   src="/images/common/title-decor.svg"
                 />
                 <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
-                  <h2 className="text-green">YGs Reward</h2>
+                  <h2 className="text-red">YGs Reward</h2>
                   <h2>Distribution</h2>
                 </div>
                 <p>Epoch record of YG collection</p>
@@ -373,7 +373,7 @@ const Treasury = () => {
                   src="/images/common/title-decor.svg"
                 />
                 <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
-                  <h2 className="text-green">GATA Revenue</h2>
+                  <h2 className="text-red">GATA Revenue</h2>
                   <h2>Distribution</h2>
                 </div>
                 <p>

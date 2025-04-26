@@ -21,7 +21,7 @@ const page = () => {
           />
         </div>
         <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
-          <div className="flex flex-col gap-2 lg:w-1/2">
+          <div className="flex flex-col gap-6 lg:w-1/2">
             <h1>GATA HUB's RollApp</h1>
             <p>
               GATA HUB redefines yield farming and sustainable value creation

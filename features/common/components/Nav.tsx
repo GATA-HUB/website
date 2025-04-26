@@ -127,7 +127,7 @@ export default function Nav() {
                 </svg>
               </div>
               {dropDown && (
-                <div className="absolute top-[72px] flex flex-col bg-black rounded-[16px] overflow-hidden">
+                <div className="absolute top-[72px] flex flex-col bg-black rounded-[16px] border-[1px] border-white border-opacity-10 overflow-hidden">
                   <Link
                     href={"/infrastructure/validators"}
                     className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-black hover:bg-dgray text-gray hover:text-white`}

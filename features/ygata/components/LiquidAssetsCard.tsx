@@ -87,7 +87,7 @@ const LiquidAssetsCard = ({
   };
 
   return (
-    <div className="w-full flex items-center justify-between px-6 py-3 rounded-2xl bg-black border-[1px] border-white border-opacity-10">
+    <div className="w-full flex items-center justify-between pl-3 pr-6 py-3 rounded-xl bg-black border-[1px] border-white border-opacity-10">
       <div className="min-w-[40%] flex items-center gap-4">
         <div className="w-8 h-8 flex items-center justfiy-center">
           <Image src={icon} width={40} height={40} quality={100} alt="" />
@@ -98,7 +98,7 @@ const LiquidAssetsCard = ({
       <div className="grid grid-cols-5 min-w-[60%]">
         <div className="flex flex-col col-span-1 items-end">
           <p>Quantity</p>
-          <h4>{quantity ? formatNumbers(quantity) : "-"}</h4>
+          <h4>{quantity ? formatNumbers(quantity) : <TextLoader />}</h4>
         </div>
 
         <div className="flex flex-col col-span-3 items-center">
@@ -110,7 +110,7 @@ const LiquidAssetsCard = ({
 
         <div className="min-w-[52px] flex flex-col text-right col-span-1 items-end ml-4">
           <p>USD value</p>
-          <h4>{usdValue ? formatNumber(usdValue) : "-"}</h4>
+          <h4>{usdValue ? formatNumber(usdValue) : <TextLoader />}</h4>
         </div>
       </div>
     </div>

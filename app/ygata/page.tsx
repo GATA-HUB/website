@@ -20,6 +20,7 @@ import { formatNumber } from "@/actions/formatNumber";
 import { formatPrice } from "@/actions/formatPrice";
 import ManagedLiquidityCard from "@/features/ygata/components/ManagedLiquidityCard";
 import { fetchCoingeckoPrice } from "@/api/fetchCoingeckoPrice";
+import TextLoader from "@/features/common/components/TextLoader";
 
 const page = () => {
   const initialLiquidity: Liquidity[] = liquidityData;
@@ -192,7 +193,7 @@ const page = () => {
           <div className="flex flex-col gap-2 lg:w-1/2">
             <h1 className="w-full">GATA YIELD DAO</h1>
             <h5 className="text-gray">Managed Assets</h5>
-            <div className="flex gap-2 items-center">
+            <div className="w-fit flex gap-2 items-center bg-black py-2 pl-2 pr-4 rounded-md border-[1px] border-white border-opacity-10">
               <div className="relative flex items-center justify-center w-6 h-6 bg-dgray rounded">
                 <div className="absolute w-[8px] h-[8px] bg-black bg-opacity-40 rounded-full" />
                 <motion.div
@@ -217,8 +218,9 @@ const page = () => {
                 <h4>-</h4>
               )}
             </div>
-            <div className="flex gap-4">
-              <div className="w-fit flex gap-2 items-center cursor-pointer bg-black py-2 px-4 rounded-xl border-[1px] border-white border-opacity-10">
+            <h5 className="text-gray mt-2">Trading at</h5>
+            <div className="flex flex-col gap-2">
+              <div className="w-fit flex gap-2 items-center bg-black py-2 pl-2 pr-4 rounded-md border-[1px] border-white border-opacity-10">
                 <Image
                   width={24}
                   height={24}
@@ -244,7 +246,15 @@ const page = () => {
                 )}
               </div>
 
-              <div className="w-fit flex gap-2 items-center cursor-pointer bg-black py-2 px-4 rounded-xl border-[1px] border-white border-opacity-10">
+              <div
+                onClick={() =>
+                  window.open(
+                    "https://www.coingecko.com/en/coins/yield-gata#:~:text=The%20price%20of%20Yield%20GATA%20(YGATA)%20is%20%240.01345%20today%20with,a%20market%20cap%20of%20%24194%2C611",
+                    "_blank"
+                  )
+                }
+                className="w-fit flex gap-2 items-center cursor-pointer bg-black py-2 pl-2 pr-4 rounded-md border-[1px] border-white border-opacity-10 hover:border-purple hover:border-opacity-100 transition-all duration-300 ease-in-out"
+              >
                 <Image
                   width={24}
                   height={24}
@@ -305,48 +315,61 @@ const page = () => {
         <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
           {/* title section */}
 
-          <div className="w-full flex justify-center gap-16 md:gap-32 flex-wrap">
+          <div className="w-full grid grid-cols-4 md:grid-cols-12 justify-center gap-2">
             {/* sub content */}
-            <div className="flex flex-col gap-1 items-center">
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-green">
-                {yGataPrice ? yGataPrice : "-"}
+            <div className="relative w-full col-span-4 flex flex-col gap-4 bg-black p-6 rounded-xl border-[1px] border-white border-opacity-10 overflow-hidden">
+              {/* gradient background image */}
+              <Image
+                fill
+                objectFit="cover"
+                objectPosition="center"
+                alt=""
+                src="/images/bgs/ygata/gradientBgSmall.jpg"
+                quality={100}
+              />
+              <h5 className="z-[1] text-black capitalize">Price</h5>
+              <h3 className="z-[1] text-[24px] sm:text-[28px] lg:text-[32px] text-black">
+                {yGataPrice === "0" ? <TextLoader /> : yGataPrice}
               </h3>
-              <p>price</p>
             </div>
 
-            <div className="flex flex-col gap-1 items-center">
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-red">
-                {lastAPR ? lastAPR : "-"}%
+            <div className="w-full col-span-2 md:col-span-4 flex flex-col gap-4 bg-black p-6 rounded-xl border-[1px] border-white border-opacity-10">
+              <h5 className="text-gray capitalize">Last APR</h5>
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
+                {lastAPR ? lastAPR : <TextLoader />}%
               </h3>
-              <p>Last APR</p>
             </div>
 
-            <div className="flex flex-col gap-1 items-center">
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-lpurple">
-                {fdv ? formatNumber(fdv) : "-"}
+            <div className="w-full col-span-2 md:col-span-4 flex flex-col gap-4 bg-black p-6 rounded-xl border-[1px] border-white border-opacity-10">
+              <h5 className="text-gray capitalize">FDV</h5>
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
+                {fdv ? formatNumber(fdv) : <TextLoader />}
               </h3>
-              <p>FDV</p>
             </div>
 
-            <div className="flex flex-col gap-1 items-center">
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                {marketCap ? formatNumber(marketCap) : "-"}
+            <div className="w-full col-span-4 flex flex-col gap-4 bg-black p-6 rounded-xl border-[1px] border-white border-opacity-10">
+              <h5 className="text-gray capitalize">Market Cap</h5>
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
+                {marketCap ? formatNumber(marketCap) : <TextLoader />}
               </h3>
-              <p>Market Cap</p>
             </div>
 
-            <div className="flex flex-col gap-1 items-center">
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                {circulatingSupply ? formatNumber(circulatingSupply) : "-"}
+            <div className="w-full col-span-2 md:col-span-4 flex flex-col gap-4 bg-black p-6 rounded-xl border-[1px] border-white border-opacity-10">
+              <h5 className="text-gray capitalize">Circulating Supply</h5>
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
+                {circulatingSupply ? (
+                  formatNumber(circulatingSupply)
+                ) : (
+                  <TextLoader />
+                )}
               </h3>
-              <p>Circulating Supply</p>
             </div>
 
-            <div className="flex flex-col gap-1 items-center">
-              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] text-yellow">
-                {totalSupply ? formatNumber(totalSupply) : "-"}
+            <div className="w-full col-span-2 md:col-span-4 flex flex-col gap-4 bg-black p-6 rounded-xl border-[1px] border-white border-opacity-10">
+              <h5 className="text-gray capitalize">Total Supply</h5>
+              <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
+                {totalSupply ? formatNumber(totalSupply) : <TextLoader />}
               </h3>
-              <p>Total Supply</p>
             </div>
           </div>
         </div>
@@ -428,12 +451,10 @@ const page = () => {
         {/* Token Distribution  */}
         <div
           ref={ref}
-          className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col md:flex-row gap-[40px] items-center"
+          className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col md:flex-row gap-10 items-center"
         >
           <div className="w-full flex flex-col gap-6">
-            <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
-              Token Distribution
-            </h3>
+            <h2 className="w-2/3">Token Distribution</h2>
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
               <p className="z-[1] text-white">Circulating Supply</p>
               <p className="z-[1] text-white">
@@ -489,9 +510,7 @@ const page = () => {
           </div>
 
           <div className="w-full flex flex-col gap-6">
-            <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
-              Asset Allocation
-            </h3>
+            <h2 className="md:w-1/2">Asset Allocation</h2>
             <div className="relative flex items-center justify-between p-6 rounded-xl bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
               <p className="z-[1] text-white">Staked Assets</p>
               <p className="z-[1] text-white">
@@ -555,13 +574,11 @@ const page = () => {
           </div>
         </div>
 
-        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col lg:flex-row gap-[32px] 2xl:gap-[64px]">
+        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col lg:flex-row gap-10">
           <div className="flex w-full flex-col gap-4">
-            <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
-              Liquid Assets
-            </h3>
+            <h2 className="">Liquid Assets</h2>
             <div className="flex gap-2 items-center">
-              <div className="relative flex items-center justify-center w-6 h-6 bg-dgray rounded">
+              <div className="relative flex items-center justify-center w-6 h-6 rounded">
                 <div className="absolute w-[8px] h-[8px] bg-black bg-opacity-40 rounded-full" />
                 <motion.div
                   animate={{
@@ -582,7 +599,7 @@ const page = () => {
                   <h4 className="text-purple">USD</h4>
                 </>
               ) : (
-                <h4>-</h4>
+                <TextLoader />
               )}
             </div>
 
@@ -609,9 +626,7 @@ const page = () => {
           </div>
 
           <div className="w-full flex flex-col p-6 gap-6 rounded-2xl bg-black border-[1px] border-white border-opacity-10">
-            <h3 className="text-[24px] sm:text-[28px] lg:text-[32px]">
-              NFT Value
-            </h3>
+            <h2 className="">NFT Value</h2>
             <div className="w-full h-[1px] rounded bg-white bg-opacity-10" />
 
             <div className="w-full h-full overflow-y-scroll overflow-x-hidden flex flex-col gap-2">
