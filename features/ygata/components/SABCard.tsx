@@ -112,7 +112,7 @@ const SABCard = ({
   };
 
   return (
-    <div className="w-full flex gap-4 p-2 pl-4 rounded-2xl items-center bg-black border-[1px] border-white border-opacity-10">
+    <div className="w-full flex gap-4 rounded-xl items-center xsm:p-4 pl-4 bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
       <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
         <div className="min-w-8 min-h-8 flex items-center justify-center">
           <Image src={icon} width={32} height={32} quality={100} alt="" />
@@ -121,7 +121,7 @@ const SABCard = ({
       </div>
       <div className="w-full flex flex-row xsm:flex-col gap-2">
         <div className=" w-full grid grid-cols-4 gap-2 items-center">
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-1">
             <p>Quantity</p>
             <h4>
               {formatNumber(roundedQuantity)}
@@ -131,22 +131,33 @@ const SABCard = ({
             </h4>
           </div>
 
-          <div className="flex flex-col col-span-2">
+          <div className="flex flex-col col-span-2 gap-1">
             <p>Reward</p>
             {loading ? <TextLoader /> : <h4>{reward ? reward : "-"}</h4>}
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-1">
             <p>Price</p>
             {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
           </div>
         </div>
-        <div className="xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between bg-dgray px-3 py-2 xsm:py-1 rounded-lg">
-          <p className="text-white">USD value</p>
+        <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 bg-black border-l-[1px] border-white border-opacity-10 px-4 py-3 xsm:py-1 rounded-r-lg xsm:rounded-md overflow-hidden">
+          <Image
+            fill
+            objectFit="cover"
+            objectPosition="center"
+            src="/images/bgs/ygata/gradientBgSmall.jpg"
+            quality={100}
+            alt=""
+            className="rotate-180"
+          />
+          <p className="z-[1] text-black">USD value</p>
           {loading ? (
             <TextLoader />
           ) : (
-            <h4 className="text-purple">{usdValue ? `$${usdValue}` : "-"}</h4>
+            <h4 className="z-[1] text-black">
+              {usdValue ? `$${usdValue}` : "-"}
+            </h4>
           )}
         </div>
       </div>

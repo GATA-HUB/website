@@ -72,8 +72,27 @@ const RoadmapComp = ({ title, desc, content, state, index }: Props) => {
               "linear-gradient(90deg, rgba(15, 15, 15, 0) 0%, #000 50%)",
             zIndex: "1",
           }}
-          className="absolute right-0 w-1/2 h-24"
+          className="absolute right-0 w-1/2 h-28"
         />
+        <motion.div
+          style={{
+            background:
+              "linear-gradient(90deg, #000 0%, rgba(15, 15, 15, 0) 50%)",
+            zIndex: "1",
+          }}
+          className="absolute left-0 w-1/2 h-28"
+        />
+        {active && (
+          <Image
+            fill
+            objectFit="cover"
+            objectPosition="center"
+            src="/images/bgs/ygata/gradientBgSmall1.jpg"
+            quality={100}
+            alt=""
+            className="opacity-80"
+          />
+        )}
         <motion.div
           style={{
             position: "absolute",
@@ -94,20 +113,20 @@ const RoadmapComp = ({ title, desc, content, state, index }: Props) => {
         >
           <motion.img
             animate={{ opacity: active ? 1 : 0 }}
-            src="/images/common/eclipse-wave.svg"
+            src="/images/common/eclipse-wave-b.png"
             alt=""
             loading="lazy"
           />
           <motion.img
             style={{ position: "absolute" }}
             animate={{ opacity: active ? 0 : 1 }}
-            src="/images/common/eclipse-wave-b.svg"
+            src="/images/common/eclipse-wave.svg"
             alt=""
             loading="lazy"
           />
         </motion.div>
         <div className="z-10 flex flex-col gap-1 lg-2">
-          <h4>{title}</h4>
+          <h2>{title}</h2>
           <p>{desc}</p>
         </div>
         <motion.div

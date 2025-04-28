@@ -17,10 +17,10 @@ const NFTValueCard = ({ icon, network, quantity, usdValue }: Props) => {
   }, []);
 
   return (
-    <div className="w-full flex items-center justify-between px-6 py-3 rounded-2xl bg-black border-[1px] border-white border-opacity-10">
+    <div className="w-full flex items-center justify-between pr-6 pl-3 py-3 rounded-xl bg-black border-[1px] border-white border-opacity-10">
       <div className="flex w-1/3 items-center gap-4">
-        <div className="w-10 h-10 flex items-center justfiy-center">
-          <Image src={icon} width={40} height={40} quality={100} alt="" />
+        <div className="w-8 h-8 flex items-center justfiy-center">
+          <Image src={icon} width={32} height={32} quality={100} alt="" />
         </div>
         <h3 className="capitalize">{network}</h3>
       </div>
