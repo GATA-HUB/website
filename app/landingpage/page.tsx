@@ -222,7 +222,7 @@ const LandingPage = () => {
             </div>
             <div className="z-[1] flex gap-2 flex-wrap">
               <h2 className="text-[40px] xl:text-[64px] font-bold leading-[40px] text-black">
-                201K
+                218K
               </h2>
               <h3 className="text-black">USD</h3>
             </div>
@@ -247,7 +247,7 @@ const LandingPage = () => {
                 src="/images/common/epoch.svg"
               />
             </div>
-            <h2 className=" text-[40px] xl:text-[64px] font-bold">31</h2>
+            <h2 className=" text-[40px] xl:text-[64px] font-bold">33</h2>
             <p>Reward Months</p>
           </div>
 
@@ -288,7 +288,7 @@ const LandingPage = () => {
                 src="/images/common/relay.svg"
               />
             </div>
-            <h2 className="text-[40px] xl:text-[64px] font-bold">451k+</h2>
+            <h2 className="text-[40px] xl:text-[64px] font-bold">571k+</h2>
             <p>IBC relayer transactions</p>
           </div>
 
