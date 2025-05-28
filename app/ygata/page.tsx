@@ -39,6 +39,7 @@ const page = () => {
   const [stakedQuantity, setStakedQuantity] = useState<number>(0);
   const [liquidityQuantities, setLiquidityQuantities] = useState<number[]>([]);
   const [coingecko, setCoingecko] = useState("0");
+  const [totalUSDValue, setTotalUSDValue] = useState<number[]>([]);
   // const [liquidityQuantity, setLiquidityQuantity] = useState<number>(0);
   const [loading, setLoading] = useState(false);
   const [yGataPrice, setYGataPrice] = useState("0");
@@ -66,14 +67,23 @@ const page = () => {
     fetchBalance();
   }, []);
 
+  const updatedIndexes = useRef<Set<number>>(new Set());
+
   const handlePriceUpdate = (newPrice: number, index: number) => {
-    if (newPrice) {
-      setAssetsPrices((prevPrices) => {
-        const updatedPrices = [...prevPrices];
-        updatedPrices[index] = newPrice;
-        return updatedPrices;
-      });
-    }
+    if (
+      newPrice === null ||
+      newPrice === undefined ||
+      updatedIndexes.current.has(index)
+    )
+      return;
+
+    updatedIndexes.current.add(index);
+
+    setAssetsPrices((prevPrices) => {
+      const updatedPrices = [...prevPrices];
+      updatedPrices[index] = newPrice;
+      return updatedPrices;
+    });
   };
 
   const handleStakedQuantity = (newQuantity: number, index: number) => {
@@ -84,6 +94,14 @@ const page = () => {
         return updatedQuantity;
       });
     }
+  };
+
+  const handleUSDValue = (newValue: number, index: number) => {
+    setTotalUSDValue((prevValue) => {
+      const updatedValue = [...prevValue];
+      updatedValue[index] = newValue;
+      return updatedValue;
+    });
   };
 
   const handleLiquidityQuantity = (newQuantity: number, index: number) => {
@@ -115,9 +133,12 @@ const page = () => {
   };
 
   useEffect(() => {
-    const sum = assetsPrices.reduce((acc, curr) => acc + curr, 0);
+    const sum = totalUSDValue.reduce((acc, curr) => acc + curr, 0);
+    assetsPrices.map((price, index) => {
+      let totalValue = price * stakedQuantities[index];
+    });
     setStakedAssets(sum);
-  }, [assetsPrices]);
+  }, [assetsPrices, stakedQuantities]);
 
   useEffect(() => {
     const sum = liquidAssetsPrices.reduce((acc, curr) => acc + curr, 0);
@@ -405,30 +426,34 @@ const page = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-2 w-full">
-            {sabData &&
+            {sabData ? (
               sabData.map((sab, i) => {
                 return (
-                  <>
-                    {loading ? (
-                      <RowCardLoader />
-                    ) : (
-                      <SABCard
-                        key={i}
-                        icon={sab.icon}
-                        network={sab.network}
-                        quantity={sab.quantity}
-                        prices={assetsPrices}
-                        setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
-                        setQuantity={(newQuantity) =>
-                          handleStakedQuantity(newQuantity, i)
-                        }
-                        symbol={sab.symbol}
-                        addr={sab.addr}
-                      />
-                    )}
-                  </>
+                  <SABCard
+                    key={i}
+                    icon={sab.icon}
+                    network={sab.network}
+                    quantity={sab.quantity}
+                    prices={assetsPrices}
+                    setPrice={(newPrice) => handlePriceUpdate(newPrice, i)}
+                    setQuantity={(newQuantity) =>
+                      handleStakedQuantity(newQuantity, i)
+                    }
+                    setUSDValue={(usdValue) => handleUSDValue(usdValue, i)}
+                    symbol={sab.symbol}
+                    addr={sab.addr}
+                  />
                 );
-              })}
+              })
+            ) : (
+              <>
+                <RowCardLoader />
+                <RowCardLoader />
+                <RowCardLoader />
+                <RowCardLoader />
+                <RowCardLoader />
+              </>
+            )}
           </div>
 
           <div className="z-[-1] absolute w-full flex justify-center items-center">
