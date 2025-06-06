@@ -13,6 +13,7 @@ interface Props {
   prices: number[];
   setPrice: (newPrice: number) => void;
   setQuantity: (newQuantity: number) => void;
+  setUSDValue: (useValue: number) => void;
   symbol: string;
   addr: string;
 }
@@ -24,6 +25,7 @@ const SABCard = ({
   symbol,
   setPrice,
   setQuantity,
+  setUSDValue,
   prices,
   addr,
 }: Props) => {
@@ -46,18 +48,22 @@ const SABCard = ({
       const updatedTokens = await fetchTokenPriceV2(symbol);
       const roundedPrice =
         updatedTokens !== null ? parseFloat(updatedTokens).toFixed(3) : null;
+
       if (roundedPrice) {
+        const parsedPrice = Number(roundedPrice);
         setTokenQuantity(quantity / 1000000);
-        setCurrentPrice(Number(roundedPrice));
-        setPrice(currentPrice);
+        setCurrentPrice(parsedPrice);
+        setPrice(parsedPrice); // ✅ Fix: Use directly instead of relying on state
       } else {
         setCurrentPrice(0);
+        setPrice(0);
       }
+
       setLoading(false);
     };
 
     fetchPrices();
-  }, []);
+  }, [usdValue, quantity]);
 
   useEffect(() => {
     const fetchReward = async () => {
@@ -90,6 +96,7 @@ const SABCard = ({
       }).format(truncatedValue);
       const [integerPart, decimalPart] = formattedQuantity.split(".");
       setUsdValue(integerPart);
+      setUSDValue(tokenUsdValue);
     }
   }, [currentPrice]);
 

@@ -10,10 +10,17 @@ export async function fetchStakedAssets() {
           fetchFn: fetchAssetBalance,
         },
         {
+          network: "atomone",
+          symbol: "ATONE",
+          icon: "/images/validators/atomone.png",
+          addr: "atone1vmjgpgsy7v7t7xvwwgcya8thuufuyh2atxz5hy",
+          fetchFn: fetchAssetBalance,
+        },
+        {
           network: "stargaze",
           symbol: "STARS",
           icon: "/images/validators/stars.png",
-          addr: "stars1y0enax8s6uxn8g5cudcc5mq30ycl0msgg0us0ewzyvlj3g66tmxq8l35eg",
+          addr: "stars1vmjgpgsy7v7t7xvwwgcya8thuufuyh2a36fw2d",
           fetchFn: fetchAssetBalance,
         },
         {
