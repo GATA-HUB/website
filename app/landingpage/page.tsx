@@ -206,7 +206,7 @@ const LandingPage = () => {
             <Github />
           </div>
 
-          <SecondaryButton disabled={true}>yGATA Token Stream</SecondaryButton>
+          {/* <SecondaryButton disabled={true}>yGATA Token Stream</SecondaryButton> */}
         </section>
 
         {/* Gata Breif */}
