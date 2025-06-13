@@ -20,11 +20,6 @@
       "endpoints": ["https://juno-rpc.gatadao.com/", "https://juno-api.gatadao.com/", "https://juno-grpc.gatadao.com/"]
     },
     {
-      "icon": "/images/validators/neutron.png",
-      "title": "Neutron",
-      "endpoints": ["https://neutron-rpc.gatadao.com/", "https://neutron-api.gatadao.com/", "https://neutron-grpc.gatadao.com/"]
-    },
-    {
       "icon": "/images/validators/omni.png",
       "title": "Omniflix",
       "endpoints": ["https://omniflix-rpc.gatadao.com", "https://omniflix-api.gatadao.com", "https://omniflix-grpc.gatadao.com"]
@@ -45,14 +40,9 @@
       "endpoints": ["https://stride-rpc.gatadao.com/", "https://stride-api.gatadao.com/", "https://stride-grpc.gatadao.com/"]
     },
     {
-      "icon": "/images/validators/cosmos.png",
-      "title": "Cosmos Theta",
-      "endpoints": ["https://rpc-theta-testnet-001.gatadao.com/", "https://api-theta-testnet-001.gatadao.com/", "https://grpc-theta-testnet-001.gatadao.com/"]
-    },
-    {
       "icon": "/images/validators/elys.png",
       "title": "Elys",
-      "endpoints": ["https://elys-rpc.gatadao.com/"]
+      "endpoints": ["https://elys-rpc.gatadao.com/", "https://elys-api.gatadao.com/", "https://elys-grpc.gatadao.com/"]
     },
     {
       "icon": "/images/validators/atomone.png",
@@ -63,10 +53,5 @@
       "icon": "/images/validators/namada.png",
       "title": "Namada",
       "endpoints": ["https://namada-rpc.gatadao.com/"]
-    },
-    {
-      "icon": "/images/validators/govgen.png",
-      "title": "GovGen",
-      "endpoints": ["https://govgen-rpc.gatadao.com/"]
     }
   ]

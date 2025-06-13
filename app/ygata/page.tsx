@@ -241,7 +241,12 @@ const page = () => {
             </div>
             <h5 className="text-gray mt-2">Trading at</h5>
             <div className="flex flex-col gap-2">
-              <div className="w-fit flex gap-2 items-center bg-black py-2 pl-2 pr-4 rounded-md border-[1px] border-white border-opacity-10">
+              <div
+                onClick={() =>
+                  window.open("https://app.osmosis.zone/assets/YGATA", "_blank")
+                }
+                className="w-fit flex gap-2 items-center cursor-pointer bg-black py-2 pl-2 pr-4 rounded-md border-[1px] border-white border-opacity-10 hover:border-purple hover:border-opacity-100 transition-all duration-300 ease-in-out"
+              >
                 <Image
                   width={24}
                   height={24}
