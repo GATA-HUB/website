@@ -1,21 +1,35 @@
 [
+    {
+        "title": "GATA DAO EPOCH 35",
+        "desc": "GATA DOA epoch 35 from June 1st 2025 to June 30th 2025. Where 986/1887 eligible holders of GATAc & GATAv NFTs earned 0.125 $ATOM per GATA.",
+        "atomeDist": 127,
+        "date": "July 4th 2025",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-35"
+    },
+    {
+        "title": "GATA DAO EPOCH 34",
+        "desc": "GATA DOA epoch 34 from May 1st 2025 to May 31st 2025. Where 986/1887 eligible holders of GATAc & GATAv NFTs earned 0.13 $ATOM per GATA.",
+        "atomeDist": 132,
+        "date": "June 2nd 2025",
+        "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-34"
+    },
    {
         "title": "GATA DAO EPOCH 33",
-        "desc": "GATA DOA epoch 33 from from April 1st 2025 to April 30th 2025. Where 986/1887 eligible holders of GATAc & GATAv NFTs earned 0.15 $ATOM per GATA.",
+        "desc": "GATA DOA epoch 33 from April 1st 2025 to April 30th 2025. Where 986/1887 eligible holders of GATAc & GATAv NFTs earned 0.15 $ATOM per GATA.",
         "atomeDist": 151,
         "date": "April 1st 2025",
         "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-33"
     },
     {
         "title": "GATA DAO EPOCH 32",
-        "desc": "GATA DOA epoch 32 from from March 1st 2025 to March 31st 2025. Where 984/1887 eligible holders of GATAc & GATAv NFTs earned 0.15 $ATOM per GATA.",
+        "desc": "GATA DOA epoch 32 from March 1st 2025 to March 31st 2025. Where 984/1887 eligible holders of GATAc & GATAv NFTs earned 0.15 $ATOM per GATA.",
         "atomeDist": 148,
         "date": "April 1st 2025",
         "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-32"
     },
     {
         "title": "GATA DAO EPOCH 31",
-        "desc": "GATA DOA epoch 31 from from February 1st 2025 to February 28th 2025. Where 980/1887 eligible holders of GATAc & GATAv NFTs earned 0.16 $ATOM per GATA.",
+        "desc": "GATA DOA epoch 31 from February 1st 2025 to February 28th 2025. Where 980/1887 eligible holders of GATAc & GATAv NFTs earned 0.16 $ATOM per GATA.",
         "atomeDist": 151,
         "date": "March 1st 2025",
         "href": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/gata-nft-dao/dao-revenue-distribution#gata-dao-epoch-31"
