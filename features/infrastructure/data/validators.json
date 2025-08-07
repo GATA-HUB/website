@@ -14,20 +14,6 @@
     "active": true
   },
   {
-    "icon": "/images/validators/archway.png",
-    "title": "Archway",
-    "network": "",
-    "tokens": 1000,
-    "symbol": "ARCH",
-    "commission": "",
-    "status": "",
-    "stake": "",
-    "autoCompound": "",
-    "stat": "decommissioned",
-    "addr": "",
-    "active": false
-  },
-  {
     "icon": "/images/validators/atomone.png",
     "title": "AtomOne",
     "network": "atone",
@@ -68,6 +54,20 @@
     "stat": "active",
     "addr": "cosmosvaloper10unx6s0cdqntvrumd5hs07rgd5ytcztqh8etw6",
     "active": true
+  },
+   {
+    "icon": "/images/validators/archway.png",
+    "title": "Archway",
+    "network": "",
+    "tokens": 1000,
+    "symbol": "ARCH",
+    "commission": "",
+    "status": "",
+    "stake": "",
+    "autoCompound": "",
+    "stat": "decommissioned",
+    "addr": "",
+    "active": false
   },
   {
     "icon": "/images/validators/dym.png",
