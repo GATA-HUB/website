@@ -37,7 +37,7 @@
     {
       "icon": "/images/validators/nomic.png",
       "title": "Nomic",
-      "endpoints": ["https://rpc-nomic.gatadao.com/"]
+      "endpoints": ["https://nomic-rpc.gatadao.com/"]
     },
     {
       "icon": "/images/validators/omni.png",
