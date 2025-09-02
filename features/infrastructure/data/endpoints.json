@@ -47,12 +47,12 @@
     {
       "icon": "/images/validators/osmosis.png",
       "title": "Osmosis",
-      "endpoints": ["https://osmosis-rpc.gatadao.com/", "https://osmosis-api.gatadao.com/", "osmosis-grpc.gatadao.com:443"]
+      "endpoints": ["https://osmosis-rpc.gatadao.com", "https://osmosis-api.gatadao.com", "osmosis-grpc.gatadao.com:443"]
     },
     {
       "icon": "/images/validators/passage.png",
       "title": "Passage",
-      "endpoints": ["https://passage-rpc.gatadao.com/", "https://passage-api.gatadao.com/", "passage-grpc.gatadao.com:443"]
+      "endpoints": ["https://passage-rpc.gatadao.com", "https://passage-api.gatadao.com", "passage-grpc.gatadao.com:443"]
     },
     {
       "icon": "/images/validators/stars.png",
