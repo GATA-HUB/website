@@ -331,7 +331,7 @@ const page = () => {
           duration: 1,
           delay: 1,
         }}
-        className="fixed flex flex-wrap justify-center gap-4 z-10 px-4"
+        className="fixed flex flex-wrap justify-center gap-4 z-20 px-4"
       >
         <PrimaryExternalLink href="https://daodao.zone/dao/omniflix19z3h463xmkz66vdq8tcpk986kvecjyqxy4ywtdzu4qqe2vjyz69sy0u32r/home">
           Visit DAO to Stake and Vote
