@@ -13,8 +13,8 @@ const NftCollection = () => {
 
   const [nfts, setNfts] = useState<NFTCollection[]>(initialNFTs);
   const collectionTads: string[] = [
-    "all",
-    "Genesis GATA collection",
+    // "all",
+    // "Genesis GATA collection",
     "Yield Series",
     "Souvenirs collection",
   ];
@@ -56,15 +56,19 @@ const NftCollection = () => {
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
-      <div className="relative flex w-full h-[960px] items-center ">
+      <div className="relative flex w-full h-[620px] items-center ">
         <div className="absolute w-full h-full overflow-hidden flex justify-center">
+          <div className="z-10 absolute bottom-0 right-0 left-0 w-full h-[128px] bg-gradient-to-t from-black to-transparent"></div>
           <Image
             style={{
               minWidth: "1920px",
             }}
             src="/images/headers/nftCollBg.jpg"
-            width={1920}
-            height={960}
+            // width={1920}
+            // height={960}
+            fill
+            objectFit="cover"
+            objectPosition="center"
             quality={100}
             alt=""
           />
@@ -76,7 +80,7 @@ const NftCollection = () => {
         </div>
       </div>
 
-      <div className="w-full max-w-[1920px] flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
+      <div className="w-full max-w-[1920px] flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64 mt-24">
         <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
           <div className="flex flex-col gap-[16px] items-center max-w-[1024px] text-center">
             <Image
@@ -104,10 +108,10 @@ const NftCollection = () => {
             setCurrentTab={setTab}
             currentTab={tab}
             tabs={[
-              "All NFT's",
-              "GATA Series",
+              // "All NFT's",
+              // "GATA Series",
               "Yield Series",
-              "Souvenir Series",
+              "Other NFTs",
             ]}
           />
 
@@ -125,6 +129,7 @@ const NftCollection = () => {
                       collection={nft.collection}
                       href={nft.href}
                       details={nft.details}
+                      rewardsUrl={nft.rewardsUrl}
                     />
                   </Template>
                 );

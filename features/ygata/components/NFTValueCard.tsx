@@ -17,23 +17,38 @@ const NFTValueCard = ({ icon, network, quantity, usdValue }: Props) => {
   }, []);
 
   return (
-    <div className="w-full flex items-center justify-between pr-6 pl-3 py-3 rounded-xl bg-black border-[1px] border-white border-opacity-10">
-      <div className="flex w-1/3 items-center gap-4">
-        <div className="w-8 h-8 flex items-center justfiy-center">
+    <div className="group relative w-full flex gap-4 items-center xsm:p-4 pl-4 bg-black border-[1px] border-dgray overflow-hidden">
+      <div className="absolute bg-dgray left-0 right-0 w-full h-0 group-hover:h-full transition-all ease-out duration-300"/>
+      <div className="z-10 flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+        <div className="min-w-8 min-h-8 flex items-center justify-center">
           <Image src={icon} width={32} height={32} quality={100} alt="" />
         </div>
-        <h3 className="capitalize">{network}</h3>
+        <h6 className="capitalize font-bold">{network}</h6>
       </div>
+      <div className="z-10 w-full flex flex-row xsm:flex-col gap-2">
+        <div className=" w-full grid grid-cols-4 gap-2 items-center">
+          <div className="flex flex-col gap-1">
+            {/* <p>Quantity</p> */}
+            <h6 className="text-gray">
+              {quantity ? quantity : "-"}
+            </h6>
+          </div>
 
-      <div className="grid grid-cols-2 w-full">
-        <div className="flex flex-col items-end">
-          <p>Quantity</p>
-          <h4>{quantity ? quantity : "-"}</h4>
+          <div className="flex flex-col col-span-2 gap-1 ">
+            {/* <p>Type</p> */}
+            <h6 className="text-gray">-</h6>
+          </div>
+
+          <div className="flex flex-col gap-1">
+            {/* <p>Floor Price</p> */}
+            <h6 className="text-gray">-</h6>
+          </div>
         </div>
-
-        <div className="flex flex-col items-end">
-          <p>USD value</p>
-          <h4>{totalValue ? totalValue : "-"}</h4>
+        <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 px-4 py-4 xsm:py-1 overflow-hidden">
+          {/* <p className="z-[1]">USD value</p> */}
+          <h6 className="z-[1]">
+            {totalValue ? `$${totalValue}` : "-"}
+          </h6>
         </div>
       </div>
     </div>

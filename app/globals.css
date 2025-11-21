@@ -76,10 +76,17 @@ h4 {
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 12px;
   font-family: var(--font-titillium);
   font-weight: 700;
   line-height: 16px;
+}
+
+h6 {
+  font-size: 11px;
+  font-family: var(--font-titillium);
+  font-weight: 400;
+  line-height: 11px;
 }
 
 p {
@@ -100,13 +107,22 @@ p {
     font-size: 48px;
     line-height: 50px;
   }
+
   p {
     font-size: 13px;
     line-height: 16px;
   }
+
   h5 {
     font-size: 16px;
     line-height: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
+    font-family: var(--font-titillium);
+    font-weight: 400;
+    line-height: 11px;
   }
 }
 
@@ -157,8 +173,8 @@ p {
 
 @media (min-width: 1536px) {
   h1 {
-    font-size: 104px;
-    line-height: 108px;
+    font-size: 96px;
+    line-height: 96px;
   }
 
   h2 {
@@ -179,6 +195,11 @@ p {
   h5 {
     font-size: 16px;
     line-height: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
+    line-height: 14px;
   }
 
   p {

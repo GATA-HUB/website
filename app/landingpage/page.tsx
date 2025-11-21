@@ -19,6 +19,7 @@ import {
   Github,
   LinkTree,
   Medium,
+  Roadmap,
   Twitter,
 } from "../../features/common/components/SocialMediaButtons";
 import { Validator, Team } from "../../types";
@@ -129,7 +130,7 @@ const LandingPage = () => {
           {/* Title text section */}
           <div className="flex flex-col">
             {/* Heading 01 */}
-            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[116px]">
+            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[104px]">
               <h1 className="h-fit">GATA</h1>
               <div className="hidden md:flex flex-col animate-text-slide h-fit w-fit">
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
@@ -204,6 +205,7 @@ const LandingPage = () => {
             <Gitbook />
             <LinkTree />
             <Github />
+            <Roadmap />
           </div>
 
           {/* <SecondaryButton disabled={true}>yGATA Token Stream</SecondaryButton> */}
@@ -211,7 +213,7 @@ const LandingPage = () => {
 
         {/* Gata Breif */}
         <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 grid grid-cols-2 sm:grid-cols-12 lg:grid-cols-4 xl:grid-cols-8 gap-2 items-center">
-          <div className="relative w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 col-span-2 sm:col-span-5 lg:col-span-1 xl:col-span-3 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden">
+          <div className="relative w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 col-span-2 sm:col-span-6 lg:col-span-2 xl:col-span-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden">
             <div className="z-[1] w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -251,7 +253,7 @@ const LandingPage = () => {
             <p>Reward Months</p>
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-4 lg:col-span-1 xl:col-span-3 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
+          {/* <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-4 lg:col-span-1 xl:col-span-3 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -262,7 +264,7 @@ const LandingPage = () => {
             </div>
             <h2 className="text-[40px] xl:text-[64px] font-bold">1727</h2>
             <p>GATA Circulating Supply</p>
-          </div>
+          </div> */}
 
           <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
@@ -276,10 +278,10 @@ const LandingPage = () => {
             <h2 className="text-[40px] xl:text-[64px] font-bold">
               {activeValidators}
             </h2>
-            <p>Active Validator</p>
+            <p>Network Supported</p>
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
+          {/* <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}
@@ -290,9 +292,9 @@ const LandingPage = () => {
             </div>
             <h2 className="text-[40px] xl:text-[64px] font-bold">571k+</h2>
             <p>IBC relayer transactions</p>
-          </div>
+          </div> */}
 
-          <div className="w-full h-full flex flex-col col-span-2 sm:col-span-6 lg:col-span-3 xl:col-span-4 gap-[16px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
+          <div className="w-full h-full flex flex-col col-span-2 sm:col-span-12 lg:col-span-4 xl:col-span-6 gap-[16px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
             <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
               <Image
                 width={64}

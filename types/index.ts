@@ -57,6 +57,7 @@ export type NFTCollection = {
   active: boolean;
   href: string;
   details: string;
+  rewardsUrl?: string;
 }
 
 export type Points = {

@@ -21,6 +21,8 @@ import { formatPrice } from "@/actions/formatPrice";
 import ManagedLiquidityCard from "@/features/ygata/components/ManagedLiquidityCard";
 import { fetchCoingeckoPrice } from "@/api/fetchCoingeckoPrice";
 import TextLoader from "@/features/common/components/TextLoader";
+import CryptoTable from "@/features/ygata/components/CryptoTable";
+import TotalAssetsCard from "@/features/ygata/components/TotalAssetsCard";
 
 const page = () => {
   const initialLiquidity: Liquidity[] = liquidityData;
@@ -133,15 +135,18 @@ const page = () => {
   };
 
   useEffect(() => {
-    const sum = totalUSDValue.reduce((acc, curr) => acc + curr, 0);
-    assetsPrices.map((price, index) => {
-      let totalValue = price * stakedQuantities[index];
-    });
+    const sum = totalUSDValue.reduce((acc, curr) => {
+      const val = Number(curr);
+      return acc + (isNaN(val) ? 0 : val);
+    }, 0);
     setStakedAssets(sum);
-  }, [assetsPrices, stakedQuantities]);
+  }, [totalUSDValue]);
 
   useEffect(() => {
-    const sum = liquidAssetsPrices.reduce((acc, curr) => acc + curr, 0);
+    const sum = liquidAssetsPrices.reduce((acc, curr) => {
+      const val = Number(curr);
+      return acc + (isNaN(val) ? 0 : val);
+    }, 0);
     setLiquidAssets(sum);
   }, [liquidAssetsPrices]);
 
@@ -196,15 +201,19 @@ const page = () => {
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
-      <div className="relative flex w-full h-[960px] items-center ">
+      <div className="relative flex w-full h-[620px] items-center ">
         <div className="absolute w-full h-full overflow-hidden flex justify-center">
+          <div className="z-10 absolute bottom-0 right-0 left-0 w-full h-[128px] bg-gradient-to-t from-black to-transparent"></div>
           <Image
             style={{
               minWidth: "1920px",
             }}
             src="/images/headers/ygataBg.jpg"
-            width={1920}
-            height={960}
+            // width={1920}
+            // height={960}
+            fill
+            objectFit="cover"
+            objectPosition="top"
             quality={100}
             alt=""
             priority={true}
@@ -212,7 +221,7 @@ const page = () => {
         </div>
         <div className="w-full mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
           <div className="flex flex-col gap-2 lg:w-1/2">
-            <h1 className="w-full">GATA YIELD DAO</h1>
+            <h1 className="w-full">GATA Yield Assets</h1>
             <h5 className="text-gray">Managed Assets</h5>
             <div className="w-fit flex gap-2 items-center bg-black py-2 pl-2 pr-4 rounded-md border-[1px] border-white border-opacity-10">
               <div className="relative flex items-center justify-center w-6 h-6 bg-dgray rounded">
@@ -239,7 +248,7 @@ const page = () => {
                 <h4>-</h4>
               )}
             </div>
-            <h5 className="text-gray mt-2">Trading at</h5>
+            {/* <h5 className="text-gray mt-2">Trading at</h5>
             <div className="flex flex-col gap-2">
               <div
                 onClick={() =>
@@ -305,7 +314,7 @@ const page = () => {
                   </h4>
                 )}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -336,9 +345,9 @@ const page = () => {
         </SecondaryExternalLink>
       </motion.div>
 
-      <div className="w-full flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
-        {/* content container 1 */}
-        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
+      <div className="w-full flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64 mt-24">
+        {/* content container 1 - hidden */}
+        <div className="hidden mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
           {/* title section */}
 
           <div className="w-full grid grid-cols-4 md:grid-cols-12 justify-center gap-2">
@@ -400,9 +409,11 @@ const page = () => {
           </div>
         </div>
 
-        <div className="relative mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col xl:flex-row gap-8">
+        {/* Staked Asset table */}
+
+        <div className="relative mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-8">
           <div className="flex flex-col gap-4 h-full">
-            <h2>Staked Asset Breakdown</h2>
+            <h2>Assets Breakdown</h2>
             <div className="flex gap-2 items-center">
               <div className="relative flex items-center justify-center w-6 h-6 bg-dgray rounded">
                 <div className="absolute w-[8px] h-[8px] bg-black bg-opacity-40 rounded-full" />
@@ -419,9 +430,9 @@ const page = () => {
                   className="w-[16px] h-[16px] rounded-full"
                 />
               </div>
-              {stakedAssets ? (
+              {stakedAssets || liquidAssets ? (
                 <>
-                  <h4>{formatPrice(stakedAssets)}</h4>
+                  <h4>{formatPrice(stakedAssets + liquidAssets)}</h4>
                   <h4 className="text-purple">USD</h4>
                 </>
               ) : (
@@ -430,9 +441,37 @@ const page = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-2 w-full">
-            {sabData ? (
-              sabData.map((sab, i) => {
+          <div className="grid grid-cols-1 -space-y-[1px] w-full">
+            
+            {/* <CryptoTable /> */}
+            <div className="w-full flex gap-4 items-center xsm:p-4 pl-4 bg-dgray rounded-t-[8px] overflow-hidden">
+              <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+                
+                <h6 className="capitalize font-bold">Tokes</h6>
+              </div>
+              <div className="w-full flex flex-row xsm:flex-col gap-2">
+                <div className=" w-full grid grid-cols-4 gap-2 items-center">
+                  <div className="flex flex-col gap-1">
+                    <p>Quantity</p>
+                  </div>
+
+                  <div className="flex flex-col col-span-2 gap-1 ">
+                    <p>Reward</p>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <p>Price</p>
+                  </div>
+                </div>
+                <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 px-4 py-3 xsm:py-1 overflow-hidden">
+                  
+                  <p className="text-white">USD value</p>
+                  
+              </div>
+              </div>
+            </div>
+            {
+              sabData?.map((sab, i) => {
                 return (
                   <SABCard
                     key={i}
@@ -449,19 +488,29 @@ const page = () => {
                     addr={sab.addr}
                   />
                 );
-              })
-            ) : (
-              <>
-                <RowCardLoader />
-                <RowCardLoader />
-                <RowCardLoader />
-                <RowCardLoader />
-                <RowCardLoader />
-              </>
-            )}
+              })}
+            {initialLiquidity.map((liquidity, i) => {
+              return (
+                <LiquidAssetsCard
+                  key={`liquid-${i}`}
+                  icon={liquidity.icon}
+                  network={liquidity.network}
+                  quantity={liquidity.quantity}
+                  symbol={liquidity.symbol}
+                  prices={liquidAssetsPrices}
+                  setPrice={(newPrice) =>
+                    handleLiquidityPriceUpdate(newPrice, i)
+                  }
+                  setQuantity={(newQuantity) =>
+                    handleLiquidityQuantity(newQuantity, i)
+                  }
+                />
+              );
+            })}
+            <div className="w-full h-2 bg-dgray rounded-b-[8px]"/>
           </div>
 
-          <div className="z-[-1] absolute w-full flex justify-center items-center">
+          {/* <div className="z-[-1] absolute w-full flex justify-center items-center">
             <div className="absolute w-[100vw] h-[637px] top-[-104px] overflow-hidden">
               <Image
                 style={{
@@ -475,11 +524,11 @@ const page = () => {
                 priority={true}
               />
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Token Distribution  */}
-        <div
+        {/* <div
           ref={ref}
           className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col md:flex-row gap-10 items-center"
         >
@@ -602,76 +651,115 @@ const page = () => {
               ></motion.div>
             </div>
           </div>
+        </div> */}
+
+        {/* Liquid Assets table */}
+
+        <div className="relative mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-8">
+
+          <h2 className="">NFT Assets</h2>
+          <div className="grid grid-cols-1 -space-y-[1px] w-full">
+
+            <div className="w-full flex gap-4 items-center xsm:p-4 pl-4 bg-dgray rounded-t-[8px] overflow-hidden">
+              <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+                
+                <h6 className="capitalize font-bold">NFTs</h6>
+              </div>
+              <div className="w-full flex flex-row xsm:flex-col gap-2">
+                <div className=" w-full grid grid-cols-4 gap-2 items-center">
+                  <div className="flex flex-col gap-1">
+                    <p>Quantity</p>
+                  </div>
+
+                  <div className="flex flex-col col-span-2 gap-1 ">
+                    <p>Reward</p>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <p>Price</p>
+                  </div>
+                </div>
+                <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 px-4 py-3 xsm:py-1 overflow-hidden">
+                  <p className="text-white">USD value</p>
+                </div>
+              </div>
+            </div>
+            {initialNFTVal.map((nftVal, i) => {
+              return (
+                <NFTValueCard
+                  key={i}
+                  icon={nftVal.icon}
+                  network={nftVal.network}
+                  quantity={nftVal.quantity}
+                  usdValue={nftVal.usdValue}
+                />
+              );
+            })}
+            <div className="w-full h-2 bg-dgray rounded-b-[8px]"/>
+          </div>
         </div>
 
-        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col lg:flex-row gap-10">
-          <div className="flex w-full flex-col gap-4">
-            <h2 className="">Liquid Assets</h2>
-            <div className="flex gap-2 items-center">
-              <div className="relative flex items-center justify-center w-6 h-6 rounded">
-                <div className="absolute w-[8px] h-[8px] bg-black bg-opacity-40 rounded-full" />
-                <motion.div
-                  animate={{
-                    background: ["#7B5AFF", "#FF4874", "#7B5AFF"],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 1,
-                  }}
-                  className="w-[16px] h-[16px] rounded-full"
-                />
+        {/* Total Assets table */}
+
+        <div className="relative mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-8">
+
+          <h2 className="">Total Assets</h2>
+          <div className="grid grid-cols-1 -space-y-[1px] w-full">
+
+            <div className="w-full flex gap-4 items-center xsm:p-4 pl-4 bg-dgray rounded-t-[8px] overflow-hidden">
+              <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+                
+                <p className="capitalize">Assets</p>
               </div>
-              {liquidAssets ? (
-                <>
-                  <h4>{formatPrice(liquidAssets)}</h4>
-                  <h4 className="text-purple">USD</h4>
-                </>
-              ) : (
-                <TextLoader />
-              )}
+              <div className="w-full flex flex-row xsm:flex-col gap-2">
+                <div className=" w-full grid grid-cols-4 gap-2 items-center">
+                  <div className="flex flex-col gap-1 w-fit">
+                    <p>USD Value</p>
+                  </div>
+                </div>
+                <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 px-4 py-3 xsm:py-1 overflow-hidden">
+                  <p>Percentage</p>
+                </div>
+              </div>
             </div>
-
-            <div className="flex flex-col gap-2 w-full">
-              {initialLiquidity.map((liquidity, i) => {
-                return (
-                  <LiquidAssetsCard
-                    key={i}
-                    icon={liquidity.icon}
-                    network={liquidity.network}
-                    quantity={liquidity.quantity}
-                    symbol={liquidity.symbol}
-                    prices={liquidAssetsPrices}
-                    setPrice={(newPrice) =>
-                      handleLiquidityPriceUpdate(newPrice, i)
-                    }
-                    setQuantity={(newQuantity) =>
-                      handleLiquidityQuantity(newQuantity, i)
-                    }
-                  />
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="w-full flex flex-col p-6 gap-6 rounded-2xl bg-black border-[1px] border-white border-opacity-10">
-            <h2 className="">NFT Value</h2>
-            <div className="w-full h-[1px] rounded bg-white bg-opacity-10" />
-
-            <div className="w-full h-full overflow-y-scroll overflow-x-hidden flex flex-col gap-2">
-              {initialNFTVal.map((nftVal, i) => {
-                return (
-                  <NFTValueCard
-                    key={i}
-                    icon={nftVal.icon}
-                    network={nftVal.network}
-                    quantity={nftVal.quantity}
-                    usdValue={nftVal.usdValue}
-                  />
-                );
-              })}
-            </div>
+            {sabData?.map((assets, i) => {
+              return(
+                <TotalAssetsCard
+                  key={i}
+                  icon={assets.icon}
+                  tokenName={assets.network}
+                  quantity={assets.quantity}
+                  symbol={assets.symbol}
+                  totalCategoryValue={liquidAssets}
+                />
+              )
+            })}
+            {initialLiquidity.map((assets, i) => {
+              return (
+                <TotalAssetsCard
+                  key={i}
+                  icon={assets.icon}
+                  tokenName={assets.network}
+                  quantity={assets.quantity}
+                  symbol={assets.symbol}
+                  totalCategoryValue={liquidAssets}
+                  lg={true}
+                />
+              );
+            })}
+            {initialNFTVal.map((assets, i) => {
+              return (
+                <TotalAssetsCard
+                  key={i}
+                  icon={assets.icon}
+                  tokenName={assets.network}
+                  quantity={assets.quantity}
+                  symbol={assets.network}
+                  totalCategoryValue={liquidAssets}
+                />
+              );
+            })}
+            <div className="w-full h-2 bg-dgray rounded-b-[8px]"/>
           </div>
         </div>
 

@@ -85,10 +85,10 @@ export default function Nav() {
                 pathname === "/ygata" ? "white" : "gray"
               } h-fit py-[8px] transition-all duration-300 ease-in-out font-semibold hover:text-white text-[16px]`}
             >
-              yGATA
+              Yield GATA
             </Link>
 
-            <Link
+            {/* <Link
               onClick={closeDropDown}
               href={"/rollapp"}
               className={`h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
@@ -96,7 +96,7 @@ export default function Nav() {
               }`}
             >
               RollApp
-            </Link>
+            </Link> */}
 
             <div
               className={`group flex gap-2 items-center justify-center h-fit py-[8px] transition-all duration-300 ease-in-out font-semibold hover:text-white text-[16px] cursor-pointer text-${
@@ -268,7 +268,7 @@ export default function Nav() {
               NFT Collections
             </Link>
 
-            <Link
+            {/* <Link
               onClick={closeDropDown}
               href={"/roadmap"}
               className={`h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
@@ -276,9 +276,9 @@ export default function Nav() {
               }`}
             >
               Roadmap
-            </Link>
+            </Link> */}
 
-            <Link
+            {/* <Link
               onClick={closeDropDown}
               href={"/rewards"}
               className={`h-fit py-[8px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
@@ -286,7 +286,7 @@ export default function Nav() {
               }`}
             >
               Rewards
-            </Link>
+            </Link> */}
           </div>
         </div>
 

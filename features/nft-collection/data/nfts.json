@@ -1,30 +1,53 @@
 [
     {
+        "image": "/images/nfts/collections/PengOne.jpg",
+        "name": "PengOne",
+        "desc": "Forged in frost, chosen by yield. The PengOnes emerged where Stargaze meets AtomOne. A GATA-born species with purpose.",
+        "collection": "Yield Series",
+        "active": true,
+        "href": "https://www.stargaze.zone/m/stars1n7af8ev4x36qzum6gz2yw4vds5vkw8evtuvfvrghq0gjulrf9ncs9mutd6/tokens",
+        "details": "https://docs.gatahub.zone/g/gatahub/gata-nfts/pengones",
+        "rewardsUrl": ""
+    },
+    {
+        "image": "/images/nfts/collections/yieldWalkers.jpg",
+        "name": "Yield Walkers",
+        "desc": "Always alive, always earning. GATA’s legacy of real yield.",
+        "collection": "Yield Series",
+        "active": true,
+        "href": "https://www.stargaze.zone/m/stars137zr8gn03g2nvanz5hsflacl06vn6dmyx62fknvwmvdaj77qg8jqh0eppc/tokens",
+        "details": "",
+        "rewardsUrl": ""
+    },
+    {
         "image": "/images/nfts/collections/yieldCrocs.png",
         "name": "Yield Crocs",
         "desc": "Your friendly neighborhood crocs provide you with monthly epoch rewards in $SOL and $yGATA. Earn passive income from various DeFi activities managed by GATA.",
         "collection": "Yield Series",
         "active": true,
-        "href" : "https://omniflix.market/c/onftdenom096ab49e894d401c8996913f3ad0d795/collect-now",
-        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-crocs"
+        "href": "https://omniflix.market/c/onftdenom096ab49e894d401c8996913f3ad0d795/collect-now",
+        "details": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-crocs",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/01.jpg",
         "name": "Colonial Cats",
         "desc": "Colonial Cats is the very first GATA series NFT collection of GATA DAO. Launched on the Stargaze launchpad on March 11, 2022.",
-        "collection": "Genesis GATA collection",
+        "collection": "Yield Series",
         "active": true,
-        "href" : "https://app.stargaze.zone/marketplace/stars1yw4xvtc43me9scqfr2jr2gzvcxd3a9y4eq7gaukreugw2yd2f8tssqyvcm",
-        "details" : "https://gatahub.gitbook.io/welcome-to-gitbook/gata-dao-information/dao-ventures/collections/gata-series"
+        "href": "https://app.stargaze.zone/marketplace/stars1yw4xvtc43me9scqfr2jr2gzvcxd3a9y4eq7gaukreugw2yd2f8tssqyvcm",
+        "details": "https://gatahub.gitbook.io/welcome-to-gitbook/gata-dao-information/dao-ventures/collections/gata-series",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/02.jpg",
         "name": "Voyager Cats",
         "desc": "Voyager Cats is the second GATA series NFT collection of GATA DAO. Launched on the Stargaze launchpad on June 3, 2022.",
-        "collection": "Genesis GATA collection",
+        "collection": "Yield Series",
         "active": true,
-        "href" : "https://app.stargaze.zone/marketplace/stars19tedq0x8csy6v35cqcjy8f76j2f0fsljjytuxcvl3x4sj82tmxnqgxuu85",
-        "details" : "https://gatahub.gitbook.io/welcome-to-gitbook/gata-dao-information/dao-ventures/collections/gata-series"
+        "href": "https://app.stargaze.zone/marketplace/stars19tedq0x8csy6v35cqcjy8f76j2f0fsljjytuxcvl3x4sj82tmxnqgxuu85",
+        "details": "https://gatahub.gitbook.io/welcome-to-gitbook/gata-dao-information/dao-ventures/collections/gata-series",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/03.jpg",
@@ -32,8 +55,9 @@
         "desc": "Yield Gorilla is the first Yield collection of GATA DAO.",
         "collection": "Yield Series",
         "active": true,
-        "href" : "https://app.teritori.com/collection/tori-tori1999u8suptza3rtxwk7lspve02m406xe7l622erg3np3aq05gawxsrh9g0p",
-        "details" : "https://gatahub.gitbook.io/welcome-to-gitbook/gata-dao-information/dao-ventures/collections/non-gata-series"
+        "href": "https://app.teritori.com/collection/tori-tori1999u8suptza3rtxwk7lspve02m406xe7l622erg3np3aq05gawxsrh9g0p",
+        "details": "https://gatahub.gitbook.io/welcome-to-gitbook/gata-dao-information/dao-ventures/collections/non-gata-series",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/09.jpg",
@@ -41,8 +65,9 @@
         "desc": "Let your kitties work for you: Yield Paws provide you with revenue from various DeFi activities, staking rewards & private sale ventures - all without lifting a single paw.",
         "collection": "Yield Series",
         "active": true,
-        "href" : "https://www.stargaze.zone/l/yieldpaws",
-        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws"
+        "href": "https://www.stargaze.zone/l/yieldpaws",
+        "details": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/yield-paws",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/gata3rdAnniversary.png",
@@ -50,8 +75,9 @@
         "desc": "Celebrate 3 incredible years of GATA HUB with this special Open Edition collection! Mint your free commemorative NFT from March 11th, 4 PM UTC to March 18th, 4 PM UTC and be part of the legacy.",
         "collection": "Souvenirs collection",
         "active": true,
-        "href" : "https://omniflix.market/c/nonTransferable/onftdenom5841d7530dfd4dd0b61093389896aae8",
-        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-9-gata-3rd-anniversary"
+        "href": "https://omniflix.market/c/nonTransferable/onftdenom5841d7530dfd4dd0b61093389896aae8",
+        "details": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-9-gata-3rd-anniversary",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/GATA-Xmas-2024.jpg",
@@ -59,8 +85,9 @@
         "desc": "As 2024 decides to take its leave, the time has come to celebrate! GATA HUB extends warm wishes to everyone who joined us on our rollercoaster journey through this wild year. Here's to you from the entire GATA HUB team - Merry Christmas, you wonderful catnip lovers!",
         "collection": "Souvenirs collection",
         "active": true,
-        "href" : "https://www.stargaze.zone/m/stars13u6ugmja48etdpy5gaf6hnkmx8gw05fkcg0wr9ry65qc5nm39cpqc3tt3x/tokens",
-        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-8-gata-xmas-greetings-2024"
+        "href": "https://www.stargaze.zone/m/stars13u6ugmja48etdpy5gaf6hnkmx8gw05fkcg0wr9ry65qc5nm39cpqc3tt3x/tokens",
+        "details": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-8-gata-xmas-greetings-2024",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/10.gif",
@@ -68,8 +95,9 @@
         "desc": "GATA HUB Delegator Reward NFTs for every GATA fam member who staked with GATA on various IBC chains.",
         "collection": "Souvenirs collection",
         "active": true,
-        "href" : "https://omniflix.market/c/onftdenom98a328b68f994118af813e69723f2cf6",
-        "details" : "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-2-gata-delegator-reward-2023"
+        "href": "https://omniflix.market/c/onftdenom98a328b68f994118af813e69723f2cf6",
+        "details": "https://docs.gatahub.zone/welcome-to-gitbook/gatahub/nft-souvenirs#id-2-gata-delegator-reward-2023",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/04.jpg",
@@ -77,8 +105,9 @@
         "desc": "GATA NFT Souvenires are a series of side collections to celebrate important events in GATA and/or partner blockchains. GATA NFT Souvenirs do not provide DAO membership.",
         "collection": "Souvenirs collection",
         "active": true,
-        "href" : "https://omniflix.market/collection/onftdenoma6a057db64674de0b129e9b5c087d404",
-        "details" : "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-1-gata-x-omniflix-4-20-launch-souvenir"
+        "href": "https://omniflix.market/collection/onftdenoma6a057db64674de0b129e9b5c087d404",
+        "details": "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-1-gata-x-omniflix-4-20-launch-souvenir",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/06.gif",
@@ -86,8 +115,9 @@
         "desc": "Limited open edition mint by GATA DAO, visual art animated by Brasco. GG7 is your lucky charm & a psychedelic tribute from GATA to Stargaze. From genesis mint till now, we've all seen a lot in the past year - there's no better time than now to celebrate the common journey of Stargaze & GATA together. Made by GATA with love.",
         "collection": "Souvenirs collection",
         "active": true,
-        "href" : "https://www.stargaze.zone/m/stars1xz3h6pvmvfygcpnyx95q7myk94vn9hf0mhyy78qy4vzp3w9qmdnqm03ue9/tokens",
-        "details" : "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-3-gata-gaze-7-gg7"
+        "href": "https://www.stargaze.zone/m/stars1xz3h6pvmvfygcpnyx95q7myk94vn9hf0mhyy78qy4vzp3w9qmdnqm03ue9/tokens",
+        "details": "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-3-gata-gaze-7-gg7",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/08.jpg",
@@ -95,8 +125,9 @@
         "desc": "First banner collection of GATA DAO, visual art by Brasco. Spice up your profile with some fresh catnip-filled banners based on your favorite parts of GATA: from Colonial Cats and Voyager Cats to Yield Gorillas and our various IBC validators. A total of 1k banners in 4 different categories with a variety of rarity classes are waiting for you. Made by GATA with love.",
         "collection": "Souvenirs collection",
         "active": true,
-        "href" : "https://www.stargaze.zone/m/stars1udmfnrewelppflnl698j4m85q04rpm3h9vtzlu9286vxalfq6nxs5dzzkm/tokens",
-        "details" : "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-5-gata-horizons"
+        "href": "https://www.stargaze.zone/m/stars1udmfnrewelppflnl698j4m85q04rpm3h9vtzlu9286vxalfq6nxs5dzzkm/tokens",
+        "details": "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-5-gata-horizons",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/05.gif",
@@ -104,8 +135,9 @@
         "desc": "GATA Delegator Reward 2023 is a limited NFT collection exclusively designed to celebrate and reward the loyal delegators of GATA DAO. These unique digital collectibles are a token of our gratitude, symbolizing GATA community's essential role in the validator service.",
         "collection": "Souvenirs collection",
         "active": true,
-        "href" : "https://omniflix.market/collection/onftdenom20f3bdc8be264bd8a17c39bbb3c6a421",
-        "details" : "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-2-gata-delegator-reward-2023"
+        "href": "https://omniflix.market/collection/onftdenom20f3bdc8be264bd8a17c39bbb3c6a421",
+        "details": "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-2-gata-delegator-reward-2023",
+        "rewardsUrl": ""
     },
     {
         "image": "/images/nfts/collections/07.gif",
@@ -113,7 +145,8 @@
         "desc": "2023 is coming to an end, it's time to celebrate. GATA is sending these greetings to people who took part in our common journey through this eventful year & stood on board. The whole GATA team is wishing you a Merry Christmas!",
         "collection": "Souvenirs collection",
         "active": true,
-        "href" : "https://www.stargaze.zone/m/stars1nssvsnfef3qpzy7a798c40mjevxky0l87admpezu4z4a36fye6yql244v8/tokens",
-        "details" : "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-4-gata-xmas-greetings-2023"
+        "href": "https://www.stargaze.zone/m/stars1nssvsnfef3qpzy7a798c40mjevxky0l87admpezu4z4a36fye6yql244v8/tokens",
+        "details": "https://gatahub.gitbook.io/welcome-to-gitbook/gatahub/nft-souvenirs#id-4-gata-xmas-greetings-2023",
+        "rewardsUrl": ""
     }
 ]

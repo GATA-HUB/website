@@ -51,15 +51,19 @@ const validators = () => {
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
-      <div className="relative flex w-full h-[960px] items-center ">
+      <div className="relative flex w-full h-[620px] items-center ">
         <div className="absolute w-full h-full overflow-hidden flex justify-center">
+          <div className="z-10 absolute bottom-0 right-0 left-0 w-full h-[128px] bg-gradient-to-t from-black to-transparent"></div>
           <Image
             style={{
               minWidth: "1920px",
             }}
             src="/images/headers/valBg.jpg"
-            width={1920}
-            height={960}
+            // width={1920}
+            // height={960}
+            fill
+            objectFit="cover"
+            objectPosition="center"
             quality={100}
             alt=""
           />

@@ -87,30 +87,51 @@ const LiquidAssetsCard = ({
   };
 
   return (
-    <div className="w-full flex items-center justify-between pl-3 pr-6 py-3 rounded-xl bg-black border-[1px] border-white border-opacity-10">
-      <div className="min-w-[40%] flex items-center gap-4">
-        <div className="w-8 h-8 flex items-center justfiy-center">
-          <Image src={icon} width={40} height={40} quality={100} alt="" />
+    <div className="group relative w-full flex gap-4 items-center xsm:p-4 pl-4 bg-black border-[1px] border-dgray overflow-hidden">
+      <div className="absolute bg-dgray left-0 right-0 w-full h-0 group-hover:h-full transition-all ease-out duration-300"/>
+      <div className="z-10 flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+        <div className="min-w-8 min-h-8 flex items-center justify-center">
+          <Image src={icon} width={32} height={32} quality={100} alt="" />
         </div>
-        <h4 className="capitalize">{network}</h4>
+        <h6 className="capitalize font-bold">{symbol}</h6>
       </div>
+      <div className="z-10 w-full flex flex-row xsm:flex-col gap-2">
+        <div className=" w-full grid grid-cols-4 gap-2 items-center">
+          <div className="flex flex-col gap-1">
+            {/* <p>Quantity</p> */}
+            <h6 className="text-gray">
+              {quantity ? formatNumbers(quantity) : <TextLoader />}
+            </h6>
+          </div>
 
-      <div className="grid grid-cols-5 min-w-[60%]">
-        <div className="flex flex-col col-span-1 items-end">
-          <p>Quantity</p>
-          <h4>{quantity ? formatNumbers(quantity) : <TextLoader />}</h4>
-        </div>
+          <div className="flex flex-col col-span-2 gap-1 ">
+            {/* <p>Reward</p> */}
+            <h6 className="text-gray">-</h6>
+          </div>
 
-        <div className="flex flex-col col-span-3 items-center">
-          <div className="min-w-[60%] flex flex-col items-end">
-            <p>Price</p>
-            {loading ? <TextLoader /> : <h4>{currentPrice}</h4>}
+          <div className="flex flex-col gap-1">
+            {/* <p>Price</p> */}
+            {loading ? <TextLoader /> : <h6 className="text-gray">{currentPrice}</h6>}
           </div>
         </div>
-
-        <div className="min-w-[52px] flex flex-col text-right col-span-1 items-end ml-4">
-          <p>USD value</p>
-          <h4>{usdValue ? formatNumber(usdValue) : <TextLoader />}</h4>
+        <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 px-4 py-4 xsm:py-1 overflow-hidden">
+          {/* <Image
+            fill
+            objectFit="cover"
+            objectPosition="center"
+            src="/images/bgs/ygata/gradientBgSmall.jpg"
+            quality={100}
+            alt=""
+            className="rotate-180"
+          /> */}
+          {/* <p className="z-[1] text-black">USD value</p> */}
+          {loading ? (
+            <TextLoader />
+          ) : (
+            <h6 className="z-[1]">
+              {usdValue ? formatNumber(usdValue) : "-"}
+            </h6>
+          )}
         </div>
       </div>
     </div>

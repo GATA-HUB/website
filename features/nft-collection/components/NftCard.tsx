@@ -1,9 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { PrimaryButton } from "../../common/components/Button";
+import {
+  PrimaryButton,
+  SecondaryButton,
+  SecondaryExternalLink,
+} from "../../common/components/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import ExternalLinkIcon from "@/features/common/components/ExternalLinkIcon";
 
 interface Props {
   image: string;
@@ -12,12 +17,23 @@ interface Props {
   collection: string;
   href: string;
   details: string;
+  rewardsUrl?: string;
 }
 
-const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
+const NftCard = ({
+  image,
+  name,
+  desc,
+  collection,
+  href,
+  details,
+  rewardsUrl,
+}: Props) => {
   const ref = useRef<HTMLParagraphElement>(null);
   const [descHeight, setDescHeight] = useState(30);
   const [loadMore, setLoadMore] = useState(false);
+
+  console.log(`Rewards from ${name} NFT card :${rewardsUrl}`);
 
   useEffect(() => {
     if (ref.current) {
@@ -46,7 +62,6 @@ const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
 
   return (
     <motion.div
-      onClick={() => window.open(details, "_blank")}
       style={{
         position: "relative",
         display: "flex",
@@ -56,7 +71,6 @@ const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
         borderRadius: "16px",
         background: "#000",
         border: "solid 1px rgba(255, 255, 255, 0.1)",
-        cursor: "pointer",
         zIndex: 0,
         overflow: "hidden",
       }}
@@ -83,7 +97,21 @@ const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
             </div>
           </div>
           <div className="flex flex-col gap-[12px] w-full p-3 lg:p-4">
-            <h4>{name}</h4>
+            <div
+              className={`flex items-center ${
+                details ? "justify-between" : "justify-start"
+              } w-full gap-4`}
+            >
+              <h4>{name}</h4>
+              {details && (
+                <div
+                  onClick={() => window.open(details, "_blank")}
+                  className="w-4 h-4 items-center justify-center"
+                >
+                  <ExternalLinkIcon size={16} />
+                </div>
+              )}
+            </div>
 
             <div className="flex flex-col">
               <motion.div
@@ -119,10 +147,17 @@ const NftCard = ({ image, name, desc, collection, href, details }: Props) => {
             </div>
           </div>
         </div>
-        <div className="px-4 pb-4 w-full">
+        <div className="z-10 px-4 pb-4 w-full gap-2 flex flex-col">
           <PrimaryButton width="full" href={href}>
             Collect
           </PrimaryButton>
+          <SecondaryButton
+            href={rewardsUrl}
+            width="full"
+            disabled={!rewardsUrl}
+          >
+            Rewards
+          </SecondaryButton>
         </div>
       </div>
     </motion.div>

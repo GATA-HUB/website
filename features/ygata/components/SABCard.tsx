@@ -119,37 +119,39 @@ const SABCard = ({
   };
 
   return (
-    <div className="w-full flex gap-4 rounded-xl items-center xsm:p-4 pl-4 bg-black border-[1px] border-white border-opacity-10 overflow-hidden">
-      <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+    <div className="group relative w-full flex gap-4 items-center xsm:p-4 pl-4 bg-black border-[1px] border-dgray overflow-hidden">
+      <div className="absolute bg-dgray left-0 right-0 w-full h-0 group-hover:h-full transition-all ease-out duration-300"/>
+      <div className="z-10 flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
         <div className="min-w-8 min-h-8 flex items-center justify-center">
           <Image src={icon} width={32} height={32} quality={100} alt="" />
         </div>
-        <h4 className="capitalize">{symbol}</h4>
+        <h6 className="capitalize font-bold">{symbol}</h6>
       </div>
-      <div className="w-full flex flex-row xsm:flex-col gap-2">
+      <div className="z-10 w-full flex flex-row xsm:flex-col gap-2">
         <div className=" w-full grid grid-cols-4 gap-2 items-center">
           <div className="flex flex-col gap-1">
-            <p>Quantity</p>
-            <h4>
+            {/* <p>Quantity</p> */}
+            <h6 className="text-gray">
+              
               {formatNumber(roundedQuantity)}
               {/* <span className="text-[12px] font-space text-gray">
             .{formatQuantity(quantity).decimalPart}
           </span> */}
-            </h4>
+            </h6>
           </div>
 
-          <div className="flex flex-col col-span-2 gap-1">
-            <p>Reward</p>
-            {loading ? <TextLoader /> : <h4>{reward ? reward : "-"}</h4>}
+          <div className="flex flex-col col-span-2 gap-1 ">
+            {/* <p>Reward</p> */}
+            {loading ? <TextLoader /> : <h6 className="text-gray">{reward ? reward : "-"}</h6>}
           </div>
 
           <div className="flex flex-col gap-1">
-            <p>Price</p>
-            {loading ? <TextLoader /> : <h4>${currentPrice}</h4>}
+            {/* <p>Price</p> */}
+            {loading ? <TextLoader /> : <h6 className="text-gray">${currentPrice}</h6>}
           </div>
         </div>
-        <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 bg-black border-l-[1px] border-white border-opacity-10 px-4 py-3 xsm:py-1 rounded-r-lg xsm:rounded-md overflow-hidden">
-          <Image
+        <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 px-4 py-4 xsm:py-1 overflow-hidden">
+          {/* <Image
             fill
             objectFit="cover"
             objectPosition="center"
@@ -157,14 +159,14 @@ const SABCard = ({
             quality={100}
             alt=""
             className="rotate-180"
-          />
-          <p className="z-[1] text-black">USD value</p>
+          /> */}
+          {/* <p className="z-[1] text-black">USD value</p> */}
           {loading ? (
             <TextLoader />
           ) : (
-            <h4 className="z-[1] text-black">
+            <h6 className="z-[1]">
               {usdValue ? `$${usdValue}` : "-"}
-            </h4>
+            </h6>
           )}
         </div>
       </div>
