@@ -139,7 +139,7 @@ const LandingPage = () => {
           {/* Title text section */}
           <div className="z-10 flex flex-col">
             {/* Heading 01 */}
-            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[104px]">
+            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[88px]">
               <h1 className="h-fit">GATA</h1>
               <div className="hidden md:flex flex-col animate-text-slide h-fit w-fit">
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
@@ -222,7 +222,7 @@ const LandingPage = () => {
 
         {/* Gata Breif */}
         <section className="z-10 mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 grid grid-cols-2 lg:grid-cols-4 gap-2 items-center">
-          <div className="relative w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden">
+          <div className="relative w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden">
             <div className="z-[1] w-10 h-10 sm:w-12 sm:h-12 flex justify-center items-center">
               <Image
                 width={48}
@@ -249,7 +249,7 @@ const LandingPage = () => {
             />
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
+          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
             <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
               <Image
                 width={48}
@@ -275,7 +275,7 @@ const LandingPage = () => {
             <p>GATA Circulating Supply</p>
           </div> */}
 
-          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
+          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
             <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
               <Image
                 width={48}
@@ -303,7 +303,7 @@ const LandingPage = () => {
             <p>IBC relayer transactions</p>
           </div> */}
 
-          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
+          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
             <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
               <Image
                 width={48}

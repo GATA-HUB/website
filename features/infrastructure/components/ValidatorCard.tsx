@@ -89,7 +89,7 @@ const ValidatorCard = ({
         alignItems: "center",
         width: "100%",
         height: "100%",
-        borderRadius: "16px",
+        borderRadius: "8px",
         background: "#000",
         border: "solid 1px rgba(255, 255, 255, 0.1)",
         cursor: "pointer",

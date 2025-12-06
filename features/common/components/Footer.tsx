@@ -10,6 +10,7 @@ import {
   MediumFooter,
   TwitterFooter,
 } from "./FooterSocialMediaButtons";
+import GridDistortion from "@/features/landing-page/components/GridDistortion";
 
 const Footer = () => {
   return (
@@ -42,14 +43,24 @@ const Footer = () => {
           <GithubFooter />
         </div>
       </div>
-      <Image
+      <div className="absolute bottom-0 w-[1920px] h-[634px]">
+        <GridDistortion
+          imageSrc="/images/footer/footer.png"
+          grid={15}
+          mouse={0.1}
+          strength={0.15}
+          relaxation={0.8}
+          className="custom-class"
+        />
+      </div>
+      {/* <Image
         alt=""
         width={1920}
         height={443}
         loading="lazy"
         className="z-[-1] w-full absolute bottom-0"
         src="/images/footer/footer.png"
-      />
+      /> */}
     </div>
   );
 };
