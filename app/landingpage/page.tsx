@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SecondaryButton } from "../../features/common/components/Button";
 import ValidatorCard from "../../features/infrastructure/components/ValidatorCard";
-import ValData from "../../features/infrastructure/data/validators.json";
+import ValData from "../../features/landing-page/data/validators_home.json";
 import teamData from "../../features/landing-page/data/team.json";
 import ValLogosAnim from "../../features/landing-page/components/ValLogosAnim";
 import { fetchValDelegation } from "@/api/fetchValDelegation";
@@ -23,6 +23,7 @@ import {
   Twitter,
 } from "../../features/common/components/SocialMediaButtons";
 import { Validator, Team } from "../../types";
+import GridDistortion from "@/features/landing-page/components/GridDistortion";
 
 const LandingPage = () => {
   const initialVals: Validator[] = ValData;
@@ -94,22 +95,30 @@ const LandingPage = () => {
   return (
     <div className="z-10 flex flex-col w-full items-center overflow-x-hidden">
       {/* Header */}
-      <div className="z-[-1] relative flex w-full px-4 justify-end items-center h-[80vh]">
-        <div className="z-[-1] w-full h-full flex justify-end items-center">
+      <div className="relative flex w-full px-4 justify-end items-center h-[80vh]">
+        <div className="w-full h-full flex justify-end items-center">
           <div className="w-full h-full flex justify-center xl:justify-end">
             <div className="w-[800px] xsm:h-[60vh] md:h-[800px] relative h-full flex flex-col justify-center items-center">
-              <div className="absolute w-[3180px] flex items-center justify-center">
-                <Image
+              <div className="absolute w-[3180px] aspect-[16/9] flex items-center justify-center z-0 pointer-events-auto">
+                <GridDistortion
+                  imageSrc="/images/headers/headercatbg.png"
+                  grid={30}
+                  mouse={0.1}
+                  strength={0.15}
+                  relaxation={0.8}
+                  className="custom-class"
+                />
+                {/* <Image
                   width={3180}
                   height={1777}
                   alt=""
                   src="/images/headers/headercatbg.png"
                   loading="lazy"
-                />
+                /> */}
               </div>
               <HeroCatBgAnimation />
-              <div className="z-10 h-full absolute flex items-center md:items-end justify-center px-16 sm:px-32 ">
-                <div className="flex w-fit h-fit sm:mb-[-40px]">
+              <div className="z-10 h-full absolute flex items-center md:items-end justify-center px-16 sm:px-32 pointer-events-none">
+                <div className="relative flex w-fit h-fit sm:mb-[-40px]">
                   <Image
                     src="/images/headers/gataCat.png"
                     alt="GATA main"
@@ -128,7 +137,7 @@ const LandingPage = () => {
         {/* Hero Section */}
         <section className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8">
           {/* Title text section */}
-          <div className="flex flex-col">
+          <div className="z-10 flex flex-col">
             {/* Heading 01 */}
             <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[104px]">
               <h1 className="h-fit">GATA</h1>
@@ -198,7 +207,7 @@ const LandingPage = () => {
           </div>
 
           {/* Social Media Links */}
-          <div className="flex gap-8 lg:gap-12">
+          <div className="flex gap-8 lg:gap-12 flex-wrap">
             <Twitter />
             <Discord />
             <Medium />
@@ -212,21 +221,21 @@ const LandingPage = () => {
         </section>
 
         {/* Gata Breif */}
-        <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 grid grid-cols-2 sm:grid-cols-12 lg:grid-cols-4 xl:grid-cols-8 gap-2 items-center">
-          <div className="relative w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 col-span-2 sm:col-span-6 lg:col-span-2 xl:col-span-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden">
-            <div className="z-[1] w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
+        <section className="z-10 mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 grid grid-cols-2 lg:grid-cols-4 gap-2 items-center">
+          <div className="relative w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden">
+            <div className="z-[1] w-10 h-10 sm:w-12 sm:h-12 flex justify-center items-center">
               <Image
-                width={64}
-                height={64}
+                width={48}
+                height={48}
                 alt="icons"
                 src="/images/common/atome.svg"
               />
             </div>
-            <div className="z-[1] flex gap-2 flex-wrap">
-              <h2 className="text-[40px] xl:text-[64px] font-bold leading-[40px] text-black">
+            <div className="z-[1] flex gap-2 flex-wrap items-center">
+              <h2 className="text-[20px] xl:text-[24px] font-bold text-black">
                 218K
               </h2>
-              <h3 className="text-black">USD</h3>
+              <h5 className="text-black/50">USD</h5>
             </div>
             <p className="z-[1] text-black">Rewards Distributed</p>
 
@@ -240,24 +249,24 @@ const LandingPage = () => {
             />
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
+          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
+            <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
               <Image
-                width={64}
-                height={64}
+                width={48}
+                height={48}
                 alt="icons"
                 src="/images/common/epoch.svg"
               />
             </div>
-            <h2 className=" text-[40px] xl:text-[64px] font-bold">33</h2>
+            <h2 className=" text-[20px] xl:text-[24px] font-bold">33</h2>
             <p>Reward Months</p>
           </div>
 
           {/* <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-4 lg:col-span-1 xl:col-span-3 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
+            <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
               <Image
-                width={64}
-                height={64}
+                width={48}
+                height={48}
                 alt="icons"
                 src="/images/common/supply.svg"
               />
@@ -266,26 +275,26 @@ const LandingPage = () => {
             <p>GATA Circulating Supply</p>
           </div> */}
 
-          <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
+          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
+            <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
               <Image
-                width={64}
-                height={64}
+                width={48}
+                height={48}
                 alt="icons"
                 src="/images/common/validator.svg"
               />
             </div>
-            <h2 className="text-[40px] xl:text-[64px] font-bold">
+            <h2 className="text-[20px] xl:text-[24px] font-bold">
               {activeValidators}
             </h2>
             <p>Network Supported</p>
           </div>
 
           {/* <div className="w-full h-full flex flex-col gap-[16px] p-4 xl:p-6 sm:col-span-3 lg:col-span-1 xl:col-span-2 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
+            <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
               <Image
-                width={64}
-                height={64}
+                width={48}
+                height={48}
                 alt="icons"
                 src="/images/common/relay.svg"
               />
@@ -294,24 +303,24 @@ const LandingPage = () => {
             <p>IBC relayer transactions</p>
           </div> */}
 
-          <div className="w-full h-full flex flex-col col-span-2 sm:col-span-12 lg:col-span-4 xl:col-span-6 gap-[16px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex justify-center items-center">
+          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[16px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
+            <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
               <Image
-                width={64}
-                height={64}
+                width={48}
+                height={48}
                 alt="icons"
                 src="/images/common/staked.svg"
               />
             </div>
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex gap-2 items-center flex-wrap">
               {isLoading ? (
                 <LargeTextLoader />
               ) : (
-                <h2 className="text-[40px] xl:text-[64px] font-bold leading-[40px]">
+                <h2 className="text-[20px] xl:text-[24px] font-bold">
                   {delegation}
                 </h2>
               )}
-              <h3 className="">USD</h3>
+              <h5 className="text-gray">USD</h5>
             </div>
             <p>Assets Staked</p>
           </div>
@@ -407,7 +416,7 @@ const LandingPage = () => {
           </div>
 
           <div className="flex w-full relative overflow-hidden">
-            <div className="flex w-full flex-wrap gap-16 justify-center">
+            <div className="flex w-full flex-wrap gap-x-0 gap-y-16 sm:gap-x-8 lg:gap-x-16 lg:gap-y-16 justify-center">
               {initialTeam.map((member, i) => {
                 return (
                   <MemberCard

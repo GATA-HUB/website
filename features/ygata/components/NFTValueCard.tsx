@@ -34,14 +34,9 @@ const NFTValueCard = ({ icon, network, quantity, usdValue }: Props) => {
             </h6>
           </div>
 
-          <div className="flex flex-col col-span-2 gap-1 ">
-            {/* <p>Type</p> */}
-            <h6 className="text-gray">-</h6>
-          </div>
-
           <div className="flex flex-col gap-1">
             {/* <p>Floor Price</p> */}
-            <h6 className="text-gray">-</h6>
+            <h6 className="text-gray">{usdValue ? `$${usdValue}` : "-"}</h6>
           </div>
         </div>
         <div className="relative xsm:w-full w-1/4 min-w-[104px] flex flex-col xsm:flex-row xsm:justify-between gap-1 px-4 py-4 xsm:py-1 overflow-hidden">

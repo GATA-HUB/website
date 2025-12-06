@@ -23,6 +23,7 @@ import { fetchCoingeckoPrice } from "@/api/fetchCoingeckoPrice";
 import TextLoader from "@/features/common/components/TextLoader";
 import CryptoTable from "@/features/ygata/components/CryptoTable";
 import TotalAssetsCard from "@/features/ygata/components/TotalAssetsCard";
+import GridDistortion from "@/features/landing-page/components/GridDistortion";
 
 const page = () => {
   const initialLiquidity: Liquidity[] = liquidityData;
@@ -30,7 +31,8 @@ const page = () => {
   const initialNFTVal: YGataNFT[] = nftAssetsData;
 
   const totalLPValue = 112500;
-  const totalNFTValue = 0;
+  const totalNFTValue = 11840;
+  const totalFiatValue = 5000;
 
   const [sabData, setSabData] = useState<StakedAssetsBreakdown[] | null>();
   // const [CoingeckoYGata, setCoingeckoYGata] = useState(0);
@@ -202,25 +204,37 @@ const page = () => {
   return (
     <div className="z-10 flex flex-col w-full items-center">
       <div className="relative flex w-full h-[620px] items-center ">
-        <div className="absolute w-full h-full overflow-hidden flex justify-center">
+        <div className="z-20 absolute w-full h-full overflow-hidden flex justify-center">
           <div className="z-10 absolute bottom-0 right-0 left-0 w-full h-[128px] bg-gradient-to-t from-black to-transparent"></div>
-          <Image
-            style={{
-              minWidth: "1920px",
-            }}
-            src="/images/headers/ygataBg.jpg"
-            // width={1920}
-            // height={960}
-            fill
-            objectFit="cover"
-            objectPosition="top"
-            quality={100}
-            alt=""
-            priority={true}
-          />
+          <div className="relative w-[1920px] h-[960px] aspect-[16/9] flex items-center justify-center z-0 pointer-events-auto">
+            <GridDistortion
+              imageSrc="/images/headers/ygataBg.jpg"
+              grid={15}
+              mouse={0.1}
+              strength={0.15}
+              relaxation={0.8}
+              className="custom-class"
+            />
+          </div>
+          {/* <div className="flex lg:hidden">
+            <Image
+              style={{
+                minWidth: "1920px",
+              }}
+              src="/images/headers/ygataBg.jpg"
+              // width={1920}
+              // height={960}
+              fill
+              objectFit="cover"
+              objectPosition="top"
+              quality={100}
+              alt=""
+              priority={true}
+            />
+          </div> */}
         </div>
-        <div className="w-full mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
-          <div className="flex flex-col gap-2 lg:w-1/2">
+        <div className="z-30 max-w-[620px] mx-8 lg:mx-16 3xl:ml-40 3xl:mr-0 flex flex-col gap-8 z-10">
+          <div className="flex flex-col gap-2">
             <h1 className="w-full">GATA Yield Assets</h1>
             <h5 className="text-gray">Managed Assets</h5>
             <div className="w-fit flex gap-2 items-center bg-black py-2 pl-2 pr-4 rounded-md border-[1px] border-white border-opacity-10">
@@ -318,7 +332,8 @@ const page = () => {
           </div>
         </div>
       </div>
-      <motion.div
+      { /* -- Floating buttons -- */}
+      {/* <motion.div
         initial={{
           bottom: "-64px",
         }}
@@ -343,7 +358,7 @@ const page = () => {
         <SecondaryExternalLink href="https://docs.gatahub.zone/welcome-to-gitbook/gatahub/ygata">
           docs
         </SecondaryExternalLink>
-      </motion.div>
+      </motion.div> */}
 
       <div className="w-full flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64 mt-24">
         {/* content container 1 - hidden */}
@@ -507,7 +522,24 @@ const page = () => {
                 />
               );
             })}
-            <div className="w-full h-2 bg-dgray rounded-b-[8px]"/>
+            {/* Total Row */}
+            <div className="w-full flex gap-4 items-center p-4 pl-8 bg-dgray border-t-[1px] border-white border-opacity-10 rounded-b-[8px]">
+              <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+                <h6 className="capitalize font-bold">Total</h6>
+              </div>
+              <div className="w-full flex justify-end">
+                <div className="flex gap-2 items-center">
+                  {stakedAssets || liquidAssets ? (
+                    <>
+                      <h4>{formatPrice(stakedAssets + liquidAssets)}</h4>
+                      <h4 className="text-purple">USD</h4>
+                    </>
+                  ) : (
+                    <h4>-</h4>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* <div className="z-[-1] absolute w-full flex justify-center items-center">
@@ -671,10 +703,6 @@ const page = () => {
                     <p>Quantity</p>
                   </div>
 
-                  <div className="flex flex-col col-span-2 gap-1 ">
-                    <p>Reward</p>
-                  </div>
-
                   <div className="flex flex-col gap-1">
                     <p>Price</p>
                   </div>
@@ -695,7 +723,18 @@ const page = () => {
                 />
               );
             })}
-            <div className="w-full h-2 bg-dgray rounded-b-[8px]"/>
+            {/* Total Row */}
+            <div className="w-full flex gap-4 items-center p-4 pl-8 bg-dgray border-t-[1px] border-white border-opacity-10 rounded-b-[8px]">
+              <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+                <h6 className="capitalize font-bold">Total</h6>
+              </div>
+              <div className="w-full flex justify-end">
+                <div className="flex gap-2 items-center">
+                  <h4>{formatNumber(totalNFTValue)}</h4>
+                  <h4 className="text-purple">USD</h4>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -722,7 +761,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-            {sabData?.map((assets, i) => {
+            {/* {sabData?.map((assets, i) => {
               return(
                 <TotalAssetsCard
                   key={i}
@@ -756,10 +795,49 @@ const page = () => {
                   quantity={assets.quantity}
                   symbol={assets.network}
                   totalCategoryValue={liquidAssets}
+                  price={assets.usdValue}
                 />
               );
-            })}
-            <div className="w-full h-2 bg-dgray rounded-b-[8px]"/>
+            })} */}
+            <TotalAssetsCard
+              tokenName="Total Tokens"
+              quantity={1}
+              price={stakedAssets + liquidAssets}
+              symbol="Tokens"
+              totalCategoryValue={liquidAssets}
+            />
+            <TotalAssetsCard
+              tokenName="Total Fiat"
+              quantity={1}
+              price={totalFiatValue}
+              symbol="Fiat"
+              totalCategoryValue={liquidAssets}
+            />
+            <TotalAssetsCard
+              tokenName="Total NFTs"
+              quantity={1}
+              price={totalNFTValue}
+              symbol="NFTs"
+              totalCategoryValue={liquidAssets}
+            />
+            {/* Total Row */}
+            <div className="w-full flex gap-4 items-center p-4 pl-8 bg-dgray border-t-[1px] border-white border-opacity-10 rounded-b-[8px]">
+              <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+                <h6 className="capitalize font-bold">Total</h6>
+              </div>
+              <div className="w-full flex justify-end">
+                <div className="flex gap-2 items-center">
+                  {managedAssets ? (
+                    <>
+                      <h4>{formatNumber(managedAssets)}</h4>
+                      <h4 className="text-purple">USD</h4>
+                    </>
+                  ) : (
+                    <h4>-</h4>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

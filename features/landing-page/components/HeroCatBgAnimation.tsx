@@ -367,7 +367,7 @@ const HeroCatBgAnimation = () => {
             layout="fill"
             objectFit="cover"
             objectPosition="center"
-            src="/images/validators/teri.png"
+            src="/images/validators/atomone.png"
             alt=""
             loading="lazy"
           />

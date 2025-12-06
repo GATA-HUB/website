@@ -47,7 +47,7 @@ export default function Nav() {
 
   return (
     <div className="z-30 fixed top-0 left-0 w-full flex justify-center">
-      <nav className="relative w-full flex justify-center items-center border-y-[1px] border-white border-opacity-10 bg-black pl-[18px] pr-[18px] py-[8px]">
+      <nav className="relative w-full flex justify-center items-center border-y-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[16px] pl-[18px] pr-[18px] py-[8px]">
         <div className="flex w-full justify-between items-center max-w-[1880px]">
           {/* Logo */}
           <Link href={"/"} onClick={closeHumberger}>
@@ -319,7 +319,7 @@ export default function Nav() {
             menu === true
               ? "opacity-100 transform scale-y-100 origin-top py-[16px] top-[48px] z-10"
               : "opacity-0 transform scale-y-0 origin-top py-0 top-12 z-[-1]"
-          } flex flex-col gap-4 px-6 overflow-hidden absolute lg:hidden border-y-[1px] border-white border-opacity-10 right-0 w-full bg-black transition-all duration-600 ease-in-out`}
+          } flex flex-col gap-4 px-6 min-h-[192px] overflow-hidden absolute lg:hidden border-y-[1px] border-white border-opacity-10 right-0 w-full bg-black/50 backdrop-blur-[16px] transition-all duration-600 ease-in-out`}
         >
           <div onClick={humberger}>
             <Link
@@ -333,7 +333,7 @@ export default function Nav() {
             </Link>
           </div>
 
-          <div onClick={humberger}>
+          {/* <div onClick={humberger}>
             <Link
               onClick={closeDropDown}
               className={`py-[16px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
@@ -343,7 +343,7 @@ export default function Nav() {
             >
               RollApp
             </Link>
-          </div>
+          </div> */}
 
           <div
             className={`group w-fit flex gap-2 items-center justify-center h-fit py-[8px] transition-all duration-300 ease-in-out font-semibold hover:text-white text-[16px] cursor-pointer text-${
@@ -374,11 +374,11 @@ export default function Nav() {
               </svg>
             </div>
             {dropDown && (
-              <div className="absolute right-0 top-0 bottom-0 w-1/2 flex flex-col bg-black border-l-[1px] border-white border-opacity-10 overflow-hidden">
+              <div className="absolute right-0 top-0 bottom-0 w-1/2 flex flex-col bg-black/10 backdrop-blur-[16px] border-l-[1px] border-white border-opacity-10 overflow-hidden">
                 <div onClick={humberger}>
                   <Link
                     href={"/infrastructure/validators"}
-                    className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-black hover:bg-dgray text-gray hover:text-white`}
+                    className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-black/10 backdrop-blur-[16px] hover:bg-dgray/50 text-gray hover:text-white`}
                   >
                     <div className="w-8 h-8 flex items-center justify-center">
                       <svg
@@ -426,7 +426,7 @@ export default function Nav() {
                 <div onClick={humberger}>
                   <Link
                     href={"/infrastructure/endpoints"}
-                    className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-black hover:bg-dgray text-gray hover:text-white`}
+                    className={`flex gap-2 py-4 pl-4 pr-6 items-center bg-black/10 backdrop-blur-[16px] hover:bg-dgray/50 text-gray hover:text-white`}
                   >
                     <div className="w-8 h-8 flex items-center justify-center">
                       <svg
@@ -463,7 +463,7 @@ export default function Nav() {
                         "_blank"
                       )
                     }
-                    className={`group flex gap-2 py-4 pl-4 pr-5 justify-between items-center bg-black hover:bg-dgray text-gray hover:text-white`}
+                    className={`group flex gap-2 py-4 pl-4 pr-5 justify-between items-center bg-black/10 backdrop-blur-[16px] hover:bg-dgray/50 text-gray hover:text-white`}
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 flex items-center justify-center">
@@ -525,7 +525,7 @@ export default function Nav() {
             </Link>
           </div>
 
-          <div onClick={humberger}>
+          {/* <div onClick={humberger}>
             <Link
               onClick={closeDropDown}
               className={`py-[16px] transition-all duration-300 ease-in-out uppercase font-semibold hover:text-white text-[16px] text-${
@@ -547,7 +547,7 @@ export default function Nav() {
             >
               Rewards
             </Link>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>

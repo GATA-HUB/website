@@ -53,6 +53,7 @@ h1 {
   font-size: 48px;
   font-family: var(--font-spacemono);
   line-height: 48px;
+  letter-spacing: -0.05em;
 }
 
 h2 {
@@ -173,8 +174,8 @@ p {
 
 @media (min-width: 1536px) {
   h1 {
-    font-size: 96px;
-    line-height: 96px;
+    font-size: 80px;
+    line-height: 80px;
   }
 
   h2 {

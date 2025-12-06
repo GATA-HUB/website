@@ -1,0 +1,50 @@
+[
+    {
+        "network": "BTC",
+        "icon": "/images/validators/btc.png",
+        "quantity": 0.01,
+        "symbol": "nBTC"
+    },
+    {
+        "network": "ETH",
+        "icon": "/images/validators/eth.png",
+        "quantity": 0.5,
+        "symbol": "ETH"
+    },
+    {
+        "network": "SOL",
+        "icon": "/images/validators/sol.png",
+        "quantity": 1,
+        "symbol": "SOL"
+    },
+    {
+        "network": "ATOM",
+        "icon": "/images/validators/cosmos.png",
+        "quantity": 10,
+        "symbol": "ATOM"
+    },
+    {
+        "network": "FLIX",
+        "icon": "/images/validators/omni.png",
+        "quantity": 1000,
+        "symbol": "FLIX"
+    },
+    {
+        "network": "STARS",
+        "icon": "/images/validators/stars.png",
+        "quantity": 20000,
+        "symbol": "STARS"
+    },
+    {
+        "network": "GATAc",
+        "icon": "/images/validators/gata.png",
+        "quantity": 0,
+        "usdValue": 0
+    },
+    {
+        "network": "GATAv",
+        "icon": "/images/validators/gata.png",
+        "quantity": 0,
+        "usdValue": 0
+    }
+]

@@ -6,13 +6,14 @@ import TextLoader from "../../common/components/TextLoader";
 import { fetchTokenPriceV2 } from "@/api/fetchTokenPriceV2";
 
 interface Props {
-  icon: string;
+  icon?: string;
   tokenName: string;
   quantity: number;
   symbol: string;
   totalCategoryValue: number; // The total value (staked or liquid) to calculate percentage against
   setUSDValue?: (value: number) => void; // Callback to report this card's value to parent
   lg?: boolean;
+  price?: number;
 }
 
 const TotalAssetsCard = ({
@@ -22,7 +23,8 @@ const TotalAssetsCard = ({
   symbol,
   totalCategoryValue,
   setUSDValue,
-  lg
+  lg,
+  price
 }: Props) => {
   const [loading, setLoading] = useState(false);
   const [currentPrice, setCurrentPrice] = useState(0);
@@ -82,9 +84,11 @@ const TotalAssetsCard = ({
     <div className="group relative w-full flex gap-4 items-center xsm:p-4 pl-4 bg-black border-[1px] border-dgray overflow-hidden">
       <div className="absolute bg-dgray left-0 right-0 w-full h-0 group-hover:h-full transition-all ease-out duration-300" />
       <div className="z-10 flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
+      {icon && (
         <div className="min-w-8 min-h-8 flex items-center justify-center">
           <Image src={icon} width={32} height={32} quality={100} alt="" />
         </div>
+      )}
         <h6 className="capitalize font-bold">{tokenName}</h6>
       </div>
       <div className="z-10 w-full flex flex-row xsm:flex-col gap-2">
@@ -94,7 +98,7 @@ const TotalAssetsCard = ({
             {loading ? (
               <TextLoader />
             ) : (
-              <h6 className="text-gray">{formatCurrency(usdValue)}</h6>
+              <h6 className="text-gray">{price ? formatCurrency(price * quantity) : formatCurrency(usdValue)}</h6>
             )}
           </div>
            {/* Empty columns to match grid layout if needed, or adjust grid */}
@@ -105,7 +109,7 @@ const TotalAssetsCard = ({
           {loading ? (
             <TextLoader />
           ) : (
-            <h6 className="z-[1]">{formatPercentage(usdValue, totalCategoryValue)}</h6>
+            <h6 className="z-[1]">{price ? formatPercentage(price * quantity, totalCategoryValue) : formatPercentage(usdValue, totalCategoryValue)}</h6>
           )}
         </div>
       </div>

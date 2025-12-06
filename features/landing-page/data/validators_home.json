@@ -1,0 +1,58 @@
+[
+    {
+        "icon": "/images/validators/cosmos.png",
+        "title": "Cosmos",
+        "network": "cosmoshub",
+        "tokens": 200,
+        "symbol": "ATOM",
+        "commission": "5%",
+        "status": "https://www.mintscan.io/cosmos/validators/cosmosvaloper10unx6s0cdqntvrumd5hs07rgd5ytcztqh8etw6",
+        "stake": "https://wallet.keplr.app/chains/cosmos-hub",
+        "autoCompound": "",
+        "stat": "active",
+        "addr": "cosmosvaloper10unx6s0cdqntvrumd5hs07rgd5ytcztqh8etw6",
+        "active": true
+    },
+    {
+        "icon": "/images/validators/atomone.png",
+        "title": "AtomOne",
+        "network": "atone",
+        "tokens": 93775.75,
+        "symbol": "ATONE",
+        "commission": "5%",
+        "status": "https://explorer.allinbits.services/atomone/uptime",
+        "stake": "https://explorer.allinbits.services/atomone/staking/atonevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq7w6s7f",
+        "autoCompound": "",
+        "stat": "active",
+        "addr": "atone10unx6s0cdqntvrumd5hs07rgd5ytcztqun3e53",
+        "active": true
+    },
+    {
+        "icon": "/images/validators/akt.png",
+        "title": "Akash",
+        "network": "akash",
+        "tokens": 1,
+        "symbol": "AKT",
+        "commission": "5%",
+        "status": "https://www.mintscan.io/akash/validators/akashvaloper1jr62umvv72q233e2ew8fkaf0x9yhzfqef42kak",
+        "stake": "https://wallet.keplr.app/chains/akash?modal=validator&chain=akashnet-2&validator_address=akashvaloper1jr62umvv72q233e2ew8fkaf0x9yhzfqef42kak",
+        "autoCompound": "",
+        "stat": "active",
+        "addr": "akashvaloper1jr62umvv72q233e2ew8fkaf0x9yhzfqef42kak",
+        "active": true
+    },
+    {
+        "icon": "/images/validators/osmosis.png",
+        "title": "Osmosis",
+        "network": "osmosis",
+        "tokens": 2000,
+        "symbol": "OSMO",
+        "commission": "",
+        "status": "",
+        "stake": "",
+        "autoCompound": "",
+        "stat": "decommissioned",
+        "addr": "osmovaloper1d5ada26tcd24wltfakqkkdu3656k6n4chnyz8h",
+        "active": false
+    }
+]

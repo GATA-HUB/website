@@ -47,7 +47,7 @@ const ValLogosAnim = () => {
               width={80}
               height={80}
               alt=""
-              src="/images/validators/neutron.png"
+              src="/images/validators/atomone.png"
             />
             <Image
               width={80}
@@ -173,7 +173,7 @@ const ValLogosAnim = () => {
               width={80}
               height={80}
               alt=""
-              src="/images/validators/neutron.png"
+              src="/images/validators/atomone.png"
             />
             <Image
               width={80}
@@ -313,7 +313,7 @@ const ValLogosAnim = () => {
               width={80}
               height={80}
               alt=""
-              src="/images/validators/neutron.png"
+              src="/images/validators/atomone.png"
             />
             <Image
               width={80}
@@ -332,7 +332,7 @@ const ValLogosAnim = () => {
               height={80}
               alt=""
               aria-hidden="true"
-              src="/images/validators/neutron.png"
+              src="/images/validators/atomone.png"
             />
           </div>
         </div>

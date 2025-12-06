@@ -68,7 +68,7 @@ const NftCard = ({
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        borderRadius: "16px",
+        borderRadius: "8px",
         background: "#000",
         border: "solid 1px rgba(255, 255, 255, 0.1)",
         zIndex: 0,
@@ -129,7 +129,7 @@ const NftCard = ({
               {loadMore ? (
                 <p
                   onClick={handleDesc}
-                  className="text-purple cursor-pointer z-10 hover:text-white"
+                  className="text-purple cursor-pointer z-10 hover:text-white transition-all ease-out duration-300"
                 >
                   {descHeight > 32 ? "Load less" : "Load more"}
                 </p>
@@ -159,6 +159,15 @@ const NftCard = ({
             Rewards
           </SecondaryButton>
         </div>
+      </div>
+      <div className="z-[-1] absolute top-12 left-0 right-0 aspect-square blur-[32px]">
+        <Image
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          alt="NFT image"
+          src={image}
+        />
       </div>
     </motion.div>
   );
