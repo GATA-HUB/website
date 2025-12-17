@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SecondaryButton } from "../../features/common/components/Button";
@@ -24,14 +24,20 @@ import {
 } from "../../features/common/components/SocialMediaButtons";
 import { Validator, Team } from "../../types";
 import GridDistortion from "@/features/landing-page/components/GridDistortion";
+import Aurora from "@/features/ygata/components/Aurora";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const LandingPage = () => {
+  const lottieStackedRef = useRef<any>(null);
+  const lottieValidatorRef = useRef<any>(null);
+  const lottieEpochRef = useRef<any>(null);
+  const lottieAtomRef = useRef<any>(null);
   const initialVals: Validator[] = ValData;
   const initialTeam: Team[] = teamData;
 
   const [delegation, setDelegation] = useState("0");
   const [isLoading, setIsLoading] = useState(false);
-  const [activeValidators, setActiveValidators] = useState(0);
+  const [activeValidators, setActiveValidators] = useState(20);
 
   const fetchPrices = async (symbol: string) => {
     const updatedTokens = await fetchTokenPriceV2(symbol);
@@ -80,17 +86,17 @@ const LandingPage = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    setIsLoading(true);
-    let count = 0;
-    initialVals.map((val) => {
-      if (val.active) {
-        count++;
-      }
-    });
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   let count = 0;
+  //   initialVals.map((val) => {
+  //     if (val.active) {
+  //       count++;
+  //     }
+  //   });
 
-    setActiveValidators(count);
-  }, []);
+  //   setActiveValidators(count);
+  // }, []);
 
   return (
     <div className="z-10 flex flex-col w-full items-center overflow-x-hidden">
@@ -221,44 +227,68 @@ const LandingPage = () => {
         </section>
 
         {/* Gata Breif */}
-        <section className="z-10 mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 grid grid-cols-2 lg:grid-cols-4 gap-2 items-center">
-          <div className="relative w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden">
-            <div className="z-[1] w-10 h-10 sm:w-12 sm:h-12 flex justify-center items-center">
-              <Image
+        <section className="z-10 mx-8 lg:mx-16 3xl:mx-40 grid grid-cols-2 lg:grid-cols-4 gap-2 items-center">
+          <div
+            onMouseEnter={() => lottieAtomRef.current?.play()}
+            onMouseLeave={() => lottieAtomRef.current?.stop()}
+            className="relative w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden"
+          >
+            <div className="w-12 h-12 flex justify-center items-center">
+              <DotLottieReact
+                src="/icons/home/atom.lottie"
+                autoplay={false}
+                loop={false}
                 width={48}
                 height={48}
-                alt="icons"
-                src="/images/common/atome.svg"
+                dotLottieRefCallback={(instance) => {
+                  lottieAtomRef.current = instance;
+                }}
               />
             </div>
             <div className="z-[1] flex gap-2 flex-wrap items-center">
-              <h2 className="text-[20px] xl:text-[24px] font-bold text-black">
-                218K
+              <h2 className="text-[20px] xl:text-[24px] font-bold text-white">
+                301K
               </h2>
-              <h5 className="text-black/50">USD</h5>
+              <h5 className="text-white/50">USD</h5>
             </div>
-            <p className="z-[1] text-black">Rewards Distributed</p>
+            <p className="z-[1] text-white">Rewards Distributed</p>
 
-            <Image
+            <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center">
+              <Aurora
+                colorStops={["#7B5AFF", "#FF4874", "#DA48FF"]}
+                blend={5}
+                amplitude={1}
+                speed={0.5}
+              />
+            </div>
+            {/* <Image
               fill
               objectFit="cover"
               objectPosition="center"
               src="/images/bgs/ygata/gradientBgSmall.jpg"
               quality={100}
               alt=""
-            />
+            /> */}
           </div>
 
-          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
-            <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
-              <Image
+          <div
+            onMouseEnter={() => lottieEpochRef.current?.play()}
+            onMouseLeave={() => lottieEpochRef.current?.stop()}
+            className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]"
+          >
+            <div className="w-12 h-12 flex justify-center items-center">
+              <DotLottieReact
+                src="/icons/home/epoch.lottie"
+                autoplay={false}
+                loop={false}
                 width={48}
                 height={48}
-                alt="icons"
-                src="/images/common/epoch.svg"
+                dotLottieRefCallback={(instance) => {
+                  lottieEpochRef.current = instance;
+                }}
               />
             </div>
-            <h2 className=" text-[20px] xl:text-[24px] font-bold">33</h2>
+            <h2 className=" text-[20px] xl:text-[24px] font-bold">40</h2>
             <p>Reward Months</p>
           </div>
 
@@ -275,13 +305,21 @@ const LandingPage = () => {
             <p>GATA Circulating Supply</p>
           </div> */}
 
-          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
-            <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
-              <Image
+          <div
+            onMouseEnter={() => lottieValidatorRef.current?.play()}
+            onMouseLeave={() => lottieValidatorRef.current?.stop()}
+            className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]"
+          >
+            <div className="w-12 h-12 flex justify-center items-center">
+              <DotLottieReact
+                src="/icons/home/validator.lottie"
+                autoplay={false}
+                loop={false}
                 width={48}
                 height={48}
-                alt="icons"
-                src="/images/common/validator.svg"
+                dotLottieRefCallback={(instance) => {
+                  lottieValidatorRef.current = instance;
+                }}
               />
             </div>
             <h2 className="text-[20px] xl:text-[24px] font-bold">
@@ -303,13 +341,21 @@ const LandingPage = () => {
             <p>IBC relayer transactions</p>
           </div> */}
 
-          <div className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]">
-            <div className="w-[1 h--10sm:w012msm:h212mflex2justify-center items-center">
-              <Image
+          <div
+            onMouseEnter={() => lottieStackedRef.current?.play()}
+            onMouseLeave={() => lottieStackedRef.current?.stop()}
+            className="w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black/10 backdrop-blur-[4px]"
+          >
+            <div className="w-12 h-12 flex justify-center items-center">
+              <DotLottieReact
+                src="/icons/home/stacked.lottie"
+                autoplay={false}
+                loop={false}
                 width={48}
                 height={48}
-                alt="icons"
-                src="/images/common/staked.svg"
+                dotLottieRefCallback={(instance) => {
+                  lottieStackedRef.current = instance;
+                }}
               />
             </div>
             <div className="flex gap-2 items-center flex-wrap">
@@ -320,7 +366,7 @@ const LandingPage = () => {
                   {delegation}
                 </h2>
               )}
-              <h5 className="text-gray">USD</h5>
+              <h5 className="text-white/50">USD</h5>
             </div>
             <p>Assets Staked</p>
           </div>

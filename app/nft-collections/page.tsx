@@ -86,7 +86,7 @@ const NftCollection = () => {
         </div>
         <div className="max-w-[800px] mx-8 lg:mx-16 3xl:ml-40 3xl:mr-0 flex flex-col gap-8 z-10">
           <div className="flex flex-col gap-2 lg:w-full">
-            <h1>Exclusive NFTs made by GATA HUB</h1>
+            <h1>Be The part of GATA HUB Yield.</h1>
           </div>
         </div>
       </div>

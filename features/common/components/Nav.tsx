@@ -265,7 +265,7 @@ export default function Nav() {
                 pathname === "/nft-collections" ? "white" : "gray"
               }`}
             >
-              NFT Collections
+              NFT-Fi
             </Link>
 
             {/* <Link
@@ -521,7 +521,7 @@ export default function Nav() {
               }`}
               href={"/nft-collections"}
             >
-              NFT Collections
+              NFT-Fi
             </Link>
           </div>
 

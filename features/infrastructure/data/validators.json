@@ -93,7 +93,7 @@
     "status": "https://mainnet.itrocket.net/elys/staking/elysvaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq6nlyj4",
     "stake": "",
     "autoCompound": "",
-    "stat": "active",
+    "stat": "decommissioned",
     "addr": "elysvaloper10unx6s0cdqntvrumd5hs07rgd5ytcztq6nlyj4",
     "active": true
   },
@@ -191,7 +191,7 @@
     "status": "https://www.mintscan.io/omniflix/validators/omniflixvaloper1ffk54ch6x8xz8dztyp64j25v7lc3mrsylkjgqj",
     "stake": "https://wallet.keplr.app/chains/omniflix?modal=validator&chain=omniflixhub-1&validator_address=omniflixvaloper1ffk54ch6x8xz8dztyp64j25v7lc3mrsylkjgqj",
     "autoCompound": "",
-    "stat": "active",
+    "stat": "decommissioned",
     "addr": "omniflixvaloper1ffk54ch6x8xz8dztyp64j25v7lc3mrsylkjgqj",
     "active": true
   },
@@ -205,7 +205,7 @@
     "status": "",
     "stake": "",
     "autoCompound": "",
-    "stat": "decommissioned",
+    "stat": "active",
     "addr": "osmovaloper1d5ada26tcd24wltfakqkkdu3656k6n4chnyz8h",
     "active": false
   },
@@ -275,7 +275,7 @@
     "status": "https://www.mintscan.io/stride/validators/stridevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztqjdf76q",
     "stake": "",
     "autoCompound": "",
-    "stat": "active",
+    "stat": "decommissioned",
     "addr": "stridevaloper10unx6s0cdqntvrumd5hs07rgd5ytcztqjdf76q",
     "active": true
   },
