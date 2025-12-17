@@ -2,15 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { fetchTokenPriceV2 } from "../../../api/fetchTokenPriceV2";
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from "../../../features/common/components/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import TextLoader from "../../common/components/TextLoader";
 import { fetchValDelegation } from "@/api/fetchValDelegation";
 import { formatPrice } from "@/actions/formatPrice";
+import PrimaryButton from "@/features/common/components/Buttons/PrimaryButton";
+import SecondaryButton from "@/features/common/components/Buttons/SecondaryButton";
 
 interface Props {
   icon: string;
@@ -90,7 +88,8 @@ const ValidatorCard = ({
         width: "100%",
         height: "100%",
         borderRadius: "8px",
-        background: "#000",
+        background: "rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(10px)",
         border: "solid 1px rgba(255, 255, 255, 0.1)",
         cursor: "pointer",
         zIndex: 0,
@@ -133,19 +132,19 @@ const ValidatorCard = ({
       <div className="z-10 flex flex-col p-3 sm:p-4 gap-2 sm:gap-4 flex-wrap w-full h-full justify-between">
         <div className="flex flex-col gap-2 sm:gap-4">
           <div className="flex flex-col sm:flex-row gap-[12px] sm:items-center">
-            <div className="flex justify-center items-center w-fit">
+            <div className="flex w-12 h-12 justify-center items-center ">
               <Image width={64} height={64} alt="" priority={true} src={icon} />
             </div>
             <h4>{title}</h4>
           </div>
 
           <div className="flex gap-4 justify-between items-center flex-wrap">
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               {loading ? (
                 <TextLoader />
               ) : (
                 <div className="flex gap-1">
-                  <p className="font-bold text-purple">
+                  <p className="font-bold text-white">
                     {delegation !== 0
                       ? formatPrice(delegation)
                       : formatPrice(tokens)}
@@ -159,10 +158,12 @@ const ValidatorCard = ({
               {loading ? (
                 <TextLoader />
               ) : (
-                <p>${currentPrice !== "NaN" ? currentPrice : 0}</p>
+                <p className="text-gray">
+                  ${currentPrice !== "NaN" ? currentPrice : 0}
+                </p>
               )}
             </div>
-            <div className="flex h-fit gap-2 px-[8px] py-[4px] items-center rounded-full bg-dgray border-[1px] border-white border-opacity-10">
+            <div className="flex h-fit gap-2 pl-[8px] pr-[12px] py-[4px] items-center rounded-full bg-black/10 backdrop-blur-xl border-[1px] border-white/10">
               <Image
                 width={16}
                 height={16}
@@ -184,31 +185,40 @@ const ValidatorCard = ({
             {status ? (
               <>
                 <div className={`hidden sm:flex w-${stake ? "fit" : "full"}`}>
-                  <PrimaryButton width={stake ? "" : "full"} href={status}>
-                    status
-                  </PrimaryButton>
+                  <SecondaryButton
+                    text="status"
+                    width={stake ? "" : "full"}
+                    href={status}
+                  ></SecondaryButton>
                 </div>
                 <div
                   className={`flex ${
                     status ? "flex" : "hidden"
                   } sm:hidden w-"full"`}
                 >
-                  <PrimaryButton width="full" href={status}>
-                    status
-                  </PrimaryButton>
+                  <SecondaryButton
+                    text="status"
+                    width="full"
+                    href={status}
+                  ></SecondaryButton>
                 </div>
               </>
             ) : null}
             {stake ? (
               <div className="w-full">
-                <PrimaryButton width="full" href={stake}>
-                  Stake Now
-                </PrimaryButton>
+                <PrimaryButton
+                  text="StakeNow"
+                  width="full"
+                  href={stake}
+                ></PrimaryButton>
               </div>
             ) : null}
           </div>
           {autoCompound ? (
-            <SecondaryButton width="full">Auto Compound</SecondaryButton>
+            <SecondaryButton
+              text="Auto Compound"
+              width="full"
+            ></SecondaryButton>
           ) : null}
         </div>
       </div>

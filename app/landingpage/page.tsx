@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { SecondaryButton } from "../../features/common/components/Button";
 import ValidatorCard from "../../features/infrastructure/components/ValidatorCard";
 import ValData from "../../features/landing-page/data/validators_home.json";
 import teamData from "../../features/landing-page/data/team.json";
@@ -26,6 +25,7 @@ import { Validator, Team } from "../../types";
 import GridDistortion from "@/features/landing-page/components/GridDistortion";
 import Aurora from "@/features/ygata/components/Aurora";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import SecondaryButton from "@/features/common/components/Buttons/SecondaryButton";
 
 const LandingPage = () => {
   const lottieStackedRef = useRef<any>(null);
@@ -145,7 +145,7 @@ const LandingPage = () => {
           {/* Title text section */}
           <div className="z-10 flex flex-col">
             {/* Heading 01 */}
-            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[88px]">
+            <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12 overflow-hidden h-16 lg:h-20 xl:h-24 2xl:h-[72px]">
               <h1 className="h-fit">GATA</h1>
               <div className="hidden md:flex flex-col animate-text-slide h-fit w-fit">
                 <div className="flex gap-4 md:gap-6 lg:gap-8 2xl:gap-12">
@@ -227,13 +227,13 @@ const LandingPage = () => {
         </section>
 
         {/* Gata Breif */}
-        <section className="z-10 mx-8 lg:mx-16 3xl:mx-40 grid grid-cols-2 lg:grid-cols-4 gap-2 items-center">
+        <section className="z-10 mx-8 lg:mx-16 3xl:mx-40 grid grid-cols-2 lg:grid-cols-4 gap-4 items-center">
           <div
             onMouseEnter={() => lottieAtomRef.current?.play()}
             onMouseLeave={() => lottieAtomRef.current?.stop()}
             className="relative w-full h-full flex flex-col gap-[8px] p-4 xl:p-6 rounded-[8px] border-[1px] border-white border-opacity-10 bg-black overflow-hidden"
           >
-            <div className="w-12 h-12 flex justify-center items-center">
+            <div className="z-10 w-12 h-12 flex justify-center items-center">
               <DotLottieReact
                 src="/icons/home/atom.lottie"
                 autoplay={false}
@@ -373,7 +373,7 @@ const LandingPage = () => {
         </section>
 
         {/* validator section */}
-        <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
+        <section className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-[64px] items-center">
           <div className="flex flex-col gap-[16px] items-center max-w-[1024px] text-center">
             <Image
               width={222}
@@ -383,7 +383,7 @@ const LandingPage = () => {
             />
             <div className="flex gap-8">
               {/* <h2>GATA HUB</h2> */}
-              <h2 className="text-red">Validators</h2>
+              <h2 className="text-white font-bold font-space">Validators</h2>
             </div>
             {/* <p>
               Trust us to safeguard your assets and deliver excellence in
@@ -392,7 +392,7 @@ const LandingPage = () => {
           </div>
 
           {/* validators */}
-          <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-2">
+          <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-4">
             {initialVals.map((val, i) => {
               let heartBeat = 4;
               const randomDecimal = Math.random();
@@ -422,19 +422,23 @@ const LandingPage = () => {
           </div>
           <Link href={"/infrastructure/validators"}>
             <span>
-              <SecondaryButton>View all validators</SecondaryButton>
+              <SecondaryButton text="View all validators"></SecondaryButton>
             </span>
           </Link>
         </section>
 
         {/* Partners & Colloborators */}
-        <section className="ml-4 sm:ml-8 lg:ml-32 3xl:ml-80 flex flex-col md:flex-row justify-between items-center gap-[64px]">
+        <section className="ml-8 lg:ml-16 3xl:ml-40 flex flex-col md:flex-row justify-between items-center gap-[64px]">
           <div className="flex flex-col gap-[16px] md:w-[512px]">
             <div className="flex flex-col">
-              <h2>Partners &</h2>
-              <h2 className="text-purple">Collaborators</h2>
+              <h2 className="text-gray">
+                Partners &{" "}
+                <span className="text-white font-space font-bold">
+                  Collaborators
+                </span>
+              </h2>
             </div>
-            <p>
+            <p className="text-gray">
               Over the past two years, GATA HUB has forged meaningful
               partnerships and collaborations with many projects. Together,
               we're driving innovation, fostering growth, and creating lasting
@@ -447,7 +451,7 @@ const LandingPage = () => {
         </section>
 
         {/* Team section */}
-        <section className="flex flex-col gap-[64px] items-center ">
+        <section className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-[64px] items-center">
           <div className="flex flex-col gap-[16px] items-center">
             <Image
               width={222}
@@ -457,7 +461,7 @@ const LandingPage = () => {
               src="/images/common/title-decor.svg"
             />
             <div className="flex gap-[16px] items-center">
-              <h2 className="text-red">Team</h2>
+              <h2 className="text-white font-bold font-space">Team</h2>
             </div>
           </div>
 

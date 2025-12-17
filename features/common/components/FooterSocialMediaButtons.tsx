@@ -5,10 +5,10 @@ export const TwitterFooter = () => {
     <a
       href="https://twitter.com/GataDaoZone"
       target="_blank"
-      className="group transition-all duration-300 ease-in-out border-[1px] border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
+      className="group transition-all duration-300 ease-in-out border-[1px] border-white/10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-black/10 backdrop-blur-lg hover:bg-dgray cursor-pointer"
     >
       <svg
-        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-dgray group-hover:text-purple"
+        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-gray group-hover:text-white"
         width="32"
         height="32"
         viewBox="0 0 32 32"
@@ -26,10 +26,10 @@ export const DiscordFooter = () => {
     <a
       href="https://discord.gg/4MCrtaCetp"
       target="_blank"
-      className="group transition-all duration-300 ease-in-out border-[1px] border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
+      className="group transition-all duration-300 ease-in-out border-[1px] border-white/10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-black/10 backdrop-blur-lg hover:bg-dgray cursor-pointer"
     >
       <svg
-        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-dgray group-hover:text-purple"
+        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-gray group-hover:text-white"
         width="32"
         height="32"
         viewBox="0 0 32 32"
@@ -47,10 +47,10 @@ export const MediumFooter = () => {
     <a
       href="https://medium.com/gatadao"
       target="_blank"
-      className="group transition-all duration-300 ease-in-out border-[1px] border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
+      className="group transition-all duration-300 ease-in-out border-[1px] border-white/10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-black/10 backdrop-blur-lg hover:bg-dgray cursor-pointer"
     >
       <svg
-        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-dgray group-hover:text-purple"
+        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-gray group-hover:text-white"
         width="32"
         height="32"
         viewBox="0 0 32 32"
@@ -70,10 +70,10 @@ export const GitbookFooter = () => {
     <a
       href="https://gatadao.gitbook.io/welcome-to-gitbook/"
       target="_blank"
-      className="group transition-all duration-300 ease-in-out border-[1px] border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
+      className="group transition-all duration-300 ease-in-out border-[1px] border-white/10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-black/10 backdrop-blur-lg hover:bg-dgray cursor-pointer"
     >
       <svg
-        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-dgray group-hover:text-purple"
+        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-gray group-hover:text-white"
         width="32"
         height="32"
         viewBox="0 0 32 32"
@@ -91,10 +91,10 @@ export const LinkTreeFooter = () => {
     <a
       href="https://linktr.ee/gatahub"
       target="_blank"
-      className="group transition-all duration-300 ease-in-out border-[1px] border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
+      className="group transition-all duration-300 ease-in-out border-[1px] border-white/10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-black/10 backdrop-blur-lg hover:bg-dgray cursor-pointer"
     >
       <svg
-        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-dgray group-hover:text-purple"
+        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-gray group-hover:text-white"
         width="32"
         height="32"
         viewBox="0 0 32 32"
@@ -119,10 +119,10 @@ export const GithubFooter = () => {
     <a
       href="https://github.com/GATA-HUB"
       target="_blank"
-      className="group transition-all duration-300 ease-in-out border-[1px] border-white border-opacity-10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-purple hover:bg-dgray cursor-pointer"
+      className="group transition-all duration-300 ease-in-out border-[1px] border-white/10 flex justify-center items-center px-[8px] py-[16px] rounded-full bg-black/10 backdrop-blur-lg hover:bg-dgray cursor-pointer"
     >
       <svg
-        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-dgray group-hover:text-purple"
+        className="w-4 h-4 lg:w-6 lg:h-6 transition-all duration-300 ease-in-out fill-current text-gray group-hover:text-white"
         height="32"
         viewBox="0 0 24 24"
         version="1.1"

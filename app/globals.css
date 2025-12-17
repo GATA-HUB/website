@@ -54,6 +54,7 @@ h1 {
   font-family: var(--font-spacemono);
   line-height: 48px;
   letter-spacing: -0.05em;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -94,7 +95,7 @@ p {
   font-size: 11px;
   font-family: var(--font-titillium);
   line-height: 16px;
-  font-weight: 200;
+  font-weight: 400;
   color: #a4a4a4;
 }
 
@@ -174,8 +175,8 @@ p {
 
 @media (min-width: 1536px) {
   h1 {
-    font-size: 80px;
-    line-height: 80px;
+    font-size: 64px;
+    line-height: 72px;
   }
 
   h2 {
@@ -204,7 +205,7 @@ p {
   }
 
   p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 14px;
   }
 }

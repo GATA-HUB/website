@@ -428,7 +428,10 @@ const page = () => {
 
         <div className="relative mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-8">
           <div className="flex flex-col gap-4 h-full">
-            <h2>Assets Breakdown</h2>
+            <h2 className="text-gray">
+              <span className="font-space font-bold text-white">Assets</span>{" "}
+              Breakdown
+            </h2>
             <div className="flex gap-2 items-center">
               <div className="relative flex items-center justify-center w-6 h-6 bg-dgray rounded">
                 <div className="absolute w-[8px] h-[8px] bg-black bg-opacity-40 rounded-full" />
@@ -683,7 +686,10 @@ const page = () => {
           {/* Liquid Assets table */}
 
           <div className="w-full relative flex flex-col gap-8">
-            <h2 className="">NFT Assets</h2>
+            <h2 className="text-gray">
+              <span className="font-space font-bold text-white">NFT</span>{" "}
+              Assets
+            </h2>
             <div className="grid grid-cols-1 -space-y-[1px] w-full">
               <div className="w-full flex gap-4 items-center xsm:p-4 pl-4 bg-dgray rounded-t-[8px] overflow-hidden">
                 <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">
@@ -733,7 +739,10 @@ const page = () => {
           {/* Total Assets table */}
 
           <div className="w-full relative flex flex-col gap-8">
-            <h2 className="">Total Assets</h2>
+            <h2 className="text-gray">
+              <span className="font-space font-bold text-white">Total</span>{" "}
+              Assets
+            </h2>
             <div className="grid grid-cols-1 -space-y-[1px] w-full">
               <div className="w-full flex gap-4 items-center xsm:p-4 pl-4 bg-dgray rounded-t-[8px] overflow-hidden">
                 <div className="flex items-center gap-2 md:gap-4 w-1/4 min-w-[90px]">

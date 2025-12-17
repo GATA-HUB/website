@@ -1,14 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import {
-  PrimaryButton,
-  SecondaryButton,
-  SecondaryExternalLink,
-} from "../../common/components/Button";
+import { SecondaryButton } from "../../common/components/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ExternalLinkIcon from "@/features/common/components/ExternalLinkIcon";
+import PrimaryButton from "@/features/common/components/Buttons/PrimaryButton";
 
 interface Props {
   image: string;
@@ -83,6 +80,16 @@ const NftCard = ({
         <div className="flex flex-col w-full">
           <div className="flex justify-center items-center overflow-hidden">
             <div className="relative flex w-full aspect-square items-center justify-center overflow-hidden">
+              <div className="absolute z-10 top-2 right-2 flex w-[fit-content] gap-2 items-center border-[1px] border-white/10 rounded-full bg-black/10 backdrop-blur-[8px] pl-[8px] pr-[16px] py-[4px]">
+                <Image
+                  width={16}
+                  height={16}
+                  src="/images/common/nft-collection-icon.svg"
+                  loading="lazy"
+                  alt=""
+                />
+                <p className="w-full text-white">{collection}</p>
+              </div>
               {image ? (
                 <Image
                   layout="fill"
@@ -124,7 +131,9 @@ const NftCard = ({
                   height: `${descHeight}px`,
                 }}
               >
-                <p ref={ref}>{desc}</p>
+                <p ref={ref} className="text-gray">
+                  {desc}
+                </p>
               </motion.div>
               {loadMore ? (
                 <p
@@ -135,29 +144,19 @@ const NftCard = ({
                 </p>
               ) : null}
             </div>
-            <div className="flex w-[fit-content] gap-2 items-center border-[1px] border-white border-opacity-10 rounded-full bg-dgray pl-[8px] pr-[16px] py-[4px]">
-              <Image
-                width={16}
-                height={16}
-                src="/images/common/nft-collection-icon.svg"
-                loading="lazy"
-                alt=""
-              />
-              <p className="w-full text-white">{collection}</p>
-            </div>
           </div>
         </div>
         <div className="z-10 px-4 pb-4 w-full gap-2 flex flex-col">
-          <PrimaryButton width="full" href={href}>
-            Collect
-          </PrimaryButton>
-          <SecondaryButton
-            href={rewardsUrl}
-            width="full"
-            disabled={!rewardsUrl}
-          >
-            Rewards
-          </SecondaryButton>
+          <PrimaryButton text="Collect" href={href} width="full" />
+          {rewardsUrl ? (
+            <SecondaryButton
+              href={rewardsUrl}
+              width="full"
+              disabled={!rewardsUrl}
+            >
+              Rewards
+            </SecondaryButton>
+          ) : null}
         </div>
       </div>
       <div className="z-[-1] absolute top-12 left-0 right-0 aspect-square blur-[32px]">

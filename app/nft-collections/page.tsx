@@ -92,7 +92,7 @@ const NftCollection = () => {
       </div>
 
       <div className="w-full max-w-[1920px] flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64 mt-24">
-        <section className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
+        <section className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-[64px] items-center">
           <div className="flex flex-col gap-[16px] items-center max-w-[1024px] text-center">
             <Image
               alt=""
@@ -102,11 +102,15 @@ const NftCollection = () => {
               loading="lazy"
             />
             <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 lg:gap-8">
-              <h2 className="text-green">NFT</h2>
-              <h2>Collections</h2>
+              <h2 className="font-bold">
+                NFT{" "}
+                <span className="font-space font-light text-gray">
+                  Collections
+                </span>
+              </h2>
             </div>
             <div className="flex flex-col items-center">
-              <p>
+              <p className="text-gray">
                 Some pay revenue share to the holders, some generate DeFi Yield
                 and some are memorial
               </p>
@@ -128,7 +132,7 @@ const NftCollection = () => {
 
           {/* NFT Collections */}
 
-          <div className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
+          <div className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg2:grid-cols-5 3xl:grid-cols-6 gap-4">
             {nfts.map((nft, i) => {
               if (nft.active) {
                 return (

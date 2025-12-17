@@ -86,7 +86,7 @@ const validators = () => {
         </div>
       </div>
       <div className="w-full flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
-        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
+        <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-[64px] items-center">
           <div className="flex flex-col gap-[8px] items-center max-w-[1024px] text-center">
             <Image
               width={222}
@@ -96,13 +96,13 @@ const validators = () => {
               src="/images/common/title-decor.svg"
             />
             <div className="flex gap-8">
-              <h2 className="text-red">Validators</h2>
+              <h2 className="font-bold">Validators</h2>
             </div>
           </div>
           {/* tab section */}
           <Tab setCurrentTab={setTab} tabs={collectionTads} currentTab={tab} />
 
-          <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-2 sm:gap-2">
+          <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-2 sm:gap-4">
             {vals.map((val, i) => {
               let heartBeat = 4;
               const randomDecimal = Math.random();

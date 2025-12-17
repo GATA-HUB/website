@@ -15,7 +15,7 @@ import GridDistortion from "@/features/landing-page/components/GridDistortion";
 const Footer = () => {
   return (
     <div className="z-20 relative w-full max-w-[1920px] flex flex-col gap-[64px] items-center pt-[160px] pb-[128px] lg:pt-[350px] lg:pb-[300px]">
-      <div className="z-20 flex flex-col gap-[16px] items-center">
+      <div className="z-20 flex flex-col gap-6 items-center">
         <svg
           width="48"
           height="48"
@@ -29,7 +29,7 @@ const Footer = () => {
           />
         </svg>
 
-        <h5 className="text-center px-4 max-w-[512px]">
+        <h5 className="text-center text-gray px-4 max-w-[512px]">
           Catnip for the decentralized world of tomorrow
         </h5>
 
@@ -43,7 +43,7 @@ const Footer = () => {
           <GithubFooter />
         </div>
       </div>
-      <div className="absolute bottom-0 w-[1920px] h-[634px]">
+      <div className="absolute bottom-0 w-full aspect-[16/6]">
         <GridDistortion
           imageSrc="/images/footer/footer.png"
           grid={15}

@@ -24,7 +24,7 @@ const ManagedLiquidityCard = ({ totalLPValue }: { totalLPValue: number }) => {
           </svg>
         </div>
 
-        <h3 className="text-[28px] lg:text-[32px] text-white">
+        <h3 className="font-space text-[28px] lg:text-[32px] text-white">
           Managed Liquidity
         </h3>
       </div>

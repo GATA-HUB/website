@@ -49,7 +49,7 @@ const endpoints = () => {
         </div>
       </div>
       <div className="w-full flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64 mt-24">
-        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
+        <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-[64px] items-center">
           <div className="flex flex-col gap-[8px] items-center max-w-[1024px] text-center">
             <Image
               width={222}
@@ -59,10 +59,15 @@ const endpoints = () => {
               src="/images/common/title-decor.svg"
             />
             <div className="flex gap-8">
-              <h2 className="text-red">Public Endpoints</h2>
+              <h2 className="text-gray">
+                Public{" "}
+                <span className="font-bold text-white font-space">
+                  Endpoints
+                </span>
+              </h2>
             </div>
           </div>
-          <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-2 sm:gap-2">
+          <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-2 sm:gap-4">
             {initialEndpoints.map((endpoint, i) => {
               return (
                 <EndpointsCard

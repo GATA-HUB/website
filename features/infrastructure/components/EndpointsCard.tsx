@@ -51,19 +51,41 @@ const EndpointsCard = ({ icon, title, endpoints }: Props) => {
       <div className="z-10 flex flex-col p-3 sm:p-4 gap-2 sm:gap-4 w-full h-full justify-between">
         <div className="flex gap-2 sm:gap-4">
           <div className="flex flex-col sm:flex-row gap-[12px] sm:items-center">
-            <div className="flex justify-center items-center w-fit">
+            <div className="flex justify-center items-center w-12 h-12">
               <Image width={64} height={64} alt="" priority={true} src={icon} />
             </div>
             <h4>{title}</h4>
           </div>
         </div>
-        <div className="flex flex-col gap-1 h-full">
+        <div className="flex flex-col h-full">
           {endpoints.map((endpoint, i) => {
             return (
               <div
                 key={i}
-                className="flex items-center justify-between w-full bg-black border-[1px] border-white border-opacity-10 pl-4 pr-2 py-2 rounded gap-2"
+                className="group/icon flex items-center justify-between w-full bg-black hover:bg-dgray border border-white/0 hover:border-white/10 pl-4 pr-2 py-2 rounded gap-2 transition-all ease-out duration-300"
               >
+                <div className="flex w-6 h-6 items-center justify-center">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="fill-gray stroke-gray group-hover/icon:fill-white group-hover/icon:stroke-white transition-all duration-300 ease-in-out"
+                  >
+                    <rect x="4" y="4" width="4" height="4" rx="2" fill="" />
+                    <rect x="4" y="16" width="4" height="4" rx="2" fill="" />
+                    <rect x="16" y="10" width="4" height="4" rx="2" fill="" />
+                    <path
+                      d="M19 12H15.5C13.8431 12 12.5 10.6569 12.5 9C12.5 7.34315 11.1569 6 9.5 6H6"
+                      stroke=""
+                    />
+                    <path
+                      d="M6 18L9.50002 18C11.1569 18 12.5 16.6568 12.5 15C12.5 13.3432 13.8432 12 15.5 12H19"
+                      stroke=""
+                    />
+                  </svg>
+                </div>
                 {copiedIndex === i ? (
                   <p className="text-white">Copied to clipboard!</p>
                 ) : (

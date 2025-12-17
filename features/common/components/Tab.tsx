@@ -20,13 +20,13 @@ const Tab = ({ currentTab, setCurrentTab, tabs }: Props) => {
           <div
             key={i}
             className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-              currentTab === i ? "purple" : "black"
-            } hover:bg-purple border-[1px] border-white border-opacity-10`}
+              currentTab === i ? "dgray border-[1px]" : "black border-0"
+            } hover:bg-dgray  border-white/10`}
             onClick={() => handleTab(i)}
           >
             <p
-              className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-black capitalize ${
-                currentTab === i ? "text-black" : "text-white"
+              className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-white capitalize ${
+                currentTab === i ? "text-white" : "text-gray hover:text-white"
               }`}
             >
               {tab}

@@ -19,10 +19,10 @@ const ExternalLinkIcon = ({ size, fill, hoverFill }: ExternalLinkIconProps) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          className={`${fill ? `fill-${fill}` : "fill-purple"} ${
+          className={`${fill ? `fill-${fill}` : "fill-white/60"} ${
             hoverFill
               ? `group-hover:fill-${hoverFill}`
-              : "group-hover:fill-lgray"
+              : "group-hover:fill-purple"
           } transition-all ease-in-out duration-300`}
           fillRule="evenodd"
           clipRule="evenodd"
@@ -30,7 +30,7 @@ const ExternalLinkIcon = ({ size, fill, hoverFill }: ExternalLinkIconProps) => {
           fill="none"
         />
         <path
-          className="fill-purple group-hover:fill-lgray transition-all ease-in-out duration-300"
+          className="fill-white/60 group-hover:fill-purple transition-all ease-in-out duration-300"
           fillRule="evenodd"
           clipRule="evenodd"
           d="M3 9C3 5.68629 5.68629 3 9 3H17C17.5523 3 18 3.44772 18 4C18 4.55228 17.5523 5 17 5H9C6.79086 5 5 6.79086 5 9V23C5 25.2091 6.79086 27 9 27H23C25.2091 27 27 25.2091 27 23V15C27 14.4477 27.4477 14 28 14C28.5523 14 29 14.4477 29 15V23C29 26.3137 26.3137 29 23 29H9C5.68629 29 3 26.3137 3 23V9Z"
