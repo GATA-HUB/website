@@ -1,29 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
-import ValidatorCard from "../../components/infrastructure/ValidatorCard";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import ValData from "../../../public/data/validators.json";
+import ValData from "../../../features/infrastructure/data/validators.json";
 import Template from "../../template";
-
-interface Validator {
-  icon: string;
-  title: string;
-  tokens: string;
-  symbol: string;
-  commission: string;
-  status?: string;
-  stake?: string;
-  autoCompound?: string;
-  stat: string;
-  active: boolean;
-}
+import ValidatorCard from "@/features/infrastructure/components/ValidatorCard";
+import { NFTCollection, Validator } from "@/types";
+import Tab from "@/features/common/components/Tab";
+import GridDistortion from "@/features/landing-page/components/GridDistortion";
 
 const validators = () => {
   const initialNFTs: Validator[] = ValData;
 
   const [vals, setVals] = useState<Validator[]>(initialNFTs);
-  const [tab, setTab] = useState("active");
+  const [tab, setTab] = useState<number>(0);
+  const collectionTads: string[] = ["active", "decommissioned"];
 
   const handleTab = (ValSet: string) => {
     let updatedVals: Validator[];
@@ -39,107 +30,79 @@ const validators = () => {
     }
 
     setVals(updatedVals);
-    setTab(ValSet);
   };
+
+  useEffect(() => {
+    const selectedCollection = collectionTads[tab];
+
+    let updatedVals: Validator[];
+
+    if (selectedCollection === "all") {
+      updatedVals = vals.map((val) => ({ ...val, active: true }));
+    } else {
+      updatedVals = vals.map((val) =>
+        val.stat != selectedCollection
+          ? { ...val, active: false }
+          : { ...val, active: true }
+      );
+    }
+
+    setVals(updatedVals);
+  }, [tab]);
 
   return (
     <div className="z-10 flex flex-col w-full items-center">
-      <div className="relative flex w-full h-[960px] items-center ">
+      <div className="relative flex w-full h-[620px] items-center ">
         <div className="absolute w-full h-full overflow-hidden flex justify-center">
-          <Image
+          <div className="z-10 absolute bottom-0 right-0 left-0 w-full h-[128px] bg-gradient-to-t from-black to-transparent"></div>
+          <div className="relative w-[1920px] h-[960px] aspect-[16/9] flex items-center justify-center z-0 pointer-events-auto">
+            <GridDistortion
+              imageSrc="/images/headers/valBg.jpg"
+              grid={15}
+              mouse={0.1}
+              strength={0.15}
+              relaxation={0.8}
+              className="custom-class"
+            />
+          </div>
+          {/* <Image
             style={{
               minWidth: "1920px",
             }}
-            src="/valBg.jpg"
-            width={1920}
-            height={960}
+            src="/images/headers/valBg.jpg"
+            // width={1920}
+            // height={960}
+            fill
+            objectFit="cover"
+            objectPosition="center"
             quality={100}
             alt=""
-          />
+          /> */}
         </div>
-        <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-8 z-10">
-          <div className="flex flex-col gap-2 lg:w-1/2">
+        <div className="max-w-[800px] mx-8 lg:mx-16 3xl:ml-40 3xl:mr-0 flex flex-col gap-8 z-10">
+          <div className="flex flex-col gap-2 lg:w-full">
             <h1>Decentralized Infrastructure & Services</h1>
           </div>
         </div>
       </div>
       <div className="w-full flex flex-col gap-20 sm:gap-32 md:gap-48 lg:gap-64">
-        <div className="mx-4 sm:mx-8 lg:mx-32 3xl:mx-80 flex flex-col gap-[64px] items-center">
+        <div className="mx-8 lg:mx-16 3xl:mx-40 flex flex-col gap-[64px] items-center">
           <div className="flex flex-col gap-[8px] items-center max-w-[1024px] text-center">
             <Image
               width={222}
               height={32}
               loading="lazy"
               alt=""
-              src="/title-decor.svg"
+              src="/images/common/title-decor.svg"
             />
             <div className="flex gap-8">
-              <h2 className="text-red">Validators</h2>
+              <h2 className="font-bold">Validators</h2>
             </div>
           </div>
           {/* tab section */}
-          <div className="flex gap-1 sm:gap-1 justify-center items-center p-1 bg-black border-2 border-white border-opacity-10 rounded-full">
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "active" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleTab("active")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "active" ? "dgray" : "white"
-                }`}
-              >
-                Active
-              </p>
-            </div>
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "all" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleTab("all")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "all" ? "dgray" : "white"
-                }`}
-              >
-                All
-              </p>
-            </div>
+          <Tab setCurrentTab={setTab} tabs={collectionTads} currentTab={tab} />
 
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "experimental" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleTab("experimental")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "experimental" ? "dgray" : "white"
-                }`}
-              >
-                Experimental
-              </p>
-            </div>
-
-            <div
-              className={`group cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-center px-3 py-0 sm:px-6 sm:py-0 rounded-full border-1 border-opacity-10 bg-${
-                tab === "decommissioned" ? "purple" : "dgray"
-              } hover:bg-purple border-2 border-white border-opacity-10`}
-              onClick={() => handleTab("decommissioned")}
-            >
-              <p
-                className={`py-[12px] transition-all duration-300 ease-in-out font-semibold group-hover:text-dgray text-${
-                  tab === "decommissioned" ? "dgray" : "white"
-                }`}
-              >
-                Decommissioned
-              </p>
-            </div>
-          </div>
-
-          <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-2 sm:gap-2">
+          <div className="grid w-full grid-cols-2 lg:grid-cols-3 lg2:grid-cols-4 gap-2 sm:gap-4">
             {vals.map((val, i) => {
               let heartBeat = 4;
               const randomDecimal = Math.random();
@@ -151,6 +114,7 @@ const validators = () => {
                     <ValidatorCard
                       icon={val.icon}
                       title={val.title}
+                      network={val.network}
                       tokens={val.tokens}
                       symbol={val.symbol}
                       commission={val.commission}
@@ -158,6 +122,7 @@ const validators = () => {
                       stake={val.stake}
                       autoCompound={val.autoCompound}
                       stat={val.stat}
+                      addr={val.addr}
                       heartBeat={heartBeat}
                     />
                   </Template>

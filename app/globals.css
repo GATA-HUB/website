@@ -26,17 +26,17 @@
 ::-webkit-scrollbar-track {
   border-radius: 4px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #232323; 
+  background: #232323;
   border-radius: 4px;
   padding-left: 8px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #646363; 
+  background: #646363;
 }
 
 @layer utilities {
@@ -53,6 +53,8 @@ h1 {
   font-size: 48px;
   font-family: var(--font-spacemono);
   line-height: 48px;
+  letter-spacing: -0.05em;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -69,25 +71,32 @@ h3 {
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 14px;
   font-family: var(--font-spacemono);
   line-height: 18px;
   font-weight: 700;
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 12px;
   font-family: var(--font-titillium);
   font-weight: 700;
   line-height: 16px;
+}
+
+h6 {
+  font-size: 11px;
+  font-family: var(--font-titillium);
+  font-weight: 400;
+  line-height: 11px;
 }
 
 p {
   font-size: 11px;
   font-family: var(--font-titillium);
   line-height: 16px;
-  font-weight: 200;
-  color: #A4A4A4;
+  font-weight: 400;
+  color: #a4a4a4;
 }
 
 .primary_button {
@@ -95,15 +104,27 @@ p {
   font-weight: 600;
 }
 
-
 @media (min-width: 640px) {
   h1 {
     font-size: 48px;
     line-height: 50px;
   }
+
   p {
     font-size: 13px;
-  line-height: 16px;
+    line-height: 16px;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
+    font-family: var(--font-titillium);
+    font-weight: 400;
+    line-height: 11px;
   }
 }
 
@@ -117,17 +138,17 @@ p {
     font-size: 32px;
     line-height: 32px;
   }
-  
+
   h3 {
     font-size: 24px;
     line-height: 24px;
   }
-  
+
   h4 {
     font-size: 18px;
     line-height: 20px;
   }
-  
+
   h5 {
     font-size: 18px;
   }
@@ -154,32 +175,37 @@ p {
 
 @media (min-width: 1536px) {
   h1 {
-    font-size: 104px;
-    line-height: 108px;
+    font-size: 64px;
+    line-height: 72px;
   }
-  
+
   h2 {
     font-size: 40px;
     line-height: 40px;
   }
-  
+
   h3 {
     font-size: 20px;
     line-height: 20px;
   }
-  
+
   h4 {
     font-size: 18px;
     line-height: 18px;
   }
-  
+
   h5 {
     font-size: 16px;
     line-height: 16px;
   }
-  
+
+  h6 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
   p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 14px;
   }
 }

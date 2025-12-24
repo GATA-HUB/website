@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import { Space_Mono, Titillium_Web } from "next/font/google";
 import "./globals.css";
-import Nav from "./components/Nav";
-import Footer from "@/app/components/Footer";
+import Nav from "../features/common/components/Nav";
+import Footer from "@/features/common/components/Footer";
 
 const spacemono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-spacemono",
+  display: "swap",
 });
 
 const titillium = Titillium_Web({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-titillium",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +34,7 @@ export default function RootLayout({
         className={`relative flex flex-col items-center w-full bg-black text-white ${spacemono.variable} ${titillium.variable}`}
       >
         <Nav />
-        <div className="mt-[84px] md:mt-[100px] lg:mt-[92px] max-w-[1920px] w-full">
+        <div className="mt-[50px] lg:mt-[58px] max-w-[1920px] w-full">
           {children}
         </div>
         <Footer />

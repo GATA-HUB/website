@@ -1,0 +1,67 @@
+[
+    {
+      "icon": "/images/validators/akt.png",
+      "title": "Akash",
+      "endpoints": ["https://akash-rpc.gatadao.com/", "https://akash-api.gatadao.com/", "https://akash-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/atomone.png",
+      "title": "AtomOne",
+      "endpoints": ["https://atomone-rpc.gatadao.com/", "https://atomone-api.gatadao.com/", "https://atomone-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/atomone.png",
+      "title": "AtomOne Testnet",
+      "endpoints": ["https://atomone-testnet-rpc.gatadao.com/", "https://atomone-testnet-api.gatadao.com/", "https://atomone-testnet-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/cosmos.png",
+      "title": "Cosmos",
+      "endpoints": ["https://cosmoshub-rpc.gatadao.com/", "https://cosmoshub-api.gatadao.com/", "https://cosmoshub-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/elys.png",
+      "title": "Elys",
+      "endpoints": ["https://elys-rpc.gatadao.com/", "https://elys-api.gatadao.com/", "https://elys-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/junologo.png",
+      "title": "Juno",
+      "endpoints": ["https://juno-rpc.gatadao.com/", "https://juno-api.gatadao.com/", "https://juno-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/namada.png",
+      "title": "Namada",
+      "endpoints": ["https://namada-rpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/nomic.png",
+      "title": "Nomic",
+      "endpoints": ["https://rpc-nomic.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/omni.png",
+      "title": "Omniflix",
+      "endpoints": ["https://omniflix-rpc.gatadao.com", "https://omniflix-api.gatadao.com", "https://omniflix-grpc.gatadao.com"]
+    },
+    {
+      "icon": "/images/validators/osmosis.png",
+      "title": "Osmosis",
+      "endpoints": ["https://osmosis-rpc.gatadao.com/", "https://osmosis-api.gatadao.com/", "https://osmosis-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/passage.png",
+      "title": "Passage",
+      "endpoints": ["https://passage-rpc.gatadao.com/", "https://passage-api.gatadao.com/", "https://passage-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/stars.png",
+      "title": "Stargaze",
+      "endpoints": ["https://stargaze-rpc.gatadao.com/", "https://stargaze-api.gatadao.com/", "https://stargaze-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/stride.png",
+      "title": "Stride",
+      "endpoints": ["https://stride-rpc.gatadao.com/", "https://stride-api.gatadao.com/", "https://stride-grpc.gatadao.com/"]
+    }
+  ]

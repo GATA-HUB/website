@@ -1,0 +1,20 @@
+[
+  {
+    "network": "BTC",
+    "icon": "/images/validators/btc.png",
+    "quantity": 0.01,
+    "symbol": "nBTC"
+  },
+  {
+    "network": "ETH",
+    "icon": "/images/validators/eth.png",
+    "quantity": 0.5,
+    "symbol": "ETH"
+  },
+  {
+    "network": "SOL",
+    "icon": "/images/validators/sol.png",
+    "quantity": 1,
+    "symbol": "SOL"
+  }
+]

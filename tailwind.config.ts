@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -21,7 +22,7 @@ const config: Config = {
         black: "#000000",
         purple: "#7B5AFF",
         lgray: "#302F31",
-        gray: "#A4A4A4",
+        gray: "#6C727C",
         dgray: "#0F0F0F",
         mgray: "#1F1F1F",
         green: "#78FF48",
@@ -30,7 +31,7 @@ const config: Config = {
         yellow: "#FFE248"
       },
       screens: {
-        'xsm': {'max': '464px'},
+        'xsm': {'max': '512px'},
         'lg2': {'min': '1440px'},
         '3xl': {'min': '1740px'},
       },

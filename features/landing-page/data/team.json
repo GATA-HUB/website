@@ -1,0 +1,58 @@
+[
+    {
+        "image": "/images/team/jove.jpg",
+        "name": "Jove",
+        "title": "CEO & CTO",
+        "desc": "GATA Core",
+        "twitter": "https://twitter.com/JoveCosmos"
+    },
+    {
+        "image": "/images/team/wassie.jpg",
+        "name": "Wassie",
+        "title": "CFO & Strategies",
+        "desc": "GATA Core",
+        "twitter": "https://twitter.com/ABCharlieEth"
+    },
+    {
+        "image": "/images/team/crypto.jpg",
+        "name": "Cryptopital",
+        "title": "Advisor",
+        "desc": "GATA Core",
+        "twitter": "https://x.com/MaximeL101"
+    },
+    {
+        "image": "/images/team/brasco.jpg",
+        "name": "Brasco",
+        "title": "CMO & Community Lead",
+        "desc": "",
+        "twitter": "https://twitter.com/Tabrasco"
+    },
+    {
+        "image": "/images/team/george.jpg",
+        "name": "George",
+        "title": "Data Analyst & Content Writing",
+        "desc": "",
+        "twitter": "https://twitter.com/George9D"
+    },
+    {
+        "image": "/images/team/sympan.jpg",
+        "name": "Hardy",
+        "title": "Operations and Networks",
+        "desc": "",
+        "twitter": ""
+    },
+    {
+        "image": "/images/team/aang.jpg",
+        "name": "A_Aang",
+        "title": "NFT Artist",
+        "desc": "",
+        "twitter": ""
+    },
+    {
+        "image": "/images/team/madu.jpg",
+        "name": "Madu",
+        "title": "Design and Development",
+        "desc": "",
+        "twitter": ""
+    }
+]
