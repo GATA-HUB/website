@@ -1,0 +1,17 @@
+[
+    {
+      "icon": "/images/validators/elys.png",
+      "title": "Elys",
+      "endpoints": ["https://elys-rpc.gatadao.com/", "https://elys-api.gatadao.com/", "https://elys-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/stride.png",
+      "title": "Stride",
+      "endpoints": ["https://stride-rpc.gatadao.com/", "https://stride-api.gatadao.com/", "https://stride-grpc.gatadao.com/"]
+    },
+    {
+      "icon": "/images/validators/omni.png",
+      "title": "Omniflix",
+      "endpoints": ["https://omniflix-rpc.gatadao.com", "https://omniflix-api.gatadao.com", "https://omniflix-grpc.gatadao.com"]
+    }
+]

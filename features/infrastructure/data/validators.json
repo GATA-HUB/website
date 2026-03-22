@@ -112,6 +112,20 @@
     "active": false
   },
   {
+    "icon": "/images/validators/gnoland.png",
+    "title": "Gno.land",
+    "network": "gnoland",
+    "tokens": 0,
+    "symbol": "GNOLAND",
+    "commission": "5%",
+    "status": "",
+    "stake": "",
+    "autoCompound": "",
+    "stat": "active",
+    "addr": "",
+    "active": true
+  },
+  {
     "icon": "/images/validators/govgen.png",
     "title": "GovGen",
     "network": "govgen",
